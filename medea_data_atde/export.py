@@ -1,11 +1,11 @@
 # %% imports
 import pandas as pd
 import numpy as np
-from medea_data_atde.get_funs import hours_in_year
+from medea_data_atde.retrieve import hours_in_year
 from config import zones, year
 
 
-def do_datadict(STATIC_FNAME, TIMESERIES_FILE, invest_conventionals=True, invest_renewables=True, invest_storage=True,
+def do_symbols(STATIC_FNAME, TIMESERIES_FILE, invest_conventionals=True, invest_renewables=True, invest_storage=True,
                 invest_tc=True):
     idx = pd.IndexSlice
 
@@ -32,7 +32,7 @@ def do_datadict(STATIC_FNAME, TIMESERIES_FILE, invest_conventionals=True, invest
 
     # create SETS
     # --------------------------------------------------------------------------- #
-    dict_sets = {
+    sets = {
         'e': {carrier: [True] for carrier in np.unique(dict_technologies['technology'][
                                                            ['fuel', 'primary_product']])},  # all energy carriers
         'i': {input: [True] for input in dict_technologies['technology']['primary_product'].unique()},  # energy inputs
@@ -53,8 +53,8 @@ def do_datadict(STATIC_FNAME, TIMESERIES_FILE, invest_conventionals=True, invest
     }
 
     # convert set-dictionaries to DataFrames
-    for key, value in dict_sets.items():
-        dict_sets.update({key: pd.DataFrame.from_dict(dict_sets[key], orient='index', columns=['Value'])})
+    for key, value in sets.items():
+        sets.update({key: pd.DataFrame.from_dict(sets[key], orient='index', columns=['Value'])})
 
     # create PARAMETERS
     # --------------------------------------------------------------------------- #
@@ -86,8 +86,8 @@ def do_datadict(STATIC_FNAME, TIMESERIES_FILE, invest_conventionals=True, invest
         (pd.Timestamp(year, 1, 1, 0, 0).tz_localize('UTC') <= ts_data['timeseries'].index) &
         (ts_data['timeseries'].index <= pd.Timestamp(year, 12, 31, 23, 0).tz_localize('UTC'))]
     # drop index and set index of df_time instead
-    if len(ts_data['timeseries']) == len(dict_sets['h']):
-        ts_data['timeseries'].set_index(dict_sets['h'].index, inplace=True)
+    if len(ts_data['timeseries']) == len(sets['h']):
+        ts_data['timeseries'].set_index(sets['h'].index, inplace=True)
     else:
         raise ValueError('Mismatch of time series data and model time resolution. Is cfg.year wrong?')
     # subset of zonal time series
@@ -126,7 +126,7 @@ def do_datadict(STATIC_FNAME, TIMESERIES_FILE, invest_conventionals=True, invest
                     dict_technologies['capacity'].loc[idx['Installed Capacity Out', :, year], hydro_storage].T.sum()
     inflow_factor.columns = inflow_factor.columns.droplevel([0, 2])
     ts_inflows = pd.DataFrame(index=list(ts_data['ZONAL'].index),
-                              columns=pd.MultiIndex.from_product([zones, dict_sets['s'].index]))
+                              columns=pd.MultiIndex.from_product([zones, sets['s'].index]))
     for zone in list(zones):
         for strg in hydro_storage:
             ts_inflows.loc[:, (zone, strg)] = ts_data['ZONAL'].loc[:, idx[zone, 'inflows', 'reservoir']] * \
@@ -155,28 +155,28 @@ def do_datadict(STATIC_FNAME, TIMESERIES_FILE, invest_conventionals=True, invest
         'potentials': pd.read_excel(STATIC_FNAME, 'potentials', index_col=[0]),
         'thermal': pd.DataFrame([float('inf') if invest_conventionals else 0]),
         'intermittent': pd.DataFrame(data=[float('inf') if invest_renewables else 0][0],
-                                     index=zones, columns=dict_sets['r'].index),
+                                     index=zones, columns=sets['r'].index),
         'storage': pd.DataFrame(data=[float('inf') if invest_storage else 0][0],
-                                index=zones, columns=dict_sets['s'].index),
+                                index=zones, columns=sets['s'].index),
         'atc': pd.DataFrame(data=[1 if invest_tc else 0][0],
                             index=zones, columns=zones)
     }
 
-    dict_parameters = {
+    parameters = {
         'AIR_POL_COST_FIX': estimates['AIR_POLLUTION']['fixed cost'],
         'AIR_POL_COST_VAR': estimates['AIR_POLLUTION']['variable cost'],
         'CAPACITY': dict_technologies['capacity'],
         'CAPACITY_X': dict_technologies['capacity_transmission'],
         'CAPACITY_STORAGE': dict_technologies['capacity'].loc
-            [idx['Storage Capacity', zones, year], dict_sets['s'].index],
+            [idx['Storage Capacity', zones, year], sets['s'].index],
         'CAPACITY_STORE_IN': dict_technologies['capacity'].loc
-            [idx['Installed Capacity In', zones, year], dict_sets['s'].index],
+            [idx['Installed Capacity In', zones, year], sets['s'].index],
         'CAPACITY_STORE_OUT': dict_technologies['capacity'].loc
-            [idx['Installed Capacity Out', zones, year], dict_sets['s'].index],
+            [idx['Installed Capacity Out', zones, year], sets['s'].index],
         'CAPITALCOST': dict_technologies['technology'].loc[:, 'eqacapex_p'].round(4),
-        'CAPITALCOST_E': dict_technologies['technology'].loc[dict_sets['s'].index, 'eqacapex_e'],
-        'CAPITALCOST_P': dict_technologies['technology'].loc[dict_sets['s'].index, 'eqacapex_p'],
-        'CAPITALCOST_X':  dict_technologies['technology'].loc[dict_sets['g'].index, 'eqacapex_p'],
+        'CAPITALCOST_E': dict_technologies['technology'].loc[sets['s'].index, 'eqacapex_e'],
+        'CAPITALCOST_P': dict_technologies['technology'].loc[sets['s'].index, 'eqacapex_p'],
+        'CAPITALCOST_X':  dict_technologies['technology'].loc[sets['g'].index, 'eqacapex_p'],
         'CO2_INTENSITY': estimates['CO2_INTENSITY'],
         # 'CONVERSION': dict_technologies['technology']['eta_ec'],
         'COST_OM_QFIX': dict_technologies['technology']['opex_f'],
@@ -202,4 +202,4 @@ def do_datadict(STATIC_FNAME, TIMESERIES_FILE, invest_conventionals=True, invest
         # 'VALUE_NSE': estimates[''],
         'SWITCH_INVEST': invest_limits['thermal'],
     }
-    return dict_sets, dict_parameters
+    return sets, parameters

@@ -8,7 +8,7 @@ from scipy import interpolate
 from datetime import datetime as dt
 from netCDF4 import Dataset, num2date
 from medea_data_atde.retrieve import days_in_year, resample_index
-from config import MEDEA_ROOT_DIR, ERA_DIR, COUNTRY, YEARS, zones, imf_file, fx_file, co2_file, url_ageb_bal
+# from config import MEDEA_ROOT_DIR, ERA_DIR, COUNTRY, YEARS, zones, imf_file, fx_file, co2_file, url_ageb_bal
 
 
 
@@ -156,17 +156,22 @@ def heat_consumption(zones, years, cons_annual, df_heat, cons_pattern):
     return ht_consumption
 
 
-def do_processing():
+def do_processing(medea_root_dir, country, years, zones, url_ageb_bal):
     setup_logging()
 
     # %% file paths
-    fuel_price_file = MEDEA_ROOT_DIR / 'data' / 'processed' / 'monthly_fuel_prices.csv'
-    co2_price_file = MEDEA_ROOT_DIR / 'data' / 'processed' / 'co2_price.csv'
-    enbal_at = MEDEA_ROOT_DIR / 'data' / 'raw' / 'enbal_AT.xlsx'
-    PPLANT_DB = MEDEA_ROOT_DIR / 'data' / 'processed' / 'power_plant_db.xlsx'
-    MEAN_TEMP_FILE = MEDEA_ROOT_DIR / 'data' / 'processed' / 'temp_daily_mean.csv'
-    CONSUMPTION_PATTERN = MEDEA_ROOT_DIR / 'data' / 'raw' / 'consumption_pattern.xlsx'
-    heat_cons_file = MEDEA_ROOT_DIR / 'data' / 'processed' / 'heat_hourly_consumption.csv'
+    ERA_DIR = medea_root_dir / 'data' / 'raw' / 'era5'
+    imf_file = medea_root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
+    fx_file = medea_root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
+    co2_file = medea_root_dir / 'data' / 'raw' / 'eua_price.csv'
+    enbal_at = medea_root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
+    CONSUMPTION_PATTERN = medea_root_dir / 'data' / 'raw' / 'consumption_pattern.xlsx'
+
+    fuel_price_file = medea_root_dir / 'data' / 'processed' / 'monthly_fuel_prices.csv'
+    co2_price_file = medea_root_dir / 'data' / 'processed' / 'co2_price.csv'
+    PPLANT_DB = medea_root_dir / 'data' / 'processed' / 'power_plant_db.xlsx'
+    MEAN_TEMP_FILE = medea_root_dir / 'data' / 'processed' / 'temp_daily_mean.csv'
+    heat_cons_file = medea_root_dir / 'data' / 'processed' / 'heat_hourly_consumption.csv'
 
     # %% process PRICE data
     df_imf = pd.read_excel(imf_file, index_col=[0], skiprows=[1, 2, 3])
@@ -195,15 +200,15 @@ def do_processing():
     # %% process temperature data
     # get coordinates of co-gen plants
     db_plants = pd.read_excel(PPLANT_DB)
-    daily_mean_temp = mean_temp_at_plants(db_plants, ERA_DIR, COUNTRY, YEARS, zones)
+    daily_mean_temp = mean_temp_at_plants(db_plants, ERA_DIR, country, years, zones)
     daily_mean_temp.to_csv(MEAN_TEMP_FILE)
     logging.info(f'Temperatures processed and saved to {MEAN_TEMP_FILE}')
 
     # %% process HEAT LOAD
     # process German energy balances
     ht_enduse_de = pd.DataFrame()
-    for yr in [x - 2000 for x in YEARS]:
-        enebal_de = MEDEA_ROOT_DIR / 'data' / 'raw' / f'enbal_DE_20{yr}.{url_ageb_bal[yr][1]}'
+    for yr in [x - 2000 for x in years]:
+        enebal_de = medea_root_dir / 'data' / 'raw' / f'enbal_DE_20{yr}.{url_ageb_bal[yr][1]}'
         df = pd.read_excel(enebal_de, sheet_name='tj', index_col=[0], usecols=[0, 31], skiprows=list(range(0, 50)),
                            nrows=24, na_values=['-'])
         df.columns = [2000 + yr]
@@ -215,20 +220,20 @@ def do_processing():
                                  na_values=['-']).astype('float')
     ht_enduse_at = ht_enduse_at / 1000
 
-    ht_cons = pd.DataFrame(index=YEARS,
+    ht_cons = pd.DataFrame(index=years,
                            columns=pd.MultiIndex.from_product([zones, ['HE08', 'HM08', 'HG08', 'WW', 'IND']]))
-    ht_cons.loc[YEARS, ('AT', 'HE08')] = ht_enduse_at.loc['Private Haushalte', YEARS] * 0.376 * 0.75
-    ht_cons.loc[YEARS, ('AT', 'HM08')] = ht_enduse_at.loc['Private Haushalte', YEARS] * 0.624 * 0.75
-    ht_cons.loc[YEARS, ('AT', 'WW')] = ht_enduse_at.loc['Private Haushalte', YEARS] * 0.25
-    ht_cons.loc[YEARS, ('AT', 'HG08')] = ht_enduse_at.loc['Öffentliche und Private Dienstleistungen', YEARS]
-    ht_cons.loc[YEARS, ('AT', 'IND')] = ht_enduse_at.loc['Produzierender Bereich', YEARS]
-    ht_cons.loc[YEARS, ('DE', 'HE08')] = ht_enduse_de.loc['Haushalte', YEARS] * 0.376 * 0.75
-    ht_cons.loc[YEARS, ('DE', 'HM08')] = ht_enduse_de.loc['Haushalte', YEARS] * 0.624 * 0.75
-    ht_cons.loc[YEARS, ('DE', 'WW')] = ht_enduse_de.loc['Haushalte', YEARS] * 0.25
-    ht_cons.loc[YEARS, ('DE', 'HG08')] = ht_enduse_de.loc[
-        'Gewerbe, Handel, Dienstleistungen u.übrige Verbraucher', YEARS]
-    ht_cons.loc[YEARS, ('DE', 'IND')] = ht_enduse_de.loc[
-        'Bergbau, Gew. Steine u. Erden, Verarbeit. Gewerbe insg.', YEARS]
+    ht_cons.loc[years, ('AT', 'HE08')] = ht_enduse_at.loc['Private Haushalte', years] * 0.376 * 0.75
+    ht_cons.loc[years, ('AT', 'HM08')] = ht_enduse_at.loc['Private Haushalte', years] * 0.624 * 0.75
+    ht_cons.loc[years, ('AT', 'WW')] = ht_enduse_at.loc['Private Haushalte', years] * 0.25
+    ht_cons.loc[years, ('AT', 'HG08')] = ht_enduse_at.loc['Öffentliche und Private Dienstleistungen', years]
+    ht_cons.loc[years, ('AT', 'IND')] = ht_enduse_at.loc['Produzierender Bereich', years]
+    ht_cons.loc[years, ('DE', 'HE08')] = ht_enduse_de.loc['Haushalte', years] * 0.376 * 0.75
+    ht_cons.loc[years, ('DE', 'HM08')] = ht_enduse_de.loc['Haushalte', years] * 0.624 * 0.75
+    ht_cons.loc[years, ('DE', 'WW')] = ht_enduse_de.loc['Haushalte', years] * 0.25
+    ht_cons.loc[years, ('DE', 'HG08')] = ht_enduse_de.loc[
+        'Gewerbe, Handel, Dienstleistungen u.übrige Verbraucher', years]
+    ht_cons.loc[years, ('DE', 'IND')] = ht_enduse_de.loc[
+        'Bergbau, Gew. Steine u. Erden, Verarbeit. Gewerbe insg.', years]
 
     """ 
     Above transformations are based on following Assumptions
@@ -256,7 +261,7 @@ def do_processing():
     cons_pattern = cons_pattern.rename_axis('hour', axis=1)
     cons_pattern = cons_pattern.unstack('consumer').stack('hour')
 
-    ht_consumption = heat_consumption(zones, YEARS, ht_cons, df_heat, cons_pattern)
+    ht_consumption = heat_consumption(zones, years, ht_cons, df_heat, cons_pattern)
     ht_consumption.to_csv(heat_cons_file)
     logging.info(f'exported hourly heat demand to {heat_cons_file}')
 
