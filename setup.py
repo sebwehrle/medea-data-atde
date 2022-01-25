@@ -4,8 +4,8 @@ with open('README.md', 'r', encoding='utf-8') as readme_file:
     readme = readme_file.read()
 
 setup(
-    name='medea-data-atde',
-    version='0.1.0',
+    name='medea_data_atde',
+    version='0.1',
     author='Sebastian Wehrle',
     author_email='sebastian.wehrle@boku.ac.at',
     description='data processing for the medea power system model',
