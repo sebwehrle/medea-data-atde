@@ -5,13 +5,12 @@ import shutil
 import pysftp
 import urllib3
 import cdsapi
-import yaml
 import logging
 import pandas as pd
 from pathlib import Path
 from itertools import compress
 
-from config import MEDEA_ROOT_DIR, ERA_DIR, YEARS, zones, imf_file, fx_file, co2_file, url_ageb_sat, url_ageb_bal
+from config import zones
 from logging_config import setup_logging
 
 
@@ -189,15 +188,19 @@ def resample_index(index, freq):
     return pd.DatetimeIndex(series.loc[index].values)
 
 
-def do_download(medea_root_dir, user, pwd, api_key, years, categories):
+def do_download(medea_root_dir, user, pwd, api_key, years, categories, url_ageb_bal, url_ageb_sat):
     setup_logging()
 
     # %% Settings
+    imf_file = medea_root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
+    fx_file = medea_root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
+    co2_file = medea_root_dir / 'data' / 'raw' / 'eua_price.csv'
 
     # format for downloading ERA5 temperatures: north/west/south/east
     BBOX_CWE = [59.8612, -10.8043, 35.8443, 30.3285]
     SERVER = 'sftp-transparency.entsoe.eu'
     RAW_DATA_DIR = medea_root_dir / 'data' / 'raw'
+    ERA_DIR = medea_root_dir / 'data' / 'raw' / 'era5'
 
     # % download ENTSO-E data
     for cat in categories:
