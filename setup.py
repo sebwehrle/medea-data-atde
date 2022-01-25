@@ -11,7 +11,7 @@ setup(
     description='data processing for the medea power system model',
     long_description=readme,
     long_description_content_type='text/markdown',
-    url='https://github.com/sebwehrle/medea-data-atde',
+    url='https://github.com/sebwehrle/medea_data_atde',
     project_urls={},
     license='MIT',
     packages=['medea_data_atde', 'medea_data_atde.scripts'],
