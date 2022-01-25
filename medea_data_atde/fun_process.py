@@ -5,7 +5,7 @@ import numpy as np
 from scipy import interpolate
 from datetime import datetime as dt
 from netCDF4 import Dataset, num2date
-from src.fun_get import days_in_year, resample_index
+from medea_data_atde.fun_get import days_in_year, resample_index
 
 
 # %% functions for heat load calculation

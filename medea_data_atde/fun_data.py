@@ -1,7 +1,7 @@
 # %% imports
 import pandas as pd
 import numpy as np
-from src.get_funs import hours_in_year
+from medea_data_atde.get_funs import hours_in_year
 from config import zones, year
 
 

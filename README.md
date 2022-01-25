@@ -1,6 +1,6 @@
 ![MIT License](https://img.shields.io/badge/license-MIT-green)
 
-_medea-data-atde_
+_medea_data_atde_
 ======================================
 
 _medea_ is a power system model developed by [Sebastian Wehrle](https://homepage.boku.ac.at/sebwehrle/index.html) and
@@ -19,6 +19,6 @@ Requirements
 
 Installation
 ------------
-_medea-data-atde_ is distributed as a python package.
+_medea_data_atde_ is distributed as a python package.
 The code can be installed locally via ```pip install -e .```, where `.` refers to the current working
 directory, which is assumed to be the directory where `setup.py` can be found.

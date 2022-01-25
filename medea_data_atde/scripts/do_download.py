@@ -5,7 +5,7 @@ import logging
 import pandas as pd
 from config import MEDEA_ROOT_DIR, ERA_DIR, YEARS, zones, imf_file, fx_file, co2_file, url_ageb_sat, url_ageb_bal
 from logging_config import setup_logging
-from src.fun_get import get_entsoe, download_file, download_era_temp
+from medea_data_atde.fun_get import get_entsoe, download_file, download_era_temp
 
 setup_logging()
 

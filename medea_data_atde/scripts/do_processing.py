@@ -3,7 +3,7 @@ import logging
 from logging_config import setup_logging
 import pandas as pd
 from config import MEDEA_ROOT_DIR, ERA_DIR, COUNTRY, YEARS, zones, imf_file, fx_file, co2_file, url_ageb_bal
-from src.fun_process import mean_temp_at_plants, heat_consumption
+from medea_data_atde.fun_process import mean_temp_at_plants, heat_consumption
 
 setup_logging()
 
