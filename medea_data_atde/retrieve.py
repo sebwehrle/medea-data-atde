@@ -80,7 +80,7 @@ def download_era_temp(filename, year, bounding_box, cdsurl=None, cdskey=None):
     """
     # create .cdsapirc if it doesn't exist and insert credentials
     if not os.path.isfile(os.path.expanduser('~')+'/.cdsapirc') and cdsurl is not None and cdskey is not None:
-        with open(os.path.expanduser('~')+'/.cdsapirc') as cdsapirc:
+        with open(os.path.expanduser('~')+'/.cdsapirc', 'x') as cdsapirc:
             cdsapirc.write(f'url: {cdsurl} \n')
             cdsapirc.write(f'key: {cdskey}')
 
