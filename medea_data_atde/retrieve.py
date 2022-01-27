@@ -66,16 +66,24 @@ def download_file(url, save_to):
         shutil.copyfileobj(r, out_file)
 
 
-def download_era_temp(filename, year, bounding_box):
+def download_era_temp(filename, year, bounding_box, cdsurl=None, cdskey=None):
     """
     download daily mean temperatures 2m above surface from ERA5 land data from the copernicus climate data store
     requires registration at https://cds.climate.copernicus.eu/user/register
     for further information see: https://confluence.ecmwf.int/display/CKB/ERA5-Land+data+documentation
+    :param cdskey: key for the Copernicus Climate Data Service
+    :param cdsurl: url for the Copernicus Climate Data Service
     :param filename: path and name of downloaded file
     :param year: year for which daily temperature data is downloaded
     :param bounding_box: bounding box of temperature data
     :return:
     """
+    # create .cdsapirc if it doesn't exist and insert credentials
+    if not os.path.isfile(os.path.expanduser('~')+'/.cdsapirc') and cdsurl is not None and cdskey is not None:
+        with open(os.path.expanduser('~')+'/.cdsapirc') as cdsapirc:
+            cdsapirc.write(f'url: {cdsurl} \n')
+            cdsapirc.write(f'key: {cdskey}')
+
     logging.info('downloading bounding box=%s for year=%s', bounding_box, year)
     c = cdsapi.Client()
 
