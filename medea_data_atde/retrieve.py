@@ -196,7 +196,8 @@ def resample_index(index, freq):
     return pd.DatetimeIndex(series.loc[index].values)
 
 
-def do_download(medea_root_dir, user, pwd, api_key, years, categories, url_ageb_bal, url_ageb_sat):
+def do_download(medea_root_dir, user, pwd, api_key, years, categories, url_ageb_bal, url_ageb_sat, cdsurl=None,
+                cdskey=None):
     setup_logging()
 
     # %% Settings
@@ -219,7 +220,7 @@ def do_download(medea_root_dir, user, pwd, api_key, years, categories, url_ageb_
     for year in years:
         logging.info(f'downloading ERA5 temperature data for {year}')
         filename = ERA_DIR / f'temperature_europe_{year}.nc'
-        download_era_temp(filename, year, BBOX_CWE)
+        download_era_temp(filename, year, BBOX_CWE, cdsurl=cdsurl, cdskey=cdskey)
 
     # % download price data
     # IMF commodity price data
