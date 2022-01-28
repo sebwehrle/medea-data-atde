@@ -279,3 +279,8 @@ def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb
 
     ht_cols = pd.MultiIndex.from_product([zones, ['HE08', 'HM08', 'HG08', 'WW', 'IND']])
     ht_cons = pd.DataFrame(index=years, columns=ht_cols)
+
+    # European power plant fleet
+    url_opsd = 'https://data.open-power-system-data.org/conventional_power_plants/latest/conventional_power_plants_EU.csv'
+    opsd_plant = root_dir / 'data' / 'raw' / 'conventional_power_plants_EU.csv'
+    download_file(url_opsd, opsd_plant)
