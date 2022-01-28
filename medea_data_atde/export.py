@@ -2,32 +2,43 @@
 import pandas as pd
 import numpy as np
 from medea_data_atde.retrieve import hours_in_year
-from config import zones, year
 
 
-def do_symbols(STATIC_FNAME, TIMESERIES_FILE, invest_conventionals=True, invest_renewables=True, invest_storage=True,
-                invest_tc=True):
+def compile_symbols(tech_data, timeseries, zones, year, invest_conventionals=True, invest_renewables=True,
+                    invest_storage=True, invest_tc=True):
+    """
+    prepares dictionaries used to build input data gdx-files for power system model medea
+    :param tech_data: path to data_static.xlsx
+    :param timeseries: path to timeseries_regional.csv
+    :param zones: ISO 2-letter country code for countries to model. Default: ['AT', 'DE']
+    :param year: integer of year to model. Default: 2016
+    :param invest_conventionals: boolean
+    :param invest_renewables: boolean
+    :param invest_storage: boolean
+    :param invest_tc: boolean for investment in transmission capacity
+    :return:
+    """
     idx = pd.IndexSlice
 
     dict_technologies = {
-        'capacity': pd.read_excel(STATIC_FNAME, 'Capacities', header=[0], index_col=[0, 1, 2], skiprows=[0, 1, 2]),
-        'capacity_transmission': pd.read_excel(STATIC_FNAME, 'ATC', index_col=[0]),
-        'technology': pd.read_excel(STATIC_FNAME, 'Technologies', header=[2], index_col=[2]).dropna(axis=0, how='all'),
-        'operating_region': pd.read_excel(STATIC_FNAME, 'FEASIBLE_INPUT-OUTPUT', header=[0], index_col=[0, 1, 2]),
+        'capacity': pd.read_excel(tech_data, 'Capacities', header=[0], index_col=[0, 1, 2], skiprows=[0, 1, 2]),
+        'capacity_transmission': pd.read_excel(tech_data, 'ATC', index_col=[0]),
+        'technology': pd.read_excel(tech_data, 'Technologies', header=[2], index_col=[2]).dropna(axis=0, how='all'),
+        'operating_region': pd.read_excel(tech_data, 'FEASIBLE_INPUT-OUTPUT', header=[0], index_col=[0, 1, 2]),
         'mappings': []
     }
 
     ts_data = {
-        'timeseries': pd.read_csv(TIMESERIES_FILE, sep=';', decimal=',')
+        'timeseries': pd.read_csv(timeseries, sep=';', decimal=',')
     }
 
     estimates = {
-        'ESTIMATES': pd.read_excel(STATIC_FNAME, 'ESTIMATES', index_col=[0]),
-        'AIR_POLLUTION': pd.read_excel(STATIC_FNAME, 'AIR_POLLUTION', index_col=[0]),
-        'CO2_INTENSITY': pd.read_excel(STATIC_FNAME, 'CO2_INTENSITY', index_col=[0]),
-        'COST_TRANSPORT': pd.read_excel(STATIC_FNAME, 'COST_TRANSPORT', index_col=[0]),
-        'DISCOUNT_RATE': pd.read_excel(STATIC_FNAME, 'WACC', index_col=[0]),
-        'DISTANCE': pd.read_excel(STATIC_FNAME, 'KM', index_col=[0])
+        'ESTIMATES': pd.read_excel(tech_data, 'ESTIMATES', index_col=[0]),
+        'AIR_POLLUTION': pd.read_excel(tech_data, 'AIR_POLLUTION', index_col=[0]),
+        'CO2_INTENSITY': pd.read_excel(tech_data, 'CO2_INTENSITY', index_col=[0]),
+        'COST_TRANSPORT': pd.read_excel(tech_data, 'COST_TRANSPORT', index_col=[0]),
+        'DISCOUNT_RATE': pd.read_excel(tech_data, 'WACC', index_col=[0]),
+        'DISTANCE': pd.read_excel(tech_data, 'KM', index_col=[0])
     }
 
     # create SETS
@@ -152,7 +163,7 @@ def do_symbols(STATIC_FNAME, TIMESERIES_FILE, invest_conventionals=True, invest_
     # SWITCH_INVEST
 
     invest_limits = {
-        'potentials': pd.read_excel(STATIC_FNAME, 'potentials', index_col=[0]),
+        'potentials': pd.read_excel(tech_data, 'potentials', index_col=[0]),
         'thermal': pd.DataFrame([float('inf') if invest_conventionals else 0]),
         'intermittent': pd.DataFrame(data=[float('inf') if invest_renewables else 0][0],
                                      index=zones, columns=sets['r'].index),

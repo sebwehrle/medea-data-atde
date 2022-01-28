@@ -9,8 +9,6 @@ import logging
 import pandas as pd
 from pathlib import Path
 from itertools import compress
-
-from config import zones
 from logging_config import setup_logging
 
 
@@ -22,7 +20,7 @@ def get_entsoe(connection_string, user, pwd, category, directory):
     downloads dataset from ENTSO-E's transparency data sftp server.
     contact ENTSO-E to receive login credentials.
     :param connection_string: url of ENTSO-E transparency server, as of May 1, 2020: 'sftp-transparency.entsoe.eu'
-    :param user: user name required for connecting with sftp server
+    :param user: username required for connecting with sftp server
     :param pwd: password required for connecting with sftp server
     :param category: ENTSO-E data category to be downloaded
     :param directory: directory where downloaded data is saved to. A separate subdirectory is created for each category
@@ -35,7 +33,7 @@ def get_entsoe(connection_string, user, pwd, category, directory):
     #
     cnopts = pysftp.CnOpts()
     cnopts.hostkeys = None
-    # connect to entsoe server via sFTP
+    # connect to entso-e server via sFTP
     entsoe_dir = f'/TP_export/{category}'
     logging.info(f'connecting to {connection_string}')
     with pysftp.Connection(connection_string, username=user, password=pwd, cnopts=cnopts) as sftp:
@@ -66,14 +64,15 @@ def download_file(url, save_to):
         shutil.copyfileobj(r, out_file)
 
 
-def download_era_temp(filename, year, bounding_box, cdsurl=None, cdskey=None):
+def download_era_temp(era5_dir, filename, year, bounding_box, cdsurl=None, cdskey=None):
     """
     download daily mean temperatures 2m above surface from ERA5 land data from the copernicus climate data store
     requires registration at https://cds.climate.copernicus.eu/user/register
     for further information see: https://confluence.ecmwf.int/display/CKB/ERA5-Land+data+documentation
+    :param era5_dir: Path to directory holding era5 data
     :param cdskey: key for the Copernicus Climate Data Service
     :param cdsurl: url for the Copernicus Climate Data Service
-    :param filename: path and name of downloaded file
+    :param filename: name of downloaded file
     :param year: year for which daily temperature data is downloaded
     :param bounding_box: bounding box of temperature data
     :return:
@@ -84,14 +83,20 @@ def download_era_temp(filename, year, bounding_box, cdsurl=None, cdskey=None):
             cdsapirc.write(f'url: {cdsurl} \n')
             cdsapirc.write(f'key: {cdskey}')
 
+    # check if era5 data directory exists and create if it doesn't
+    if not os.path.exists(era5_dir):
+        os.makedirs(era5_dir)
+
+    filepath = Path(era5_dir) / filename
+
     logging.info('downloading bounding box=%s for year=%s', bounding_box, year)
     c = cdsapi.Client()
 
-    if os.path.exists(filename):
-        logging.info(f'Skipping {filename}, already exists')
+    if os.path.exists(filepath):
+        logging.info(f'Skipping {filepath}, already exists')
         return
 
-    logging.info(f'starting download of {filename}...')
+    logging.info(f'starting download of {filepath}...')
     for i in range(5):
         try:
             c.retrieve(
@@ -106,21 +111,19 @@ def download_era_temp(filename, year, bounding_box, cdsurl=None, cdskey=None):
                     'day': [f'{day:02d}' for day in range(1, 32)],
                     'time': [f'{hour:02d}:00' for hour in range(24)],
                 },
-                f'{filename}.part'
+                f'{filepath}.part'
             )
         except Exception as e:
             logging.warning('download failed: %s', e)
         else:
-            logging.info(f'download of {filename} successful')
-            os.rename(f'{filename}.part', filename)
+            logging.info(f'download of {filepath} successful')
+            os.rename(f'{filepath}.part', filepath)
             break
     else:
         logging.warning('download failed permanently')
 
 
-
 def download_energy_balance(country, directory, years=range(2012, 2019)):
-    # TODO: check if files exist already and download only if not
     if isinstance(directory, str):
         directory = Path(directory)
 
@@ -196,20 +199,36 @@ def resample_index(index, freq):
     return pd.DatetimeIndex(series.loc[index].values)
 
 
-def do_download(medea_root_dir, user, pwd, api_key, years, categories, url_ageb_bal, url_ageb_sat, cdsurl=None,
+def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb_bal, url_ageb_sat, cdsurl=None,
                 cdskey=None):
+    """
+    downloads power system and climate data. Intended for use with power system model medea.
+    If not existent, it creates the directory structure: root_dir/data/raw
+    :param zones: list of ISO 2-digit country codes. Default ['AT', 'DE']
+    :param root_dir: path to main directory
+    :param user: user name of ENTSO-E's transparency platform
+    :param pwd: password for ENTSO-E's transparency platform
+    :param api_key: api_key from quandl
+    :param years: years for which data should be downloaded
+    :param categories: ENTSO-E data descriptors
+    :param url_ageb_bal: url to AG Energiebilanzen energy balances
+    :param url_ageb_sat: url to AG Energiebilanzen satellite energy balances
+    :param cdsurl: url to Copernicus climate data service
+    :param cdskey: user key for Copernicus climate data service
+    :return:
+    """
     setup_logging()
 
     # %% Settings
-    imf_file = medea_root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
-    fx_file = medea_root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
-    co2_file = medea_root_dir / 'data' / 'raw' / 'eua_price.csv'
+    imf_file = root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
+    fx_file = root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
+    co2_file = root_dir / 'data' / 'raw' / 'eua_price.csv'
 
     # format for downloading ERA5 temperatures: north/west/south/east
     BBOX_CWE = [59.8612, -10.8043, 35.8443, 30.3285]
     SERVER = 'sftp-transparency.entsoe.eu'
-    RAW_DATA_DIR = medea_root_dir / 'data' / 'raw'
-    ERA_DIR = medea_root_dir / 'data' / 'raw' / 'era5'
+    RAW_DATA_DIR = root_dir / 'data' / 'raw'
+    ERA_DIR = root_dir / 'data' / 'raw' / 'era5'
 
     # % download ENTSO-E data
     for cat in categories:
@@ -220,7 +239,7 @@ def do_download(medea_root_dir, user, pwd, api_key, years, categories, url_ageb_
     for year in years:
         logging.info(f'downloading ERA5 temperature data for {year}')
         filename = ERA_DIR / f'temperature_europe_{year}.nc'
-        download_era_temp(filename, year, BBOX_CWE, cdsurl=cdsurl, cdskey=cdskey)
+        download_era_temp(ERA_DIR, filename, year, BBOX_CWE, cdsurl=cdsurl, cdskey=cdskey)
 
     # % download price data
     # IMF commodity price data
@@ -243,7 +262,7 @@ def do_download(medea_root_dir, user, pwd, api_key, years, categories, url_ageb_
     # Austrian energy balance as provided by Statistik Austria
     url = ('http://www.statistik.at/wcm/idc/idcplg?IdcService=GET_NATIVE_FILE&'
            'RevisionSelectionMethod=LatestReleased&dDocName=029955')
-    enbal_at = medea_root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
+    enbal_at = root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
     logging.info(f'downloading Austrian energy balance')
     download_file(url, enbal_at)
 
@@ -252,8 +271,8 @@ def do_download(medea_root_dir, user, pwd, api_key, years, categories, url_ageb_
         url = 'https://ag-energiebilanzen.de/wp-content/uploads/'
         url_balance = url + f'{url_ageb_bal[yr][0]}/bilanz{yr}d.{url_ageb_bal[yr][1]}'
         url_sat = url + f'{url_ageb_sat[yr][0]}/sat{yr}.{url_ageb_sat[yr][1]}'
-        enbal_de = medea_root_dir / 'data' / 'raw' / f'enbal_DE_20{yr}.{url_ageb_bal[yr][1]}'
-        enbal_sat_de = medea_root_dir / 'data' / 'raw' / f'enbal_sat_DE_20{yr}.{url_ageb_sat[yr][1]}'
+        enbal_de = root_dir / 'data' / 'raw' / f'enbal_DE_20{yr}.{url_ageb_bal[yr][1]}'
+        enbal_sat_de = root_dir / 'data' / 'raw' / f'enbal_sat_DE_20{yr}.{url_ageb_sat[yr][1]}'
         logging.info(f'downloading German energy balance for year 20{yr}')
         download_file(url_balance, enbal_de)
         download_file(url_sat, enbal_sat_de)

@@ -1,15 +1,14 @@
 # %% imports
+import os
+from pathlib import Path
 import logging
 from logging_config import setup_logging
 import pandas as pd
-import os
 import numpy as np
 from scipy import interpolate
 from datetime import datetime as dt
 from netCDF4 import Dataset, num2date
 from medea_data_atde.retrieve import days_in_year, resample_index
-# from config import MEDEA_ROOT_DIR, ERA_DIR, COUNTRY, YEARS, zones, imf_file, fx_file, co2_file, url_ageb_bal
-
 
 
 # %% functions for heat load calculation
@@ -156,22 +155,33 @@ def heat_consumption(zones, years, cons_annual, df_heat, cons_pattern):
     return ht_consumption
 
 
-def do_processing(medea_root_dir, country, years, zones, url_ageb_bal):
+def do_processing(root_dir, country, years, zones, url_ageb_bal):
+    """
+    processes data stored in root_dir/data/raw and saves it to root_dir/data/processed. Intended for use with power
+    system model medea.
+    :param root_dir:
+    :param country:
+    :param years:
+    :param zones:
+    :param url_ageb_bal:
+    :return:
+    """
     setup_logging()
 
     # %% file paths
-    ERA_DIR = medea_root_dir / 'data' / 'raw' / 'era5'
-    imf_file = medea_root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
-    fx_file = medea_root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
-    co2_file = medea_root_dir / 'data' / 'raw' / 'eua_price.csv'
-    enbal_at = medea_root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
-    CONSUMPTION_PATTERN = medea_root_dir / 'data' / 'raw' / 'consumption_pattern.xlsx'
+    root_dir = Path(root_dir)
+    ERA_DIR = root_dir / 'data' / 'raw' / 'era5'
+    imf_file = root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
+    fx_file = root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
+    co2_file = root_dir / 'data' / 'raw' / 'eua_price.csv'
+    enbal_at = root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
+    CONSUMPTION_PATTERN = root_dir / 'data' / 'raw' / 'consumption_pattern.xlsx'
 
-    fuel_price_file = medea_root_dir / 'data' / 'processed' / 'monthly_fuel_prices.csv'
-    co2_price_file = medea_root_dir / 'data' / 'processed' / 'co2_price.csv'
-    PPLANT_DB = medea_root_dir / 'data' / 'processed' / 'power_plant_db.xlsx'
-    MEAN_TEMP_FILE = medea_root_dir / 'data' / 'processed' / 'temp_daily_mean.csv'
-    heat_cons_file = medea_root_dir / 'data' / 'processed' / 'heat_hourly_consumption.csv'
+    fuel_price_file = root_dir / 'data' / 'processed' / 'monthly_fuel_prices.csv'
+    co2_price_file = root_dir / 'data' / 'processed' / 'co2_price.csv'
+    PPLANT_DB = root_dir / 'data' / 'processed' / 'power_plant_db.xlsx'
+    MEAN_TEMP_FILE = root_dir / 'data' / 'processed' / 'temp_daily_mean.csv'
+    heat_cons_file = root_dir / 'data' / 'processed' / 'heat_hourly_consumption.csv'
 
     # %% process PRICE data
     df_imf = pd.read_excel(imf_file, index_col=[0], skiprows=[1, 2, 3])
@@ -208,7 +218,7 @@ def do_processing(medea_root_dir, country, years, zones, url_ageb_bal):
     # process German energy balances
     ht_enduse_de = pd.DataFrame()
     for yr in [x - 2000 for x in years]:
-        enebal_de = medea_root_dir / 'data' / 'raw' / f'enbal_DE_20{yr}.{url_ageb_bal[yr][1]}'
+        enebal_de = root_dir / 'data' / 'raw' / f'enbal_DE_20{yr}.{url_ageb_bal[yr][1]}'
         df = pd.read_excel(enebal_de, sheet_name='tj', index_col=[0], usecols=[0, 31], skiprows=list(range(0, 50)),
                            nrows=24, na_values=['-'])
         df.columns = [2000 + yr]
