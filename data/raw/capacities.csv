@@ -1,0 +1,1806 @@
+indicator,zone,year,Type_ID,el
+Installed Capacity Out,AT,2012,pv,0.362885
+Installed Capacity Out,AT,2012,ror,5.519
+Installed Capacity Out,AT,2012,wind_off,0.0
+Installed Capacity Out,AT,2012,wind_on,1.373
+Installed Capacity In,AT,2012,bio,0.0
+Installed Capacity In,AT,2012,bio_boiler_chp,0.0
+Installed Capacity In,AT,2012,bio_chp,0.0
+Installed Capacity In,AT,2012,coal_igcc,0.0
+Installed Capacity In,AT,2012,coal_sc,0.0
+Installed Capacity In,AT,2012,coal_sc_chp,0.0
+Installed Capacity In,AT,2012,coal_sub,0.0
+Installed Capacity In,AT,2012,coal_sub_chp,0.0
+Installed Capacity In,AT,2012,coal_usc,0.0
+Installed Capacity In,AT,2012,coal_usc_chp,0.0
+Installed Capacity In,AT,2012,eboi_pth,0.0
+Installed Capacity In,AT,2012,heatpump_pth,0.0
+Installed Capacity In,AT,2012,hpa_pth,0.0
+Installed Capacity In,AT,2012,lig_boa,0.0
+Installed Capacity In,AT,2012,lig_boa_chp,0.0
+Installed Capacity In,AT,2012,lig_stm,0.0
+Installed Capacity In,AT,2012,lig_stm_chp,0.0
+Installed Capacity In,AT,2012,ng_boiler_chp,0.0
+Installed Capacity In,AT,2012,ng_cbt_hi,0.0
+Installed Capacity In,AT,2012,ng_cbt_hi_chp,0.0
+Installed Capacity In,AT,2012,ng_cbt_lo,0.0
+Installed Capacity In,AT,2012,ng_cbt_lo_chp,0.0
+Installed Capacity In,AT,2012,ng_cc_hi,0.0
+Installed Capacity In,AT,2012,ng_cc_hi_chp,0.0
+Installed Capacity In,AT,2012,ng_cc_lo,0.0
+Installed Capacity In,AT,2012,ng_cc_lo_chp,0.0
+Installed Capacity In,AT,2012,ng_mtr,0.0
+Installed Capacity In,AT,2012,ng_mtr_chp,0.0
+Installed Capacity In,AT,2012,ng_stm,0.0
+Installed Capacity In,AT,2012,ng_stm_chp,0.0
+Installed Capacity In,AT,2012,nuc,0.0
+Installed Capacity In,AT,2012,oil_cbt,0.0
+Installed Capacity In,AT,2012,oil_cbt_chp,0.0
+Installed Capacity In,AT,2012,oil_cc,0.0
+Installed Capacity In,AT,2012,oil_cc_chp,0.0
+Installed Capacity In,AT,2012,oil_stm,0.0
+Installed Capacity In,AT,2012,oil_stm_chp,0.0
+Installed Capacity In,AT,2012,pv,0.0
+Installed Capacity In,AT,2012,ror,0.0
+Installed Capacity In,AT,2012,wind_off,0.0
+Installed Capacity In,AT,2012,wind_on,0.0
+Storage Capacity,AT,2012,bio,0.0
+Storage Capacity,AT,2012,bio_boiler_chp,0.0
+Storage Capacity,AT,2012,bio_chp,0.0
+Storage Capacity,AT,2012,coal_igcc,0.0
+Storage Capacity,AT,2012,coal_sc,0.0
+Storage Capacity,AT,2012,coal_sc_chp,0.0
+Storage Capacity,AT,2012,coal_sub,0.0
+Storage Capacity,AT,2012,coal_sub_chp,0.0
+Storage Capacity,AT,2012,coal_usc,0.0
+Storage Capacity,AT,2012,coal_usc_chp,0.0
+Storage Capacity,AT,2012,eboi_pth,0.0
+Storage Capacity,AT,2012,heatpump_pth,0.0
+Storage Capacity,AT,2012,hpa_pth,0.0
+Storage Capacity,AT,2012,lig_boa,0.0
+Storage Capacity,AT,2012,lig_boa_chp,0.0
+Storage Capacity,AT,2012,lig_stm,0.0
+Storage Capacity,AT,2012,lig_stm_chp,0.0
+Storage Capacity,AT,2012,ng_boiler_chp,0.0
+Storage Capacity,AT,2012,ng_cbt_hi,0.0
+Storage Capacity,AT,2012,ng_cbt_hi_chp,0.0
+Storage Capacity,AT,2012,ng_cbt_lo,0.0
+Storage Capacity,AT,2012,ng_cbt_lo_chp,0.0
+Storage Capacity,AT,2012,ng_cc_hi,0.0
+Storage Capacity,AT,2012,ng_cc_hi_chp,0.0
+Storage Capacity,AT,2012,ng_cc_lo,0.0
+Storage Capacity,AT,2012,ng_cc_lo_chp,0.0
+Storage Capacity,AT,2012,ng_mtr,0.0
+Storage Capacity,AT,2012,ng_mtr_chp,0.0
+Storage Capacity,AT,2012,ng_stm,0.0
+Storage Capacity,AT,2012,ng_stm_chp,0.0
+Storage Capacity,AT,2012,nuc,0.0
+Storage Capacity,AT,2012,oil_cbt,0.0
+Storage Capacity,AT,2012,oil_cbt_chp,0.0
+Storage Capacity,AT,2012,oil_cc,0.0
+Storage Capacity,AT,2012,oil_cc_chp,0.0
+Storage Capacity,AT,2012,oil_stm,0.0
+Storage Capacity,AT,2012,oil_stm_chp,0.0
+Storage Capacity,AT,2012,pv,0.0
+Storage Capacity,AT,2012,ror,0.0
+Storage Capacity,AT,2012,wind_off,0.0
+Storage Capacity,AT,2012,wind_on,0.0
+Installed Capacity Out,AT,2013,pv,0.625974
+Installed Capacity Out,AT,2013,ror,5.573
+Installed Capacity Out,AT,2013,wind_off,0.0
+Installed Capacity Out,AT,2013,wind_on,1.688
+Installed Capacity In,AT,2013,bio,0.0
+Installed Capacity In,AT,2013,bio_boiler_chp,0.0
+Installed Capacity In,AT,2013,bio_chp,0.0
+Installed Capacity In,AT,2013,coal_igcc,0.0
+Installed Capacity In,AT,2013,coal_sc,0.0
+Installed Capacity In,AT,2013,coal_sc_chp,0.0
+Installed Capacity In,AT,2013,coal_sub,0.0
+Installed Capacity In,AT,2013,coal_sub_chp,0.0
+Installed Capacity In,AT,2013,coal_usc,0.0
+Installed Capacity In,AT,2013,coal_usc_chp,0.0
+Installed Capacity In,AT,2013,eboi_pth,0.0
+Installed Capacity In,AT,2013,heatpump_pth,0.0
+Installed Capacity In,AT,2013,hpa_pth,0.0
+Installed Capacity In,AT,2013,lig_boa,0.0
+Installed Capacity In,AT,2013,lig_boa_chp,0.0
+Installed Capacity In,AT,2013,lig_stm,0.0
+Installed Capacity In,AT,2013,lig_stm_chp,0.0
+Installed Capacity In,AT,2013,ng_boiler_chp,0.0
+Installed Capacity In,AT,2013,ng_cbt_hi,0.0
+Installed Capacity In,AT,2013,ng_cbt_hi_chp,0.0
+Installed Capacity In,AT,2013,ng_cbt_lo,0.0
+Installed Capacity In,AT,2013,ng_cbt_lo_chp,0.0
+Installed Capacity In,AT,2013,ng_cc_hi,0.0
+Installed Capacity In,AT,2013,ng_cc_hi_chp,0.0
+Installed Capacity In,AT,2013,ng_cc_lo,0.0
+Installed Capacity In,AT,2013,ng_cc_lo_chp,0.0
+Installed Capacity In,AT,2013,ng_mtr,0.0
+Installed Capacity In,AT,2013,ng_mtr_chp,0.0
+Installed Capacity In,AT,2013,ng_stm,0.0
+Installed Capacity In,AT,2013,ng_stm_chp,0.0
+Installed Capacity In,AT,2013,nuc,0.0
+Installed Capacity In,AT,2013,oil_cbt,0.0
+Installed Capacity In,AT,2013,oil_cbt_chp,0.0
+Installed Capacity In,AT,2013,oil_cc,0.0
+Installed Capacity In,AT,2013,oil_cc_chp,0.0
+Installed Capacity In,AT,2013,oil_stm,0.0
+Installed Capacity In,AT,2013,oil_stm_chp,0.0
+Installed Capacity In,AT,2013,pv,0.0
+Installed Capacity In,AT,2013,ror,0.0
+Installed Capacity In,AT,2013,wind_off,0.0
+Installed Capacity In,AT,2013,wind_on,0.0
+Storage Capacity,AT,2013,bio,0.0
+Storage Capacity,AT,2013,bio_boiler_chp,0.0
+Storage Capacity,AT,2013,bio_chp,0.0
+Storage Capacity,AT,2013,coal_igcc,0.0
+Storage Capacity,AT,2013,coal_sc,0.0
+Storage Capacity,AT,2013,coal_sc_chp,0.0
+Storage Capacity,AT,2013,coal_sub,0.0
+Storage Capacity,AT,2013,coal_sub_chp,0.0
+Storage Capacity,AT,2013,coal_usc,0.0
+Storage Capacity,AT,2013,coal_usc_chp,0.0
+Storage Capacity,AT,2013,eboi_pth,0.0
+Storage Capacity,AT,2013,heatpump_pth,0.0
+Storage Capacity,AT,2013,hpa_pth,0.0
+Storage Capacity,AT,2013,lig_boa,0.0
+Storage Capacity,AT,2013,lig_boa_chp,0.0
+Storage Capacity,AT,2013,lig_stm,0.0
+Storage Capacity,AT,2013,lig_stm_chp,0.0
+Storage Capacity,AT,2013,ng_boiler_chp,0.0
+Storage Capacity,AT,2013,ng_cbt_hi,0.0
+Storage Capacity,AT,2013,ng_cbt_hi_chp,0.0
+Storage Capacity,AT,2013,ng_cbt_lo,0.0
+Storage Capacity,AT,2013,ng_cbt_lo_chp,0.0
+Storage Capacity,AT,2013,ng_cc_hi,0.0
+Storage Capacity,AT,2013,ng_cc_hi_chp,0.0
+Storage Capacity,AT,2013,ng_cc_lo,0.0
+Storage Capacity,AT,2013,ng_cc_lo_chp,0.0
+Storage Capacity,AT,2013,ng_mtr,0.0
+Storage Capacity,AT,2013,ng_mtr_chp,0.0
+Storage Capacity,AT,2013,ng_stm,0.0
+Storage Capacity,AT,2013,ng_stm_chp,0.0
+Storage Capacity,AT,2013,nuc,0.0
+Storage Capacity,AT,2013,oil_cbt,0.0
+Storage Capacity,AT,2013,oil_cbt_chp,0.0
+Storage Capacity,AT,2013,oil_cc,0.0
+Storage Capacity,AT,2013,oil_cc_chp,0.0
+Storage Capacity,AT,2013,oil_stm,0.0
+Storage Capacity,AT,2013,oil_stm_chp,0.0
+Storage Capacity,AT,2013,pv,0.0
+Storage Capacity,AT,2013,ror,0.0
+Storage Capacity,AT,2013,wind_off,0.0
+Storage Capacity,AT,2013,wind_on,0.0
+Installed Capacity Out,AT,2014,pv,0.724
+Installed Capacity Out,AT,2014,ror,5.615
+Installed Capacity Out,AT,2014,wind_off,0.0
+Installed Capacity Out,AT,2014,wind_on,2.11
+Installed Capacity In,AT,2014,bio,0.0
+Installed Capacity In,AT,2014,bio_boiler_chp,0.0
+Installed Capacity In,AT,2014,bio_chp,0.0
+Installed Capacity In,AT,2014,coal_igcc,0.0
+Installed Capacity In,AT,2014,coal_sc,0.0
+Installed Capacity In,AT,2014,coal_sc_chp,0.0
+Installed Capacity In,AT,2014,coal_sub,0.0
+Installed Capacity In,AT,2014,coal_sub_chp,0.0
+Installed Capacity In,AT,2014,coal_usc,0.0
+Installed Capacity In,AT,2014,coal_usc_chp,0.0
+Installed Capacity In,AT,2014,eboi_pth,0.0
+Installed Capacity In,AT,2014,heatpump_pth,0.0
+Installed Capacity In,AT,2014,hpa_pth,0.0
+Installed Capacity In,AT,2014,lig_boa,0.0
+Installed Capacity In,AT,2014,lig_boa_chp,0.0
+Installed Capacity In,AT,2014,lig_stm,0.0
+Installed Capacity In,AT,2014,lig_stm_chp,0.0
+Installed Capacity In,AT,2014,ng_boiler_chp,0.0
+Installed Capacity In,AT,2014,ng_cbt_hi,0.0
+Installed Capacity In,AT,2014,ng_cbt_hi_chp,0.0
+Installed Capacity In,AT,2014,ng_cbt_lo,0.0
+Installed Capacity In,AT,2014,ng_cbt_lo_chp,0.0
+Installed Capacity In,AT,2014,ng_cc_hi,0.0
+Installed Capacity In,AT,2014,ng_cc_hi_chp,0.0
+Installed Capacity In,AT,2014,ng_cc_lo,0.0
+Installed Capacity In,AT,2014,ng_cc_lo_chp,0.0
+Installed Capacity In,AT,2014,ng_mtr,0.0
+Installed Capacity In,AT,2014,ng_mtr_chp,0.0
+Installed Capacity In,AT,2014,ng_stm,0.0
+Installed Capacity In,AT,2014,ng_stm_chp,0.0
+Installed Capacity In,AT,2014,nuc,0.0
+Installed Capacity In,AT,2014,oil_cbt,0.0
+Installed Capacity In,AT,2014,oil_cbt_chp,0.0
+Installed Capacity In,AT,2014,oil_cc,0.0
+Installed Capacity In,AT,2014,oil_cc_chp,0.0
+Installed Capacity In,AT,2014,oil_stm,0.0
+Installed Capacity In,AT,2014,oil_stm_chp,0.0
+Installed Capacity In,AT,2014,pv,0.0
+Installed Capacity In,AT,2014,ror,0.0
+Installed Capacity In,AT,2014,wind_off,0.0
+Installed Capacity In,AT,2014,wind_on,0.0
+Storage Capacity,AT,2014,bio,0.0
+Storage Capacity,AT,2014,bio_boiler_chp,0.0
+Storage Capacity,AT,2014,bio_chp,0.0
+Storage Capacity,AT,2014,coal_igcc,0.0
+Storage Capacity,AT,2014,coal_sc,0.0
+Storage Capacity,AT,2014,coal_sc_chp,0.0
+Storage Capacity,AT,2014,coal_sub,0.0
+Storage Capacity,AT,2014,coal_sub_chp,0.0
+Storage Capacity,AT,2014,coal_usc,0.0
+Storage Capacity,AT,2014,coal_usc_chp,0.0
+Storage Capacity,AT,2014,eboi_pth,0.0
+Storage Capacity,AT,2014,heatpump_pth,0.0
+Storage Capacity,AT,2014,hpa_pth,0.0
+Storage Capacity,AT,2014,lig_boa,0.0
+Storage Capacity,AT,2014,lig_boa_chp,0.0
+Storage Capacity,AT,2014,lig_stm,0.0
+Storage Capacity,AT,2014,lig_stm_chp,0.0
+Storage Capacity,AT,2014,ng_boiler_chp,0.0
+Storage Capacity,AT,2014,ng_cbt_hi,0.0
+Storage Capacity,AT,2014,ng_cbt_hi_chp,0.0
+Storage Capacity,AT,2014,ng_cbt_lo,0.0
+Storage Capacity,AT,2014,ng_cbt_lo_chp,0.0
+Storage Capacity,AT,2014,ng_cc_hi,0.0
+Storage Capacity,AT,2014,ng_cc_hi_chp,0.0
+Storage Capacity,AT,2014,ng_cc_lo,0.0
+Storage Capacity,AT,2014,ng_cc_lo_chp,0.0
+Storage Capacity,AT,2014,ng_mtr,0.0
+Storage Capacity,AT,2014,ng_mtr_chp,0.0
+Storage Capacity,AT,2014,ng_stm,0.0
+Storage Capacity,AT,2014,ng_stm_chp,0.0
+Storage Capacity,AT,2014,nuc,0.0
+Storage Capacity,AT,2014,oil_cbt,0.0
+Storage Capacity,AT,2014,oil_cbt_chp,0.0
+Storage Capacity,AT,2014,oil_cc,0.0
+Storage Capacity,AT,2014,oil_cc_chp,0.0
+Storage Capacity,AT,2014,oil_stm,0.0
+Storage Capacity,AT,2014,oil_stm_chp,0.0
+Storage Capacity,AT,2014,pv,0.0
+Storage Capacity,AT,2014,ror,0.0
+Storage Capacity,AT,2014,wind_off,0.0
+Storage Capacity,AT,2014,wind_on,0.0
+Installed Capacity Out,AT,2015,pv,0.872
+Installed Capacity Out,AT,2015,ror,5.656
+Installed Capacity Out,AT,2015,wind_off,0.0
+Installed Capacity Out,AT,2015,wind_on,2.489
+Installed Capacity In,AT,2015,bio,0.0
+Installed Capacity In,AT,2015,bio_boiler_chp,0.0
+Installed Capacity In,AT,2015,bio_chp,0.0
+Installed Capacity In,AT,2015,coal_igcc,0.0
+Installed Capacity In,AT,2015,coal_sc,0.0
+Installed Capacity In,AT,2015,coal_sc_chp,0.0
+Installed Capacity In,AT,2015,coal_sub,0.0
+Installed Capacity In,AT,2015,coal_sub_chp,0.0
+Installed Capacity In,AT,2015,coal_usc,0.0
+Installed Capacity In,AT,2015,coal_usc_chp,0.0
+Installed Capacity In,AT,2015,eboi_pth,0.0
+Installed Capacity In,AT,2015,heatpump_pth,0.0
+Installed Capacity In,AT,2015,hpa_pth,0.0
+Installed Capacity In,AT,2015,lig_boa,0.0
+Installed Capacity In,AT,2015,lig_boa_chp,0.0
+Installed Capacity In,AT,2015,lig_stm,0.0
+Installed Capacity In,AT,2015,lig_stm_chp,0.0
+Installed Capacity In,AT,2015,ng_boiler_chp,0.0
+Installed Capacity In,AT,2015,ng_cbt_hi,0.0
+Installed Capacity In,AT,2015,ng_cbt_hi_chp,0.0
+Installed Capacity In,AT,2015,ng_cbt_lo,0.0
+Installed Capacity In,AT,2015,ng_cbt_lo_chp,0.0
+Installed Capacity In,AT,2015,ng_cc_hi,0.0
+Installed Capacity In,AT,2015,ng_cc_hi_chp,0.0
+Installed Capacity In,AT,2015,ng_cc_lo,0.0
+Installed Capacity In,AT,2015,ng_cc_lo_chp,0.0
+Installed Capacity In,AT,2015,ng_mtr,0.0
+Installed Capacity In,AT,2015,ng_mtr_chp,0.0
+Installed Capacity In,AT,2015,ng_stm,0.0
+Installed Capacity In,AT,2015,ng_stm_chp,0.0
+Installed Capacity In,AT,2015,nuc,0.0
+Installed Capacity In,AT,2015,oil_cbt,0.0
+Installed Capacity In,AT,2015,oil_cbt_chp,0.0
+Installed Capacity In,AT,2015,oil_cc,0.0
+Installed Capacity In,AT,2015,oil_cc_chp,0.0
+Installed Capacity In,AT,2015,oil_stm,0.0
+Installed Capacity In,AT,2015,oil_stm_chp,0.0
+Installed Capacity In,AT,2015,pv,0.0
+Installed Capacity In,AT,2015,ror,0.0
+Installed Capacity In,AT,2015,wind_off,0.0
+Installed Capacity In,AT,2015,wind_on,0.0
+Storage Capacity,AT,2015,bio,0.0
+Storage Capacity,AT,2015,bio_boiler_chp,0.0
+Storage Capacity,AT,2015,bio_chp,0.0
+Storage Capacity,AT,2015,coal_igcc,0.0
+Storage Capacity,AT,2015,coal_sc,0.0
+Storage Capacity,AT,2015,coal_sc_chp,0.0
+Storage Capacity,AT,2015,coal_sub,0.0
+Storage Capacity,AT,2015,coal_sub_chp,0.0
+Storage Capacity,AT,2015,coal_usc,0.0
+Storage Capacity,AT,2015,coal_usc_chp,0.0
+Storage Capacity,AT,2015,eboi_pth,0.0
+Storage Capacity,AT,2015,heatpump_pth,0.0
+Storage Capacity,AT,2015,hpa_pth,0.0
+Storage Capacity,AT,2015,lig_boa,0.0
+Storage Capacity,AT,2015,lig_boa_chp,0.0
+Storage Capacity,AT,2015,lig_stm,0.0
+Storage Capacity,AT,2015,lig_stm_chp,0.0
+Storage Capacity,AT,2015,ng_boiler_chp,0.0
+Storage Capacity,AT,2015,ng_cbt_hi,0.0
+Storage Capacity,AT,2015,ng_cbt_hi_chp,0.0
+Storage Capacity,AT,2015,ng_cbt_lo,0.0
+Storage Capacity,AT,2015,ng_cbt_lo_chp,0.0
+Storage Capacity,AT,2015,ng_cc_hi,0.0
+Storage Capacity,AT,2015,ng_cc_hi_chp,0.0
+Storage Capacity,AT,2015,ng_cc_lo,0.0
+Storage Capacity,AT,2015,ng_cc_lo_chp,0.0
+Storage Capacity,AT,2015,ng_mtr,0.0
+Storage Capacity,AT,2015,ng_mtr_chp,0.0
+Storage Capacity,AT,2015,ng_stm,0.0
+Storage Capacity,AT,2015,ng_stm_chp,0.0
+Storage Capacity,AT,2015,nuc,0.0
+Storage Capacity,AT,2015,oil_cbt,0.0
+Storage Capacity,AT,2015,oil_cbt_chp,0.0
+Storage Capacity,AT,2015,oil_cc,0.0
+Storage Capacity,AT,2015,oil_cc_chp,0.0
+Storage Capacity,AT,2015,oil_stm,0.0
+Storage Capacity,AT,2015,oil_stm_chp,0.0
+Storage Capacity,AT,2015,pv,0.0
+Storage Capacity,AT,2015,ror,0.0
+Storage Capacity,AT,2015,wind_off,0.0
+Storage Capacity,AT,2015,wind_on,0.0
+Installed Capacity Out,AT,2016,battery,0.0
+Installed Capacity Out,AT,2016,bio,0.2095
+Installed Capacity Out,AT,2016,bio_boiler_chp,0.8
+Installed Capacity Out,AT,2016,bio_chp,0.477
+Installed Capacity Out,AT,2016,coal_igcc,0.0
+Installed Capacity Out,AT,2016,coal_sc,0.0
+Installed Capacity Out,AT,2016,coal_sc_chp,0.0
+Installed Capacity Out,AT,2016,coal_sub,0.785
+Installed Capacity Out,AT,2016,coal_sub_chp,0.416
+Installed Capacity Out,AT,2016,coal_usc,0.0
+Installed Capacity Out,AT,2016,coal_usc_chp,0.0
+Installed Capacity Out,AT,2016,eboi_pth,0.0
+Installed Capacity Out,AT,2016,h2_stack,0.5
+Installed Capacity Out,AT,2016,heatpump_pth,1.0
+Installed Capacity Out,AT,2016,hpa_pth,0.0
+Installed Capacity Out,AT,2016,hyd_psp_day,2.464
+Installed Capacity Out,AT,2016,hyd_psp_season,1.606
+Installed Capacity Out,AT,2016,hyd_psp_week,1.17
+Installed Capacity Out,AT,2016,hyd_res_day,1.989
+Installed Capacity Out,AT,2016,hyd_res_season,1.207
+Installed Capacity Out,AT,2016,hyd_res_week,0.328
+Installed Capacity Out,AT,2016,lig_boa,0.0
+Installed Capacity Out,AT,2016,lig_boa_chp,0.0
+Installed Capacity Out,AT,2016,lig_stm,0.0
+Installed Capacity Out,AT,2016,lig_stm_chp,0.0
+Installed Capacity Out,AT,2016,ng_boiler_chp,1.719
+Installed Capacity Out,AT,2016,ng_cbt_hi,0.0
+Installed Capacity Out,AT,2016,ng_cbt_hi_chp,0.0
+Installed Capacity Out,AT,2016,ng_cbt_lo,0.149
+Installed Capacity Out,AT,2016,ng_cbt_lo_chp,0.322
+Installed Capacity Out,AT,2016,ng_cc_hi,0.0
+Installed Capacity Out,AT,2016,ng_cc_hi_chp,2.658
+Installed Capacity Out,AT,2016,ng_cc_lo,0.176
+Installed Capacity Out,AT,2016,ng_cc_lo_chp,0.383
+Installed Capacity Out,AT,2016,ng_mtr,0.0
+Installed Capacity Out,AT,2016,ng_mtr_chp,0.0
+Installed Capacity Out,AT,2016,ng_stm,0.162
+Installed Capacity Out,AT,2016,ng_stm_chp,0.705
+Installed Capacity Out,AT,2016,nuc,0.0
+Installed Capacity Out,AT,2016,oil_cbt,0.014
+Installed Capacity Out,AT,2016,oil_cbt_chp,0.0
+Installed Capacity Out,AT,2016,oil_cc,0.12
+Installed Capacity Out,AT,2016,oil_cc_chp,0.0
+Installed Capacity Out,AT,2016,oil_stm,0.296
+Installed Capacity Out,AT,2016,oil_stm_chp,0.0
+Installed Capacity Out,AT,2016,pv,1.976
+Installed Capacity Out,AT,2016,ror,5.796
+Installed Capacity Out,AT,2016,wind_off,0.0
+Installed Capacity Out,AT,2016,wind_on,3.164
+Installed Capacity In,AT,2016,battery,0.0
+Installed Capacity In,AT,2016,bio,0.0
+Installed Capacity In,AT,2016,bio_boiler_chp,0.0
+Installed Capacity In,AT,2016,bio_chp,0.0
+Installed Capacity In,AT,2016,coal_igcc,0.0
+Installed Capacity In,AT,2016,coal_sc,0.0
+Installed Capacity In,AT,2016,coal_sc_chp,0.0
+Installed Capacity In,AT,2016,coal_sub,0.0
+Installed Capacity In,AT,2016,coal_sub_chp,0.0
+Installed Capacity In,AT,2016,coal_usc,0.0
+Installed Capacity In,AT,2016,coal_usc_chp,0.0
+Installed Capacity In,AT,2016,eboi_pth,0.0
+Installed Capacity In,AT,2016,h2_stack,0.5
+Installed Capacity In,AT,2016,heatpump_pth,0.0
+Installed Capacity In,AT,2016,hpa_pth,0.0
+Installed Capacity In,AT,2016,hyd_psp_day,0.89
+Installed Capacity In,AT,2016,hyd_psp_season,1.393
+Installed Capacity In,AT,2016,hyd_psp_week,1.01
+Installed Capacity In,AT,2016,hyd_res_day,0.0
+Installed Capacity In,AT,2016,hyd_res_season,0.0
+Installed Capacity In,AT,2016,hyd_res_week,0.0
+Installed Capacity In,AT,2016,lig_boa,0.0
+Installed Capacity In,AT,2016,lig_boa_chp,0.0
+Installed Capacity In,AT,2016,lig_stm,0.0
+Installed Capacity In,AT,2016,lig_stm_chp,0.0
+Installed Capacity In,AT,2016,ng_boiler_chp,0.0
+Installed Capacity In,AT,2016,ng_cbt_hi,0.0
+Installed Capacity In,AT,2016,ng_cbt_hi_chp,0.0
+Installed Capacity In,AT,2016,ng_cbt_lo,0.0
+Installed Capacity In,AT,2016,ng_cbt_lo_chp,0.0
+Installed Capacity In,AT,2016,ng_cc_hi,0.0
+Installed Capacity In,AT,2016,ng_cc_hi_chp,0.0
+Installed Capacity In,AT,2016,ng_cc_lo,0.0
+Installed Capacity In,AT,2016,ng_cc_lo_chp,0.0
+Installed Capacity In,AT,2016,ng_mtr,0.0
+Installed Capacity In,AT,2016,ng_mtr_chp,0.0
+Installed Capacity In,AT,2016,ng_stm,0.0
+Installed Capacity In,AT,2016,ng_stm_chp,0.0
+Installed Capacity In,AT,2016,nuc,0.0
+Installed Capacity In,AT,2016,oil_cbt,0.0
+Installed Capacity In,AT,2016,oil_cbt_chp,0.0
+Installed Capacity In,AT,2016,oil_cc,0.0
+Installed Capacity In,AT,2016,oil_cc_chp,0.0
+Installed Capacity In,AT,2016,oil_stm,0.0
+Installed Capacity In,AT,2016,oil_stm_chp,0.0
+Installed Capacity In,AT,2016,pv,0.0
+Installed Capacity In,AT,2016,ror,0.0
+Installed Capacity In,AT,2016,wind_off,0.0
+Installed Capacity In,AT,2016,wind_on,0.0
+Storage Capacity,AT,2016,battery,0.0
+Storage Capacity,AT,2016,bio,0.0
+Storage Capacity,AT,2016,bio_boiler_chp,0.0
+Storage Capacity,AT,2016,bio_chp,0.0
+Storage Capacity,AT,2016,coal_igcc,0.0
+Storage Capacity,AT,2016,coal_sc,0.0
+Storage Capacity,AT,2016,coal_sc_chp,0.0
+Storage Capacity,AT,2016,coal_sub,0.0
+Storage Capacity,AT,2016,coal_sub_chp,0.0
+Storage Capacity,AT,2016,coal_usc,0.0
+Storage Capacity,AT,2016,coal_usc_chp,0.0
+Storage Capacity,AT,2016,eboi_pth,0.0
+Storage Capacity,AT,2016,h2_stack,375.0
+Storage Capacity,AT,2016,heatpump_pth,0.0
+Storage Capacity,AT,2016,hpa_pth,0.0
+Storage Capacity,AT,2016,hyd_psp_day,75.4
+Storage Capacity,AT,2016,hyd_psp_season,1481.5
+Storage Capacity,AT,2016,hyd_psp_week,308.5
+Storage Capacity,AT,2016,hyd_res_day,34.6
+Storage Capacity,AT,2016,hyd_res_season,1342.3
+Storage Capacity,AT,2016,hyd_res_week,36.7
+Storage Capacity,AT,2016,lig_boa,0.0
+Storage Capacity,AT,2016,lig_boa_chp,0.0
+Storage Capacity,AT,2016,lig_stm,0.0
+Storage Capacity,AT,2016,lig_stm_chp,0.0
+Storage Capacity,AT,2016,ng_boiler_chp,0.0
+Storage Capacity,AT,2016,ng_cbt_hi,0.0
+Storage Capacity,AT,2016,ng_cbt_hi_chp,0.0
+Storage Capacity,AT,2016,ng_cbt_lo,0.0
+Storage Capacity,AT,2016,ng_cbt_lo_chp,0.0
+Storage Capacity,AT,2016,ng_cc_hi,0.0
+Storage Capacity,AT,2016,ng_cc_hi_chp,0.0
+Storage Capacity,AT,2016,ng_cc_lo,0.0
+Storage Capacity,AT,2016,ng_cc_lo_chp,0.0
+Storage Capacity,AT,2016,ng_mtr,0.0
+Storage Capacity,AT,2016,ng_mtr_chp,0.0
+Storage Capacity,AT,2016,ng_stm,0.0
+Storage Capacity,AT,2016,ng_stm_chp,0.0
+Storage Capacity,AT,2016,nuc,0.0
+Storage Capacity,AT,2016,oil_cbt,0.0
+Storage Capacity,AT,2016,oil_cbt_chp,0.0
+Storage Capacity,AT,2016,oil_cc,0.0
+Storage Capacity,AT,2016,oil_cc_chp,0.0
+Storage Capacity,AT,2016,oil_stm,0.0
+Storage Capacity,AT,2016,oil_stm_chp,0.0
+Storage Capacity,AT,2016,pv,0.0
+Storage Capacity,AT,2016,ror,0.0
+Storage Capacity,AT,2016,wind_off,0.0
+Storage Capacity,AT,2016,wind_on,0.0
+Installed Capacity Out,AT,2017,pv,1.193
+Installed Capacity Out,AT,2017,ror,5.714
+Installed Capacity Out,AT,2017,wind_off,0.0
+Installed Capacity Out,AT,2017,wind_on,2.887
+Installed Capacity In,AT,2017,bio,0.0
+Installed Capacity In,AT,2017,bio_boiler_chp,0.0
+Installed Capacity In,AT,2017,bio_chp,0.0
+Installed Capacity In,AT,2017,coal_igcc,0.0
+Installed Capacity In,AT,2017,coal_sc,0.0
+Installed Capacity In,AT,2017,coal_sc_chp,0.0
+Installed Capacity In,AT,2017,coal_sub,0.0
+Installed Capacity In,AT,2017,coal_sub_chp,0.0
+Installed Capacity In,AT,2017,coal_usc,0.0
+Installed Capacity In,AT,2017,coal_usc_chp,0.0
+Installed Capacity In,AT,2017,eboi_pth,0.0
+Installed Capacity In,AT,2017,heatpump_pth,0.0
+Installed Capacity In,AT,2017,hpa_pth,0.0
+Installed Capacity In,AT,2017,lig_boa,0.0
+Installed Capacity In,AT,2017,lig_boa_chp,0.0
+Installed Capacity In,AT,2017,lig_stm,0.0
+Installed Capacity In,AT,2017,lig_stm_chp,0.0
+Installed Capacity In,AT,2017,ng_boiler_chp,0.0
+Installed Capacity In,AT,2017,ng_cbt_hi,0.0
+Installed Capacity In,AT,2017,ng_cbt_hi_chp,0.0
+Installed Capacity In,AT,2017,ng_cbt_lo,0.0
+Installed Capacity In,AT,2017,ng_cbt_lo_chp,0.0
+Installed Capacity In,AT,2017,ng_cc_hi,0.0
+Installed Capacity In,AT,2017,ng_cc_hi_chp,0.0
+Installed Capacity In,AT,2017,ng_cc_lo,0.0
+Installed Capacity In,AT,2017,ng_cc_lo_chp,0.0
+Installed Capacity In,AT,2017,ng_mtr,0.0
+Installed Capacity In,AT,2017,ng_mtr_chp,0.0
+Installed Capacity In,AT,2017,ng_stm,0.0
+Installed Capacity In,AT,2017,ng_stm_chp,0.0
+Installed Capacity In,AT,2017,nuc,0.0
+Installed Capacity In,AT,2017,oil_cbt,0.0
+Installed Capacity In,AT,2017,oil_cbt_chp,0.0
+Installed Capacity In,AT,2017,oil_cc,0.0
+Installed Capacity In,AT,2017,oil_cc_chp,0.0
+Installed Capacity In,AT,2017,oil_stm,0.0
+Installed Capacity In,AT,2017,oil_stm_chp,0.0
+Installed Capacity In,AT,2017,pv,0.0
+Installed Capacity In,AT,2017,ror,0.0
+Installed Capacity In,AT,2017,wind_off,0.0
+Installed Capacity In,AT,2017,wind_on,0.0
+Storage Capacity,AT,2017,bio,0.0
+Storage Capacity,AT,2017,bio_boiler_chp,0.0
+Storage Capacity,AT,2017,bio_chp,0.0
+Storage Capacity,AT,2017,coal_igcc,0.0
+Storage Capacity,AT,2017,coal_sc,0.0
+Storage Capacity,AT,2017,coal_sc_chp,0.0
+Storage Capacity,AT,2017,coal_sub,0.0
+Storage Capacity,AT,2017,coal_sub_chp,0.0
+Storage Capacity,AT,2017,coal_usc,0.0
+Storage Capacity,AT,2017,coal_usc_chp,0.0
+Storage Capacity,AT,2017,eboi_pth,0.0
+Storage Capacity,AT,2017,heatpump_pth,0.0
+Storage Capacity,AT,2017,hpa_pth,0.0
+Storage Capacity,AT,2017,lig_boa,0.0
+Storage Capacity,AT,2017,lig_boa_chp,0.0
+Storage Capacity,AT,2017,lig_stm,0.0
+Storage Capacity,AT,2017,lig_stm_chp,0.0
+Storage Capacity,AT,2017,ng_boiler_chp,0.0
+Storage Capacity,AT,2017,ng_cbt_hi,0.0
+Storage Capacity,AT,2017,ng_cbt_hi_chp,0.0
+Storage Capacity,AT,2017,ng_cbt_lo,0.0
+Storage Capacity,AT,2017,ng_cbt_lo_chp,0.0
+Storage Capacity,AT,2017,ng_cc_hi,0.0
+Storage Capacity,AT,2017,ng_cc_hi_chp,0.0
+Storage Capacity,AT,2017,ng_cc_lo,0.0
+Storage Capacity,AT,2017,ng_cc_lo_chp,0.0
+Storage Capacity,AT,2017,ng_mtr,0.0
+Storage Capacity,AT,2017,ng_mtr_chp,0.0
+Storage Capacity,AT,2017,ng_stm,0.0
+Storage Capacity,AT,2017,ng_stm_chp,0.0
+Storage Capacity,AT,2017,nuc,0.0
+Storage Capacity,AT,2017,oil_cbt,0.0
+Storage Capacity,AT,2017,oil_cbt_chp,0.0
+Storage Capacity,AT,2017,oil_cc,0.0
+Storage Capacity,AT,2017,oil_cc_chp,0.0
+Storage Capacity,AT,2017,oil_stm,0.0
+Storage Capacity,AT,2017,oil_stm_chp,0.0
+Storage Capacity,AT,2017,pv,0.0
+Storage Capacity,AT,2017,ror,0.0
+Storage Capacity,AT,2017,wind_off,0.0
+Storage Capacity,AT,2017,wind_on,0.0
+Installed Capacity Out,AT,2018,pv,1.371
+Installed Capacity Out,AT,2018,ror,5.723
+Installed Capacity Out,AT,2018,wind_off,0.0
+Installed Capacity Out,AT,2018,wind_on,3.133
+Installed Capacity In,AT,2018,bio,0.0
+Installed Capacity In,AT,2018,bio_boiler_chp,0.0
+Installed Capacity In,AT,2018,bio_chp,0.0
+Installed Capacity In,AT,2018,coal_igcc,0.0
+Installed Capacity In,AT,2018,coal_sc,0.0
+Installed Capacity In,AT,2018,coal_sc_chp,0.0
+Installed Capacity In,AT,2018,coal_sub,0.0
+Installed Capacity In,AT,2018,coal_sub_chp,0.0
+Installed Capacity In,AT,2018,coal_usc,0.0
+Installed Capacity In,AT,2018,coal_usc_chp,0.0
+Installed Capacity In,AT,2018,eboi_pth,0.0
+Installed Capacity In,AT,2018,heatpump_pth,0.0
+Installed Capacity In,AT,2018,hpa_pth,0.0
+Installed Capacity In,AT,2018,lig_boa,0.0
+Installed Capacity In,AT,2018,lig_boa_chp,0.0
+Installed Capacity In,AT,2018,lig_stm,0.0
+Installed Capacity In,AT,2018,lig_stm_chp,0.0
+Installed Capacity In,AT,2018,ng_boiler_chp,0.0
+Installed Capacity In,AT,2018,ng_cbt_hi,0.0
+Installed Capacity In,AT,2018,ng_cbt_hi_chp,0.0
+Installed Capacity In,AT,2018,ng_cbt_lo,0.0
+Installed Capacity In,AT,2018,ng_cbt_lo_chp,0.0
+Installed Capacity In,AT,2018,ng_cc_hi,0.0
+Installed Capacity In,AT,2018,ng_cc_hi_chp,0.0
+Installed Capacity In,AT,2018,ng_cc_lo,0.0
+Installed Capacity In,AT,2018,ng_cc_lo_chp,0.0
+Installed Capacity In,AT,2018,ng_mtr,0.0
+Installed Capacity In,AT,2018,ng_mtr_chp,0.0
+Installed Capacity In,AT,2018,ng_stm,0.0
+Installed Capacity In,AT,2018,ng_stm_chp,0.0
+Installed Capacity In,AT,2018,nuc,0.0
+Installed Capacity In,AT,2018,oil_cbt,0.0
+Installed Capacity In,AT,2018,oil_cbt_chp,0.0
+Installed Capacity In,AT,2018,oil_cc,0.0
+Installed Capacity In,AT,2018,oil_cc_chp,0.0
+Installed Capacity In,AT,2018,oil_stm,0.0
+Installed Capacity In,AT,2018,oil_stm_chp,0.0
+Installed Capacity In,AT,2018,pv,0.0
+Installed Capacity In,AT,2018,ror,0.0
+Installed Capacity In,AT,2018,wind_off,0.0
+Installed Capacity In,AT,2018,wind_on,0.0
+Storage Capacity,AT,2018,bio,0.0
+Storage Capacity,AT,2018,bio_boiler_chp,0.0
+Storage Capacity,AT,2018,bio_chp,0.0
+Storage Capacity,AT,2018,coal_igcc,0.0
+Storage Capacity,AT,2018,coal_sc,0.0
+Storage Capacity,AT,2018,coal_sc_chp,0.0
+Storage Capacity,AT,2018,coal_sub,0.0
+Storage Capacity,AT,2018,coal_sub_chp,0.0
+Storage Capacity,AT,2018,coal_usc,0.0
+Storage Capacity,AT,2018,coal_usc_chp,0.0
+Storage Capacity,AT,2018,eboi_pth,0.0
+Storage Capacity,AT,2018,heatpump_pth,0.0
+Storage Capacity,AT,2018,hpa_pth,0.0
+Storage Capacity,AT,2018,lig_boa,0.0
+Storage Capacity,AT,2018,lig_boa_chp,0.0
+Storage Capacity,AT,2018,lig_stm,0.0
+Storage Capacity,AT,2018,lig_stm_chp,0.0
+Storage Capacity,AT,2018,ng_boiler_chp,0.0
+Storage Capacity,AT,2018,ng_cbt_hi,0.0
+Storage Capacity,AT,2018,ng_cbt_hi_chp,0.0
+Storage Capacity,AT,2018,ng_cbt_lo,0.0
+Storage Capacity,AT,2018,ng_cbt_lo_chp,0.0
+Storage Capacity,AT,2018,ng_cc_hi,0.0
+Storage Capacity,AT,2018,ng_cc_hi_chp,0.0
+Storage Capacity,AT,2018,ng_cc_lo,0.0
+Storage Capacity,AT,2018,ng_cc_lo_chp,0.0
+Storage Capacity,AT,2018,ng_mtr,0.0
+Storage Capacity,AT,2018,ng_mtr_chp,0.0
+Storage Capacity,AT,2018,ng_stm,0.0
+Storage Capacity,AT,2018,ng_stm_chp,0.0
+Storage Capacity,AT,2018,nuc,0.0
+Storage Capacity,AT,2018,oil_cbt,0.0
+Storage Capacity,AT,2018,oil_cbt_chp,0.0
+Storage Capacity,AT,2018,oil_cc,0.0
+Storage Capacity,AT,2018,oil_cc_chp,0.0
+Storage Capacity,AT,2018,oil_stm,0.0
+Storage Capacity,AT,2018,oil_stm_chp,0.0
+Storage Capacity,AT,2018,pv,0.0
+Storage Capacity,AT,2018,ror,0.0
+Storage Capacity,AT,2018,wind_off,0.0
+Storage Capacity,AT,2018,wind_on,0.0
+Installed Capacity Out,AT,2019,pv,1.615
+Installed Capacity Out,AT,2019,ror,5.797
+Installed Capacity Out,AT,2019,wind_off,0.0
+Installed Capacity Out,AT,2019,wind_on,3.208
+Installed Capacity In,AT,2019,bio,0.0
+Installed Capacity In,AT,2019,bio_boiler_chp,0.0
+Installed Capacity In,AT,2019,bio_chp,0.0
+Installed Capacity In,AT,2019,coal_igcc,0.0
+Installed Capacity In,AT,2019,coal_sc,0.0
+Installed Capacity In,AT,2019,coal_sc_chp,0.0
+Installed Capacity In,AT,2019,coal_sub,0.0
+Installed Capacity In,AT,2019,coal_sub_chp,0.0
+Installed Capacity In,AT,2019,coal_usc,0.0
+Installed Capacity In,AT,2019,coal_usc_chp,0.0
+Installed Capacity In,AT,2019,eboi_pth,0.0
+Installed Capacity In,AT,2019,heatpump_pth,0.0
+Installed Capacity In,AT,2019,hpa_pth,0.0
+Installed Capacity In,AT,2019,lig_boa,0.0
+Installed Capacity In,AT,2019,lig_boa_chp,0.0
+Installed Capacity In,AT,2019,lig_stm,0.0
+Installed Capacity In,AT,2019,lig_stm_chp,0.0
+Installed Capacity In,AT,2019,ng_boiler_chp,0.0
+Installed Capacity In,AT,2019,ng_cbt_hi,0.0
+Installed Capacity In,AT,2019,ng_cbt_hi_chp,0.0
+Installed Capacity In,AT,2019,ng_cbt_lo,0.0
+Installed Capacity In,AT,2019,ng_cbt_lo_chp,0.0
+Installed Capacity In,AT,2019,ng_cc_hi,0.0
+Installed Capacity In,AT,2019,ng_cc_hi_chp,0.0
+Installed Capacity In,AT,2019,ng_cc_lo,0.0
+Installed Capacity In,AT,2019,ng_cc_lo_chp,0.0
+Installed Capacity In,AT,2019,ng_mtr,0.0
+Installed Capacity In,AT,2019,ng_mtr_chp,0.0
+Installed Capacity In,AT,2019,ng_stm,0.0
+Installed Capacity In,AT,2019,ng_stm_chp,0.0
+Installed Capacity In,AT,2019,nuc,0.0
+Installed Capacity In,AT,2019,oil_cbt,0.0
+Installed Capacity In,AT,2019,oil_cbt_chp,0.0
+Installed Capacity In,AT,2019,oil_cc,0.0
+Installed Capacity In,AT,2019,oil_cc_chp,0.0
+Installed Capacity In,AT,2019,oil_stm,0.0
+Installed Capacity In,AT,2019,oil_stm_chp,0.0
+Installed Capacity In,AT,2019,pv,0.0
+Installed Capacity In,AT,2019,ror,0.0
+Installed Capacity In,AT,2019,wind_off,0.0
+Installed Capacity In,AT,2019,wind_on,0.0
+Storage Capacity,AT,2019,bio,0.0
+Storage Capacity,AT,2019,bio_boiler_chp,0.0
+Storage Capacity,AT,2019,bio_chp,0.0
+Storage Capacity,AT,2019,coal_igcc,0.0
+Storage Capacity,AT,2019,coal_sc,0.0
+Storage Capacity,AT,2019,coal_sc_chp,0.0
+Storage Capacity,AT,2019,coal_sub,0.0
+Storage Capacity,AT,2019,coal_sub_chp,0.0
+Storage Capacity,AT,2019,coal_usc,0.0
+Storage Capacity,AT,2019,coal_usc_chp,0.0
+Storage Capacity,AT,2019,eboi_pth,0.0
+Storage Capacity,AT,2019,heatpump_pth,0.0
+Storage Capacity,AT,2019,hpa_pth,0.0
+Storage Capacity,AT,2019,lig_boa,0.0
+Storage Capacity,AT,2019,lig_boa_chp,0.0
+Storage Capacity,AT,2019,lig_stm,0.0
+Storage Capacity,AT,2019,lig_stm_chp,0.0
+Storage Capacity,AT,2019,ng_boiler_chp,0.0
+Storage Capacity,AT,2019,ng_cbt_hi,0.0
+Storage Capacity,AT,2019,ng_cbt_hi_chp,0.0
+Storage Capacity,AT,2019,ng_cbt_lo,0.0
+Storage Capacity,AT,2019,ng_cbt_lo_chp,0.0
+Storage Capacity,AT,2019,ng_cc_hi,0.0
+Storage Capacity,AT,2019,ng_cc_hi_chp,0.0
+Storage Capacity,AT,2019,ng_cc_lo,0.0
+Storage Capacity,AT,2019,ng_cc_lo_chp,0.0
+Storage Capacity,AT,2019,ng_mtr,0.0
+Storage Capacity,AT,2019,ng_mtr_chp,0.0
+Storage Capacity,AT,2019,ng_stm,0.0
+Storage Capacity,AT,2019,ng_stm_chp,0.0
+Storage Capacity,AT,2019,nuc,0.0
+Storage Capacity,AT,2019,oil_cbt,0.0
+Storage Capacity,AT,2019,oil_cbt_chp,0.0
+Storage Capacity,AT,2019,oil_cc,0.0
+Storage Capacity,AT,2019,oil_cc_chp,0.0
+Storage Capacity,AT,2019,oil_stm,0.0
+Storage Capacity,AT,2019,oil_stm_chp,0.0
+Storage Capacity,AT,2019,pv,0.0
+Storage Capacity,AT,2019,ror,0.0
+Storage Capacity,AT,2019,wind_off,0.0
+Storage Capacity,AT,2019,wind_on,0.0
+Installed Capacity Out,AT,2020,pv,1.976
+Installed Capacity Out,AT,2020,ror,5.796
+Installed Capacity Out,AT,2020,wind_off,0.0
+Installed Capacity Out,AT,2020,wind_on,3.164
+Installed Capacity In,AT,2020,bio,0.0
+Installed Capacity In,AT,2020,bio_boiler_chp,0.0
+Installed Capacity In,AT,2020,bio_chp,0.0
+Installed Capacity In,AT,2020,coal_igcc,0.0
+Installed Capacity In,AT,2020,coal_sc,0.0
+Installed Capacity In,AT,2020,coal_sc_chp,0.0
+Installed Capacity In,AT,2020,coal_sub,0.0
+Installed Capacity In,AT,2020,coal_sub_chp,0.0
+Installed Capacity In,AT,2020,coal_usc,0.0
+Installed Capacity In,AT,2020,coal_usc_chp,0.0
+Installed Capacity In,AT,2020,eboi_pth,0.0
+Installed Capacity In,AT,2020,heatpump_pth,0.0
+Installed Capacity In,AT,2020,hpa_pth,0.0
+Installed Capacity In,AT,2020,lig_boa,0.0
+Installed Capacity In,AT,2020,lig_boa_chp,0.0
+Installed Capacity In,AT,2020,lig_stm,0.0
+Installed Capacity In,AT,2020,lig_stm_chp,0.0
+Installed Capacity In,AT,2020,ng_boiler_chp,0.0
+Installed Capacity In,AT,2020,ng_cbt_hi,0.0
+Installed Capacity In,AT,2020,ng_cbt_hi_chp,0.0
+Installed Capacity In,AT,2020,ng_cbt_lo,0.0
+Installed Capacity In,AT,2020,ng_cbt_lo_chp,0.0
+Installed Capacity In,AT,2020,ng_cc_hi,0.0
+Installed Capacity In,AT,2020,ng_cc_hi_chp,0.0
+Installed Capacity In,AT,2020,ng_cc_lo,0.0
+Installed Capacity In,AT,2020,ng_cc_lo_chp,0.0
+Installed Capacity In,AT,2020,ng_mtr,0.0
+Installed Capacity In,AT,2020,ng_mtr_chp,0.0
+Installed Capacity In,AT,2020,ng_stm,0.0
+Installed Capacity In,AT,2020,ng_stm_chp,0.0
+Installed Capacity In,AT,2020,nuc,0.0
+Installed Capacity In,AT,2020,oil_cbt,0.0
+Installed Capacity In,AT,2020,oil_cbt_chp,0.0
+Installed Capacity In,AT,2020,oil_cc,0.0
+Installed Capacity In,AT,2020,oil_cc_chp,0.0
+Installed Capacity In,AT,2020,oil_stm,0.0
+Installed Capacity In,AT,2020,oil_stm_chp,0.0
+Installed Capacity In,AT,2020,pv,0.0
+Installed Capacity In,AT,2020,ror,0.0
+Installed Capacity In,AT,2020,wind_off,0.0
+Installed Capacity In,AT,2020,wind_on,0.0
+Storage Capacity,AT,2020,bio,0.0
+Storage Capacity,AT,2020,bio_boiler_chp,0.0
+Storage Capacity,AT,2020,bio_chp,0.0
+Storage Capacity,AT,2020,coal_igcc,0.0
+Storage Capacity,AT,2020,coal_sc,0.0
+Storage Capacity,AT,2020,coal_sc_chp,0.0
+Storage Capacity,AT,2020,coal_sub,0.0
+Storage Capacity,AT,2020,coal_sub_chp,0.0
+Storage Capacity,AT,2020,coal_usc,0.0
+Storage Capacity,AT,2020,coal_usc_chp,0.0
+Storage Capacity,AT,2020,eboi_pth,0.0
+Storage Capacity,AT,2020,heatpump_pth,0.0
+Storage Capacity,AT,2020,hpa_pth,0.0
+Storage Capacity,AT,2020,lig_boa,0.0
+Storage Capacity,AT,2020,lig_boa_chp,0.0
+Storage Capacity,AT,2020,lig_stm,0.0
+Storage Capacity,AT,2020,lig_stm_chp,0.0
+Storage Capacity,AT,2020,ng_boiler_chp,0.0
+Storage Capacity,AT,2020,ng_cbt_hi,0.0
+Storage Capacity,AT,2020,ng_cbt_hi_chp,0.0
+Storage Capacity,AT,2020,ng_cbt_lo,0.0
+Storage Capacity,AT,2020,ng_cbt_lo_chp,0.0
+Storage Capacity,AT,2020,ng_cc_hi,0.0
+Storage Capacity,AT,2020,ng_cc_hi_chp,0.0
+Storage Capacity,AT,2020,ng_cc_lo,0.0
+Storage Capacity,AT,2020,ng_cc_lo_chp,0.0
+Storage Capacity,AT,2020,ng_mtr,0.0
+Storage Capacity,AT,2020,ng_mtr_chp,0.0
+Storage Capacity,AT,2020,ng_stm,0.0
+Storage Capacity,AT,2020,ng_stm_chp,0.0
+Storage Capacity,AT,2020,nuc,0.0
+Storage Capacity,AT,2020,oil_cbt,0.0
+Storage Capacity,AT,2020,oil_cbt_chp,0.0
+Storage Capacity,AT,2020,oil_cc,0.0
+Storage Capacity,AT,2020,oil_cc_chp,0.0
+Storage Capacity,AT,2020,oil_stm,0.0
+Storage Capacity,AT,2020,oil_stm_chp,0.0
+Storage Capacity,AT,2020,pv,0.0
+Storage Capacity,AT,2020,ror,0.0
+Storage Capacity,AT,2020,wind_off,0.0
+Storage Capacity,AT,2020,wind_on,0.0
+Installed Capacity Out,DE,2012,pv,34.077
+Installed Capacity Out,DE,2012,ror,4.518
+Installed Capacity Out,DE,2012,wind_off,0.268
+Installed Capacity Out,DE,2012,wind_on,30.711
+Installed Capacity In,DE,2012,bio,0.0
+Installed Capacity In,DE,2012,bio_boiler_chp,0.0
+Installed Capacity In,DE,2012,bio_chp,0.0
+Installed Capacity In,DE,2012,coal_igcc,0.0
+Installed Capacity In,DE,2012,coal_sc,0.0
+Installed Capacity In,DE,2012,coal_sc_chp,0.0
+Installed Capacity In,DE,2012,coal_sub,0.0
+Installed Capacity In,DE,2012,coal_sub_chp,0.0
+Installed Capacity In,DE,2012,coal_usc,0.0
+Installed Capacity In,DE,2012,coal_usc_chp,0.0
+Installed Capacity In,DE,2012,eboi_pth,0.0
+Installed Capacity In,DE,2012,heatpump_pth,0.0
+Installed Capacity In,DE,2012,hpa_pth,0.0
+Installed Capacity In,DE,2012,lig_boa,0.0
+Installed Capacity In,DE,2012,lig_boa_chp,0.0
+Installed Capacity In,DE,2012,lig_stm,0.0
+Installed Capacity In,DE,2012,lig_stm_chp,0.0
+Installed Capacity In,DE,2012,ng_boiler_chp,0.0
+Installed Capacity In,DE,2012,ng_cbt_hi,0.0
+Installed Capacity In,DE,2012,ng_cbt_hi_chp,0.0
+Installed Capacity In,DE,2012,ng_cbt_lo,0.0
+Installed Capacity In,DE,2012,ng_cbt_lo_chp,0.0
+Installed Capacity In,DE,2012,ng_cc_hi,0.0
+Installed Capacity In,DE,2012,ng_cc_hi_chp,0.0
+Installed Capacity In,DE,2012,ng_cc_lo,0.0
+Installed Capacity In,DE,2012,ng_cc_lo_chp,0.0
+Installed Capacity In,DE,2012,ng_mtr,0.0
+Installed Capacity In,DE,2012,ng_mtr_chp,0.0
+Installed Capacity In,DE,2012,ng_stm,0.0
+Installed Capacity In,DE,2012,ng_stm_chp,0.0
+Installed Capacity In,DE,2012,nuc,0.0
+Installed Capacity In,DE,2012,oil_cbt,0.0
+Installed Capacity In,DE,2012,oil_cbt_chp,0.0
+Installed Capacity In,DE,2012,oil_cc,0.0
+Installed Capacity In,DE,2012,oil_cc_chp,0.0
+Installed Capacity In,DE,2012,oil_stm,0.0
+Installed Capacity In,DE,2012,oil_stm_chp,0.0
+Installed Capacity In,DE,2012,pv,0.0
+Installed Capacity In,DE,2012,ror,0.0
+Installed Capacity In,DE,2012,wind_off,0.0
+Installed Capacity In,DE,2012,wind_on,0.0
+Storage Capacity,DE,2012,bio,0.0
+Storage Capacity,DE,2012,bio_boiler_chp,0.0
+Storage Capacity,DE,2012,bio_chp,0.0
+Storage Capacity,DE,2012,coal_igcc,0.0
+Storage Capacity,DE,2012,coal_sc,0.0
+Storage Capacity,DE,2012,coal_sc_chp,0.0
+Storage Capacity,DE,2012,coal_sub,0.0
+Storage Capacity,DE,2012,coal_sub_chp,0.0
+Storage Capacity,DE,2012,coal_usc,0.0
+Storage Capacity,DE,2012,coal_usc_chp,0.0
+Storage Capacity,DE,2012,eboi_pth,0.0
+Storage Capacity,DE,2012,heatpump_pth,0.0
+Storage Capacity,DE,2012,hpa_pth,0.0
+Storage Capacity,DE,2012,lig_boa,0.0
+Storage Capacity,DE,2012,lig_boa_chp,0.0
+Storage Capacity,DE,2012,lig_stm,0.0
+Storage Capacity,DE,2012,lig_stm_chp,0.0
+Storage Capacity,DE,2012,ng_boiler_chp,0.0
+Storage Capacity,DE,2012,ng_cbt_hi,0.0
+Storage Capacity,DE,2012,ng_cbt_hi_chp,0.0
+Storage Capacity,DE,2012,ng_cbt_lo,0.0
+Storage Capacity,DE,2012,ng_cbt_lo_chp,0.0
+Storage Capacity,DE,2012,ng_cc_hi,0.0
+Storage Capacity,DE,2012,ng_cc_hi_chp,0.0
+Storage Capacity,DE,2012,ng_cc_lo,0.0
+Storage Capacity,DE,2012,ng_cc_lo_chp,0.0
+Storage Capacity,DE,2012,ng_mtr,0.0
+Storage Capacity,DE,2012,ng_mtr_chp,0.0
+Storage Capacity,DE,2012,ng_stm,0.0
+Storage Capacity,DE,2012,ng_stm_chp,0.0
+Storage Capacity,DE,2012,nuc,0.0
+Storage Capacity,DE,2012,oil_cbt,0.0
+Storage Capacity,DE,2012,oil_cbt_chp,0.0
+Storage Capacity,DE,2012,oil_cc,0.0
+Storage Capacity,DE,2012,oil_cc_chp,0.0
+Storage Capacity,DE,2012,oil_stm,0.0
+Storage Capacity,DE,2012,oil_stm_chp,0.0
+Storage Capacity,DE,2012,pv,0.0
+Storage Capacity,DE,2012,ror,0.0
+Storage Capacity,DE,2012,wind_off,0.0
+Storage Capacity,DE,2012,wind_on,0.0
+Installed Capacity Out,DE,2013,pv,36.71
+Installed Capacity Out,DE,2013,ror,4.5009999999999994
+Installed Capacity Out,DE,2013,wind_off,0.508
+Installed Capacity Out,DE,2013,wind_on,32.969
+Installed Capacity In,DE,2013,bio,0.0
+Installed Capacity In,DE,2013,bio_boiler_chp,0.0
+Installed Capacity In,DE,2013,bio_chp,0.0
+Installed Capacity In,DE,2013,coal_igcc,0.0
+Installed Capacity In,DE,2013,coal_sc,0.0
+Installed Capacity In,DE,2013,coal_sc_chp,0.0
+Installed Capacity In,DE,2013,coal_sub,0.0
+Installed Capacity In,DE,2013,coal_sub_chp,0.0
+Installed Capacity In,DE,2013,coal_usc,0.0
+Installed Capacity In,DE,2013,coal_usc_chp,0.0
+Installed Capacity In,DE,2013,eboi_pth,0.0
+Installed Capacity In,DE,2013,heatpump_pth,0.0
+Installed Capacity In,DE,2013,hpa_pth,0.0
+Installed Capacity In,DE,2013,lig_boa,0.0
+Installed Capacity In,DE,2013,lig_boa_chp,0.0
+Installed Capacity In,DE,2013,lig_stm,0.0
+Installed Capacity In,DE,2013,lig_stm_chp,0.0
+Installed Capacity In,DE,2013,ng_boiler_chp,0.0
+Installed Capacity In,DE,2013,ng_cbt_hi,0.0
+Installed Capacity In,DE,2013,ng_cbt_hi_chp,0.0
+Installed Capacity In,DE,2013,ng_cbt_lo,0.0
+Installed Capacity In,DE,2013,ng_cbt_lo_chp,0.0
+Installed Capacity In,DE,2013,ng_cc_hi,0.0
+Installed Capacity In,DE,2013,ng_cc_hi_chp,0.0
+Installed Capacity In,DE,2013,ng_cc_lo,0.0
+Installed Capacity In,DE,2013,ng_cc_lo_chp,0.0
+Installed Capacity In,DE,2013,ng_mtr,0.0
+Installed Capacity In,DE,2013,ng_mtr_chp,0.0
+Installed Capacity In,DE,2013,ng_stm,0.0
+Installed Capacity In,DE,2013,ng_stm_chp,0.0
+Installed Capacity In,DE,2013,nuc,0.0
+Installed Capacity In,DE,2013,oil_cbt,0.0
+Installed Capacity In,DE,2013,oil_cbt_chp,0.0
+Installed Capacity In,DE,2013,oil_cc,0.0
+Installed Capacity In,DE,2013,oil_cc_chp,0.0
+Installed Capacity In,DE,2013,oil_stm,0.0
+Installed Capacity In,DE,2013,oil_stm_chp,0.0
+Installed Capacity In,DE,2013,pv,0.0
+Installed Capacity In,DE,2013,ror,0.0
+Installed Capacity In,DE,2013,wind_off,0.0
+Installed Capacity In,DE,2013,wind_on,0.0
+Storage Capacity,DE,2013,bio,0.0
+Storage Capacity,DE,2013,bio_boiler_chp,0.0
+Storage Capacity,DE,2013,bio_chp,0.0
+Storage Capacity,DE,2013,coal_igcc,0.0
+Storage Capacity,DE,2013,coal_sc,0.0
+Storage Capacity,DE,2013,coal_sc_chp,0.0
+Storage Capacity,DE,2013,coal_sub,0.0
+Storage Capacity,DE,2013,coal_sub_chp,0.0
+Storage Capacity,DE,2013,coal_usc,0.0
+Storage Capacity,DE,2013,coal_usc_chp,0.0
+Storage Capacity,DE,2013,eboi_pth,0.0
+Storage Capacity,DE,2013,heatpump_pth,0.0
+Storage Capacity,DE,2013,hpa_pth,0.0
+Storage Capacity,DE,2013,lig_boa,0.0
+Storage Capacity,DE,2013,lig_boa_chp,0.0
+Storage Capacity,DE,2013,lig_stm,0.0
+Storage Capacity,DE,2013,lig_stm_chp,0.0
+Storage Capacity,DE,2013,ng_boiler_chp,0.0
+Storage Capacity,DE,2013,ng_cbt_hi,0.0
+Storage Capacity,DE,2013,ng_cbt_hi_chp,0.0
+Storage Capacity,DE,2013,ng_cbt_lo,0.0
+Storage Capacity,DE,2013,ng_cbt_lo_chp,0.0
+Storage Capacity,DE,2013,ng_cc_hi,0.0
+Storage Capacity,DE,2013,ng_cc_hi_chp,0.0
+Storage Capacity,DE,2013,ng_cc_lo,0.0
+Storage Capacity,DE,2013,ng_cc_lo_chp,0.0
+Storage Capacity,DE,2013,ng_mtr,0.0
+Storage Capacity,DE,2013,ng_mtr_chp,0.0
+Storage Capacity,DE,2013,ng_stm,0.0
+Storage Capacity,DE,2013,ng_stm_chp,0.0
+Storage Capacity,DE,2013,nuc,0.0
+Storage Capacity,DE,2013,oil_cbt,0.0
+Storage Capacity,DE,2013,oil_cbt_chp,0.0
+Storage Capacity,DE,2013,oil_cc,0.0
+Storage Capacity,DE,2013,oil_cc_chp,0.0
+Storage Capacity,DE,2013,oil_stm,0.0
+Storage Capacity,DE,2013,oil_stm_chp,0.0
+Storage Capacity,DE,2013,pv,0.0
+Storage Capacity,DE,2013,ror,0.0
+Storage Capacity,DE,2013,wind_off,0.0
+Storage Capacity,DE,2013,wind_on,0.0
+Installed Capacity Out,DE,2014,pv,37.9
+Installed Capacity Out,DE,2014,ror,4.491
+Installed Capacity Out,DE,2014,wind_off,0.994
+Installed Capacity Out,DE,2014,wind_on,37.62
+Installed Capacity In,DE,2014,bio,0.0
+Installed Capacity In,DE,2014,bio_boiler_chp,0.0
+Installed Capacity In,DE,2014,bio_chp,0.0
+Installed Capacity In,DE,2014,coal_igcc,0.0
+Installed Capacity In,DE,2014,coal_sc,0.0
+Installed Capacity In,DE,2014,coal_sc_chp,0.0
+Installed Capacity In,DE,2014,coal_sub,0.0
+Installed Capacity In,DE,2014,coal_sub_chp,0.0
+Installed Capacity In,DE,2014,coal_usc,0.0
+Installed Capacity In,DE,2014,coal_usc_chp,0.0
+Installed Capacity In,DE,2014,eboi_pth,0.0
+Installed Capacity In,DE,2014,heatpump_pth,0.0
+Installed Capacity In,DE,2014,hpa_pth,0.0
+Installed Capacity In,DE,2014,lig_boa,0.0
+Installed Capacity In,DE,2014,lig_boa_chp,0.0
+Installed Capacity In,DE,2014,lig_stm,0.0
+Installed Capacity In,DE,2014,lig_stm_chp,0.0
+Installed Capacity In,DE,2014,ng_boiler_chp,0.0
+Installed Capacity In,DE,2014,ng_cbt_hi,0.0
+Installed Capacity In,DE,2014,ng_cbt_hi_chp,0.0
+Installed Capacity In,DE,2014,ng_cbt_lo,0.0
+Installed Capacity In,DE,2014,ng_cbt_lo_chp,0.0
+Installed Capacity In,DE,2014,ng_cc_hi,0.0
+Installed Capacity In,DE,2014,ng_cc_hi_chp,0.0
+Installed Capacity In,DE,2014,ng_cc_lo,0.0
+Installed Capacity In,DE,2014,ng_cc_lo_chp,0.0
+Installed Capacity In,DE,2014,ng_mtr,0.0
+Installed Capacity In,DE,2014,ng_mtr_chp,0.0
+Installed Capacity In,DE,2014,ng_stm,0.0
+Installed Capacity In,DE,2014,ng_stm_chp,0.0
+Installed Capacity In,DE,2014,nuc,0.0
+Installed Capacity In,DE,2014,oil_cbt,0.0
+Installed Capacity In,DE,2014,oil_cbt_chp,0.0
+Installed Capacity In,DE,2014,oil_cc,0.0
+Installed Capacity In,DE,2014,oil_cc_chp,0.0
+Installed Capacity In,DE,2014,oil_stm,0.0
+Installed Capacity In,DE,2014,oil_stm_chp,0.0
+Installed Capacity In,DE,2014,pv,0.0
+Installed Capacity In,DE,2014,ror,0.0
+Installed Capacity In,DE,2014,wind_off,0.0
+Installed Capacity In,DE,2014,wind_on,0.0
+Storage Capacity,DE,2014,bio,0.0
+Storage Capacity,DE,2014,bio_boiler_chp,0.0
+Storage Capacity,DE,2014,bio_chp,0.0
+Storage Capacity,DE,2014,coal_igcc,0.0
+Storage Capacity,DE,2014,coal_sc,0.0
+Storage Capacity,DE,2014,coal_sc_chp,0.0
+Storage Capacity,DE,2014,coal_sub,0.0
+Storage Capacity,DE,2014,coal_sub_chp,0.0
+Storage Capacity,DE,2014,coal_usc,0.0
+Storage Capacity,DE,2014,coal_usc_chp,0.0
+Storage Capacity,DE,2014,eboi_pth,0.0
+Storage Capacity,DE,2014,heatpump_pth,0.0
+Storage Capacity,DE,2014,hpa_pth,0.0
+Storage Capacity,DE,2014,lig_boa,0.0
+Storage Capacity,DE,2014,lig_boa_chp,0.0
+Storage Capacity,DE,2014,lig_stm,0.0
+Storage Capacity,DE,2014,lig_stm_chp,0.0
+Storage Capacity,DE,2014,ng_boiler_chp,0.0
+Storage Capacity,DE,2014,ng_cbt_hi,0.0
+Storage Capacity,DE,2014,ng_cbt_hi_chp,0.0
+Storage Capacity,DE,2014,ng_cbt_lo,0.0
+Storage Capacity,DE,2014,ng_cbt_lo_chp,0.0
+Storage Capacity,DE,2014,ng_cc_hi,0.0
+Storage Capacity,DE,2014,ng_cc_hi_chp,0.0
+Storage Capacity,DE,2014,ng_cc_lo,0.0
+Storage Capacity,DE,2014,ng_cc_lo_chp,0.0
+Storage Capacity,DE,2014,ng_mtr,0.0
+Storage Capacity,DE,2014,ng_mtr_chp,0.0
+Storage Capacity,DE,2014,ng_stm,0.0
+Storage Capacity,DE,2014,ng_stm_chp,0.0
+Storage Capacity,DE,2014,nuc,0.0
+Storage Capacity,DE,2014,oil_cbt,0.0
+Storage Capacity,DE,2014,oil_cbt_chp,0.0
+Storage Capacity,DE,2014,oil_cc,0.0
+Storage Capacity,DE,2014,oil_cc_chp,0.0
+Storage Capacity,DE,2014,oil_stm,0.0
+Storage Capacity,DE,2014,oil_stm_chp,0.0
+Storage Capacity,DE,2014,pv,0.0
+Storage Capacity,DE,2014,ror,0.0
+Storage Capacity,DE,2014,wind_off,0.0
+Storage Capacity,DE,2014,wind_on,0.0
+Installed Capacity Out,DE,2015,pv,39.224
+Installed Capacity Out,DE,2015,ror,4.5
+Installed Capacity Out,DE,2015,wind_off,3.283
+Installed Capacity Out,DE,2015,wind_on,41.297
+Installed Capacity In,DE,2015,bio,0.0
+Installed Capacity In,DE,2015,bio_boiler_chp,0.0
+Installed Capacity In,DE,2015,bio_chp,0.0
+Installed Capacity In,DE,2015,coal_igcc,0.0
+Installed Capacity In,DE,2015,coal_sc,0.0
+Installed Capacity In,DE,2015,coal_sc_chp,0.0
+Installed Capacity In,DE,2015,coal_sub,0.0
+Installed Capacity In,DE,2015,coal_sub_chp,0.0
+Installed Capacity In,DE,2015,coal_usc,0.0
+Installed Capacity In,DE,2015,coal_usc_chp,0.0
+Installed Capacity In,DE,2015,eboi_pth,0.0
+Installed Capacity In,DE,2015,heatpump_pth,0.0
+Installed Capacity In,DE,2015,hpa_pth,0.0
+Installed Capacity In,DE,2015,lig_boa,0.0
+Installed Capacity In,DE,2015,lig_boa_chp,0.0
+Installed Capacity In,DE,2015,lig_stm,0.0
+Installed Capacity In,DE,2015,lig_stm_chp,0.0
+Installed Capacity In,DE,2015,ng_boiler_chp,0.0
+Installed Capacity In,DE,2015,ng_cbt_hi,0.0
+Installed Capacity In,DE,2015,ng_cbt_hi_chp,0.0
+Installed Capacity In,DE,2015,ng_cbt_lo,0.0
+Installed Capacity In,DE,2015,ng_cbt_lo_chp,0.0
+Installed Capacity In,DE,2015,ng_cc_hi,0.0
+Installed Capacity In,DE,2015,ng_cc_hi_chp,0.0
+Installed Capacity In,DE,2015,ng_cc_lo,0.0
+Installed Capacity In,DE,2015,ng_cc_lo_chp,0.0
+Installed Capacity In,DE,2015,ng_mtr,0.0
+Installed Capacity In,DE,2015,ng_mtr_chp,0.0
+Installed Capacity In,DE,2015,ng_stm,0.0
+Installed Capacity In,DE,2015,ng_stm_chp,0.0
+Installed Capacity In,DE,2015,nuc,0.0
+Installed Capacity In,DE,2015,oil_cbt,0.0
+Installed Capacity In,DE,2015,oil_cbt_chp,0.0
+Installed Capacity In,DE,2015,oil_cc,0.0
+Installed Capacity In,DE,2015,oil_cc_chp,0.0
+Installed Capacity In,DE,2015,oil_stm,0.0
+Installed Capacity In,DE,2015,oil_stm_chp,0.0
+Installed Capacity In,DE,2015,pv,0.0
+Installed Capacity In,DE,2015,ror,0.0
+Installed Capacity In,DE,2015,wind_off,0.0
+Installed Capacity In,DE,2015,wind_on,0.0
+Storage Capacity,DE,2015,bio,0.0
+Storage Capacity,DE,2015,bio_boiler_chp,0.0
+Storage Capacity,DE,2015,bio_chp,0.0
+Storage Capacity,DE,2015,coal_igcc,0.0
+Storage Capacity,DE,2015,coal_sc,0.0
+Storage Capacity,DE,2015,coal_sc_chp,0.0
+Storage Capacity,DE,2015,coal_sub,0.0
+Storage Capacity,DE,2015,coal_sub_chp,0.0
+Storage Capacity,DE,2015,coal_usc,0.0
+Storage Capacity,DE,2015,coal_usc_chp,0.0
+Storage Capacity,DE,2015,eboi_pth,0.0
+Storage Capacity,DE,2015,heatpump_pth,0.0
+Storage Capacity,DE,2015,hpa_pth,0.0
+Storage Capacity,DE,2015,lig_boa,0.0
+Storage Capacity,DE,2015,lig_boa_chp,0.0
+Storage Capacity,DE,2015,lig_stm,0.0
+Storage Capacity,DE,2015,lig_stm_chp,0.0
+Storage Capacity,DE,2015,ng_boiler_chp,0.0
+Storage Capacity,DE,2015,ng_cbt_hi,0.0
+Storage Capacity,DE,2015,ng_cbt_hi_chp,0.0
+Storage Capacity,DE,2015,ng_cbt_lo,0.0
+Storage Capacity,DE,2015,ng_cbt_lo_chp,0.0
+Storage Capacity,DE,2015,ng_cc_hi,0.0
+Storage Capacity,DE,2015,ng_cc_hi_chp,0.0
+Storage Capacity,DE,2015,ng_cc_lo,0.0
+Storage Capacity,DE,2015,ng_cc_lo_chp,0.0
+Storage Capacity,DE,2015,ng_mtr,0.0
+Storage Capacity,DE,2015,ng_mtr_chp,0.0
+Storage Capacity,DE,2015,ng_stm,0.0
+Storage Capacity,DE,2015,ng_stm_chp,0.0
+Storage Capacity,DE,2015,nuc,0.0
+Storage Capacity,DE,2015,oil_cbt,0.0
+Storage Capacity,DE,2015,oil_cbt_chp,0.0
+Storage Capacity,DE,2015,oil_cc,0.0
+Storage Capacity,DE,2015,oil_cc_chp,0.0
+Storage Capacity,DE,2015,oil_stm,0.0
+Storage Capacity,DE,2015,oil_stm_chp,0.0
+Storage Capacity,DE,2015,pv,0.0
+Storage Capacity,DE,2015,ror,0.0
+Storage Capacity,DE,2015,wind_off,0.0
+Storage Capacity,DE,2015,wind_on,0.0
+Installed Capacity Out,DE,2016,battery,0.0
+Installed Capacity Out,DE,2016,bio,2.504
+Installed Capacity Out,DE,2016,bio_boiler_chp,2.0
+Installed Capacity Out,DE,2016,bio_chp,0.0
+Installed Capacity Out,DE,2016,coal_igcc,0.0
+Installed Capacity Out,DE,2016,coal_sc,1.135
+Installed Capacity Out,DE,2016,coal_sc_chp,4.146
+Installed Capacity Out,DE,2016,coal_sub,8.06
+Installed Capacity Out,DE,2016,coal_sub_chp,11.634
+Installed Capacity Out,DE,2016,coal_usc,0.0
+Installed Capacity Out,DE,2016,coal_usc_chp,0.0
+Installed Capacity Out,DE,2016,eboi_pth,0.0
+Installed Capacity Out,DE,2016,h2_stack,5.0
+Installed Capacity Out,DE,2016,heatpump_pth,0.1
+Installed Capacity Out,DE,2016,hpa_pth,0.0
+Installed Capacity Out,DE,2016,hyd_psp_day,6.155
+Installed Capacity Out,DE,2016,hyd_psp_season,0.289
+Installed Capacity Out,DE,2016,hyd_psp_week,0.0
+Installed Capacity Out,DE,2016,hyd_res_day,0.0
+Installed Capacity Out,DE,2016,hyd_res_season,0.185
+Installed Capacity Out,DE,2016,hyd_res_week,0.0
+Installed Capacity Out,DE,2016,lig_boa,1.012
+Installed Capacity Out,DE,2016,lig_boa_chp,0.933
+Installed Capacity Out,DE,2016,lig_stm,5.923
+Installed Capacity Out,DE,2016,lig_stm_chp,12.425
+Installed Capacity Out,DE,2016,ng_boiler_chp,18.0
+Installed Capacity Out,DE,2016,ng_cbt_hi,0.094
+Installed Capacity Out,DE,2016,ng_cbt_hi_chp,0.428
+Installed Capacity Out,DE,2016,ng_cbt_lo,2.462
+Installed Capacity Out,DE,2016,ng_cbt_lo_chp,1.082
+Installed Capacity Out,DE,2016,ng_cc_hi,3.472
+Installed Capacity Out,DE,2016,ng_cc_hi_chp,5.236
+Installed Capacity Out,DE,2016,ng_cc_lo,1.835
+Installed Capacity Out,DE,2016,ng_cc_lo_chp,4.995
+Installed Capacity Out,DE,2016,ng_mtr,0.021
+Installed Capacity Out,DE,2016,ng_mtr_chp,0.149
+Installed Capacity Out,DE,2016,ng_stm,1.502
+Installed Capacity Out,DE,2016,ng_stm_chp,2.909
+Installed Capacity Out,DE,2016,nuc,12.02
+Installed Capacity Out,DE,2016,oil_cbt,1.478
+Installed Capacity Out,DE,2016,oil_cbt_chp,0.297
+Installed Capacity Out,DE,2016,oil_cc,0.0
+Installed Capacity Out,DE,2016,oil_cc_chp,0.0
+Installed Capacity Out,DE,2016,oil_stm,0.194
+Installed Capacity Out,DE,2016,oil_stm_chp,1.547
+Installed Capacity Out,DE,2016,pv,40.679
+Installed Capacity Out,DE,2016,ror,4.5
+Installed Capacity Out,DE,2016,wind_off,4.152
+Installed Capacity Out,DE,2016,wind_on,45.283
+Installed Capacity In,DE,2016,battery,0.0
+Installed Capacity In,DE,2016,bio,0.0
+Installed Capacity In,DE,2016,bio_boiler_chp,0.0
+Installed Capacity In,DE,2016,bio_chp,0.0
+Installed Capacity In,DE,2016,coal_igcc,0.0
+Installed Capacity In,DE,2016,coal_sc,0.0
+Installed Capacity In,DE,2016,coal_sc_chp,0.0
+Installed Capacity In,DE,2016,coal_sub,0.0
+Installed Capacity In,DE,2016,coal_sub_chp,0.0
+Installed Capacity In,DE,2016,coal_usc,0.0
+Installed Capacity In,DE,2016,coal_usc_chp,0.0
+Installed Capacity In,DE,2016,eboi_pth,0.0
+Installed Capacity In,DE,2016,h2_stack,5.0
+Installed Capacity In,DE,2016,heatpump_pth,0.0
+Installed Capacity In,DE,2016,hpa_pth,0.0
+Installed Capacity In,DE,2016,hyd_psp_day,5.835
+Installed Capacity In,DE,2016,hyd_psp_season,0.173
+Installed Capacity In,DE,2016,hyd_psp_week,0.0
+Installed Capacity In,DE,2016,hyd_res_day,0.0
+Installed Capacity In,DE,2016,hyd_res_season,0.0
+Installed Capacity In,DE,2016,hyd_res_week,0.0
+Installed Capacity In,DE,2016,lig_boa,0.0
+Installed Capacity In,DE,2016,lig_boa_chp,0.0
+Installed Capacity In,DE,2016,lig_stm,0.0
+Installed Capacity In,DE,2016,lig_stm_chp,0.0
+Installed Capacity In,DE,2016,ng_boiler_chp,0.0
+Installed Capacity In,DE,2016,ng_cbt_hi,0.0
+Installed Capacity In,DE,2016,ng_cbt_hi_chp,0.0
+Installed Capacity In,DE,2016,ng_cbt_lo,0.0
+Installed Capacity In,DE,2016,ng_cbt_lo_chp,0.0
+Installed Capacity In,DE,2016,ng_cc_hi,0.0
+Installed Capacity In,DE,2016,ng_cc_hi_chp,0.0
+Installed Capacity In,DE,2016,ng_cc_lo,0.0
+Installed Capacity In,DE,2016,ng_cc_lo_chp,0.0
+Installed Capacity In,DE,2016,ng_mtr,0.0
+Installed Capacity In,DE,2016,ng_mtr_chp,0.0
+Installed Capacity In,DE,2016,ng_stm,0.0
+Installed Capacity In,DE,2016,ng_stm_chp,0.0
+Installed Capacity In,DE,2016,nuc,0.0
+Installed Capacity In,DE,2016,oil_cbt,0.0
+Installed Capacity In,DE,2016,oil_cbt_chp,0.0
+Installed Capacity In,DE,2016,oil_cc,0.0
+Installed Capacity In,DE,2016,oil_cc_chp,0.0
+Installed Capacity In,DE,2016,oil_stm,0.0
+Installed Capacity In,DE,2016,oil_stm_chp,0.0
+Installed Capacity In,DE,2016,pv,0.0
+Installed Capacity In,DE,2016,ror,0.0
+Installed Capacity In,DE,2016,wind_off,0.0
+Installed Capacity In,DE,2016,wind_on,0.0
+Storage Capacity,DE,2016,battery,0.0
+Storage Capacity,DE,2016,bio,0.0
+Storage Capacity,DE,2016,bio_boiler_chp,0.0
+Storage Capacity,DE,2016,bio_chp,0.0
+Storage Capacity,DE,2016,coal_igcc,0.0
+Storage Capacity,DE,2016,coal_sc,0.0
+Storage Capacity,DE,2016,coal_sc_chp,0.0
+Storage Capacity,DE,2016,coal_sub,0.0
+Storage Capacity,DE,2016,coal_sub_chp,0.0
+Storage Capacity,DE,2016,coal_usc,0.0
+Storage Capacity,DE,2016,coal_usc_chp,0.0
+Storage Capacity,DE,2016,eboi_pth,0.0
+Storage Capacity,DE,2016,h2_stack,3750.0
+Storage Capacity,DE,2016,heatpump_pth,0.0
+Storage Capacity,DE,2016,hpa_pth,0.0
+Storage Capacity,DE,2016,hyd_psp_day,38.45
+Storage Capacity,DE,2016,hyd_psp_season,98.55
+Storage Capacity,DE,2016,hyd_psp_week,0.0
+Storage Capacity,DE,2016,hyd_res_day,0.0
+Storage Capacity,DE,2016,hyd_res_season,101.44
+Storage Capacity,DE,2016,hyd_res_week,0.0
+Storage Capacity,DE,2016,lig_boa,0.0
+Storage Capacity,DE,2016,lig_boa_chp,0.0
+Storage Capacity,DE,2016,lig_stm,0.0
+Storage Capacity,DE,2016,lig_stm_chp,0.0
+Storage Capacity,DE,2016,ng_boiler_chp,0.0
+Storage Capacity,DE,2016,ng_cbt_hi,0.0
+Storage Capacity,DE,2016,ng_cbt_hi_chp,0.0
+Storage Capacity,DE,2016,ng_cbt_lo,0.0
+Storage Capacity,DE,2016,ng_cbt_lo_chp,0.0
+Storage Capacity,DE,2016,ng_cc_hi,0.0
+Storage Capacity,DE,2016,ng_cc_hi_chp,0.0
+Storage Capacity,DE,2016,ng_cc_lo,0.0
+Storage Capacity,DE,2016,ng_cc_lo_chp,0.0
+Storage Capacity,DE,2016,ng_mtr,0.0
+Storage Capacity,DE,2016,ng_mtr_chp,0.0
+Storage Capacity,DE,2016,ng_stm,0.0
+Storage Capacity,DE,2016,ng_stm_chp,0.0
+Storage Capacity,DE,2016,nuc,0.0
+Storage Capacity,DE,2016,oil_cbt,0.0
+Storage Capacity,DE,2016,oil_cbt_chp,0.0
+Storage Capacity,DE,2016,oil_cc,0.0
+Storage Capacity,DE,2016,oil_cc_chp,0.0
+Storage Capacity,DE,2016,oil_stm,0.0
+Storage Capacity,DE,2016,oil_stm_chp,0.0
+Storage Capacity,DE,2016,pv,0.0
+Storage Capacity,DE,2016,ror,0.0
+Storage Capacity,DE,2016,wind_off,0.0
+Storage Capacity,DE,2016,wind_on,0.0
+Installed Capacity Out,DE,2017,pv,42.339
+Installed Capacity Out,DE,2017,ror,4.5
+Installed Capacity Out,DE,2017,wind_off,5.427
+Installed Capacity Out,DE,2017,wind_on,50.291
+Installed Capacity In,DE,2017,bio,0.0
+Installed Capacity In,DE,2017,bio_boiler_chp,0.0
+Installed Capacity In,DE,2017,bio_chp,0.0
+Installed Capacity In,DE,2017,coal_igcc,0.0
+Installed Capacity In,DE,2017,coal_sc,0.0
+Installed Capacity In,DE,2017,coal_sc_chp,0.0
+Installed Capacity In,DE,2017,coal_sub,0.0
+Installed Capacity In,DE,2017,coal_sub_chp,0.0
+Installed Capacity In,DE,2017,coal_usc,0.0
+Installed Capacity In,DE,2017,coal_usc_chp,0.0
+Installed Capacity In,DE,2017,eboi_pth,0.0
+Installed Capacity In,DE,2017,heatpump_pth,0.0
+Installed Capacity In,DE,2017,hpa_pth,0.0
+Installed Capacity In,DE,2017,lig_boa,0.0
+Installed Capacity In,DE,2017,lig_boa_chp,0.0
+Installed Capacity In,DE,2017,lig_stm,0.0
+Installed Capacity In,DE,2017,lig_stm_chp,0.0
+Installed Capacity In,DE,2017,ng_boiler_chp,0.0
+Installed Capacity In,DE,2017,ng_cbt_hi,0.0
+Installed Capacity In,DE,2017,ng_cbt_hi_chp,0.0
+Installed Capacity In,DE,2017,ng_cbt_lo,0.0
+Installed Capacity In,DE,2017,ng_cbt_lo_chp,0.0
+Installed Capacity In,DE,2017,ng_cc_hi,0.0
+Installed Capacity In,DE,2017,ng_cc_hi_chp,0.0
+Installed Capacity In,DE,2017,ng_cc_lo,0.0
+Installed Capacity In,DE,2017,ng_cc_lo_chp,0.0
+Installed Capacity In,DE,2017,ng_mtr,0.0
+Installed Capacity In,DE,2017,ng_mtr_chp,0.0
+Installed Capacity In,DE,2017,ng_stm,0.0
+Installed Capacity In,DE,2017,ng_stm_chp,0.0
+Installed Capacity In,DE,2017,nuc,0.0
+Installed Capacity In,DE,2017,oil_cbt,0.0
+Installed Capacity In,DE,2017,oil_cbt_chp,0.0
+Installed Capacity In,DE,2017,oil_cc,0.0
+Installed Capacity In,DE,2017,oil_cc_chp,0.0
+Installed Capacity In,DE,2017,oil_stm,0.0
+Installed Capacity In,DE,2017,oil_stm_chp,0.0
+Installed Capacity In,DE,2017,pv,0.0
+Installed Capacity In,DE,2017,ror,0.0
+Installed Capacity In,DE,2017,wind_off,0.0
+Installed Capacity In,DE,2017,wind_on,0.0
+Storage Capacity,DE,2017,bio,0.0
+Storage Capacity,DE,2017,bio_boiler_chp,0.0
+Storage Capacity,DE,2017,bio_chp,0.0
+Storage Capacity,DE,2017,coal_igcc,0.0
+Storage Capacity,DE,2017,coal_sc,0.0
+Storage Capacity,DE,2017,coal_sc_chp,0.0
+Storage Capacity,DE,2017,coal_sub,0.0
+Storage Capacity,DE,2017,coal_sub_chp,0.0
+Storage Capacity,DE,2017,coal_usc,0.0
+Storage Capacity,DE,2017,coal_usc_chp,0.0
+Storage Capacity,DE,2017,eboi_pth,0.0
+Storage Capacity,DE,2017,heatpump_pth,0.0
+Storage Capacity,DE,2017,hpa_pth,0.0
+Storage Capacity,DE,2017,lig_boa,0.0
+Storage Capacity,DE,2017,lig_boa_chp,0.0
+Storage Capacity,DE,2017,lig_stm,0.0
+Storage Capacity,DE,2017,lig_stm_chp,0.0
+Storage Capacity,DE,2017,ng_boiler_chp,0.0
+Storage Capacity,DE,2017,ng_cbt_hi,0.0
+Storage Capacity,DE,2017,ng_cbt_hi_chp,0.0
+Storage Capacity,DE,2017,ng_cbt_lo,0.0
+Storage Capacity,DE,2017,ng_cbt_lo_chp,0.0
+Storage Capacity,DE,2017,ng_cc_hi,0.0
+Storage Capacity,DE,2017,ng_cc_hi_chp,0.0
+Storage Capacity,DE,2017,ng_cc_lo,0.0
+Storage Capacity,DE,2017,ng_cc_lo_chp,0.0
+Storage Capacity,DE,2017,ng_mtr,0.0
+Storage Capacity,DE,2017,ng_mtr_chp,0.0
+Storage Capacity,DE,2017,ng_stm,0.0
+Storage Capacity,DE,2017,ng_stm_chp,0.0
+Storage Capacity,DE,2017,nuc,0.0
+Storage Capacity,DE,2017,oil_cbt,0.0
+Storage Capacity,DE,2017,oil_cbt_chp,0.0
+Storage Capacity,DE,2017,oil_cc,0.0
+Storage Capacity,DE,2017,oil_cc_chp,0.0
+Storage Capacity,DE,2017,oil_stm,0.0
+Storage Capacity,DE,2017,oil_stm_chp,0.0
+Storage Capacity,DE,2017,pv,0.0
+Storage Capacity,DE,2017,ror,0.0
+Storage Capacity,DE,2017,wind_off,0.0
+Storage Capacity,DE,2017,wind_on,0.0
+Installed Capacity Out,DE,2018,pv,45.277
+Installed Capacity Out,DE,2018,ror,4.507
+Installed Capacity Out,DE,2018,wind_off,6.417
+Installed Capacity Out,DE,2018,wind_on,52.565
+Installed Capacity In,DE,2018,bio,0.0
+Installed Capacity In,DE,2018,bio_boiler_chp,0.0
+Installed Capacity In,DE,2018,bio_chp,0.0
+Installed Capacity In,DE,2018,coal_igcc,0.0
+Installed Capacity In,DE,2018,coal_sc,0.0
+Installed Capacity In,DE,2018,coal_sc_chp,0.0
+Installed Capacity In,DE,2018,coal_sub,0.0
+Installed Capacity In,DE,2018,coal_sub_chp,0.0
+Installed Capacity In,DE,2018,coal_usc,0.0
+Installed Capacity In,DE,2018,coal_usc_chp,0.0
+Installed Capacity In,DE,2018,eboi_pth,0.0
+Installed Capacity In,DE,2018,heatpump_pth,0.0
+Installed Capacity In,DE,2018,hpa_pth,0.0
+Installed Capacity In,DE,2018,lig_boa,0.0
+Installed Capacity In,DE,2018,lig_boa_chp,0.0
+Installed Capacity In,DE,2018,lig_stm,0.0
+Installed Capacity In,DE,2018,lig_stm_chp,0.0
+Installed Capacity In,DE,2018,ng_boiler_chp,0.0
+Installed Capacity In,DE,2018,ng_cbt_hi,0.0
+Installed Capacity In,DE,2018,ng_cbt_hi_chp,0.0
+Installed Capacity In,DE,2018,ng_cbt_lo,0.0
+Installed Capacity In,DE,2018,ng_cbt_lo_chp,0.0
+Installed Capacity In,DE,2018,ng_cc_hi,0.0
+Installed Capacity In,DE,2018,ng_cc_hi_chp,0.0
+Installed Capacity In,DE,2018,ng_cc_lo,0.0
+Installed Capacity In,DE,2018,ng_cc_lo_chp,0.0
+Installed Capacity In,DE,2018,ng_mtr,0.0
+Installed Capacity In,DE,2018,ng_mtr_chp,0.0
+Installed Capacity In,DE,2018,ng_stm,0.0
+Installed Capacity In,DE,2018,ng_stm_chp,0.0
+Installed Capacity In,DE,2018,nuc,0.0
+Installed Capacity In,DE,2018,oil_cbt,0.0
+Installed Capacity In,DE,2018,oil_cbt_chp,0.0
+Installed Capacity In,DE,2018,oil_cc,0.0
+Installed Capacity In,DE,2018,oil_cc_chp,0.0
+Installed Capacity In,DE,2018,oil_stm,0.0
+Installed Capacity In,DE,2018,oil_stm_chp,0.0
+Installed Capacity In,DE,2018,pv,0.0
+Installed Capacity In,DE,2018,ror,0.0
+Installed Capacity In,DE,2018,wind_off,0.0
+Installed Capacity In,DE,2018,wind_on,0.0
+Storage Capacity,DE,2018,bio,0.0
+Storage Capacity,DE,2018,bio_boiler_chp,0.0
+Storage Capacity,DE,2018,bio_chp,0.0
+Storage Capacity,DE,2018,coal_igcc,0.0
+Storage Capacity,DE,2018,coal_sc,0.0
+Storage Capacity,DE,2018,coal_sc_chp,0.0
+Storage Capacity,DE,2018,coal_sub,0.0
+Storage Capacity,DE,2018,coal_sub_chp,0.0
+Storage Capacity,DE,2018,coal_usc,0.0
+Storage Capacity,DE,2018,coal_usc_chp,0.0
+Storage Capacity,DE,2018,eboi_pth,0.0
+Storage Capacity,DE,2018,heatpump_pth,0.0
+Storage Capacity,DE,2018,hpa_pth,0.0
+Storage Capacity,DE,2018,lig_boa,0.0
+Storage Capacity,DE,2018,lig_boa_chp,0.0
+Storage Capacity,DE,2018,lig_stm,0.0
+Storage Capacity,DE,2018,lig_stm_chp,0.0
+Storage Capacity,DE,2018,ng_boiler_chp,0.0
+Storage Capacity,DE,2018,ng_cbt_hi,0.0
+Storage Capacity,DE,2018,ng_cbt_hi_chp,0.0
+Storage Capacity,DE,2018,ng_cbt_lo,0.0
+Storage Capacity,DE,2018,ng_cbt_lo_chp,0.0
+Storage Capacity,DE,2018,ng_cc_hi,0.0
+Storage Capacity,DE,2018,ng_cc_hi_chp,0.0
+Storage Capacity,DE,2018,ng_cc_lo,0.0
+Storage Capacity,DE,2018,ng_cc_lo_chp,0.0
+Storage Capacity,DE,2018,ng_mtr,0.0
+Storage Capacity,DE,2018,ng_mtr_chp,0.0
+Storage Capacity,DE,2018,ng_stm,0.0
+Storage Capacity,DE,2018,ng_stm_chp,0.0
+Storage Capacity,DE,2018,nuc,0.0
+Storage Capacity,DE,2018,oil_cbt,0.0
+Storage Capacity,DE,2018,oil_cbt_chp,0.0
+Storage Capacity,DE,2018,oil_cc,0.0
+Storage Capacity,DE,2018,oil_cc_chp,0.0
+Storage Capacity,DE,2018,oil_stm,0.0
+Storage Capacity,DE,2018,oil_stm_chp,0.0
+Storage Capacity,DE,2018,pv,0.0
+Storage Capacity,DE,2018,ror,0.0
+Storage Capacity,DE,2018,wind_off,0.0
+Storage Capacity,DE,2018,wind_on,0.0
+Installed Capacity In,DE,2019,bio,0.0
+Installed Capacity In,DE,2019,bio_boiler_chp,0.0
+Installed Capacity In,DE,2019,bio_chp,0.0
+Installed Capacity In,DE,2019,coal_igcc,0.0
+Installed Capacity In,DE,2019,coal_sc,0.0
+Installed Capacity In,DE,2019,coal_sc_chp,0.0
+Installed Capacity In,DE,2019,coal_sub,0.0
+Installed Capacity In,DE,2019,coal_sub_chp,0.0
+Installed Capacity In,DE,2019,coal_usc,0.0
+Installed Capacity In,DE,2019,coal_usc_chp,0.0
+Installed Capacity In,DE,2019,eboi_pth,0.0
+Installed Capacity In,DE,2019,heatpump_pth,0.0
+Installed Capacity In,DE,2019,hpa_pth,0.0
+Installed Capacity In,DE,2019,lig_boa,0.0
+Installed Capacity In,DE,2019,lig_boa_chp,0.0
+Installed Capacity In,DE,2019,lig_stm,0.0
+Installed Capacity In,DE,2019,lig_stm_chp,0.0
+Installed Capacity In,DE,2019,ng_boiler_chp,0.0
+Installed Capacity In,DE,2019,ng_cbt_hi,0.0
+Installed Capacity In,DE,2019,ng_cbt_hi_chp,0.0
+Installed Capacity In,DE,2019,ng_cbt_lo,0.0
+Installed Capacity In,DE,2019,ng_cbt_lo_chp,0.0
+Installed Capacity In,DE,2019,ng_cc_hi,0.0
+Installed Capacity In,DE,2019,ng_cc_hi_chp,0.0
+Installed Capacity In,DE,2019,ng_cc_lo,0.0
+Installed Capacity In,DE,2019,ng_cc_lo_chp,0.0
+Installed Capacity In,DE,2019,ng_mtr,0.0
+Installed Capacity In,DE,2019,ng_mtr_chp,0.0
+Installed Capacity In,DE,2019,ng_stm,0.0
+Installed Capacity In,DE,2019,ng_stm_chp,0.0
+Installed Capacity In,DE,2019,nuc,0.0
+Installed Capacity In,DE,2019,oil_cbt,0.0
+Installed Capacity In,DE,2019,oil_cbt_chp,0.0
+Installed Capacity In,DE,2019,oil_cc,0.0
+Installed Capacity In,DE,2019,oil_cc_chp,0.0
+Installed Capacity In,DE,2019,oil_stm,0.0
+Installed Capacity In,DE,2019,oil_stm_chp,0.0
+Installed Capacity In,DE,2019,pv,0.0
+Installed Capacity In,DE,2019,ror,0.0
+Installed Capacity In,DE,2019,wind_off,0.0
+Installed Capacity In,DE,2019,wind_on,0.0
+Storage Capacity,DE,2019,bio,0.0
+Storage Capacity,DE,2019,bio_boiler_chp,0.0
+Storage Capacity,DE,2019,bio_chp,0.0
+Storage Capacity,DE,2019,coal_igcc,0.0
+Storage Capacity,DE,2019,coal_sc,0.0
+Storage Capacity,DE,2019,coal_sc_chp,0.0
+Storage Capacity,DE,2019,coal_sub,0.0
+Storage Capacity,DE,2019,coal_sub_chp,0.0
+Storage Capacity,DE,2019,coal_usc,0.0
+Storage Capacity,DE,2019,coal_usc_chp,0.0
+Storage Capacity,DE,2019,eboi_pth,0.0
+Storage Capacity,DE,2019,heatpump_pth,0.0
+Storage Capacity,DE,2019,hpa_pth,0.0
+Storage Capacity,DE,2019,lig_boa,0.0
+Storage Capacity,DE,2019,lig_boa_chp,0.0
+Storage Capacity,DE,2019,lig_stm,0.0
+Storage Capacity,DE,2019,lig_stm_chp,0.0
+Storage Capacity,DE,2019,ng_boiler_chp,0.0
+Storage Capacity,DE,2019,ng_cbt_hi,0.0
+Storage Capacity,DE,2019,ng_cbt_hi_chp,0.0
+Storage Capacity,DE,2019,ng_cbt_lo,0.0
+Storage Capacity,DE,2019,ng_cbt_lo_chp,0.0
+Storage Capacity,DE,2019,ng_cc_hi,0.0
+Storage Capacity,DE,2019,ng_cc_hi_chp,0.0
+Storage Capacity,DE,2019,ng_cc_lo,0.0
+Storage Capacity,DE,2019,ng_cc_lo_chp,0.0
+Storage Capacity,DE,2019,ng_mtr,0.0
+Storage Capacity,DE,2019,ng_mtr_chp,0.0
+Storage Capacity,DE,2019,ng_stm,0.0
+Storage Capacity,DE,2019,ng_stm_chp,0.0
+Storage Capacity,DE,2019,nuc,0.0
+Storage Capacity,DE,2019,oil_cbt,0.0
+Storage Capacity,DE,2019,oil_cbt_chp,0.0
+Storage Capacity,DE,2019,oil_cc,0.0
+Storage Capacity,DE,2019,oil_cc_chp,0.0
+Storage Capacity,DE,2019,oil_stm,0.0
+Storage Capacity,DE,2019,oil_stm_chp,0.0
+Storage Capacity,DE,2019,pv,0.0
+Storage Capacity,DE,2019,ror,0.0
+Storage Capacity,DE,2019,wind_off,0.0
+Storage Capacity,DE,2019,wind_on,0.0
+Installed Capacity Out,DE,2020,bio,4.2
+Installed Capacity Out,DE,2020,bio_boiler_chp,2.0
+Installed Capacity Out,DE,2020,bio_chp,4.2
+Installed Capacity Out,DE,2020,pv,53.848
+Installed Capacity Out,DE,2020,ror,4.5
+Installed Capacity Out,DE,2020,wind_off,7.747
+Installed Capacity Out,DE,2020,wind_on,54.42
+Installed Capacity In,DE,2020,bio,0.0
+Installed Capacity In,DE,2020,bio_boiler_chp,0.0
+Installed Capacity In,DE,2020,bio_chp,0.0
+Installed Capacity In,DE,2020,coal_igcc,0.0
+Installed Capacity In,DE,2020,coal_sc,0.0
+Installed Capacity In,DE,2020,coal_sc_chp,0.0
+Installed Capacity In,DE,2020,coal_sub,0.0
+Installed Capacity In,DE,2020,coal_sub_chp,0.0
+Installed Capacity In,DE,2020,coal_usc,0.0
+Installed Capacity In,DE,2020,coal_usc_chp,0.0
+Installed Capacity In,DE,2020,eboi_pth,0.0
+Installed Capacity In,DE,2020,heatpump_pth,0.0
+Installed Capacity In,DE,2020,hpa_pth,0.0
+Installed Capacity In,DE,2020,lig_boa,0.0
+Installed Capacity In,DE,2020,lig_boa_chp,0.0
+Installed Capacity In,DE,2020,lig_stm,0.0
+Installed Capacity In,DE,2020,lig_stm_chp,0.0
+Installed Capacity In,DE,2020,ng_boiler_chp,0.0
+Installed Capacity In,DE,2020,ng_cbt_hi,0.0
+Installed Capacity In,DE,2020,ng_cbt_hi_chp,0.0
+Installed Capacity In,DE,2020,ng_cbt_lo,0.0
+Installed Capacity In,DE,2020,ng_cbt_lo_chp,0.0
+Installed Capacity In,DE,2020,ng_cc_hi,0.0
+Installed Capacity In,DE,2020,ng_cc_hi_chp,0.0
+Installed Capacity In,DE,2020,ng_cc_lo,0.0
+Installed Capacity In,DE,2020,ng_cc_lo_chp,0.0
+Installed Capacity In,DE,2020,ng_mtr,0.0
+Installed Capacity In,DE,2020,ng_mtr_chp,0.0
+Installed Capacity In,DE,2020,ng_stm,0.0
+Installed Capacity In,DE,2020,ng_stm_chp,0.0
+Installed Capacity In,DE,2020,nuc,0.0
+Installed Capacity In,DE,2020,oil_cbt,0.0
+Installed Capacity In,DE,2020,oil_cbt_chp,0.0
+Installed Capacity In,DE,2020,oil_cc,0.0
+Installed Capacity In,DE,2020,oil_cc_chp,0.0
+Installed Capacity In,DE,2020,oil_stm,0.0
+Installed Capacity In,DE,2020,oil_stm_chp,0.0
+Installed Capacity In,DE,2020,pv,0.0
+Installed Capacity In,DE,2020,ror,0.0
+Installed Capacity In,DE,2020,wind_off,0.0
+Installed Capacity In,DE,2020,wind_on,0.0
+Storage Capacity,DE,2020,bio,0.0
+Storage Capacity,DE,2020,bio_boiler_chp,0.0
+Storage Capacity,DE,2020,bio_chp,0.0
+Storage Capacity,DE,2020,coal_igcc,0.0
+Storage Capacity,DE,2020,coal_sc,0.0
+Storage Capacity,DE,2020,coal_sc_chp,0.0
+Storage Capacity,DE,2020,coal_sub,0.0
+Storage Capacity,DE,2020,coal_sub_chp,0.0
+Storage Capacity,DE,2020,coal_usc,0.0
+Storage Capacity,DE,2020,coal_usc_chp,0.0
+Storage Capacity,DE,2020,eboi_pth,0.0
+Storage Capacity,DE,2020,heatpump_pth,0.0
+Storage Capacity,DE,2020,hpa_pth,0.0
+Storage Capacity,DE,2020,lig_boa,0.0
+Storage Capacity,DE,2020,lig_boa_chp,0.0
+Storage Capacity,DE,2020,lig_stm,0.0
+Storage Capacity,DE,2020,lig_stm_chp,0.0
+Storage Capacity,DE,2020,ng_boiler_chp,0.0
+Storage Capacity,DE,2020,ng_cbt_hi,0.0
+Storage Capacity,DE,2020,ng_cbt_hi_chp,0.0
+Storage Capacity,DE,2020,ng_cbt_lo,0.0
+Storage Capacity,DE,2020,ng_cbt_lo_chp,0.0
+Storage Capacity,DE,2020,ng_cc_hi,0.0
+Storage Capacity,DE,2020,ng_cc_hi_chp,0.0
+Storage Capacity,DE,2020,ng_cc_lo,0.0
+Storage Capacity,DE,2020,ng_cc_lo_chp,0.0
+Storage Capacity,DE,2020,ng_mtr,0.0
+Storage Capacity,DE,2020,ng_mtr_chp,0.0
+Storage Capacity,DE,2020,ng_stm,0.0
+Storage Capacity,DE,2020,ng_stm_chp,0.0
+Storage Capacity,DE,2020,nuc,0.0
+Storage Capacity,DE,2020,oil_cbt,0.0
+Storage Capacity,DE,2020,oil_cbt_chp,0.0
+Storage Capacity,DE,2020,oil_cc,0.0
+Storage Capacity,DE,2020,oil_cc_chp,0.0
+Storage Capacity,DE,2020,oil_stm,0.0
+Storage Capacity,DE,2020,oil_stm_chp,0.0
+Storage Capacity,DE,2020,pv,0.0
+Storage Capacity,DE,2020,ror,0.0
+Storage Capacity,DE,2020,wind_off,0.0
+Storage Capacity,DE,2020,wind_on,0.0
+Installed Capacity Out,CH,2030,bio,1.197
+Installed Capacity Out,CH,2030,coal_sub,0.0
+Installed Capacity Out,CH,2030,hyd_psp_day,3.989
+Installed Capacity Out,CH,2030,hyd_res_day,8.152
+Installed Capacity Out,CH,2030,lig_boa,0.0
+Installed Capacity Out,CH,2030,lig_stm,4.42
+Installed Capacity Out,CH,2030,ng_cc_hi,0.889
+Installed Capacity Out,CH,2030,nuc,1.19
+Installed Capacity Out,CH,2030,pv,5.5
+Installed Capacity Out,CH,2030,ror,4.113
+Installed Capacity Out,CH,2030,wind_on,0.255
+Installed Capacity In,CH,2030,coal_sub,0.0
+Installed Capacity In,CH,2030,lig_boa,0.0
+Installed Capacity In,CH,2030,lig_stm,0.0
+Installed Capacity In,CH,2030,nuc,0.0
+Installed Capacity In,CH,2030,pv,0.0
+Installed Capacity In,CH,2030,ror,0.0
+Installed Capacity In,CH,2030,wind_on,0.0
+Storage Capacity,CH,2030,coal_sub,0.0
+Storage Capacity,CH,2030,lig_boa,0.0
+Storage Capacity,CH,2030,lig_stm,0.0
+Storage Capacity,CH,2030,nuc,0.0
+Storage Capacity,CH,2030,pv,0.0
+Storage Capacity,CH,2030,ror,0.0
+Storage Capacity,CH,2030,wind_on,0.0
+Installed Capacity Out,CZ,2030,battery,0.453
+Installed Capacity Out,CZ,2030,bio,1.063
+Installed Capacity Out,CZ,2030,coal_sub,0.372
+Installed Capacity Out,CZ,2030,coal_usc_chp,1.225
+Installed Capacity Out,CZ,2030,hyd_psp_day,1.158
+Installed Capacity Out,CZ,2030,hyd_res_day,0.7
+Installed Capacity Out,CZ,2030,lig_boa,0.6
+Installed Capacity Out,CZ,2030,lig_stm,0.0
+Installed Capacity Out,CZ,2030,ng_cc_hi,0.886
+Installed Capacity Out,CZ,2030,ng_cc_lo,0.462
+Installed Capacity Out,CZ,2030,nuc,4.041
+Installed Capacity Out,CZ,2030,oil_stm,0.014
+Installed Capacity Out,CZ,2030,pv,4.9
+Installed Capacity Out,CZ,2030,ror,0.395
+Installed Capacity Out,CZ,2030,wind_on,0.96
+Installed Capacity In,CZ,2030,coal_sub,0.0
+Installed Capacity In,CZ,2030,lig_boa,0.0
+Installed Capacity In,CZ,2030,lig_stm,0.0
+Installed Capacity In,CZ,2030,nuc,0.0
+Installed Capacity In,CZ,2030,pv,0.0
+Installed Capacity In,CZ,2030,ror,0.0
+Installed Capacity In,CZ,2030,wind_on,0.0
+Storage Capacity,CZ,2030,coal_sub,0.0
+Storage Capacity,CZ,2030,lig_boa,0.0
+Storage Capacity,CZ,2030,lig_stm,0.0
+Storage Capacity,CZ,2030,nuc,0.0
+Storage Capacity,CZ,2030,pv,0.0
+Storage Capacity,CZ,2030,ror,0.0
+Storage Capacity,CZ,2030,wind_on,0.0
+Installed Capacity Out,HU,2030,bio,0.577
+Installed Capacity Out,HU,2030,coal_sub,0.0
+Installed Capacity Out,HU,2030,coal_usc_chp,0.454
+Installed Capacity Out,HU,2030,lig_boa,0.0
+Installed Capacity Out,HU,2030,lig_stm,0.0
+Installed Capacity Out,HU,2030,ng_cbt_hi,0.114
+Installed Capacity Out,HU,2030,ng_cc_hi,0.834
+Installed Capacity Out,HU,2030,ng_cc_lo,1.167
+Installed Capacity Out,HU,2030,nuc,4.248
+Installed Capacity Out,HU,2030,oil_stm,0.41
+Installed Capacity Out,HU,2030,pv,6.645
+Installed Capacity Out,HU,2030,ror,0.057
+Installed Capacity Out,HU,2030,wind_on,0.0
+Installed Capacity In,HU,2030,coal_sub,0.0
+Installed Capacity In,HU,2030,lig_boa,0.0
+Installed Capacity In,HU,2030,lig_stm,0.0
+Installed Capacity In,HU,2030,nuc,0.0
+Installed Capacity In,HU,2030,pv,0.0
+Installed Capacity In,HU,2030,ror,0.0
+Installed Capacity In,HU,2030,wind_on,0.0
+Storage Capacity,HU,2030,coal_sub,0.0
+Storage Capacity,HU,2030,lig_boa,0.0
+Storage Capacity,HU,2030,lig_stm,0.0
+Storage Capacity,HU,2030,nuc,0.0
+Storage Capacity,HU,2030,pv,0.0
+Storage Capacity,HU,2030,ror,0.0
+Storage Capacity,HU,2030,wind_on,0.0
+Installed Capacity Out,IT,2030,bio,2.266
+Installed Capacity Out,IT,2030,coal_sub,0.0
+Installed Capacity Out,IT,2030,coal_usc_chp,3.242
+Installed Capacity Out,IT,2030,hyd_psp_day,4.872
+Installed Capacity Out,IT,2030,hyd_res_day,7.015
+Installed Capacity Out,IT,2030,lig_boa,0.0
+Installed Capacity Out,IT,2030,lig_stm,0.0
+Installed Capacity Out,IT,2030,ng_cbt_hi,2.846
+Installed Capacity Out,IT,2030,ng_cc_hi,15.2
+Installed Capacity Out,IT,2030,ng_cc_lo,4.482
+Installed Capacity Out,IT,2030,nuc,0.0
+Installed Capacity Out,IT,2030,pv,23.656
+Installed Capacity Out,IT,2030,ror,4.68
+Installed Capacity Out,IT,2030,wind_on,0.12
+Installed Capacity In,IT,2030,coal_sub,0.0
+Installed Capacity In,IT,2030,lig_boa,0.0
+Installed Capacity In,IT,2030,lig_stm,0.0
+Installed Capacity In,IT,2030,nuc,0.0
+Installed Capacity In,IT,2030,pv,0.0
+Installed Capacity In,IT,2030,ror,0.0
+Installed Capacity In,IT,2030,wind_on,0.0
+Storage Capacity,IT,2030,coal_sub,0.0
+Storage Capacity,IT,2030,lig_boa,0.0
+Storage Capacity,IT,2030,lig_stm,0.0
+Storage Capacity,IT,2030,nuc,0.0
+Storage Capacity,IT,2030,pv,0.0
+Storage Capacity,IT,2030,ror,0.0
+Storage Capacity,IT,2030,wind_on,0.0
+Installed Capacity Out,SI,2030,battery,0.01
+Installed Capacity Out,SI,2030,bio,0.049
+Installed Capacity Out,SI,2030,coal_sub,0.045
+Installed Capacity Out,SI,2030,coal_usc_chp,0.158
+Installed Capacity Out,SI,2030,hyd_psp_day,0.185
+Installed Capacity Out,SI,2030,lig_boa,0.0
+Installed Capacity Out,SI,2030,lig_stm,0.844
+Installed Capacity Out,SI,2030,ng_cbt_lo,0.415
+Installed Capacity Out,SI,2030,ng_cc_hi,0.139
+Installed Capacity Out,SI,2030,nuc,0.703
+Installed Capacity Out,SI,2030,pv,1.81
+Installed Capacity Out,SI,2030,ror,1.206
+Installed Capacity Out,SI,2030,wind_on,0.15
+Installed Capacity In,SI,2030,coal_sub,0.0
+Installed Capacity In,SI,2030,lig_boa,0.0
+Installed Capacity In,SI,2030,lig_stm,0.0
+Installed Capacity In,SI,2030,nuc,0.0
+Installed Capacity In,SI,2030,pv,0.0
+Installed Capacity In,SI,2030,ror,0.0
+Installed Capacity In,SI,2030,wind_on,0.0
+Storage Capacity,SI,2030,coal_sub,0.0
+Storage Capacity,SI,2030,lig_boa,0.0
+Storage Capacity,SI,2030,lig_stm,0.0
+Storage Capacity,SI,2030,nuc,0.0
+Storage Capacity,SI,2030,pv,0.0
+Storage Capacity,SI,2030,ror,0.0
+Storage Capacity,SI,2030,wind_on,0.0
