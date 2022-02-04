@@ -2,7 +2,7 @@
 import os
 from pathlib import Path
 import logging
-from logging_config import setup_logging
+from medea_data_atde.logging_config import setup_logging
 import pandas as pd
 import numpy as np
 from scipy import interpolate

@@ -9,7 +9,7 @@ import logging
 import pandas as pd
 from pathlib import Path
 from itertools import compress
-from logging_config import setup_logging
+from medea_data_atde.logging_config import setup_logging
 
 
 # ======================================================================================================================
