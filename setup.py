@@ -27,4 +27,11 @@ setup(
         'pysftp',
         'openpyxl'
     ],
+    data_files=[
+        ('raw', ['data/raw/capacities.csv']),
+        ('raw', ['data/raw/technologies.csv']),
+        ('raw', ['data/raw/operating_region.csv']),
+        ('raw', ['data/raw/transmission.csv']),
+        ('raw', ['data/raw/external_cost.csv']),
+    ]
 )
