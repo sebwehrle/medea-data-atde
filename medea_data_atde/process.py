@@ -101,10 +101,11 @@ def mean_temp_at_plants(db_plants, era_dir, country, years, zones):
     temp_date_range = pd.date_range(pd.datetime(years[0], 1, 1), pd.datetime(years[-1], 12, 31), freq='D')
     daily_mean_temp = pd.DataFrame(index=temp_date_range.values, columns=[zones])
     for zne in zones:
-        chp = db_plants[(db_plants['UnitCoGen'] == 1) & (db_plants['UnitNameplate'] >= 10) &
-                        (db_plants['PlantCountry'] == country[zne])]
-        chp_lon = chp['PlantLongitude'].values
-        chp_lat = chp['PlantLatitude'].values
+        chp = db_plants[(db_plants['country'] == zne) & (db_plants['chp'] == 'yes')]
+        if chp.empty:
+            chp = db_plants[(db_plants['country'] == zne) & (db_plants['technology'] == 'Combined cycle')]
+        chp_lon = chp['lon'].values
+        chp_lat = chp['lat'].values
         for year in years:
             filename = os.path.join(era_dir, f'temperature_europe_{year}.nc')
             era5 = Dataset(filename, format='NETCDF4')
@@ -117,7 +118,7 @@ def mean_temp_at_plants(db_plants, era_dir, country, years, zones):
                 temp_2m = era5.variables['t2m'][hour, :, :] - 273.15
                 # obtain weighted average temperature from interpolation function, using CHP capacities as weights
                 f = interpolate.interp2d(lons, lats, temp_2m)
-                temp_itp = np.diagonal(f(chp_lon, chp_lat)) * chp['UnitNameplate'].values / chp['UnitNameplate'].sum()
+                temp_itp = np.diagonal(f(chp_lon, chp_lat)) * chp['capacity'].values / chp['capacity'].sum()
                 era_date = num2date(era5.variables['time'][hour], era5.variables['time'].units,
                                     era5.variables['time'].calendar)
                 # conversion of date formats
@@ -179,7 +180,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
 
     fuel_price_file = root_dir / 'data' / 'processed' / 'monthly_fuel_prices.csv'
     co2_price_file = root_dir / 'data' / 'processed' / 'co2_price.csv'
-    PPLANT_DB = root_dir / 'data' / 'processed' / 'power_plant_db.xlsx'
+    PPLANT_DB = root_dir / 'data' / 'raw' / 'conventional_power_plants_EU.csv'
     MEAN_TEMP_FILE = root_dir / 'data' / 'processed' / 'temp_daily_mean.csv'
     heat_cons_file = root_dir / 'data' / 'processed' / 'heat_hourly_consumption.csv'
 
@@ -209,7 +210,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
 
     # %% process temperature data
     # get coordinates of co-gen plants
-    db_plants = pd.read_excel(PPLANT_DB)
+    db_plants = pd.read_csv(PPLANT_DB)
     daily_mean_temp = mean_temp_at_plants(db_plants, ERA_DIR, country, years, zones)
     daily_mean_temp.to_csv(MEAN_TEMP_FILE)
     logging.info(f'Temperatures processed and saved to {MEAN_TEMP_FILE}')
