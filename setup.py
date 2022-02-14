@@ -14,7 +14,7 @@ setup(
     url='https://github.com/sebwehrle/medea_data_atde',
     project_urls={},
     license='MIT',
-    packages=['medea_data_atde', 'medea_data_atde.scripts'],
+    packages=['medea_data_atde'],
     install_requires=[
         'pyyaml',
         'numpy',
