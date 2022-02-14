@@ -220,7 +220,10 @@ def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb
     setup_logging()
 
     # %% Settings
-    imf_file = root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
+    # imf_file = root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
+    bafa_file = root_dir / 'data' / 'raw' / 'egas_aufkommen_export_1991.xlsm'
+    destatis_file = root_dir / 'data' / 'raw' / 'energiepreisentwicklung_5619001.xlsx'
+    eia_file = root_dir / 'data' / 'raw' / 'RBRTEm.xls'
     fx_file = root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
     co2_file = root_dir / 'data' / 'raw' / 'eua_price.csv'
 
@@ -242,11 +245,41 @@ def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb
         download_era_temp(ERA_DIR, filename, year, BBOX_CWE, cdsurl=cdsurl, cdskey=cdskey)
 
     # % download price data
+    """
     # IMF commodity price data
+    # as of February 2022, the IMF does not provide coal prices in USD anymore. 
+    # The platform is under maintenance, so coal prices might come back. 
+    # Therefore, code for IMF data is temporarily kept.
+    f'http://dataservices.imf.org/REST/SDMX_JSON.svc/CompactData/{database_ID}/{frequency}.{item1 from dimension1}+' \
+    f'{item2 from dimension1}+{item N from dimension1}.{item1 from dimension2}+{item2 from dimension2}+' \
+    f'{item M from dimension2}?startPeriod = {startdate} & endPeriod = {enddate}'
+
+    database_ID = 'PCPS'
+    frequency = 'M'  # monthly, also possible: Q - quarterly, D - daily, A - annual, W - weekly
+    item1 = 'POILBRE'  # Brent Crude
+    item2 = 'PCOALSA'  # COal South Africa
+    item3 = 'PNGASEU'  # Natural Gas European Union
+
     # url_imf = 'https://www.imf.org/~/media/Files/Research/CommodityPrices/Monthly/ExternalData.ashx'
-    url_imf = 'https://www.imf.org/-/media/Files/Research/CommodityPrices/Monthly/external-datadecember.ashx'
+    url_imf = 'https://www.imf.org/-/media/Files/Research/CommodityPrices/Monthly/external-datajanuary.ashx'
     logging.info(f'downloading monthly commodity prices from {url_imf}')
     download_file(url_imf, imf_file)
+    """
+    # BAFA data
+    url_ngas = 'https://www.bafa.de/SharedDocs/Downloads/DE/Energie/egas_aufkommen_export_1991.xlsm?__blob=publicationFile'
+    # destatis coal price index for Germany
+    url_coal = 'https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Publikationen/Energiepreise/energiepreisentwicklung-xlsx-5619001.xlsx?__blob=publicationFile'
+    # EIA oil prices
+    url_brent = 'https://www.eia.gov/dnav/pet/hist_xls/RBRTEm.xls'
+
+    logging.info(f'downloading monthly coal price index from {url_coal}')
+    download_file(url_coal, destatis_file)
+
+    logging.info(f'downloading monthly natural gas prices from {url_ngas}')
+    download_file(url_ngas, bafa_file)
+
+    logging.info(f'downloading monthly oil prices from {url_brent}')
+    download_file(url_brent, eia_file)
 
     # ECB foreign exchange data
     url_fx = 'https://sdw.ecb.europa.eu/quickviewexport.do?SERIES_KEY=120.EXR.D.USD.EUR.SP00.A&type=xls'
