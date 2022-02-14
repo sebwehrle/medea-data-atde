@@ -1,9 +1,9 @@
 # %% imports
-import os
+from pathlib import Path
 import logging.config
 from config import ROOT_DIR
 
-LOG_FILE = os.path.join(ROOT_DIR, '../data', 'logfile.log')
+LOG_FILE = Path(ROOT_DIR) / 'data' / 'logfile.log'
 
 
 def setup_logging(fname=LOG_FILE):
