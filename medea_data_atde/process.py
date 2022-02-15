@@ -88,10 +88,10 @@ def heat_day2hr(df_ht, con_day, con_pattern):
     cons_hourly.drop(cons_hourly.tail(1).index, inplace=True)
 
     for d in df_ht.index:
-        temp_lvl = np.floor(df_ht[d] / 5) * 5
+        temp_lvl = np.floor(df_ht.loc[d] / 5) * 5
         cons_hlpr = con_day.loc[d] * con_pattern.loc[temp_lvl]
         cons_hlpr = cons_hlpr[cons_hourly.columns]
-        cons_hlpr.index = d + pd.to_timedelta(cons_hlpr.index, unit='h')
+        cons_hlpr.index = d + pd.to_timedelta(cons_hlpr.index.astype('int'), unit='h')
         cons_hourly.loc[cons_hlpr.index] = cons_hlpr.astype(str).astype(float)
 
     cons_hourly = cons_hourly.astype(str).astype(float)
