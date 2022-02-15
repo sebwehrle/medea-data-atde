@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as readme_file:
 
 setup(
     name='medea_data_atde',
-    version='0.1',
+    version='0.1.0',
     author='Sebastian Wehrle',
     author_email='sebastian.wehrle@boku.ac.at',
     description='data processing for the medea power system model',
@@ -35,5 +35,6 @@ setup(
         ('raw', ['data/raw/transmission.csv']),
         ('raw', ['data/raw/external_cost.csv']),
         ('raw', ['data/raw/consumption_pattern.csv']),
-    ]
+    ],
+    include_package_data=True,
 )

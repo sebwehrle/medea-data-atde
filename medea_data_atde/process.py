@@ -1,5 +1,6 @@
 # %% imports
 import os
+import sysconfig
 from pathlib import Path
 import logging
 from medea_data_atde.logging_config import setup_logging
@@ -179,7 +180,6 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     fx_file = root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
     co2_file = root_dir / 'data' / 'raw' / 'eua_price.csv'
     enbal_at = root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
-    CONSUMPTION_PATTERN = root_dir / 'data' / 'raw' / 'consumption_pattern.csv'
     PPLANT_DB = root_dir / 'data' / 'raw' / 'conventional_power_plants_EU.csv'
 
     process_dir = root_dir / 'data' / 'processed'
@@ -187,6 +187,9 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     co2_price_file = process_dir / 'co2_price.csv'
     MEAN_TEMP_FILE = process_dir / 'temp_daily_mean.csv'
     heat_cons_file = process_dir / 'heat_hourly_consumption.csv'
+
+    package_dir = Path(sysconfig.get_path('data'))
+    CONSUMPTION_PATTERN = package_dir / 'raw' / 'consumption_pattern.csv'
 
     if not os.path.exists(process_dir):
         os.makedirs(process_dir)
