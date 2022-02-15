@@ -99,7 +99,7 @@ def heat_day2hr(df_ht, con_day, con_pattern):
 
 
 def mean_temp_at_plants(db_plants, era_dir, country, years, zones):
-    temp_date_range = pd.date_range(pd.datetime(years[0], 1, 1), pd.datetime(years[-1], 12, 31), freq='D')
+    temp_date_range = pd.date_range(f'{years[0]}/01/01', f'{years[-1]}/12/31', freq='D')
     daily_mean_temp = pd.DataFrame(index=temp_date_range.values, columns=[zones])
     for zne in zones:
         chp = db_plants[(db_plants['country'] == zne) & (db_plants['chp'] == 'yes')]
@@ -133,8 +133,7 @@ def mean_temp_at_plants(db_plants, era_dir, country, years, zones):
 
 def heat_consumption(zones, years, cons_annual, df_heat, cons_pattern):
     # ----------------------------------------------------------------------------
-    dayrange = pd.date_range(pd.datetime(np.min(df_heat['year']), 1, 1), pd.datetime(np.max(df_heat['year']), 12, 31),
-                             freq='D')
+    dayrange = pd.date_range(f'{np.min(df_heat["year"])}/01/01', f'{np.max(df_heat["year"])}/12/31', freq='D')
 
     # calculate heat consumption for each region
     # ----------------------------------------------------------------------------
@@ -198,7 +197,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     # df_imf = pd.read_excel(imf_file, index_col=[0], skiprows=[1, 2, 3])
     # df_imf.index = pd.to_datetime(df_imf.index, format='%YM%m')
     df_ngas = pd.read_excel(ngas_file)
-    p_ngas = pd.DataFrame(data=0, index=pd.date_range(start='1/1/2010', end='31/12/2021', freq='MS'), columns=['Preis'])
+    p_ngas = pd.DataFrame(data=0, index=pd.date_range(start='2010/01/01', end='2021/12/31', freq='MS'), columns=['Preis'])
     p_ngas.loc['2010', 'Preis'] = np.round(df_ngas.iloc[112:124, 2].astype('float') / 277.7777, 2).values
     p_ngas.loc['2011', 'Preis'] = np.round(df_ngas.iloc[81:93, 10].astype('float') / 277.7777, 2).values
     p_ngas.loc['2012', 'Preis'] = np.round(df_ngas.iloc[81:93, 8].astype('float') / 277.7777, 2).values
@@ -218,7 +217,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     df_coal = pd.read_excel(coal_file, sheet_name='5.1 Steinkohle und Braunkohle', index_col=[0],
                             skiprows=[0, 1, 2, 3, 4, 5])
     df_coal = df_coal.iloc[5:17, 0:12].stack().astype('float')
-    p_coal = pd.DataFrame(data=0, index=pd.date_range(start='1/1/2010', end='31/12/2021', freq='MS'), columns=['Preis'])
+    p_coal = pd.DataFrame(data=0, index=pd.date_range(start='2010/01/01', end='2021/12/31', freq='MS'), columns=['Preis'])
     p_coal.loc['2010':'2021', 'Preis'] = df_coal.values * 67.9 / 100  # Euro pro Tonne SKE
 
     df_fx = pd.read_csv(fx_file, index_col=[0], skiprows=[0, 2, 3, 4, 5], usecols=[1], na_values=['-']).astype('float')
