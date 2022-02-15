@@ -25,7 +25,8 @@ setup(
         'cdsapi',
         'urllib3',
         'pysftp',
-        'openpyxl'
+        'openpyxl',
+        'xlrd'
     ],
     data_files=[
         ('raw', ['data/raw/capacities.csv']),

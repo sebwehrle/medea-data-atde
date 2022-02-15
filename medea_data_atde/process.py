@@ -206,6 +206,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     p_ngas.loc['2021', 'Preis'] = np.round(df_ngas.iloc[10:22, 3].astype('float') / 277.7777, 2).values
 
     p_brent = pd.read_excel(brent_file, sheet_name='Data 1', index_col=[0], skiprows=[0, 1])
+    p_brent.index = p_brent.index.to_period('M').to_timestamp()
 
     df_coal = pd.read_excel(coal_file, sheet_name='5.1 Steinkohle und Braunkohle', index_col=[0],
                             skiprows=[0, 1, 2, 3, 4, 5])
@@ -217,9 +218,10 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     df_fx.index = pd.to_datetime(df_fx.index, format='%Y-%m-%d')
 
     # convert prices to EUR per MWh
-    df_prices_mwh = pd.DataFrame(index=p_brent.index, columns=['USD_EUR', 'Brent_UK', 'Coal_SA', 'NGas_DE'])
+    df_prices_mwh = pd.DataFrame(index=p_coal.index, columns=['USD_EUR', 'Brent_UK', 'Coal_SA', 'NGas_DE'])
     df_prices_mwh['USD_EUR'] = df_fx.resample('MS').mean()
-    df_prices_mwh['Brent_UK'] = p_brent['2010':'2021'] / df_prices_mwh['USD_EUR'] * 7.52 / 11.63
+    df_prices_mwh['Brent_UK'] = (p_brent.loc['2010':'2021', 'Europe Brent Spot Price FOB (Dollars per Barrel)'] /
+                                 df_prices_mwh['USD_EUR']) * 7.52 / 11.63
     df_prices_mwh['Coal_SA'] = p_coal / 8.141
     df_prices_mwh['NGas_DE'] = p_ngas  # df_imf['PNGASEU'] / df_prices_mwh['USD_EUR'] / 0.29307
     # drop rows with all nan
