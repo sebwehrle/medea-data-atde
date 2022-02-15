@@ -179,7 +179,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     fx_file = root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
     co2_file = root_dir / 'data' / 'raw' / 'eua_price.csv'
     enbal_at = root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
-    CONSUMPTION_PATTERN = root_dir / 'data' / 'raw' / 'consumption_pattern.xlsx'
+    CONSUMPTION_PATTERN = root_dir / 'data' / 'raw' / 'consumption_pattern.csv'
     PPLANT_DB = root_dir / 'data' / 'raw' / 'conventional_power_plants_EU.csv'
 
     process_dir = root_dir / 'data' / 'processed'
@@ -299,7 +299,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     df_heat['weekday'] = df_heat.index.strftime('%a')
     df_heat.fillna(method='pad', inplace=True)  # fill NA to prevent NAs in temperature smoothing below
 
-    cons_pattern = pd.read_excel(CONSUMPTION_PATTERN, 'consumption_pattern', index_col=[0, 1])
+    cons_pattern = pd.read_csv(CONSUMPTION_PATTERN, index_col=[0, 1])
     cons_pattern = cons_pattern.rename_axis('hour', axis=1)
     cons_pattern = cons_pattern.unstack('consumer').stack('hour')
 
