@@ -180,12 +180,16 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     co2_file = root_dir / 'data' / 'raw' / 'eua_price.csv'
     enbal_at = root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
     CONSUMPTION_PATTERN = root_dir / 'data' / 'raw' / 'consumption_pattern.xlsx'
-
-    fuel_price_file = root_dir / 'data' / 'processed' / 'monthly_fuel_prices.csv'
-    co2_price_file = root_dir / 'data' / 'processed' / 'co2_price.csv'
     PPLANT_DB = root_dir / 'data' / 'raw' / 'conventional_power_plants_EU.csv'
-    MEAN_TEMP_FILE = root_dir / 'data' / 'processed' / 'temp_daily_mean.csv'
-    heat_cons_file = root_dir / 'data' / 'processed' / 'heat_hourly_consumption.csv'
+
+    process_dir = root_dir / 'data' / 'processed'
+    fuel_price_file = process_dir / 'monthly_fuel_prices.csv'
+    co2_price_file = process_dir / 'co2_price.csv'
+    MEAN_TEMP_FILE = process_dir / 'temp_daily_mean.csv'
+    heat_cons_file = process_dir / 'heat_hourly_consumption.csv'
+
+    if not os.path.exists(process_dir):
+        os.makedirs(process_dir)
 
     # %% process PRICE data
     # df_imf = pd.read_excel(imf_file, index_col=[0], skiprows=[1, 2, 3])
