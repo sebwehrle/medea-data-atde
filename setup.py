@@ -34,5 +34,6 @@ setup(
         ('raw', ['data/raw/operating_region.csv']),
         ('raw', ['data/raw/transmission.csv']),
         ('raw', ['data/raw/external_cost.csv']),
+        ('raw', ['data/raw/consumption_pattern.csv']),
     ]
 )
