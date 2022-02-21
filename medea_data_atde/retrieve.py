@@ -1,5 +1,6 @@
 # %% imports
 import os
+import sysconfig
 import certifi
 import shutil
 import pysftp
@@ -15,6 +16,29 @@ from medea_data_atde.logging_config import setup_logging
 # ======================================================================================================================
 # %% sFTP data download
 # ----------------------------------------------------------------------------------------------------------------------
+def init_medea_data_atde(root_dir):
+    root_dir = Path(root_dir)
+    if not os.path.exists(root_dir):
+        os.makedirs(root_dir)
+    if not os.path.exists(root_dir / 'data'):
+        os.makedirs(root_dir / 'data')
+    if not os.path.exists(root_dir / 'data' / 'raw'):
+        os.makedirs(root_dir / 'data' / 'raw')
+    if not os.path.exists(root_dir / 'data' / 'processed'):
+        os.makedirs(root_dir / 'data' / 'processed')
+
+    # fetch main gams model
+    package_dir = Path(sysconfig.get_path('data'))
+    shutil.copyfile(package_dir / 'raw' / 'capacities.csv', root_dir / 'data' / 'raw' / 'capacities.csv')
+    shutil.copyfile(package_dir / 'raw' / 'technologies.csv', root_dir / 'data' / 'raw' / 'technologies.csv')
+    shutil.copyfile(package_dir / 'raw' / 'operating_region.csv', root_dir / 'data' / 'raw' / 'operating_region.csv')
+    shutil.copyfile(package_dir / 'raw' / 'transmission.csv', root_dir / 'data' / 'raw' / 'transmission.csv')
+    shutil.copyfile(package_dir / 'raw' / 'external_cost.csv', root_dir / 'data' / 'raw' / 'external_cost.csv')
+    shutil.copyfile(package_dir / 'raw' / 'consumption_pattern.csv',
+                    root_dir / 'data' / 'raw' / 'consumption_pattern.csv')
+    print('>medea data atde< sucessfully initialized')
+
+
 def get_entsoe(connection_string, user, pwd, category, directory):
     """
     downloads dataset from ENTSO-E's transparency data sftp server.
@@ -218,6 +242,7 @@ def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb
     :return:
     """
     setup_logging()
+    init_medea_data_atde(root_dir)
 
     # %% Settings
     # imf_file = root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
@@ -313,7 +338,27 @@ def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb
     ht_cols = pd.MultiIndex.from_product([zones, ['HE08', 'HM08', 'HG08', 'WW', 'IND']])
     ht_cons = pd.DataFrame(index=years, columns=ht_cols)
 
-    # European power plant fleet
+    # European power plant fleet (opsd)
     url_opsd = 'https://data.open-power-system-data.org/conventional_power_plants/latest/conventional_power_plants_EU.csv'
     opsd_plant = root_dir / 'data' / 'raw' / 'conventional_power_plants_EU.csv'
     download_file(url_opsd, opsd_plant)
+
+    # time series (opsd)
+    url_timeseries = 'https://data.open-power-system-data.org/time_series/latest/time_series_60min_singleindex.csv'
+    opsd_timeseries = root_dir / 'data' / 'raw' / 'time_series_60min_singleindex.csv'
+    download_file(url_timeseries, opsd_timeseries)
+
+    # offshore wind power capacities from MaStR
+    # TODO: load offshore wind power data from MaStR - via API?
+
+    # e-control Jahresreihen
+    url_jahresreihen = 'https://www.e-control.at/documents/1785851/1811609/BStGes-JR1_Bilanz.xlsx'
+    econtrol_jahresreihen = root_dir / 'data' / 'raw' / 'BStGes-JR1_Bilanz.xlsx'
+    download_file(url_jahresreihen, econtrol_jahresreihen)
+
+    # EE Jahresreihen DE
+    url_eejr = 'https://www.erneuerbare-energien.de/EE/Redaktion/DE/Downloads/' \
+                'zeitreihen-zur-entwicklung-der-erneuerbaren-energien-in-deutschland-1990-2020-excel-en.xlsx' \
+                '?__blob=publicationFile'
+    ee_jahresreihen = root_dir / 'data' / 'raw' / 'zeitreihen-ee-in-de-1990-2020-excel-en.xlsx'
+    download_file(url_eejr, ee_jahresreihen)

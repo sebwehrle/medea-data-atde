@@ -156,6 +156,296 @@ def heat_consumption(zones, years, cons_annual, df_heat, cons_pattern):
     return ht_consumption
 
 
+def compile_hydro_generation(root_dir, zones):
+    """
+    process hydro power generation time series from entso-e transparency platform
+    :param root_dir: Path() of project root directory
+    :param zones: list of model zones
+    :return:
+    """
+    dir_aggenpertype = root_dir / 'data' / 'raw' / 'AggregatedGenerationPerType_16.1.B_C'
+
+    df_ror = pd.DataFrame()
+    for file in os.listdir(dir_aggenpertype):
+        filename = os.fsdecode(file)
+        print(filename)
+        if filename.endswith('.csv'):
+            df_tmpfile = pd.DataFrame()
+            ts_agpt = pd.read_csv(dir_aggenpertype / filename, encoding='utf-8', sep='\t')
+            ts_agpt['DateTime'] = pd.to_datetime(ts_agpt['DateTime'])
+            ts_agpt.set_index('DateTime', inplace=True)
+            # splitstr = filename.split('_')
+            # time = pd.datetime(int(splitstr[0]), int(splitstr[1]), 1)
+
+            if any('ProductionType_Name' in s for s in ts_agpt.columns):
+                newcols = [col.replace('ProductionType_Name', 'ProductionType') for col in ts_agpt.columns]
+                ts_agpt.columns = newcols
+
+            for reg in zones:
+                df_tmpror = ts_agpt.loc[(ts_agpt['ProductionType'] == 'Hydro Run-of-river and poundage') & (
+                        ts_agpt['MapCode'] == reg), 'ActualGenerationOutput']
+                df_tmpres = ts_agpt.loc[(ts_agpt['ProductionType'] == 'Hydro Water Reservoir') & (
+                        ts_agpt['MapCode'] == reg), 'ActualGenerationOutput']
+                df_tmppspgen = ts_agpt.loc[(ts_agpt['ProductionType'] == 'Hydro Pumped Storage') & (
+                        ts_agpt['MapCode'] == reg), 'ActualGenerationOutput']
+                df_tmppspcon = ts_agpt.loc[(ts_agpt['ProductionType'] == 'Hydro Pumped Storage') & (
+                        ts_agpt['MapCode'] == reg), 'ActualConsumption']
+                df_tmpfile[f'ror_{reg}'] = df_tmpror.drop_duplicates()
+                df_tmpfile[f'res_{reg}'] = df_tmpres.drop_duplicates()
+                df_tmpfile[f'psp_gen_{reg}'] = df_tmppspgen.drop_duplicates()
+                df_tmpfile[f'psp_con_{reg}'] = df_tmppspcon.drop_duplicates()
+            df_ror = df_ror.append(df_tmpfile)
+            del df_tmpror, df_tmpfile
+
+    df_ror = df_ror.sort_index()
+
+    for reg in zones:
+        df_ror.loc[:, [f'ror_{reg}']] = df_ror.loc[:, [f'ror_{reg}']].interpolate('linear')
+    df_ror = df_ror.fillna(0)
+    # resample to hourly frequency
+    df_ror_hr = df_ror.resample('H').mean()
+    df_ror_hr = df_ror_hr.interpolate('linear')
+    df_ror_hr.to_csv(root_dir / 'data' / 'processed' / 'generation_hydro.csv')
+
+
+def compile_reservoir_filling(root_dir, zones):
+
+    resfill_dir = root_dir / 'data' / 'raw' / 'AggregatedFillingRateOfWaterReservoirsAndHydroStoragePlants_16.1.D'
+
+    df_resfill = pd.DataFrame()
+    for file in os.listdir(resfill_dir):
+        filename = os.fsdecode(file)
+        print(filename)
+        if filename.endswith('.csv'):
+            # read data
+            df_fill = pd.read_csv(resfill_dir / filename, sep='\t', encoding='utf-8')
+            df_fill.index = pd.DatetimeIndex(df_fill['DateTime'])
+            df_fillreg = pd.DataFrame(columns=zones)
+            for reg in zones:
+                df_fillreg[f'{reg}'] = df_fill.loc[df_fill['MapCode'] == reg, 'StoredEnergy'].drop_duplicates()
+
+            df_resfill = df_resfill.append(df_fillreg)
+
+    df_resfill = df_resfill.sort_index()
+
+    # eliminate data errors for Austrian reservoirs filled below 200000
+    df_resfill.loc[df_resfill['AT'] < 200000, 'AT'] = None
+    df_resfill = df_resfill.interpolate(method='pchip')
+
+    df_resfill.to_csv(root_dir / 'data' / 'processed' / 'reservoir_filling.csv')
+
+
+def process_profiles(root_dir, zones, eta=0.9):
+    idx = pd.IndexSlice
+    caps = pd.read_csv(root_dir / 'data' / 'raw' / 'capacities.csv', index_col=[0, 1, 2, 3])
+    itm_caps = caps.loc[pd.IndexSlice['Installed Capacity Out', zones, :, ['pv', 'ror', 'wind_off', 'wind_on']], 'el']
+    itm_caps.index = itm_caps.index.droplevel(0)
+    itm_caps = itm_caps.unstack([0, 2])
+    itm_caps.index = pd.to_datetime(itm_caps.index.values + 1, format='%Y', utc='true') - pd.Timedelta(days=184)
+
+    ts_opsd = pd.read_csv(root_dir / 'data' / 'raw' / 'time_series_60min_singleindex.csv', index_col=0)
+    ts_opsd.index = pd.DatetimeIndex(ts_opsd.index).tz_convert('utc')
+    ts = pd.DataFrame(index=ts_opsd.index)
+
+    # historical pv capacity and generation in GW(h)
+    for reg in zones:
+        ts[(reg, 'pv-gen')] = ts_opsd[f'{reg}_solar_generation_actual'] / 1000
+        if ts_opsd.columns.str.contains(f'{reg}_solar_capacity').any():
+            ts[(reg, 'pv-cap')] = ts_opsd[f'{reg}_solar_capacity'] / 1000
+        else:
+            ts[(reg, 'pv-cap')] = itm_caps.loc[:, idx[reg, 'pv']]
+            ts[(reg, 'pv-cap')] = ts[(reg, 'pv-cap')].interpolate()
+
+    # historical wind onshore capacity and generation
+    for reg in zones:
+        ts[(reg, 'wind_on-gen')] = ts_opsd[f'{reg}_wind_onshore_generation_actual'] / 1000
+        if ts_opsd.columns.str.contains(f'{reg}_solar_capacity').any():
+            ts[(reg, 'wind_on-cap')] = ts_opsd[f'{reg}_wind_onshore_capacity'] / 1000
+        else:
+            ts[(reg, 'wind_on-cap')] = itm_caps.loc[:, idx[reg, 'wind_on']]
+            ts[(reg, 'wind_on-cap')] = ts[(reg, 'wind_on-cap')].interpolate()
+
+    # historical wind offshore capacity and generation
+    for reg in zones:
+        if ts_opsd.columns.str.contains(f'{reg}_wind_offshore_generation_actual').any():
+            ts[(reg, 'wind_off-gen')] = ts_opsd[f'{reg}_wind_offshore_generation_actual'] / 1000
+        else:
+            ts[(reg, 'wind_off-gen')] = 0
+        if ts_opsd.columns.str.contains(f'{reg}_wind_offshore_capacity').any():
+            ts[(reg, 'wind_off-cap')] = ts_opsd[f'{reg}_wind_offshore_capacity'] / 1000
+        else:
+            ts[(reg, 'wind_off-cap')] = 0
+
+    # historical run-of-river capacity and generation
+    ts_hydro_generation = pd.read_csv(root_dir / 'data' / 'processed' / 'generation_hydro.csv', index_col=[0])
+    ts_hydro_generation.index = pd.DatetimeIndex(ts_hydro_generation.index).tz_localize('utc')
+
+    for reg in zones:
+        ts[(reg, 'ror-gen')] = ts_hydro_generation[f'ror_{reg}'] / 1000
+        ts[(reg, 'ror-cap')] = itm_caps.loc[:, idx[reg, 'ror']]
+        ts[(reg, 'ror-cap')] = ts[(reg, 'ror-cap')].interpolate()
+
+    ts[('DE', 'hydro-gen')] = ts_hydro_generation[['ror_DE', 'res_DE']].sum(axis=1) / 1000 + \
+                              0.186 * ts_hydro_generation['psp_gen_DE'] / 1000
+    # German pumped storages with natural inflows (18.6 % of installed PSP capacity, according to
+    # https://www.fwt.fichtner.de/userfiles/fileadmin-fwt/Publikationen/WaWi_2017_10_Heimerl_Kohler_PSKW.pdf) are included
+    # in official hydropower generation numbers.
+
+    # historical electricity load
+    for reg in zones:
+        ts[(reg, 'power-load')] = ts_opsd[f'{reg}_load_actual_entsoe_transparency'] / 1000
+
+    # convert to multiindex
+    ts.columns = pd.MultiIndex.from_tuples(ts.columns)
+    # calculate scaling factor to match energy balances
+    # ---
+    # scaling factor for Austria
+    cols = ['pv', 'wind_on', 'wind_off', 'ror', 'store', 'load']
+    first_year = max(ts.index.year.min(), 2015)
+    last_year = min(ts.index.year.max(), 2022)
+    scale_index = pd.MultiIndex.from_product([cols, [str(yr) for yr in range(first_year, last_year)]])
+    scaling_factor = pd.DataFrame(data=1, columns=zones, index=scale_index)
+
+    nbal_at = {}
+    nbal_at['cons'] = pd.read_excel(root_dir / 'data' / 'raw' / 'enbal_AT.xlsx', sheet_name='Elektrische Energie',
+                                    header=196, index_col=[0], nrows=190, na_values=['-']).astype('float').dropna(
+        axis=0, how='all')
+    nbal_at['pv'] = pd.read_excel(root_dir / 'data' / 'raw' / 'enbal_AT.xlsx', sheet_name='Photovoltaik',
+                                  header=196, index_col=[0], nrows=1, na_values=['-']).astype('float').dropna(axis=1)
+    nbal_at['wind_on'] = pd.read_excel(root_dir / 'data' / 'raw' / 'enbal_AT.xlsx', sheet_name='Wind',
+                                       header=196, index_col=[0], nrows=1, na_values=['-']).astype('float').dropna(
+        axis=1)
+    nbal_at['hydro_eca'] = pd.read_excel(root_dir / 'data' / 'raw' / 'BStGes-JR1_Bilanz.xlsx', sheet_name='Erz',
+                                         header=[8, 9], index_col=[0], nrows=37)
+    nbal_at['pump_eca'] = pd.read_excel(root_dir / 'data' / 'raw' / 'BStGes-JR1_Bilanz.xlsx', sheet_name='Bil',
+                                        header=[7, 8], index_col=[0], nrows=37, na_values=['', ' '])
+    nbal_at['hydro_eca'].replace(to_replace='-', value=np.nan, inplace=True)
+    nbal_at['hydro'] = nbal_at['cons'].loc['aus Wasserkraft', :].sum()
+
+    for year in range(first_year, last_year):
+        if ts.loc[str(year), idx['AT', 'pv-gen']].sum() > 0:
+            scaling_factor.loc[idx['pv', str(year)], 'AT'] = (nbal_at['pv'].loc[:, year].values / 1000) / \
+                                                             ts.loc[str(year), idx['AT', 'pv-gen']].sum()
+        if ts.loc[str(year), idx['AT', 'wind_on-gen']].sum() > 0:
+            scaling_factor.loc[idx['wind_on', str(year)], 'AT'] = (nbal_at['wind_on'].loc[:, year].values / 1000) / \
+                                                                  ts.loc[str(year), idx['AT', 'wind_on-gen']].sum()
+        if ts.loc[str(year), idx['AT', 'ror-gen']].sum() > 0:
+            scaling_factor.loc[idx['ror', str(year)], 'AT'] = \
+                nbal_at['hydro_eca'].loc[year, ('Laufkraft\nwerke', 'GWh')] * (nbal_at['hydro'][year] / 1000) / \
+                nbal_at['hydro_eca'].loc[year, ('Summe\nWasser\nkraft', 'GWh')] / \
+                ts.loc[str(year), idx['AT', 'ror-gen']].sum()
+
+        if ts_hydro_generation.loc[str(year), ['res_AT', 'psp_gen_AT']].sum().sum() > 0:
+            scaling_factor.loc[idx['store', str(year)], 'AT'] = \
+                nbal_at['hydro_eca'].loc[year, ('Speicher\nkraftwerke', 'GWh')] * (nbal_at['hydro'][year] / 1000) / \
+                nbal_at['hydro_eca'].loc[year, ('Summe\nWasser\nkraft', 'GWh')] / \
+                (ts_hydro_generation.loc[str(year), ['res_AT', 'psp_gen_AT']].sum().sum() / 1000)
+
+        if ts.loc[str(year), idx['AT', 'power-load']].sum() > 0:
+            scaling_factor.loc[idx['load', str(year)], 'AT'] = \
+                nbal_at['cons'].loc[['Energetischer Endverbrauch', 'Transportverluste'], year].sum() / 1000 / \
+                ts.loc[str(year), idx['AT', 'power-load']].sum()
+
+    # scaling factor for Germany
+    res_de = pd.read_excel(root_dir / 'data' / 'raw' / 'zeitreihen-ee-in-de-1990-2020-excel-en.xlsx',
+                           sheet_name='3', header=[7], index_col=[0], nrows=13)
+
+    # get rid of "Unnamed..." columns and set year as column name
+    res_de_clean = res_de.filter(regex=r'^\d+', axis=1)
+    res_de_clean_cols = res_de_clean.columns
+    res_de_clean.columns = [str(x.year) for x in res_de_clean_cols]
+    res_de = res_de_clean
+
+    nbal_de_el = pd.read_csv(root_dir / 'data' / 'processed' / 'enbal_DE_el.csv', index_col=[0], sep=';')
+
+    for year in range(first_year, last_year):
+        if ts.loc[str(year), idx['DE', 'pv-gen']].sum() > 0:
+            scaling_factor.loc[idx['pv', str(year)], 'DE'] = \
+                res_de.loc['Solar Photovoltaic', str(year)] / ts.loc[str(year), idx['DE', 'pv-gen']].sum()
+
+        if ts.loc[str(year), idx['DE', 'wind_on-gen']].sum() > 0:
+            scaling_factor.loc[idx['wind_on', str(year)], 'DE'] = \
+                res_de.loc['Wind energy onshore', str(year)] / ts.loc[str(year), idx['DE', 'wind_on-gen']].sum()
+
+        if ts.loc[str(year), idx['DE', 'wind_off-gen']].sum() > 0:
+            scaling_factor.loc[idx['wind_off', str(year)], 'DE'] = \
+                res_de.loc['Wind energy offshore', str(year)] / ts.loc[str(year), idx['DE', 'wind_off-gen']].sum()
+
+        if ts.loc[str(year), idx['DE', 'hydro-gen']].sum() > 0:
+            scaling_factor.loc[idx['ror', str(year)], 'DE'] = \
+                res_de.loc['Hydropower 1)', str(year)] / \
+                ts.loc[str(year), idx['DE', 'hydro-gen']].sum()
+
+        if ts.loc[str(year), idx['DE', 'power-load']].sum() > 0:
+            scaling_factor.loc[idx['load', str(year)], 'DE'] = \
+                nbal_de_el.loc[['ENDENERGIEVERBRAUCH', 'Fackel- u. Leitungsverluste'], str(year)].sum() / \
+                ts.loc[str(year), idx['DE', 'power-load']].sum()
+
+    # generate scaled generation profiles and electric load
+    intermittents = ['pv', 'wind_on', 'wind_off', 'ror']
+    for reg in zones:
+        for yr in range(first_year, last_year):
+            ts.loc[str(yr), idx[f'{reg}', 'power-load']] = ts.loc[str(yr), idx[f'{reg}', 'power-load']] * \
+                                                           scaling_factor.loc[idx['load', str(yr)], reg]
+
+            for itm in intermittents:
+                ts[idx[f'{reg}', f'{itm}-profile']] = 0
+                if scaling_factor.loc[idx[itm, str(yr)], reg] < 2:
+                    ts.loc[str(yr), idx[f'{reg}', f'{itm}-profile']] = ts.loc[str(yr), idx[f'{reg}', f'{itm}-gen']] / \
+                                                                       ts.loc[str(yr), idx[f'{reg}', f'{itm}-cap']] * \
+                                                                       scaling_factor.loc[idx[itm, str(yr)], reg]
+                else:
+                    ts.loc[str(yr), idx[f'{reg}', f'{itm}-profile']] = ts.loc[str(yr), idx[f'{reg}', f'{itm}-gen']] / \
+                                                                       ts.loc[str(yr), idx[f'{reg}', f'{itm}-cap']]
+
+    # ----- approximate reservoir inflows -----
+    # hourly reservoir filling levels
+    df_hydro_fill = pd.read_csv(root_dir / 'data' / 'processed' / 'reservoir_filling.csv', index_col=[0])
+    df_hydro_fill.index = pd.DatetimeIndex(df_hydro_fill.index).tz_localize('utc')
+    """
+    # resample storage fill to hourly frequency
+    ts_hydro_fill = pd.DataFrame(
+        index=pd.date_range(f'{df_hydro_fill.head(1).index.year[0]}/01/01-00:00',
+                            f'{df_hydro_fill.tail(1).index.year[0]}/12/31-23:00', freq='h', tz='utc'), columns=zones)
+    ts_hydro_fill.update(df_hydro_fill[zones].resample('H').interpolate(method='pchip'))
+    ts_hydro_fill = ts_hydro_fill.fillna(method='pad')
+    ts_hydro_fill = ts_hydro_fill.fillna(method='bfill')
+    for reg in zones:
+        ts[(f'{reg}', 'fill-reservoir-entsoe')] = ts_hydro_fill.loc[:, reg] / df_hydro_fill[reg].max()
+    """
+    # reservoir inflows
+    inflows = pd.DataFrame(columns=zones)
+    for reg in zones:
+        # upsample turbining and pumping to fill rate times and calculate balance at time of fill readings
+        inflows[reg] = (df_hydro_fill[reg] - df_hydro_fill[reg].shift(periods=-1) -
+                        ts_hydro_generation[f'psp_con_{reg}'].resample('W-MON').sum() * eta +
+                        ts_hydro_generation[f'psp_gen_{reg}'].resample('W-MON').sum() / eta +
+                        ts_hydro_generation[f'res_{reg}'].resample('W-MON').sum() / eta ) / 1000 / 168
+        # shift inflow estimate up to avoid negative inflows
+        if inflows[reg].min() < 0:
+            inflows[reg] = inflows[reg] - inflows[reg].min() * 1.1
+        # upsample inflows
+        inflows = inflows.resample('H').interpolate(method='pchip')
+
+    # inflow correction factor
+    inflows_nbal = (nbal_at['hydro_eca'][('Speicher\nkraftwerke', 'GWh')] / eta -
+                    nbal_at['pump_eca'][('Verbrauch\nfür Pump\nspeicher', 'GWh')] * eta) * \
+                   (nbal_at['hydro_eca'][('Summe\nWasser\nkraft', 'GWh')] / (nbal_at['hydro'] / 1000))
+    inflows_annual = inflows.resample('Y').sum()
+    inflows_annual.index = inflows_annual.index.year
+    # scale inflows
+    for yr in range(first_year, last_year):
+        inflows.loc[str(yr)] = inflows.loc[str(yr)] * inflows_nbal.loc[yr] / inflows_annual.loc[yr, 'AT']
+
+    ts.loc[:, idx['AT', 'reservoir-inflows']] = inflows['AT']
+    ts.loc[ts.loc[:, idx['AT', 'reservoir-inflows']] < 0, idx['AT', 'reservoir-inflows']] = 0
+
+    # save data
+    profile_file = root_dir / 'data' / 'processed' / 'profiles_inflows_load.csv'
+    ts.to_csv(profile_file, sep=';', decimal=',')
+    logging.info(f'Renewables profiles, inflows and load processed and saved to {profile_file}')
+
+
 def do_processing(root_dir, country, years, zones, url_ageb_bal):
     """
     processes data stored in root_dir/data/raw and saves it to root_dir/data/processed. Intended for use with power
@@ -169,7 +459,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     """
     setup_logging()
 
-    # %% file paths
+    # file paths
     root_dir = Path(root_dir)
     ERA_DIR = root_dir / 'data' / 'raw' / 'era5'
     # imf_file = root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
@@ -180,12 +470,14 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     co2_file = root_dir / 'data' / 'raw' / 'eua_price.csv'
     enbal_at = root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
     PPLANT_DB = root_dir / 'data' / 'raw' / 'conventional_power_plants_EU.csv'
+    opsd_timeseries = root_dir / 'data' / 'raw' / 'time_series_60min_singleindex.csv'
 
     process_dir = root_dir / 'data' / 'processed'
     fuel_price_file = process_dir / 'monthly_fuel_prices.csv'
     co2_price_file = process_dir / 'co2_price.csv'
     MEAN_TEMP_FILE = process_dir / 'temp_daily_mean.csv'
     heat_cons_file = process_dir / 'heat_hourly_consumption.csv'
+    profile_file = process_dir / 'profiles_inflows_load.csv'
 
     package_dir = Path(sysconfig.get_path('data'))
     CONSUMPTION_PATTERN = package_dir / 'raw' / 'consumption_pattern.csv'
@@ -193,7 +485,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     if not os.path.exists(process_dir):
         os.makedirs(process_dir)
 
-    # %% process PRICE data
+    # process PRICE data
     # df_imf = pd.read_excel(imf_file, index_col=[0], skiprows=[1, 2, 3])
     # df_imf.index = pd.to_datetime(df_imf.index, format='%YM%m')
     df_ngas = pd.read_excel(ngas_file)
@@ -241,14 +533,14 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     df_price_co2['Settle'].to_csv(co2_price_file)
     logging.info(f'CO2 prices processed and saved to {co2_price_file}')
 
-    # %% process temperature data
+    # process temperature data
     # get coordinates of co-gen plants
     db_plants = pd.read_csv(PPLANT_DB)
     daily_mean_temp = mean_temp_at_plants(db_plants, ERA_DIR, country, years, zones)
     daily_mean_temp.to_csv(MEAN_TEMP_FILE)
     logging.info(f'Temperatures processed and saved to {MEAN_TEMP_FILE}')
 
-    # %% process HEAT LOAD
+    # process HEAT LOAD
     # process German energy balances
     ht_enduse_de = pd.DataFrame()
     for yr in [x - 2000 for x in years]:
@@ -308,4 +600,10 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     ht_consumption = heat_consumption(zones, years, ht_cons, df_heat, cons_pattern)
     ht_consumption.to_csv(heat_cons_file)
     logging.info(f'exported hourly heat demand to {heat_cons_file}')
+
+    # process time series data
+    # legacy code: d:/git_repos/medea_data_atde_local/src/compile/compile_timeseries.py
+    process_profiles(root_dir, zones, eta=0.9)
+
+    # TODO: compile all time series in one file
 

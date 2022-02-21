@@ -1,4 +1,6 @@
 # %% imports
+from pathlib import Path
+import sysconfig
 import pandas as pd
 import numpy as np
 from medea_data_atde.retrieve import hours_in_year
@@ -19,12 +21,12 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
     :return:
     """
     idx = pd.IndexSlice
-    raw_data = root_dir / 'data' / 'raw'
+    package_dir = Path(sysconfig.get_path('data'))
     technologies = {
-        'capacity': pd.read_csv(raw_data / 'capacities.csv'),
-        'capacity_transmission': pd.read_csv(raw_data / 'transmission.csv', index_col=[0, 1]),
-        'technology': pd.read_csv(raw_data / 'technologies.csv').dropna(axis=0, how='all'),
-        'operating_region': pd.read_csv(raw_data / 'operating_region.csv', index_col=[0, 1, 2]),
+        'capacity': pd.read_csv(package_dir / 'raw' / 'capacities.csv'),
+        'capacity_transmission': pd.read_csv(package_dir / 'raw' / 'transmission.csv', index_col=[0, 1]),
+        'technology': pd.read_csv(package_dir / 'raw' / 'technologies.csv').dropna(axis=0, how='all'),
+        'operating_region': pd.read_csv(package_dir / 'raw' / 'operating_region.csv', index_col=[0, 1, 2]),
         'mappings': []
     }
 
@@ -34,7 +36,7 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
 
     estimates = {
         ##        'ESTIMATES': pd.read_excel(tech_data, 'ESTIMATES', index_col=[0]),
-        'external_cost': pd.read_csv(raw_data / 'external_cost.csv', index_col=[0]),
+        'external_cost': pd.read_csv(package_dir / 'raw' / 'external_cost.csv', index_col=[0]),
         #        'AIR_POLLUTION': pd.read_excel(tech_data, 'AIR_POLLUTION', index_col=[0]),
         #        'CO2_INTENSITY': pd.read_excel(tech_data, 'CO2_INTENSITY', index_col=[0]),
         #        'COST_TRANSPORT': pd.read_excel(tech_data, 'COST_TRANSPORT', index_col=[0]),
