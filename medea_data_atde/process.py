@@ -619,4 +619,5 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     #tsx = tsx.merge(ht_consumption.groupby(axis=1, level=0).sum(), left_index=True, right_index=True, how='outer')
     tsx = tsx.tz_localize('UTC')
     tsx = tsx.merge(ts, left_index=True, right_index=True, how='outer')
-    tsx.to_csv(ts_file, sep=';', decimal=',')
+    tsx.to_csv(ts_file)
+    logging.info('data fully processed')
