@@ -483,6 +483,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     co2_price_file = process_dir / 'co2_price.csv'
     MEAN_TEMP_FILE = process_dir / 'temp_daily_mean.csv'
     heat_cons_file = process_dir / 'heat_hourly_consumption.csv'
+    ts_file = process_dir / 'time_series.csv'
 
     package_dir = Path(sysconfig.get_path('data'))
     CONSUMPTION_PATTERN = package_dir / 'raw' / 'consumption_pattern.csv'
@@ -618,5 +619,4 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     #tsx = tsx.merge(ht_consumption.groupby(axis=1, level=0).sum(), left_index=True, right_index=True, how='outer')
     tsx = tsx.tz_localize('UTC')
     tsx = tsx.merge(ts, left_index=True, right_index=True, how='outer')
-    return tsx
-
+    tsx.to_csv(ts_file, sep=';', decimal=',')
