@@ -536,7 +536,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
 
     df_price_co2 = pd.read_csv(co2_file, index_col=[0])
     df_price_co2.index = pd.to_datetime(df_price_co2.index, format='%Y-%m-%d')
-    df_price_co2.rename(columns={'Settle': 'EUA'})
+    df_price_co2 = df_price_co2.rename(columns={'Settle': 'EUA'})
     df_price_co2['EUA'].to_csv(co2_price_file)
     logging.info(f'CO2 prices processed and saved to {co2_price_file}')
 
