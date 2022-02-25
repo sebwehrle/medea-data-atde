@@ -615,7 +615,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
 
     tsx = ht_consumption.groupby(axis=1, level=0).sum().merge(df_prices_mwh.resample('H').interpolate('pchip'),
                                                               left_index=True, right_index=True, how='outer')
-    tsx = tsx.merge(df_price_co2['Settle'].resample('H').interpolate('pchip'),
+    tsx = tsx.merge(df_price_co2['EUA'].resample('H').interpolate('pchip'),
                     left_index=True, right_index=True, how='outer')
     #tsx = tsx.merge(ht_consumption.groupby(axis=1, level=0).sum(), left_index=True, right_index=True, how='outer')
     tsx = tsx.tz_localize('UTC')
