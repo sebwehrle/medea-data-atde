@@ -524,10 +524,10 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     # convert prices to EUR per MWh
     df_prices_mwh = pd.DataFrame(index=p_coal.index, columns=['USD_EUR', 'Brent_UK', 'Coal_SA', 'NGas_DE'])
     df_prices_mwh['USD_EUR'] = df_fx.resample('MS').mean()
-    df_prices_mwh['Brent_UK'] = (p_brent.loc['2010':'2021', 'Europe Brent Spot Price FOB (Dollars per Barrel)'] /
+    df_prices_mwh['Oil'] = (p_brent.loc['2010':'2021', 'Europe Brent Spot Price FOB (Dollars per Barrel)'] /
                                  df_prices_mwh['USD_EUR']) * 7.52 / 11.63
-    df_prices_mwh['Coal_SA'] = p_coal / 8.141
-    df_prices_mwh['NGas_DE'] = p_ngas  # df_imf['PNGASEU'] / df_prices_mwh['USD_EUR'] / 0.29307
+    df_prices_mwh['Coal'] = p_coal / 8.141
+    df_prices_mwh['Gas'] = p_ngas  # df_imf['PNGASEU'] / df_prices_mwh['USD_EUR'] / 0.29307
     # drop rows with all nan
     df_prices_mwh.dropna(how='all', inplace=True)
 
@@ -536,7 +536,8 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
 
     df_price_co2 = pd.read_csv(co2_file, index_col=[0])
     df_price_co2.index = pd.to_datetime(df_price_co2.index, format='%Y-%m-%d')
-    df_price_co2['Settle'].to_csv(co2_price_file)
+    df_price_co2.rename(columns={'Settle': 'EUA'})
+    df_price_co2['EUA'].to_csv(co2_price_file)
     logging.info(f'CO2 prices processed and saved to {co2_price_file}')
 
     # process temperature data
