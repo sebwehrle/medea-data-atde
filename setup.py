@@ -35,6 +35,7 @@ setup(
         ('raw', ['data/raw/transmission.csv']),
         ('raw', ['data/raw/external_cost.csv']),
         ('raw', ['data/raw/consumption_pattern.csv']),
+        ('raw', ['data/raw/point_estimates.csv']),
         ('raw', ['data/raw/price_nonmarket_fuels.csv']),
     ],
     include_package_data=True,
