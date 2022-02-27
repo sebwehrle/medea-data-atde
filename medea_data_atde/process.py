@@ -256,7 +256,15 @@ def process_profiles(root_dir, zones, eta=0.9):
 
     ts_opsd = pd.read_csv(opsd_timeseries, index_col=0)
     ts_opsd.index = pd.DatetimeIndex(ts_opsd.index).tz_convert('utc')
+    ts_opsd = ts_opsd.rename(columns={'DE_LU_price_day_ahead': 'DE_price_day_ahead'})
     ts = pd.DataFrame(index=ts_opsd.index)
+
+    # historical day ahead prices
+    for reg in zones:
+        if ts_opsd.columns.str.contains(f'{reg}_price_day_ahead').any():
+            ts[f'{reg}-price-day_ahead'] = ts_opsd[f'{reg}_price_day_ahead']
+        else:
+            ts[f'{reg}-price-day_ahead'] = np.nan
 
     # historical pv capacity and generation in GW(h)
     for reg in zones:
@@ -444,8 +452,9 @@ def process_profiles(root_dir, zones, eta=0.9):
     for yr in range(first_year, last_year):
         inflows.loc[str(yr)] = inflows.loc[str(yr)] * inflows_nbal.loc[yr] / inflows_annual.loc[yr, 'AT']
 
-    ts.loc[:, 'AT-reservoir-inflows'] = inflows['AT']
-    ts.loc[ts.loc[:, 'AT-reservoir-inflows'] < 0, 'AT-reservoir-inflows'] = 0
+    for reg in zones:
+        ts.loc[:, f'{reg}-reservoir-inflows'] = inflows[reg]
+        ts.loc[ts.loc[:, f'{reg}-reservoir-inflows'] < 0, f'{reg}-reservoir-inflows'] = 0
 
     # save data
     ts.to_csv(profile_file, sep=';', decimal=',')
@@ -522,7 +531,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     df_fx.index = pd.to_datetime(df_fx.index, format='%Y-%m-%d')
 
     # convert prices to EUR per MWh
-    df_prices_mwh = pd.DataFrame(index=p_coal.index, columns=['USD_EUR', 'Brent_UK', 'Coal_SA', 'NGas_DE'])
+    df_prices_mwh = pd.DataFrame(index=p_coal.index, columns=['USD_EUR', 'Oil', 'Coal', 'Gas'])
     df_prices_mwh['USD_EUR'] = df_fx.resample('MS').mean()
     df_prices_mwh['Oil'] = (p_brent.loc['2010':'2021', 'Europe Brent Spot Price FOB (Dollars per Barrel)'] /
                                  df_prices_mwh['USD_EUR']) * 7.52 / 11.63
@@ -615,10 +624,11 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
 
     tsx = ht_consumption.groupby(axis=1, level=0).sum().merge(df_prices_mwh.resample('H').interpolate('pchip'),
                                                               left_index=True, right_index=True, how='outer')
+    tsx = tsx.rename(columns={'AT': 'AT-heat-load', 'DE': 'DE-heat-load'})
     tsx = tsx.merge(df_price_co2['EUA'].resample('H').interpolate('pchip'),
                     left_index=True, right_index=True, how='outer')
     #tsx = tsx.merge(ht_consumption.groupby(axis=1, level=0).sum(), left_index=True, right_index=True, how='outer')
     tsx = tsx.tz_localize('UTC')
     tsx = tsx.merge(ts, left_index=True, right_index=True, how='outer')
     tsx.to_csv(ts_file)
-    logging.info('data fully processed')
+    logging.info('data processing completed')
