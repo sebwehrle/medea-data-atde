@@ -58,29 +58,29 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
     # create SETS
     # --------------------------------------------------------------------------- #
     sets = {
-        'e': {carrier: [True] for carrier in np.unique(technologies['technology'][['fuel', 'primary_product']])},
+        'e': [carrier for carrier in np.unique(technologies['technology'][['fuel', 'primary_product']])],
         # all energy carriers
-        'i': {input: [True] for input in technologies['technology']['fuel'].unique()},  # energy inputs
-        'f': {final: [True] for final in technologies['technology']['primary_product'].unique()},  # final energy
-        't': {tec: [True] for tec in technologies['technology'].index.unique()},  # technologies
-        'c': {chp: [True] for chp in technologies['operating_region'].index.get_level_values(0).unique()},
+        'i': [input for input in technologies['technology']['fuel'].unique()],  # energy inputs
+        'f': [final for final in technologies['technology']['primary_product'].unique()],  # final energy
+        't': [tec for tec in technologies['technology'].index.unique()],  # technologies
+        'c': [chp for chp in technologies['operating_region'].index.get_level_values(0).unique()],
         # co-generation technologies
-        'd': {plant: [True] for plant in technologies['technology'].loc[
-            technologies['technology']['conventional'] == 1].index.unique()},  # dispatchable technologies
-        'r': {intmit: [True] for intmit in technologies['technology'].loc[
-            technologies['technology']['intermittent'] == 1].index.unique()},  # intermittent technologies
-        's': {storage: [True] for storage in technologies['technology'].loc[
-            technologies['technology']['storage'] == 1].index.unique()},  # storage technologies
-        'g': {transmit: [True] for transmit in technologies['technology'].loc[
-            technologies['technology']['transmission'] == 1].index.unique()},  # transmission technologies
-        'l': {f'l{x}': [True] for x in range(1, 5)},  # feasible operating regions
-        'h': {f'h{hour}': [True] for hour in range(1, hours_in_year(year) + 1)},  # time steps / hours
-        'z': {zone: [True] for zone in zones}  # market zones
+        'd': [plant for plant in technologies['technology'].loc[
+            technologies['technology']['conventional'] == 1].index.unique()],  # dispatchable technologies
+        'r': [intmit for intmit in technologies['technology'].loc[
+            technologies['technology']['intermittent'] == 1].index.unique()],  # intermittent technologies
+        's': [storage for storage in technologies['technology'].loc[
+            technologies['technology']['storage'] == 1].index.unique()],  # storage technologies
+        'g': [transmit for transmit in technologies['technology'].loc[
+            technologies['technology']['transmission'] == 1].index.unique()],  # transmission technologies
+        'l': [f'l{x}' for x in range(1, 5)],  # feasible operating regions
+        'h': [f'h{hour}' for hour in range(1, hours_in_year(year) + 1)],  # time steps / hours
+        'z': [zone for zone in zones]  # market zones
     }
 
     # convert set-dictionaries to DataFrames
     for key, value in sets.items():
-        sets.update({key: pd.DataFrame.from_dict(sets[key], orient='index', columns=['Value'])})
+        sets.update({key: pd.DataFrame(data=sets[key], columns=['uni_0'])})
 
     # create PARAMETERS
     # --------------------------------------------------------------------------- #
@@ -118,20 +118,6 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
     # date-time conversion and selection
     ts_data['zonal'] = date2set_index(ts_data['zonal'], year)
     ts_data['timeseries'] = date2set_index(ts_data['timeseries'], year)
-
-    """
-    ts_data['zonal']['DateTime'] = pd.to_datetime(ts_data['zonal'].index)
-    ts_data['zonal'].set_index('DateTime', inplace=True)
-    # constrain data to scenario year
-    ts_data['zonal'] = ts_data['zonal'].loc[
-        (pd.Timestamp(year, 1, 1, 0, 0).tz_localize('UTC') <= ts_data['zonal'].index) &
-        (ts_data['zonal'].index <= pd.Timestamp(year, 12, 31, 23, 0).tz_localize('UTC'))]
-    # drop index and set index of df_time instead
-    if len(ts_data['zonal']) == len(sets['h']):
-        ts_data['zonal'].set_index(sets['h'].index, inplace=True)
-    else:
-        raise ValueError('Mismatch of time series data and model time resolution. Is year wrong?')
-    """
 
     # process PRICES
     # create price time series incl transport cost
@@ -193,17 +179,17 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
             1).reorder_levels((1, 0)), '[GW]'],
         'CAPACITY_X': [['z', 'z', 'f'], technologies['capacity_transmission'], '[GW]'],
         'CAPACITY_STORAGE': [['z', 'f', 's'], technologies['capacity'].loc[
-            idx['Storage Capacity', zones, year], sets['s'].index].T.stack((1, 3)).reorder_levels((1, 2, 0)), '[GWh]'],
+            idx['Storage Capacity', zones, year], [s[0] for s in sets['s'].values]].T.stack((1, 3)).reorder_levels((1, 2, 0)), '[GWh]'],
         'CAPACITY_STORE_IN': [['z', 'f', 's'], technologies['capacity'].loc[
-            idx['Installed Capacity In', zones, year], sets['s'].index].T.stack((1, 3)).reorder_levels((1, 2, 0)),
+            idx['Installed Capacity In', zones, year], [s[0] for s in sets['s'].values]].T.stack((1, 3)).reorder_levels((1, 2, 0)),
                               '[GW]'],
         'CAPACITY_STORE_OUT': [['z', 'f', 's'], technologies['capacity'].loc[
-            idx['Installed Capacity Out', zones, year], sets['s'].index].T.stack((1, 3)).reorder_levels((1, 2, 0)),
+            idx['Installed Capacity Out', zones, year], [s[0] for s in sets['s'].values]].T.stack((1, 3)).reorder_levels((1, 2, 0)),
                                '[GW]'],
         'OVERNIGHTCOST': [['t'], technologies['technology'].loc[:, 'capex_p'].round(4), '[EUR per MW]'],
-        'OVERNIGHTCOST_E': [['s'], technologies['technology'].loc[sets['s'].index, 'capex_e'], '[EUR per MWh]'],
-        'OVERNIGHTCOST_P': [['t'], technologies['technology'].loc[sets['s'].index, 'capex_p'], '[EUR per MW]'],
-        'OVERNIGHTCOST_X': [['f'], technologies['technology'].loc[sets['g'].index, 'capex_p'], '[EUR per MW]'],
+        'OVERNIGHTCOST_E': [['s'], technologies['technology'].loc[[s[0] for s in sets['s'].values], 'capex_e'], '[EUR per MWh]'],
+        'OVERNIGHTCOST_P': [['t'], technologies['technology'].loc[[s[0] for s in sets['s'].values], 'capex_p'], '[EUR per MW]'],
+        'OVERNIGHTCOST_X': [['f'], technologies['technology'].loc[[g[0] for g in sets['g'].values], 'capex_p'], '[EUR per MW]'],
         'CO2_INTENSITY': [['i'], estimates['external_cost']['CO2_intensity'].dropna(), '[t CO2 per MWh fuel input]'],
         'CONVERSION': [['t'], technologies['technology']['eta_ec'],'[]'],
         'COST_OM_QFIX': [['t'], technologies['technology']['opex_f'], '[EUR per MW]'],
@@ -233,8 +219,10 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
     }
 
     for key, val in parameters.items():
-        parameters[key] = val[1].reset_index()
+        if val[0]:
+            parameters[key] = val[1].reset_index()
         cols = [f'{i[1]}_{i[0]}' for i in enumerate(val[0])]
-        parameters[key].columns = cols.extend(['value'])
+        cols.extend(['value'])
+        parameters[key].columns = cols
 
     return sets, parameters
