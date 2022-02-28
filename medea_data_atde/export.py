@@ -6,6 +6,20 @@ import numpy as np
 from medea_data_atde.retrieve import hours_in_year
 
 
+def date2set_index(df, year, tz='utc', set_sym='h'):
+    df['DateTime'] = pd.to_datetime(df.index)
+    df.set_index('DateTime', inplace=True)
+    start_stamp = pd.Timestamp(year, 1, 1, 0, 0).tz_localize(tz)
+    end_stamp = pd.Timestamp(year, 12, 31, 23, 0).tz_localize(tz)
+    df = df.loc[(start_stamp <= df.index) & (df.index <= end_stamp)]
+    if len(df) == hours_in_year(year):
+        hour_index = [f'{set_sym}{hour}' for hour in range(1, hours_in_year(year) + 1)]
+        df.set_index(hour_index, inplace=True)
+    else:
+        raise ValueError('Mismatch of time series data and model time resolution. Is year wrong?')
+    return df
+
+
 def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True, invest_renewables=True,
                     invest_storage=True, invest_tc=True):
     """
@@ -99,6 +113,10 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
     ts_data['zonal'] = ts_data['zonal'].rename(columns={'power': 'el', 'heat': 'ht'})
 
     # date-time conversion and selection
+    ts_data['zonal'] = date2set_index(ts_data['zonal'], year)
+    ts_data['timeseries'] = date2set_index(ts_data['timeseries'], year)
+
+    """
     ts_data['zonal']['DateTime'] = pd.to_datetime(ts_data['zonal'].index)
     ts_data['zonal'].set_index('DateTime', inplace=True)
     # constrain data to scenario year
@@ -110,6 +128,7 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
         ts_data['zonal'].set_index(sets['h'].index, inplace=True)
     else:
         raise ValueError('Mismatch of time series data and model time resolution. Is year wrong?')
+    """
 
     # process PRICES
     # create price time series incl transport cost
@@ -165,37 +184,48 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
     }
 
     parameters = {
-        'AIR_POL_COST_FIX': estimates['external_cost']['fixed cost'].dropna(),
-        'AIR_POL_COST_VAR': estimates['external_cost']['variable cost'].dropna(),
-        'CAPACITY': technologies['capacity'],
-        'CAPACITY_X': technologies['capacity_transmission'],
-        'CAPACITY_STORAGE': technologies['capacity'].loc[idx['Storage Capacity', zones, year], sets['s'].index],
-        'CAPACITY_STORE_IN': technologies['capacity'].loc[idx['Installed Capacity In', zones, year], sets['s'].index],
-        'CAPACITY_STORE_OUT': technologies['capacity'].loc[idx['Installed Capacity Out', zones, year], sets['s'].index],
-        'CAPITALCOST': technologies['technology'].loc[:, 'eqacapex_p'].round(4),
-        'CAPITALCOST_E': technologies['technology'].loc[sets['s'].index, 'eqacapex_e'],
-        'CAPITALCOST_P': technologies['technology'].loc[sets['s'].index, 'eqacapex_p'],
-        'CAPITALCOST_X': technologies['technology'].loc[sets['g'].index, 'eqacapex_p'],
-        'CO2_INTENSITY': estimates['external_cost']['CO2_intensity'].dropna(),
-        'CONVERSION': technologies['technology']['eta_ec'],
-        'COST_OM_QFIX': technologies['technology']['opex_f'],
-        'COST_OM_VAR': technologies['technology']['opex_v'],
-        'DEMAND': ts_data['zonal'].loc[:, idx[:, :, 'load']].stack((0, 1)).reorder_levels((1, 0, 2)).round(4),
-        'DISCOUNT_RATE': estimates['point_estimates'].loc['wacc', :],
-        'DISTANCE': technologies['distance'],
-        'FEASIBLE_INPUT': technologies['operating_region']['fuel'],
-        'FEASIBLE_OUTPUT': technologies['operating_region'][['el', 'ht']].droplevel('f').stack(),
-        'INFLOWS': ts_data['INFLOWS'].stack((0, 1)).reorder_levels((1, 0, 2)).astype('float').round(4),
-        'LAMBDA': estimates['point_estimates'].loc['LAMBDA', :],
-        'LIFETIME': technologies['technology']['lifetime'],
-        'PEAK_LOAD': ts_data['PEAK_LOAD'],
-        'PEAK_PROFILE': ts_data['PEAK_PROFILE'],
-        'PRICE_CO2': ts_data['price'].loc[:, idx['EUA', :]].stack().reorder_levels((1, 0)),
-        'PRICE': ts_data['price'].drop(columns=['EUA'], level=0).stack((0, 1)).reorder_levels((2, 0, 1)).round(4),
-        'PRICE_TRADE': estimates['price_nonmarket_fuels'].loc['Syngas', :],
-        'PROFILE': ts_data['zonal'].loc[:, idx[:, :, 'profile']].stack((0, 1)).reorder_levels((1, 0, 2)).round(4),
-        'SIGMA': estimates['point_estimates'].loc['SIGMA', :],
-        'VALUE_NSE': estimates['point_estimates'].loc['VALUE_NSE', :],
+        'AIR_POL_COST_FIX': [['i'], estimates['external_cost']['fixed cost'].dropna(), '[EUR per MW]'],
+        'AIR_POL_COST_VAR': [['i'], estimates['external_cost']['variable cost'].dropna(), '[EUR per MWh]'],
+        'CAPACITY': [['z', 't'], technologies['capacity'].loc[idx['Installed Capacity Out', zones, year], :].T.stack(
+            1).reorder_levels((1, 0)), '[GW]'],
+        'CAPACITY_X': [['z', 'z', 'f'], technologies['capacity_transmission'], '[GW]'],
+        'CAPACITY_STORAGE': [['z', 'f', 's'], technologies['capacity'].loc[
+            idx['Storage Capacity', zones, year], sets['s'].index].T.stack((1, 3)).reorder_levels((1, 2, 0)), '[GWh]'],
+        'CAPACITY_STORE_IN': [['z', 'f', 's'], technologies['capacity'].loc[
+            idx['Installed Capacity In', zones, year], sets['s'].index].T.stack((1, 3)).reorder_levels((1, 2, 0)),
+                              '[GW]'],
+        'CAPACITY_STORE_OUT': [['z', 'f', 's'], technologies['capacity'].loc[
+            idx['Installed Capacity Out', zones, year], sets['s'].index].T.stack((1, 3)).reorder_levels((1, 2, 0)),
+                               '[GW]'],
+        'OVERNIGHTCOST': [['t'], technologies['technology'].loc[:, 'capex_p'].round(4), '[EUR per MW]'],
+        'OVERNIGHTCOST_E': [['s'], technologies['technology'].loc[sets['s'].index, 'eqacapex_e'], '[EUR per MWh]'],
+        'OVERNIGHTCOST_P': [['t'], technologies['technology'].loc[sets['s'].index, 'eqacapex_p'], '[EUR per MW]'],
+        'CAPITALCOST_X': [['z', 'f'], technologies['technology'].loc[sets['g'].index, 'eqacapex_p'], '[EUR per MW]'],
+        'CO2_INTENSITY': [['i'], estimates['external_cost']['CO2_intensity'].dropna(), '[t CO2 per MWh fuel input]'],
+        'CONVERSION': [['t'], technologies['technology']['eta_ec'],'[]'],
+        'COST_OM_QFIX': [['z', 't'], technologies['technology']['opex_f'], '[EUR per MW]'],
+        'COST_OM_VAR': [['z', 't'], technologies['technology']['opex_v'], '[EUR per MWh]'],
+        'DEMAND': [['z', 'h', 'f'], ts_data['zonal'].loc[
+                                    :, idx[:, :, 'load']].stack((0, 1)).reorder_levels((1, 0, 2)).round(4), '[GW]'],
+        'DISCOUNT_RATE': [[], estimates['point_estimates'].loc['wacc', :], '[]'],
+        'DISTANCE': [['z', 'z'], technologies['distance'], '[km]'],
+        'FEASIBLE_INPUT': [['l', 'i', 'c'], technologies['operating_region']['fuel'], '[GW]'],
+        'FEASIBLE_OUTPUT': [['l', 'f', 'c'], technologies['operating_region'][
+            ['el', 'ht']].droplevel('f').stack(), '[GW]'],
+        'INFLOWS': [['z', 'h', 's'], ts_data['INFLOWS'].stack((0, 1)).reorder_levels(
+            (1, 0, 2)).astype('float').round(4), '[GW]'],
+        'LAMBDA': [[], estimates['point_estimates'].loc['LAMBDA', :], '[]'],
+        'LIFETIME': [['t'], technologies['technology']['lifetime'], '[a]'],
+        'PEAK_LOAD': [['z'], ts_data['PEAK_LOAD'], '[GW]'],
+        'PEAK_PROFILE': [['z', 'i'], ts_data['PEAK_PROFILE'], '[]'],
+        'PRICE_CO2': [['z', 'h'], ts_data['price'].loc[:, idx['EUA', :]].stack().reorder_levels((1, 0)), '[EUR per t]'],
+        'PRICE': [['z', 'h', 'i'], ts_data['price'].drop(columns=['EUA'], level=0).stack(
+            (0, 1)).reorder_levels((2, 0, 1)).round(4), '[EUR per MWh]'],
+        'PRICE_TRADE': [[''], estimates['price_nonmarket_fuels'].loc['Syngas', :], '[EUR per MWh]'],
+        'PROFILE': [['z', 'h', 'i'], ts_data['zonal'].loc[:, idx[:, :, 'profile']].stack(
+            (0, 1)).reorder_levels((1, 0, 2)).round(4), '[]'],
+        'SIGMA': [[], estimates['point_estimates'].loc['SIGMA', :], '[]'],
+        'VALUE_NSE': [['z', 'f'], estimates['point_estimates'].loc['VALUE_NSE', :], '[EUR per MWh]'],
         # 'SWITCH_INVEST': invest_limits['thermal'],
     }
     return sets, parameters
