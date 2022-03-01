@@ -161,6 +161,19 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
     ts_data.update({'PEAK_PROFILE': peak_profile})
 
     # --------------------------------------------------------------------------- #
+    # mappings
+    # --------------------------------------------------------------------------- #
+    map_input =  pd.DataFrame(data=False, index=technologies['technology'].index,
+                              columns=np.unique(technologies['technology'][['fuel', 'primary_product']]))
+    for idx, row in technologies['technology'].iterrows():
+        map_input.loc[idx, row['fuel']] = True
+
+    map_output = pd.DataFrame(data=False, index=technologies['technology'].index,
+                              columns=technologies['technology']['primary_product'].unique())
+    for idx, row in technologies['technology'].iterrows():
+        map_output.loc[idx, row['primary_product']] = True
+
+    # --------------------------------------------------------------------------- #
     # limits on investment - long-run vs short-run
     # --------------------------------------------------------------------------- #
     # SWITCH_INVEST
@@ -189,28 +202,30 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
         'OVERNIGHTCOST': [['t'], technologies['technology'].loc[:, 'capex_p'].round(4), '[EUR per MW]'],
         'OVERNIGHTCOST_E': [['s'], technologies['technology'].loc[[s[0] for s in sets['s'].values], 'capex_e'], '[EUR per MWh]'],
         'OVERNIGHTCOST_P': [['t'], technologies['technology'].loc[[s[0] for s in sets['s'].values], 'capex_p'], '[EUR per MW]'],
-        'OVERNIGHTCOST_X': [['f'], technologies['technology'].loc[[g[0] for g in sets['g'].values], 'capex_p'], '[EUR per MW]'],
+        'OVERNIGHTCOST_X': [['g'], technologies['technology'].loc[[g[0] for g in sets['g'].values], 'capex_p'], '[EUR per MW]'],
         'CO2_INTENSITY': [['i'], estimates['external_cost']['CO2_intensity'].dropna(), '[t CO2 per MWh fuel input]'],
-        'CONVERSION': [['t'], technologies['technology']['eta_ec'],'[]'],
+        'CONVERSION': [['e', 'f', 't'], technologies['technology'][['fuel', 'primary_product', 'eta_ec']].reset_index().set_index(['fuel', 'primary_product', 'set_id']),'[]'],
         'COST_OM_QFIX': [['t'], technologies['technology']['opex_f'], '[EUR per MW]'],
         'COST_OM_VAR': [['t'], technologies['technology']['opex_v'], '[EUR per MWh]'],
         'DEMAND': [['z', 'h', 'f'], ts_data['zonal'].loc[
                                     :, idx[:, :, 'load']].stack((0, 1)).reorder_levels((1, 0, 2)).round(4), '[GW]'],
         'DISCOUNT_RATE': [['z'], estimates['point_estimates'].loc['wacc', :], '[]'],
         'DISTANCE': [['z', 'z'], technologies['distance'], '[km]'],
-        'FEASIBLE_INPUT': [['l', 'i', 'c'], technologies['operating_region']['fuel'], '[GW]'],
+        'FEASIBLE_INPUT': [['l', 'i', 'c'], technologies['operating_region']['fuel'].reorder_levels((1, 2, 0)), '[GW]'],
         'FEASIBLE_OUTPUT': [['l', 'f', 'c'], technologies['operating_region'][
-            ['el', 'ht']].droplevel('f').stack(), '[GW]'],
+            ['el', 'ht']].droplevel('f').stack().reorder_levels((1, 2, 0)), '[GW]'],
         'INFLOWS': [['z', 'h', 's'], ts_data['INFLOWS'].stack((0, 1)).reorder_levels(
             (1, 0, 2)).astype('float').round(4), '[GW]'],
         'LAMBDA': [['z'], estimates['point_estimates'].loc['LAMBDA', :], '[]'],
         'LIFETIME': [['t'], technologies['technology']['lifetime'], '[a]'],
+        'MAP_INPUTS': [['e', 't'], map_input.stack().reorder_levels((1, 0)), '[]'],
+        'MAP_OUTPUTS': [['f', 't'], map_output.stack().reorder_levels((1, 0)), '[]'],
         'PEAK_LOAD': [['z'], ts_data['PEAK_LOAD'], '[GW]'],
         'PEAK_PROFILE': [['z', 'i'], ts_data['PEAK_PROFILE'], '[]'],
         'PRICE_CO2': [['z', 'h'], ts_data['price'].loc[:, idx['EUA', :]].stack().reorder_levels((1, 0)), '[EUR per t]'],
         'PRICE': [['z', 'h', 'i'], ts_data['price'].drop(columns=['EUA'], level=0).stack(
             (0, 1)).reorder_levels((2, 0, 1)).round(4), '[EUR per MWh]'],
-        'PRICE_TRADE': [[], estimates['price_nonmarket_fuels'].loc['Syngas', :], '[EUR per MWh]'],
+        'PRICE_TRADE': [['i'], estimates['price_nonmarket_fuels'].loc['Syngas', :], '[EUR per MWh]'],
         'PROFILE': [['z', 'h', 'i'], ts_data['zonal'].loc[:, idx[:, :, 'profile']].stack(
             (0, 1)).reorder_levels((1, 0, 2)).round(4), '[]'],
         'SIGMA': [['z'], estimates['point_estimates'].loc['SIGMA', :], '[]'],
