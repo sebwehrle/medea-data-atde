@@ -140,7 +140,7 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
 
     # process INFLOWS to hydro storage plants
     hydro_storage = technologies['technology'].loc[(technologies['technology']['storage'] == 1) &
-                                                   (technologies['technology']['fuel'] == 'Water')].index
+                                                   (technologies['technology'].index.str.contains('hyd'))].index
     inflow_factor = technologies['capacity'].loc[idx['Installed Capacity Out', zones, year], hydro_storage].T / \
                     technologies['capacity'].loc[idx['Installed Capacity Out', zones, year], hydro_storage].T.sum()
     inflow_factor.columns = inflow_factor.columns.droplevel([0, 2, 3])
@@ -157,7 +157,7 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
     # peak load and profiles
     # --------------------------------------------------------------------------- #
     ts_data.update({'PEAK_LOAD': ts_data['zonal'].loc[:, idx[:, 'el', 'load']].max().unstack((1, 2)).squeeze()})
-    peak_profile = ts_data['zonal'].loc[:, idx[:, :, 'profile']].max().unstack(2).drop('ror', axis=0, level=1)
+    peak_profile = ts_data['zonal'].loc[:, idx[:, :, 'profile']].max().unstack(2).drop('Water', axis=0, level=1)
     peak_profile.fillna(0, inplace=True)
     ts_data.update({'PEAK_PROFILE': peak_profile})
 
