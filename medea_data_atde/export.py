@@ -145,7 +145,8 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
                     technologies['capacity'].loc[idx['Installed Capacity Out', zones, year], hydro_storage].T.sum()
     inflow_factor.columns = inflow_factor.columns.droplevel([0, 2, 3])
     ts_inflows = pd.DataFrame(index=list(ts_data['zonal'].index),
-                              columns=pd.MultiIndex.from_product([zones, sets['s'].index]))
+                              columns=pd.MultiIndex.from_product([zones,
+                                                                  [s[0] for s in sets['s'].values if 'hyd' in s[0]]]))
     for zone in list(zones):
         for strg in hydro_storage:
             ts_inflows.loc[:, (zone, strg)] = ts_data['zonal'].loc[:, idx[zone, 'reservoir', 'inflows']] * \
@@ -172,6 +173,7 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
                               columns=technologies['technology']['primary_product'].unique())
     for ix, row in technologies['technology'].iterrows():
         map_output.loc[ix, row['primary_product']] = True
+    map_output.loc[map_output.index.str.contains('chp'), 'ht'] = True
 
     # --------------------------------------------------------------------------- #
     # limits on investment - long-run vs short-run
@@ -211,7 +213,8 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
                                     :, idx[:, :, 'load']].stack((0, 1)).reorder_levels((1, 0, 2)).round(4), '[GW]'],
         'DISCOUNT_RATE': [['z'], estimates['point_estimates'].loc['wacc', :], '[]'],
         'DISTANCE': [['z', 'z'], technologies['distance'], '[km]'],
-        'FEASIBLE_INPUT': [['l', 'i', 'c'], technologies['operating_region']['fuel'].reorder_levels((1, 2, 0)), '[GW]'],
+        'FEASIBLE_INPUT': [['l', 'i', 'c'], technologies['operating_region']['fuel'].div(
+            technologies['technology']['eta_ec']).reorder_levels((1, 2, 0)), '[GW]'],
         'FEASIBLE_OUTPUT': [['l', 'f', 'c'], technologies['operating_region'][
             ['el', 'ht']].droplevel('f').stack().reorder_levels((1, 2, 0)), '[GW]'],
         'INFLOWS': [['z', 'h', 's'], ts_data['INFLOWS'].stack((0, 1)).reorder_levels(
@@ -235,9 +238,9 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
 
     for key, val in parameters.items():
         if val[0]:
-            parameters[key] = val[1].reset_index()
+            parameters[key][1] = val[1].reset_index()
         cols = [f'{i[1]}_{i[0]}' for i in enumerate(val[0])]
         cols.extend(['value'])
-        parameters[key].columns = cols
+        parameters[key][1].columns = cols
 
     return sets, parameters
