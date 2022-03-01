@@ -397,22 +397,20 @@ def process_profiles(root_dir, zones, eta=0.9):
                 ts.loc[str(year), 'DE-power-load'].sum()
 
     # generate scaled generation profiles and electric load
-    intermittents = ['pv', 'wind_on', 'wind_off', 'ror']
-    itm_fuels = {'pv': 'Solar', 'wind_on': 'Wind_On', 'wind_off': 'Wind_off', 'ror': 'Water'}
+    intermittents = {'pv': 'Solar', 'wind_on': 'Wind_On', 'wind_off': 'Wind_off', 'ror': 'Water'}
     for reg in zones:
         for yr in range(first_year, last_year):
             ts.loc[str(yr), f'{reg}-power-load'] = ts.loc[str(yr), f'{reg}-power-load'] * \
-                                                           scaling_factor.loc[idx['load', str(yr)], reg]
+                                                   scaling_factor.loc[idx['load', str(yr)], reg]
 
-            for itm in intermittents:
-                ts[f'{reg}-{itm_fuels[itm]}-profile'] = 0
+            for itm, fuel in intermittents.items():
                 if scaling_factor.loc[idx[itm, str(yr)], reg] < 2:
-                    ts.loc[str(yr), f'{reg}-{itm_fuels[itm]}-profile'] = ts.loc[str(yr), f'{reg}-{itm}-gen'] / \
-                                                                         ts.loc[str(yr), f'{reg}-{itm}-cap'] * \
-                                                                         scaling_factor.loc[idx[itm, str(yr)], reg]
+                    ts.loc[str(yr), f'{reg}-{fuel}-profile'] = ts.loc[str(yr), f'{reg}-{itm}-gen'] / \
+                                                               ts.loc[str(yr), f'{reg}-{itm}-cap'] * \
+                                                               scaling_factor.loc[idx[itm, str(yr)], reg]
                 else:
-                    ts.loc[str(yr), f'{reg}-{itm_fuels[itm]}-profile'] = ts.loc[str(yr), f'{reg}-{itm}-gen'] / \
-                                                                         ts.loc[str(yr), f'{reg}-{itm}-cap']
+                    ts.loc[str(yr), f'{reg}-{fuel}-profile'] = ts.loc[str(yr), f'{reg}-{itm}-gen'] / \
+                                                               ts.loc[str(yr), f'{reg}-{itm}-cap']
 
     # ----- approximate reservoir inflows -----
     # hourly reservoir filling levels
