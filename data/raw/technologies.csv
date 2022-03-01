@@ -1,8 +1,8 @@
 set_id,id,name,fuel,primary_product,capex_p,capex_e,eqacapex_p,eqacapex_e,opex_f,opex_v,lifetime,eta_ec,source,heat_generation,intermittent,storage,transmission,conventional,P_c,c_v,c_b,Q_mc,Q_b,P_mc,P_b,fuel_consumption,eta_mincond,q_q,source_b
 pv,0,Solar Photovoltaics,Solar,el,625.0,,36.0,na,9032.0,0.0,40,1.0,,0,1,0,0,0,1.0,na,na,na,na,na,na,na,na,na,na
 ror,1,Run-of-river Hydro,Water,el,2800.0,,148.0,na,60000.0,0.0,60,1.0,,0,1,0,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-wind_on,2,Wind Power Onshore,Wind,el,1040.0,,68.0,na,12600.0,1.35,30,1.0,,0,1,0,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-wind_off,3,Wind Power Offshore,Wind,el,1930.0,,126.0,na,36053.0,2.7,30,1.0,,0,1,0,0,0,1.0,na,na,na,na,na,na,na,na,na,na
+wind_on,2,Wind Power Onshore,Wind_On,el,1040.0,,68.0,na,12600.0,1.35,30,1.0,,0,1,0,0,0,1.0,na,na,na,na,na,na,na,na,na,na
+wind_off,3,Wind Power Offshore,Wind_Off,el,1930.0,,126.0,na,36053.0,2.7,30,1.0,,0,1,0,0,0,1.0,na,na,na,na,na,na,na,na,na,na
 bio,Biomass & Waste,Biomass & Waste,Biomass,el,3230.0,,229.0,na,92720.0,3.8,25,0.296,1,0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
 bio_chp,Biomass & Waste - CoGen,Biomass & Waste - CoGen,Biomass,el,3400.0,,241.0,na,97600.0,3.8,25,0.296,1,1,0,0,0,1,1.0,1,0.36,0.5882352941176471,0.7352941176470589,0.4117647058823529,0.2647058823529411,5.365659777424484,0.296,0.8,1
 bio_boiler_chp,,Biomass Boiler,Biomass,ht,420.0,,30.0,na,33300.0,3.4,25,0.95,1,1,0,0,0,1,0.0,na,na,na,na,na,na,na,na,na,na
