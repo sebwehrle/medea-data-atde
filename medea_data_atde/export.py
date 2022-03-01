@@ -165,13 +165,13 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
     # --------------------------------------------------------------------------- #
     map_input =  pd.DataFrame(data=False, index=technologies['technology'].index,
                               columns=np.unique(technologies['technology'][['fuel', 'primary_product']]))
-    for idx, row in technologies['technology'].iterrows():
-        map_input.loc[idx, row['fuel']] = True
+    for ix, row in technologies['technology'].iterrows():
+        map_input.loc[ix, row['fuel']] = True
 
     map_output = pd.DataFrame(data=False, index=technologies['technology'].index,
                               columns=technologies['technology']['primary_product'].unique())
-    for idx, row in technologies['technology'].iterrows():
-        map_output.loc[idx, row['primary_product']] = True
+    for ix, row in technologies['technology'].iterrows():
+        map_output.loc[ix, row['primary_product']] = True
 
     # --------------------------------------------------------------------------- #
     # limits on investment - long-run vs short-run
