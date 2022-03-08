@@ -249,7 +249,7 @@ def process_profiles(root_dir, zones, eta=0.9):
 
     idx = pd.IndexSlice
     caps = pd.read_csv(capacities, index_col=[0, 1, 2, 3])
-    itm_caps = caps.loc[pd.IndexSlice['Installed Capacity Out', zones, :, ['pv', 'ror', 'wind_off', 'wind_on']], 'el']
+    itm_caps = caps.loc[idx['Installed Capacity Out', zones, :, 'el'], ['pv', 'ror', 'wind_off', 'wind_on']]
     itm_caps.index = itm_caps.index.droplevel(0)
     itm_caps = itm_caps.unstack([0, 2])
     itm_caps.index = pd.to_datetime(itm_caps.index.values + 1, format='%Y', utc='true') - pd.Timedelta(days=184)
@@ -272,7 +272,7 @@ def process_profiles(root_dir, zones, eta=0.9):
         if ts_opsd.columns.str.contains(f'{reg}_solar_capacity').any():
             ts[f'{reg}-pv-cap'] = ts_opsd[f'{reg}_solar_capacity'] / 1000
         else:
-            ts[f'{reg}-pv-cap'] = itm_caps.loc[:, idx[reg, 'pv']]
+            ts[f'{reg}-pv-cap'] = itm_caps.loc[:, idx['pv', reg]]
             ts[f'{reg}-pv-cap'] = ts[f'{reg}-pv-cap'].interpolate()
 
     # historical wind onshore capacity and generation
@@ -281,7 +281,7 @@ def process_profiles(root_dir, zones, eta=0.9):
         if ts_opsd.columns.str.contains(f'{reg}_solar_capacity').any():
             ts[f'{reg}-wind_on-cap'] = ts_opsd[f'{reg}_wind_onshore_capacity'] / 1000
         else:
-            ts[f'{reg}-wind_on-cap'] = itm_caps.loc[:, idx[reg, 'wind_on']]
+            ts[f'{reg}-wind_on-cap'] = itm_caps.loc[:, idx['wind_on', reg]]
             ts[f'{reg}-wind_on-cap'] = ts[f'{reg}-wind_on-cap'].interpolate()
 
     # historical wind offshore capacity and generation
@@ -301,7 +301,7 @@ def process_profiles(root_dir, zones, eta=0.9):
 
     for reg in zones:
         ts[f'{reg}-ror-gen'] = ts_hydro_generation[f'ror_{reg}'] / 1000
-        ts[f'{reg}-ror-cap'] = itm_caps.loc[:, idx[reg, 'ror']]
+        ts[f'{reg}-ror-cap'] = itm_caps.loc[:, idx['ror', reg]]
         ts[f'{reg}-ror-cap'] = ts[f'{reg}-ror-cap'].interpolate()
 
     ts[('DE-hydro-gen')] = ts_hydro_generation[['ror_DE', 'res_DE']].sum(axis=1) / 1000 + \
@@ -359,8 +359,9 @@ def process_profiles(root_dir, zones, eta=0.9):
 
         if ts.loc[str(year), 'AT-power-load'].sum() > 0:
             scaling_factor.loc[idx['load', str(year)], 'AT'] = \
-                nbal_at['cons'].loc[['Energetischer Endverbrauch', 'Transportverluste',
-                                     'Verbrauch des Sektors Energie'], year].sum() / 1000 / \
+                (nbal_at['cons'].loc[['Energetischer Endverbrauch', 'Transportverluste',
+                                      'Verbrauch des Sektors Energie'], year].sum() / 1000 -
+                 nbal_at['pump_eca'].loc[year, ('Verbrauch\nfür Pump\nspeicher', 'GWh')]) / \
                 ts.loc[str(year), 'AT-power-load'].sum()
 
     # scaling factor for Germany
