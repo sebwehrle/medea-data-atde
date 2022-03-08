@@ -359,7 +359,8 @@ def process_profiles(root_dir, zones, eta=0.9):
 
         if ts.loc[str(year), 'AT-power-load'].sum() > 0:
             scaling_factor.loc[idx['load', str(year)], 'AT'] = \
-                nbal_at['cons'].loc[['Energetischer Endverbrauch', 'Transportverluste'], year].sum() / 1000 / \
+                nbal_at['cons'].loc[['Energetischer Endverbrauch', 'Transportverluste',
+                                     'Verbrauch des Sektors Energie'], year].sum() / 1000 / \
                 ts.loc[str(year), 'AT-power-load'].sum()
 
     # scaling factor for Germany
@@ -567,17 +568,21 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     ht_enduse_de = ht_enduse_de / 3.6
 
     # process Austrian energy balances
+    ht_gen_at = pd.read_excel(enbal_at, sheet_name='Fernwärme', index_col=[0], header=[196], nrows=190)
+    ht_gen_at = ht_gen_at.loc[['Energetischer Endverbrauch', 'Transportverluste'], years].sum() / 1000
     ht_enduse_at = pd.read_excel(enbal_at, sheet_name='Fernwärme', header=[438], index_col=[0], nrows=24,
                                  na_values=['-']).astype('float')
     ht_enduse_at = ht_enduse_at / 1000
+    ht_mult_at = ht_gen_at / ht_enduse_at.loc[['Private Haushalte', 'Öffentliche und Private Dienstleistungen',
+                                               'Produzierender Bereich'], years].sum()
 
     ht_cons = pd.DataFrame(index=years,
                            columns=pd.MultiIndex.from_product([zones, ['HE08', 'HM08', 'HG08', 'WW', 'IND']]))
-    ht_cons.loc[years, ('AT', 'HE08')] = ht_enduse_at.loc['Private Haushalte', years] * 0.376 * 0.75
-    ht_cons.loc[years, ('AT', 'HM08')] = ht_enduse_at.loc['Private Haushalte', years] * 0.624 * 0.75
-    ht_cons.loc[years, ('AT', 'WW')] = ht_enduse_at.loc['Private Haushalte', years] * 0.25
-    ht_cons.loc[years, ('AT', 'HG08')] = ht_enduse_at.loc['Öffentliche und Private Dienstleistungen', years]
-    ht_cons.loc[years, ('AT', 'IND')] = ht_enduse_at.loc['Produzierender Bereich', years]
+    ht_cons.loc[years, ('AT', 'HE08')] = ht_enduse_at.loc['Private Haushalte', years] * ht_mult_at * 0.376 * 0.75
+    ht_cons.loc[years, ('AT', 'HM08')] = ht_enduse_at.loc['Private Haushalte', years] * ht_mult_at * 0.624 * 0.75
+    ht_cons.loc[years, ('AT', 'WW')] = ht_enduse_at.loc['Private Haushalte', years] * ht_mult_at * 0.25
+    ht_cons.loc[years, ('AT', 'HG08')] = ht_enduse_at.loc['Öffentliche und Private Dienstleistungen', years] * ht_mult_at
+    ht_cons.loc[years, ('AT', 'IND')] = ht_enduse_at.loc['Produzierender Bereich', years] * ht_mult_at
     ht_cons.loc[years, ('DE', 'HE08')] = ht_enduse_de.loc['Haushalte', years] * 0.376 * 0.75
     ht_cons.loc[years, ('DE', 'HM08')] = ht_enduse_de.loc['Haushalte', years] * 0.624 * 0.75
     ht_cons.loc[years, ('DE', 'WW')] = ht_enduse_de.loc['Haushalte', years] * 0.25
