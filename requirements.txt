@@ -1,0 +1,11 @@
+yaml
+numpy
+scipy
+pandas
+netCDF4
+certifi
+cdsapi
+urllib3
+pysftp
+openpyxl
+xlrd
