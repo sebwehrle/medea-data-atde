@@ -20,5 +20,7 @@ Requirements
 Installation
 ------------
 _medea_data_atde_ is distributed as a python package.
-The code can be installed locally via ```pip install -e .```, where `.` refers to the current working
-directory, which is assumed to be the directory where `setup.py` can be found.
+The code can be installed locally via ```pip install git+git://github.com/boku-inwe/medea_data_atde.git```.
+However, it is recommended to fork this repository and install the package from your own fork via 
+```pip install git+git://github.com/your_github/medea_data_atde.git``` where `your_github` needs to be adjusted 
+such that it reflects the url to the forked repository.
