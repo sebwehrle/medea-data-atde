@@ -102,8 +102,8 @@ def download_era_temp(era5_dir, filename, year, bounding_box, cdsurl=None, cdske
     :return:
     """
     # create .cdsapirc if it doesn't exist and insert credentials
-    if not os.path.isfile(os.path.expanduser('~')+'/.cdsapirc') and cdsurl is not None and cdskey is not None:
-        with open(os.path.expanduser('~')+'/.cdsapirc', 'x') as cdsapirc:
+    if not os.path.isfile(os.path.expanduser('~') + '/.cdsapirc') and cdsurl is not None and cdskey is not None:
+        with open(os.path.expanduser('~') + '/.cdsapirc', 'x') as cdsapirc:
             cdsapirc.write(f'url: {cdsurl} \n')
             cdsapirc.write(f'key: {cdskey}')
 
@@ -162,13 +162,14 @@ def download_energy_balance(country, directory, years=range(2012, 2019)):
     if country == 'DE':
         # German energy balance as provided by AGEB
         url_extension_bal = {12: 'xlsx', 13: 'xls', 14: 'xls', 15: 'xlsx', 16: 'xls', 17: 'xlsx', 18: 'xls', 19: 'xlsx'}
-        url_extension_sat = {12: 'xlsx', 13: 'xls', 14: 'xls', 15: 'xlsx', 16: 'xls', 17: 'xlsx', 18: 'xlsx', 19: 'xlsx'}
+        url_extension_sat = {12: 'xlsx', 13: 'xls', 14: 'xls', 15: 'xlsx', 16: 'xls', 17: 'xlsx', 18: 'xlsx',
+                             19: 'xlsx'}
         for yr in [x - 2000 for x in years]:
             url = 'https://ag-energiebilanzen.de/wp-content/uploads/2021/01/'
             url_balance = url + f'bilanz{yr}d.{url_extension_bal[yr]}'
             url_sat = url + f'sat{yr}.{url_extension_sat[yr]}'
             enbal_de = directory / 'data' / 'raw' / f'enbal_DE_20{yr}.{url_extension_bal[yr]}'
-            enbal_sat_de = directory / 'data'/ 'raw' / f'enbal_sat_DE_20{yr}.{url_extension_sat[yr]}'
+            enbal_sat_de = directory / 'data' / 'raw' / f'enbal_sat_DE_20{yr}.{url_extension_sat[yr]}'
             logging.info(f'downloading German energy balance for year 20{yr}')
             download_file(url_balance, enbal_de)
             download_file(url_sat, enbal_sat_de)
@@ -357,8 +358,8 @@ def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb
     download_file(url_jahresreihen, econtrol_jahresreihen)
 
     # EE Jahresreihen DE
-    url_eejr = 'https://www.erneuerbare-energien.de/EE/Redaktion/DE/Downloads/' \
-                'zeitreihen-zur-entwicklung-der-erneuerbaren-energien-in-deutschland-1990-2020-excel-en.xlsx' \
-                '?__blob=publicationFile'
-    ee_jahresreihen = root_dir / 'data' / 'raw' / 'zeitreihen-ee-in-de-1990-2020-excel-en.xlsx'
+    url_eejr = 'https://www.erneuerbare-energien.de/EE/Redaktion/DE/Downloads/zeitreihen-zur-entwicklung-der' \
+               '-erneuerbaren-energien-in-deutschland-1990-2021-excel-en.xlsx?__blob=publicationFile'
+    ee_jahresreihen = root_dir / 'data' / 'raw' / 'zeitreihen-ee-in-de-1990-2021-excel-en.xlsx'
     download_file(url_eejr, ee_jahresreihen)
+    logging.info('Data download successfully completed')
