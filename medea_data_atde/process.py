@@ -243,7 +243,7 @@ def process_profiles(root_dir, zones, eta=0.9):
     nrg_balance_at = root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
     nrg_balance_de = root_dir / 'data' / 'processed' / 'enbal_DE_el.csv'
     jahresreihen_eca = root_dir / 'data' / 'raw' / 'BStGes-JR1_Bilanz.xlsx'
-    zeitreihen_ee_de = root_dir / 'data' / 'raw' / 'zeitreihen-ee-in-de-1990-2020-excel-en.xlsx'
+    zeitreihen_ee_de = root_dir / 'data' / 'raw' / 'zeitreihen-ee-in-de-1990-2021-excel-en.xlsx'
     reservoir_fill = root_dir / 'data' / 'processed' / 'reservoir_filling.csv'
     profile_file = root_dir / 'data' / 'processed' / 'profiles_inflows_load.csv'
 
