@@ -270,7 +270,7 @@ def process_profiles(root_dir, zones, eta=0.9):
     for reg in zones:
         ts[f'{reg}-pv-gen'] = ts_opsd[f'{reg}_solar_generation_actual'] / 1000
         if ts_opsd.columns.str.contains(f'{reg}_solar_capacity').any():
-            ts[f'{reg}-pv-cap'] = ts_opsd[f'{reg}_solar_capacity'] / 1000
+            ts[f'{reg}-pv-cap'] = ts_opsd[f'{reg}_solar_capacity'].fillna(method='ffill') / 1000
         else:
             ts[f'{reg}-pv-cap'] = itm_caps.loc[:, idx['pv', reg]]
             ts[f'{reg}-pv-cap'] = ts[f'{reg}-pv-cap'].interpolate()
@@ -279,7 +279,7 @@ def process_profiles(root_dir, zones, eta=0.9):
     for reg in zones:
         ts[f'{reg}-wind_on-gen'] = ts_opsd[f'{reg}_wind_onshore_generation_actual'] / 1000
         if ts_opsd.columns.str.contains(f'{reg}_solar_capacity').any():
-            ts[f'{reg}-wind_on-cap'] = ts_opsd[f'{reg}_wind_onshore_capacity'] / 1000
+            ts[f'{reg}-wind_on-cap'] = ts_opsd[f'{reg}_wind_onshore_capacity'].fillna(method='ffill') / 1000
         else:
             ts[f'{reg}-wind_on-cap'] = itm_caps.loc[:, idx['wind_on', reg]]
             ts[f'{reg}-wind_on-cap'] = ts[f'{reg}-wind_on-cap'].interpolate()
@@ -291,7 +291,7 @@ def process_profiles(root_dir, zones, eta=0.9):
         else:
             ts[f'{reg}-wind_off-gen'] = 0
         if ts_opsd.columns.str.contains(f'{reg}_wind_offshore_capacity').any():
-            ts[f'{reg}-wind_off-cap'] = ts_opsd[f'{reg}_wind_offshore_capacity'] / 1000
+            ts[f'{reg}-wind_off-cap'] = ts_opsd[f'{reg}_wind_offshore_capacity'].fillna(method='ffill') / 1000
         else:
             ts[f'{reg}-wind_off-cap'] = 0
 
@@ -413,6 +413,8 @@ def process_profiles(root_dir, zones, eta=0.9):
                 else:
                     ts.loc[str(yr), f'{reg}-{fuel}-profile'] = ts.loc[str(yr), f'{reg}-{itm}-gen'] / \
                                                                ts.loc[str(yr), f'{reg}-{itm}-cap']
+
+    # TODO: wind offshore capacity from opsd is wrong -- needs to be corrected
 
     # ----- approximate reservoir inflows -----
     # hourly reservoir filling levels
@@ -623,6 +625,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     logging.info(f'exported hourly heat demand to {heat_cons_file}')
 
     # process time series data
+    compile_hydro_generation(root_dir, zones)
     # legacy code: d:/git_repos/medea_data_atde_local/src/compile/compile_timeseries.py
     ts = process_profiles(root_dir, zones, eta=0.9)
     logging.info(f'time series processed')
