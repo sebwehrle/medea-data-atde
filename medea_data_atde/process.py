@@ -440,7 +440,7 @@ def process_profiles(root_dir, zones, eta=0.9):
 
         if ts.loc[str(year), 'DE-hydro-gen'].sum() > 0:
             scaling_factor.loc[idx['ror', str(year)], 'DE'] = \
-                res_de.loc['Hydropower 1)', str(year)] / \
+                res_de.loc[res_de.index.str.contains('Hydropower'), str(year)] / \
                 ts.loc[str(year), 'DE-hydro-gen'].sum()
 
         if ts.loc[str(year), 'DE-power-load'].sum() > 0:
