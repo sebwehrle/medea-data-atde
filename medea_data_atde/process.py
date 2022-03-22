@@ -678,6 +678,7 @@ def do_processing(root_dir, years, zones):
 
     # process time series data
     compile_hydro_generation(root_dir, zones)
+    compile_reservoir_filling(root_dir, zones)
     # legacy code: d:/git_repos/medea_data_atde_local/src/compile/compile_timeseries.py
     ts = process_profiles(root_dir, zones, eta=0.9)
     logging.info(f'time series processed')
