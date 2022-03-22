@@ -84,7 +84,8 @@ def heat_day2hr(df_ht, con_day, con_pattern):
     # apply demand_pattern
     last_day = pd.DataFrame(index=df_ht.tail(1).index + pd.Timedelta(1, unit='d'), columns=sigm_a.keys())
 
-    cons_hourly = con_day.append(last_day).astype(float).resample('1H').sum()
+    # cons_hourly = con_day.append(last_day).astype(float).resample('1H').sum()
+    cons_hourly = pd.concat([con_day, last_day], axis=0).astype(float).resample('1H').sum()
     cons_hourly.drop(cons_hourly.tail(1).index, inplace=True)
 
     for d in df_ht.index:
@@ -194,7 +195,8 @@ def compile_hydro_generation(root_dir, zones):
                 df_tmpfile[f'res_{reg}'] = df_tmpres.drop_duplicates()
                 df_tmpfile[f'psp_gen_{reg}'] = df_tmppspgen.drop_duplicates()
                 df_tmpfile[f'psp_con_{reg}'] = df_tmppspcon.drop_duplicates()
-            df_ror = df_ror.append(df_tmpfile)
+            # df_ror = df_ror.append(df_tmpfile)
+            df_ror = pd.concat([df_ror, df_tmpfile], axis=0)
             del df_tmpror, df_tmpfile
 
     df_ror = df_ror.sort_index()
@@ -224,7 +226,8 @@ def compile_reservoir_filling(root_dir, zones):
             for reg in zones:
                 df_fillreg[f'{reg}'] = df_fill.loc[df_fill['MapCode'] == reg, 'StoredEnergy'].drop_duplicates()
 
-            df_resfill = df_resfill.append(df_fillreg)
+            # df_resfill = df_resfill.append(df_fillreg)
+            df_resfill = pd.concat([df_resfill, df_fillreg])
 
     df_resfill = df_resfill.sort_index()
 
@@ -440,7 +443,7 @@ def process_profiles(root_dir, zones, eta=0.9):
 
         if ts.loc[str(year), 'DE-hydro-gen'].sum() > 0:
             scaling_factor.loc[idx['ror', str(year)], 'DE'] = \
-                res_de.loc[res_de.index.str.contains('Hydropower'), str(year)] / \
+                res_de.loc[res_de.index.str.contains('Hydropower'), str(year)].values[0] / \
                 ts.loc[str(year), 'DE-hydro-gen'].sum()
 
         if ts.loc[str(year), 'DE-power-load'].sum() > 0:
