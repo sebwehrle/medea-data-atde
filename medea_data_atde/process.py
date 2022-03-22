@@ -617,6 +617,7 @@ def do_processing(root_dir, years, zones):
     nbal_de = pd.read_csv(enbal_de, sep=';', index_col=[0, 1])
     ht_enduse_de = nbal_de.loc[pd.IndexSlice['Elektrischer Strom und-Fernwärme', :], :] / 3.6
     ht_enduse_de.index = ht_enduse_de.index.get_level_values(1)
+    ht_enduse_de.columns = ht_enduse_de.columns.astype(int)
 
     # process Austrian energy balances
     ht_gen_at = pd.read_excel(enbal_at, sheet_name='Fernwärme', index_col=[0], header=[196], nrows=190)
