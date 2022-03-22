@@ -609,8 +609,11 @@ def do_processing(root_dir, years, zones):
     daily_mean_temp.to_csv(MEAN_TEMP_FILE)
     logging.info(f'Temperatures processed and saved to {MEAN_TEMP_FILE}')
 
-    # process HEAT LOAD
     # process German energy balances
+    process_energy_balance_de(root_dir)
+
+    # process HEAT LOAD
+    # read German energy balances
     nbal_de = pd.read_csv(enbal_de, sep=';', index_col=[0, 1])
     ht_enduse_de = nbal_de.loc[pd.IndexSlice['Elektrischer Strom und-Fernwärme', :], :] / 3.6
     ht_enduse_de.index = ht_enduse_de.index.get_level_values(1)
@@ -668,9 +671,6 @@ def do_processing(root_dir, years, zones):
     ht_consumption = heat_consumption(zones, years, ht_cons, df_heat, cons_pattern)
     ht_consumption.to_csv(heat_cons_file)
     logging.info(f'exported hourly heat demand to {heat_cons_file}')
-
-    # process energy balances
-    process_energy_balance_de(root_dir)
 
     # process time series data
     compile_hydro_generation(root_dir, zones)
