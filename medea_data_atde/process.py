@@ -98,7 +98,7 @@ def heat_day2hr(df_ht, con_day, con_pattern):
     return cons_hourly
 
 
-def mean_temp_at_plants(db_plants, era_dir, country, years, zones):
+def mean_temp_at_plants(db_plants, era_dir, years, zones):
     temp_date_range = pd.date_range(f'{years[0]}/01/01', f'{years[-1]}/12/31', freq='D')
     daily_mean_temp = pd.DataFrame(index=temp_date_range.values, columns=[zones])
     for zne in zones:
@@ -235,13 +235,61 @@ def compile_reservoir_filling(root_dir, zones):
     df_resfill.to_csv(root_dir / 'data' / 'processed' / 'reservoir_filling.csv')
 
 
+def process_energy_balance_de(root_dir):
+    """
+    processes annual German energy balances from AGEB into a single multi-dimensional file
+    :param root_dir: Path-object giving path to project root directory. Expects subfolders 'data'/'raw' and
+    'data'/'processed' to exist. Moreover, 'data'/'raw' is expected to hold German energy balances named *enbal_DE*
+    :return:
+    """
+    dir_nblde = root_dir / 'data' / 'raw'
+    nbal_de = pd.DataFrame()
+    for file in os.listdir(dir_nblde):
+        filename = os.fsdecode(file)
+
+        if 'enbal_DE' in filename:
+            nb = pd.read_excel(dir_nblde / filename, sheet_name='tj', header=[0], index_col=[0], na_values='')
+            # generate multiindex columns
+            year = int(nb.index[0][-4:])
+            column_label1 = []
+            column_label2 = []
+
+            for n in list(nb.columns[1:]):
+                if 'Unnamed' not in n:
+                    fuel = n.strip()
+                column_label1.append(fuel)
+                col = nb[n]
+                if not pd.isna(col[2]):
+                    k = 2
+                else:
+                    k = 3
+                label = col[k].strip().replace('\n', '').replace('-', '')
+                i = k + 1
+                while (not pd.isna(col[i])) & (not isinstance(col[i], int)):
+                    label = label + col[i].strip().replace('-', '')
+                    i += 1
+                column_label2.append(label)
+
+            columns = [f'{l1}-{l2}' for l1, l2 in zip(column_label1, column_label2)]
+            nb = nb.drop(labels='Zeile', axis=1)
+            nb = nb.iloc[6:, :]
+            nb.columns = pd.MultiIndex.from_product([[year], columns])
+            # concat df for each year
+            nbal_de = pd.concat([nbal_de, nb], axis=1, join='outer')
+
+    nbal_de = nbal_de.stack(1).swaplevel()
+    nbal_de.to_csv(root_dir / 'data' / 'processed' / 'Energiebilanz_DE_TJ.csv', sep=';', decimal=',')
+    logging.info(f'German energy balances processed and written to '
+                 f'{root_dir / "data" / "processed" / "Energiebilanz_DE_TJ.csv"}')
+
+
 def process_profiles(root_dir, zones, eta=0.9):
 
     capacities  = root_dir / 'data' / 'raw' / 'capacities.csv'
     opsd_timeseries = root_dir / 'data' / 'raw' / 'time_series_60min_singleindex.csv'
     hydro_generation = root_dir / 'data' / 'processed' / 'generation_hydro.csv'
     nrg_balance_at = root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
-    nrg_balance_de = root_dir / 'data' / 'processed' / 'enbal_DE_el.csv'
+    nrg_balance_de = root_dir / 'data' / 'processed' / 'Energiebilanz_DE_TJ.csv'
     jahresreihen_eca = root_dir / 'data' / 'raw' / 'BStGes-JR1_Bilanz.xlsx'
     zeitreihen_ee_de = root_dir / 'data' / 'raw' / 'zeitreihen-ee-in-de-1990-2021-excel-en.xlsx'
     reservoir_fill = root_dir / 'data' / 'processed' / 'reservoir_filling.csv'
@@ -373,7 +421,9 @@ def process_profiles(root_dir, zones, eta=0.9):
     res_de_clean.columns = [str(x.year) for x in res_de_clean_cols]
     res_de = res_de_clean
 
-    nbal_de_el = pd.read_csv(nrg_balance_de, index_col=[0], sep=';')
+    nbal_de = pd.read_csv(nrg_balance_de, index_col=[0, 1], sep=';', decimal=',')
+    # convert from TJ to GWh
+    nbal_de = nbal_de / 3.6
 
     for year in range(first_year, last_year):
         if ts.loc[str(year), 'DE-pv-gen'].sum() > 0:
@@ -395,7 +445,8 @@ def process_profiles(root_dir, zones, eta=0.9):
 
         if ts.loc[str(year), 'DE-power-load'].sum() > 0:
             scaling_factor.loc[idx['load', str(year)], 'DE'] = \
-                nbal_de_el.loc[['ENDENERGIEVERBRAUCH', 'Fackel- u. Leitungsverluste'], str(year)].sum() / \
+                nbal_de.loc[idx['Elektrischer Strom und-Strom',
+                                   ['ENDENERGIEVERBRAUCH', 'Fackel- u. Leitungsverluste']], str(year)].sum() / \
                 ts.loc[str(year), 'DE-power-load'].sum()
 
     # generate scaled generation profiles and electric load
@@ -465,15 +516,13 @@ def process_profiles(root_dir, zones, eta=0.9):
     return ts
 
 
-def do_processing(root_dir, country, years, zones, url_ageb_bal):
+def do_processing(root_dir, years, zones):
     """
     processes data stored in root_dir/data/raw and saves it to root_dir/data/processed. Intended for use with power
     system model medea.
     :param root_dir:
-    :param country:
     :param years:
     :param zones:
-    :param url_ageb_bal:
     :return:
     """
     setup_logging()
@@ -488,6 +537,7 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     fx_file = root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
     co2_file = root_dir / 'data' / 'raw' / 'eua_price.csv'
     enbal_at = root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
+    enbal_de = root_dir / 'data' / 'processed' / 'Energiebilanz_DE_TJ.csv'
     PPLANT_DB = root_dir / 'data' / 'raw' / 'conventional_power_plants_EU.csv'
 
     process_dir = root_dir / 'data' / 'processed'
@@ -555,20 +605,15 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     # process temperature data
     # get coordinates of co-gen plants
     db_plants = pd.read_csv(PPLANT_DB)
-    daily_mean_temp = mean_temp_at_plants(db_plants, ERA_DIR, country, years, zones)
+    daily_mean_temp = mean_temp_at_plants(db_plants, ERA_DIR, years, zones)
     daily_mean_temp.to_csv(MEAN_TEMP_FILE)
     logging.info(f'Temperatures processed and saved to {MEAN_TEMP_FILE}')
 
     # process HEAT LOAD
     # process German energy balances
-    ht_enduse_de = pd.DataFrame()
-    for yr in [x - 2000 for x in years]:
-        enebal_de = root_dir / 'data' / 'raw' / f'enbal_DE_20{yr}.{url_ageb_bal[yr][1]}'
-        df = pd.read_excel(enebal_de, sheet_name='tj', index_col=[0], usecols=[0, 31], skiprows=list(range(0, 50)),
-                           nrows=24, na_values=['-'])
-        df.columns = [2000 + yr]
-        ht_enduse_de = pd.concat([ht_enduse_de, df], axis=1)
-    ht_enduse_de = ht_enduse_de / 3.6
+    nbal_de = pd.read_csv(enbal_de, sep=';', index_col=[0, 1])
+    ht_enduse_de = nbal_de.loc[pd.IndexSlice['Elektrischer Strom und-Fernwärme', :], :] / 3.6
+    ht_enduse_de.index = ht_enduse_de.index.get_level_values(1)
 
     # process Austrian energy balances
     ht_gen_at = pd.read_excel(enbal_at, sheet_name='Fernwärme', index_col=[0], header=[196], nrows=190)
@@ -624,6 +669,9 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     ht_consumption.to_csv(heat_cons_file)
     logging.info(f'exported hourly heat demand to {heat_cons_file}')
 
+    # process energy balances
+    process_energy_balance_de(root_dir)
+
     # process time series data
     compile_hydro_generation(root_dir, zones)
     # legacy code: d:/git_repos/medea_data_atde_local/src/compile/compile_timeseries.py
@@ -640,3 +688,4 @@ def do_processing(root_dir, country, years, zones, url_ageb_bal):
     tsx = tsx.merge(ts, left_index=True, right_index=True, how='outer')
     tsx.to_csv(ts_file)
     logging.info('data processing completed')
+
