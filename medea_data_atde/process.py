@@ -169,7 +169,6 @@ def compile_hydro_generation(root_dir, zones):
     df_ror = pd.DataFrame()
     for file in os.listdir(dir_aggenpertype):
         filename = os.fsdecode(file)
-        print(filename)
         if filename.endswith('.csv'):
             df_tmpfile = pd.DataFrame()
             ts_agpt = pd.read_csv(dir_aggenpertype / filename, encoding='utf-8', sep='\t')
@@ -208,6 +207,7 @@ def compile_hydro_generation(root_dir, zones):
     df_ror_hr = df_ror.resample('H').mean()
     df_ror_hr = df_ror_hr.interpolate('linear')
     df_ror_hr.to_csv(root_dir / 'data' / 'processed' / 'generation_hydro.csv')
+    logging.info(f'Hydro generation processed and saved to {root_dir / "data" / "processed" / "generation_hydro.csv"}')
 
 
 def compile_reservoir_filling(root_dir, zones):
@@ -217,7 +217,6 @@ def compile_reservoir_filling(root_dir, zones):
     df_resfill = pd.DataFrame()
     for file in os.listdir(resfill_dir):
         filename = os.fsdecode(file)
-        print(filename)
         if filename.endswith('.csv'):
             # read data
             df_fill = pd.read_csv(resfill_dir / filename, sep='\t', encoding='utf-8')
@@ -236,6 +235,8 @@ def compile_reservoir_filling(root_dir, zones):
     df_resfill = df_resfill.interpolate(method='pchip')
 
     df_resfill.to_csv(root_dir / 'data' / 'processed' / 'reservoir_filling.csv')
+    logging.info(f'Filling rate of reservoirs processed and saved to '
+                 f'{root_dir / "data" / "processed" / "reservoir_filling.csv"}')
 
 
 def process_energy_balance_de(root_dir):
