@@ -47,5 +47,5 @@ hyd_res_season,Hydro - Pumped Storage,"Hydro - Reservoir, seasonal",el,el,2400.0
 hyd_psp_day,,"Hydro - Pumped Storage, day",el,el,3000.0,6.5,164.0,na,20000.0,0.0,50,0.9,"3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
 hyd_psp_week,,"Hydro - Pumped Storage, week",el,el,3000.0,6.5,164.0,na,20000.0,0.0,50,0.9,"3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
 hyd_psp_season,,"Hydro - Pumped Storage, seasonal",el,el,3000.0,6.5,164.0,na,20000.0,0.0,50,0.9,"3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-h2_stack,,H2 Electrolysis - Fuel cell stack,el,h2,2575.0,2.0,183.0,0,82500.0,0.0,25,0.333,"1, 2, 15",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
+h2_stack,,H2 Electrolysis - Fuel cell stack,el,el,2575.0,2.0,183.0,0,82500.0,0.0,25,0.333,"1, 2, 15",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
 transmission,,Transmission grid expansion,el,el,506.0,,29.0,na,9.0,0.0,40,0.0,"16, 17",0,0,0,1,0,0.0,na,na,na,na,na,na,na,na,na,na
