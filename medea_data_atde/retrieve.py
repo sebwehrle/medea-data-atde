@@ -5,10 +5,13 @@ import certifi
 import shutil
 import pysftp
 import urllib3
+import urllib.request
 import cdsapi
 import logging
 import pandas as pd
 from pathlib import Path
+from zipfile import ZipFile
+from bs4 import BeautifulSoup
 from itertools import compress
 from medea_data_atde.logging_config import setup_logging
 
@@ -74,6 +77,21 @@ def get_entsoe(connection_string, user, pwd, category, directory):
             logging.info(f'download of {file} successful')
 
     sftp.close()
+
+
+def mastr_gesamtdatenurl(mastr_html):
+    """
+    retrieves the current download link for the "Gesamtdatenexport" of the German Marktstammdatenregister
+    :param mastr_html: url to the page holding the download link for the zipped Gesamtdatenexport-XML
+    :return: url to download zipped Gesamtdatenexport XML-file
+    """
+    html_page = urllib.request.urlopen(mastr_html)
+    soup = BeautifulSoup(html_page, 'html.parser')
+    for link in soup.findAll('a'):
+        mastr_href = link.get('href')
+        if (mastr_href is not None) and ('Gesamtdatenexport' in mastr_href) and ('zip' in mastr_href):
+            url_mastr = mastr_href
+    return url_mastr
 
 
 def download_file(url, save_to):
@@ -252,6 +270,7 @@ def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb
     eia_file = root_dir / 'data' / 'raw' / 'RBRTEm.xls'
     fx_file = root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
     co2_file = root_dir / 'data' / 'raw' / 'eua_price.csv'
+    mastr_file = root_dir / 'data' / 'raw' / 'mastr.zip'
 
     # format for downloading ERA5 temperatures: north/west/south/east
     BBOX_CWE = [59.8612, -10.8043, 35.8443, 30.3285]
@@ -350,7 +369,11 @@ def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb
     download_file(url_timeseries, opsd_timeseries)
 
     # offshore wind power capacities from MaStR
-    # TODO: load offshore wind power data from MaStR - via API?
+    mastr_html = 'https://www.marktstammdatenregister.de/MaStR/Datendownload'
+    download_file(mastr_gesamtdatenurl(mastr_html), mastr_file)
+    with ZipFile(mastr_file, 'r') as zippedObject:
+        zippedObject.extract('EinheitenWind.xml', root_dir / 'data' / 'raw')
+    logging.info('Marktstammdatenregister successfully downloaded and unzipped "EinheitenWind.xml"')
 
     # e-control Jahresreihen
     url_jahresreihen = 'https://www.e-control.at/documents/1785851/1811609/BStGes-JR1_Bilanz.xlsx'

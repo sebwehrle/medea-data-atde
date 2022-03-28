@@ -9,3 +9,4 @@ urllib3
 pysftp
 openpyxl
 xlrd
+bs4

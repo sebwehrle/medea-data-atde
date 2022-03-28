@@ -239,6 +239,30 @@ def compile_reservoir_filling(root_dir, zones):
                  f'{root_dir / "data" / "processed" / "reservoir_filling.csv"}')
 
 
+def mastr_capacity_wind_at_sea(mastr_wind_file):
+    """
+    computes installed capacity of offshore wind turbines in Germany from the Markstammdatenregister data dump
+    :param mastr_wind_file: string-path of EinheitenWind.xml from MaStR data dump
+    :return: pandas series of hourly installed offshore capacity in megawatt
+    """
+    wka = pd.read_xml(mastr_wind_file, parser='etree', encoding='utf-16')
+    wka['Inbetriebnahmedatum'] = pd.to_datetime(wka['Inbetriebnahmedatum'], utc=True)
+    wka = wka.sort_values(by='Inbetriebnahmedatum')
+    # filter for offshore turbines
+    wka = wka[wka['Lage'] == 889]
+    wka['cumleistung'] = wka['Bruttoleistung'].cumsum()
+    wka.reset_index(drop=True, inplace=True)
+    wka = wka.loc[~wka['Inbetriebnahmedatum'].isna(), :]
+    # create pandas series of hourly values
+    wkash = pd.DataFrame(index=pd.date_range(start=wka.loc[0, 'Inbetriebnahmedatum'],
+                                             end=wka.loc[len(wka) - 1, 'Inbetriebnahmedatum'], freq='H', tz='utc'),
+                         columns=['Capacity'])
+    wka.index = wka['Inbetriebnahmedatum']
+    wkash.loc[wka['Inbetriebnahmedatum'], 'Capacity'] = wka['cumleistung'] / 1000
+    wkash = wkash.fillna(method='ffill')
+    return wkash
+
+
 def process_energy_balance_de(root_dir):
     """
     processes annual German energy balances from AGEB into a single multi-dimensional file
@@ -298,6 +322,7 @@ def process_profiles(root_dir, zones, eta=0.9):
     zeitreihen_ee_de = root_dir / 'data' / 'raw' / 'zeitreihen-ee-in-de-1990-2021-excel-en.xlsx'
     reservoir_fill = root_dir / 'data' / 'processed' / 'reservoir_filling.csv'
     profile_file = root_dir / 'data' / 'processed' / 'profiles_inflows_load.csv'
+    mastr_wind_file = root_dir / 'data' / 'raw' / 'EinheitenWind.xml'
 
     idx = pd.IndexSlice
     caps = pd.read_csv(capacities, index_col=[0, 1, 2, 3])
@@ -337,6 +362,10 @@ def process_profiles(root_dir, zones, eta=0.9):
             ts[f'{reg}-wind_on-cap'] = ts[f'{reg}-wind_on-cap'].interpolate()
 
     # historical wind offshore capacity and generation
+    # fix wrong opsd data
+    de_wind_off_cap = mastr_capacity_wind_at_sea(mastr_wind_file)
+    ts_opsd['DE_wind_offshore_capacity'] = de_wind_off_cap
+
     for reg in zones:
         if ts_opsd.columns.str.contains(f'{reg}_wind_offshore_generation_actual').any():
             ts[f'{reg}-wind_off-gen'] = ts_opsd[f'{reg}_wind_offshore_generation_actual'] / 1000
@@ -468,8 +497,6 @@ def process_profiles(root_dir, zones, eta=0.9):
                 else:
                     ts.loc[str(yr), f'{reg}-{fuel}-profile'] = ts.loc[str(yr), f'{reg}-{itm}-gen'] / \
                                                                ts.loc[str(yr), f'{reg}-{itm}-cap']
-
-    # TODO: wind offshore capacity from opsd is wrong -- needs to be corrected
 
     # ----- approximate reservoir inflows -----
     # hourly reservoir filling levels
