@@ -1,7 +1,7 @@
 ,variable cost,fixed cost,remark,source,CO2_intensity,AT,DE
 Biomass,4.04,0.0,20.0% net efficiency,"10, 13",0.0,3,1
 Coal,6.12,0.0,45.0% net efficiency,"10, 12",0.337,9,1
-Gas,2.36,0.0,57.5% net efficiency,"10, 12",0.201,5,1
+Gas,2.36,0.0,57.5% net efficiency,"10, 12",0.201,6,3
 Heat,,,,,,0,0
 Lignite,4.06,0.0,43.2% net efficiency,"10, 12",0.399,9,1
 Nuclear,0.27,0.0,34.0% net efficiency,"10, 8",0.0,1,1

@@ -26,7 +26,8 @@ setup(
         'urllib3',
         'pysftp',
         'openpyxl',
-        'xlrd'
+        'xlrd',
+        'bs4',
     ],
     data_files=[
         ('raw', ['data/raw/capacities.csv']),
