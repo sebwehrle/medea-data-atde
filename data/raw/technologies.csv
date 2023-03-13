@@ -1,51 +1,54 @@
 set_id,id,name,fuel,primary_product,capex_p,capex_e,eqacapex_p,eqacapex_e,opex_f,opex_v,lifetime,eta_ec,source,heat_generation,intermittent,storage,transmission,conventional,P_c,c_v,c_b,Q_mc,Q_b,P_mc,P_b,fuel_consumption,eta_mincond,q_q,source_b
-pv,0,Solar Photovoltaics,Solar,el,625.0,,36.0,na,9032.0,0.0,40,1.0,,0,1,0,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-ror,1,Run-of-river Hydro,Water,el,2800.0,,148.0,na,60000.0,0.0,60,1.0,,0,1,0,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-wind_on,2,Wind Power Onshore,Wind_On,el,1040.0,,68.0,na,12600.0,1.35,30,1.0,,0,1,0,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-wind_off,3,Wind Power Offshore,Wind_Off,el,1930.0,,126.0,na,36053.0,2.7,30,1.0,,0,1,0,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-bio,Biomass & Waste,Biomass & Waste,Biomass,el,3230.0,,229.0,na,92720.0,3.8,25,0.296,1,0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-bio_chp,Biomass & Waste - CoGen,Biomass & Waste - CoGen,Biomass,el,3400.0,,241.0,na,97600.0,3.8,25,0.296,1,1,0,0,0,1,1.0,1,0.36,0.5882352941176471,0.7352941176470589,0.4117647058823529,0.2647058823529411,5.365659777424484,0.296,0.8,1
-bio_boiler_chp,,Biomass Boiler,Biomass,ht,420.0,,30.0,na,33300.0,3.4,25,0.95,1,1,0,0,0,1,0.0,na,na,na,na,na,na,na,na,na,na
-nuc,Nuclear,Nuclear,Nuclear,el,5800.0,,338.0,na,121800.00000000001,2.5,40,0.34,6,0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-lig_stm,Lignite - Old,Lignite - Old,Lignite,el,1700.0,,99.0,na,60000.0,2.0,40,0.352,9,0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-lig_stm_chp,Lignite - Old CoGen,Lignite - Old CoGen,Lignite,el,1700.0,,99.0,na,60000.0,2.0,40,0.352,9,1,0,0,0,1,1.0,0.15,0.525,1.1851851851851851,1.4814814814814814,0.8222222222222222,0.7777777777777778,3.3459595959595965,0.7066074074074072,0.8,"4, 1, 8"
-lig_boa,Lignite - New (BoA),Lignite - New (BoA),Lignite,el,2000.0,,117.0,na,50000.0,4.5,40,0.439,6,0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-lig_boa_chp,Lignite - New (BoA) CoGen,Lignite - New (BoA) CoGen,Lignite,el,2105.0,,123.0,na,52625.0,4.5,40,0.439,"6, 1",1,0,0,0,1,1.0,0.15,0.66,0.9876543209876543,1.2345679012345678,0.8518518518518519,0.8148148148148149,2.615371635872775,0.8075432098765433,0.8,"3, 1, 8"
-coal_sub,Coal - Subcritical,Coal - Subcritical,Coal,el,1200.0,,70.0,na,30000.0,6.0,40,0.375,"1, 3",0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-coal_sub_chp,Coal - Subcritical CoGen,Coal - Subcritical CoGen,Coal,el,1263.0,,74.0,na,30000.0,6.0,40,0.375,"1, 3",1,0,0,0,1,1.0,0.15,0.55,1.1428571428571428,1.4285714285714284,0.8285714285714286,0.7857142857142858,3.123809523809524,0.7392857142857143,0.8,"4, 1, 8"
-coal_sc,Coal - Supercritical,Coal - Supercritical,Coal,el,1300.0,,76.0,na,25000.0,6.0,40,0.425,"1, 3",0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-coal_sc_chp,Coal - Supercritical CoGen,Coal - Supercritical CoGen,Coal,el,1368.0,,80.0,na,25000.0,6.0,40,0.425,"1, 3",1,0,0,0,1,1.0,0.15,0.6,1.0666666666666667,1.3333333333333333,0.84,0.8,2.7294117647058824,0.8103333333333333,0.8,"4, 1, 8"
-coal_usc,Coal - Ultra-Supercritical,Coal - Ultra-Supercritical,Coal,el,1900.0,,111.0,na,31000.0,2.9,40,0.485,"1, 3",0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-coal_usc_chp,Coal - Ultra-Supercritical CoGen,Coal - Ultra-Supercritical CoGen,Coal,el,2000.0,,117.0,na,31000.0,2.9,40,0.485,1,1,0,0,0,1,1.0,0.15,0.84,0.8080808080808082,1.0101010101010102,0.8787878787878788,0.8484848484848485,2.311777569509528,0.8181313131313132,0.8,1
-coal_igcc,Coal - IGCC,Coal - IGCC,Coal,el,2300.0,,140.0,na,57500.0,5.0,35,0.46,6,0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-ng_stm,Nat Gas - Steam Turbine,Nat Gas - Steam Turbine,Gas,el,400.0,,26.0,na,15000.0,3.0,30,0.407,3,0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-ng_stm_chp,Nat Gas - Steam Turbine CoGen,Nat Gas - Steam Turbine CoGen,Gas,el,400.0,,26.0,na,15000.0,3.0,30,0.407,3,1,0,0,0,1,1.0,0.15,0.55,1.1428571428571428,1.4285714285714284,0.8285714285714286,0.7857142857142858,2.8782028782028783,0.8023714285714285,0.8,"4, 7, 8"
-ng_cbt_lo,Nat Gas - Old OCGT,Nat Gas - Old OCGT,Gas,el,454.0,,32.0,na,8068.0,4.5,25,0.328,1,0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-ng_cbt_lo_chp,,Nat Gas - Old OCGT CoGen,Gas,el,499.40000000000003,,,,8068.0,4.5,25,0.328,,1,0,0,0,1,,,,,,,,,,,
-ng_cbt_hi,Nat Gas - New OCGT,Nat Gas - New OCGT,Gas,el,590.0,,42.0,na,19500.0,4.4,25,0.42,1,0,0,0,0,1,1.0,0,0.96,0.8333333333333335,1.0416666666666667,1,1,2.380952380952381,0.77,0.8,1
-ng_cbt_hi_chp,,Nat Gas - New OCGT CoGen,Gas,el,649.0,,,,19500.0,4.4,25,0.42,,1,0,0,0,1,,,,,,,,,,,
-ng_cc_lo,Nat Gas - Old Combined Cycle,Nat Gas - Old Combined Cycle,Gas,el,800.0,,52.0,na,20000.0,4.0,30,0.56,"3, 6",0,0,0,0,1,1.0,0.56,na,na,na,na,na,na,na,na,na
-ng_cc_lo_chp,Nat Gas - Old Combined Cycle CoGen,Nat Gas - Old Combined Cycle CoGen,Gas,el,842.0,,55.0,na,20000.0,4.0,30,0.56,"1, 3, 6",1,0,0,0,1,1.0,0.56,0.15,0.961111111111111,0.81,0.9,0.8785000000000001,0.865,2.002678571428571,0.9455600000000002,1
-ng_cc_hi,Nat Gas - New Combined Cycle,Nat Gas - New Combined Cycle,Gas,el,836.0,,59.0,na,27835.0,4.4,25,0.61,1,0,0,0,0,1,1.0,0.61,na,na,na,na,na,na,na,na,na
-ng_cc_hi_chp,Nat Gas - New Combined Cycle CoGen,Nat Gas - New Combined Cycle CoGen,Gas,el,880.0,,62.0,na,29300.0,4.4,25,0.61,1,1,0,0,0,1,1.0,0.61,0.15,1.2785714285714287,0.63,0.7,0.9055,0.895,1.7942622950819673,0.9366549999999999,1
-ng_mtr,Nat Gas - Motor,Nat Gas - Motor,Gas,el,902.5,,64.0,na,9262.5,5.4,25,0.47,1,0,0,0,0,1,1.0,0.47,na,na,na,na,na,na,na,na,na
-ng_mtr_chp,Nat Gas - Motor CoGen,Nat Gas - Motor CoGen,Gas,el,950.0,,67.0,na,9750.0,5.4,25,0.47,1,1,0,0,0,1,1.0,0.47,0,0.9500000000000001,0.9473684210526315,1.0526315789473684,1,1,2.127659574468085,0.9152631578947367,1
-ng_boiler_chp,"District heating boiler, gas fired","District heating boiler, gas fired",Gas,el,60.0,,4.0,na,1950.0,1.0,25,0.95,1,1,0,0,0,1,1.0,0.95,na,na,na,na,na,na,na,na,na
-oil_stm,Oil - Steam Turbine,Oil - Steam Turbine,Oil,el,400.0,,26.0,na,6000.0,3.0,30,0.396,3,0,0,0,0,1,1.0,0.396,na,na,na,na,na,na,na,na,na
-oil_stm_chp,Oil - Steam Turbine CoGen,Oil - Steam Turbine CoGen,Oil,el,400.0,,26.0,na,6000.0,3.0,30,0.396,3,1,0,0,0,1,1.0,0.396,0.175,0.5006756756756757,1.332,1.48,0.7669,0.741,3.113888888888889,0.8311644,"4, 7, 8"
-oil_cbt,Oil - OCGT,Oil - OCGT,Oil,el,378.0,,27.0,na,8068.0,4.5,25,0.41,1,0,0,0,0,1,1.0,0.41,na,na,na,na,na,na,na,na,na
-oil_cbt_chp,,Oil - OCGT CoGen,Oil,el,415.8,,,,8068.0,4.5,25,0.41,,1,0,0,0,1,,,,,,,,,,,
-oil_cc,Oil - Combined Cycle,Oil - Combined Cycle,Oil,el,800.0,,57.0,na,25000.0,4.0,25,0.47,8,0,0,0,0,1,1.0,0.47,na,na,na,na,na,na,na,na,na
-oil_cc_chp,Oil - Combined Cycle CoGen,Oil - Combined Cycle CoGen,Oil,el,842.0,,60.0,na,25000.0,4.0,25,0.47,"1, 8",1,0,0,0,1,1.0,0.47,0.187,0.5324244604316547,1.251,1.39,0.766063,0.74007,2.6253978723404257,0.9480196100000001,"4, 7, 8"
-heatpump_pth,Power - Heatpump Compression,Power - Heatpump Compression,el,ht,660.0,,47.0,na,2000.0,1.8,25,3.6,1,1,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-hpa_pth,Power - Heatpump Absorption,Power - Heatpump Absorption,el,ht,560.0,,40.0,na,2000.0,0.28,25,1.71,1,1,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-eboi_pth,Power - Electric Boiler,Power - Electric Boiler,el,ht,150.0,,12.0,na,1070.0,0.5,20,0.99,1,1,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
-battery,,Battery (Li-Ion),el,el,320.0,302.0,23.0,21,540.0,1.8,25,1.0,,0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-hyd_res_day,Hydro - Run-of-River,"Hydro - Reservoir, day",el,el,2400.0,6.5,131.0,na,20000.0,0.0,50,0.9,"2, 3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-hyd_res_week,Hydro - Reservoir,"Hydro - Reservoir, week",el,el,2400.0,6.5,131.0,na,20000.0,0.0,50,0.9,"2, 3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-hyd_res_season,Hydro - Pumped Storage,"Hydro - Reservoir, seasonal",el,el,2400.0,6.5,131.0,na,20000.0,0.0,50,0.9,"2, 3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-hyd_psp_day,,"Hydro - Pumped Storage, day",el,el,3000.0,6.5,164.0,na,20000.0,0.0,50,0.9,"3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-hyd_psp_week,,"Hydro - Pumped Storage, week",el,el,3000.0,6.5,164.0,na,20000.0,0.0,50,0.9,"3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-hyd_psp_season,,"Hydro - Pumped Storage, seasonal",el,el,3000.0,6.5,164.0,na,20000.0,0.0,50,0.9,"3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-h2_stack,,H2 Electrolysis - Fuel cell stack,el,el,2575.0,2.0,183.0,0,82500.0,0.0,25,0.333,"1, 2, 15",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
-transmission,,Transmission grid expansion,el,el,506.0,,29.0,na,9.0,0.0,40,0.0,"16, 17",0,0,0,1,0,0.0,na,na,na,na,na,na,na,na,na,na
+bio_eng,,Gas engine,biomass,el,875,0.0,62,0,8900.0,6.5,25,0.46,td_for_el_and_dh,0,0,0,0,1,,,,,,,,,,,
+bio_sofc,,Biogas SOFC,biomass,el,1400,0.0,112,0,70000.0,0.0,20,0.6,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+bio_wchip_boiler,,Wood Chips Boiler,biomass,ht,410,0.0,29,0,37150.0,4.115,25,1.149,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+bio_wchip_chp,,Wood Chips Backpressure CHP,biomass,el,3030,0.0,215,0,86500.0,4.41,25,0.303,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+bio_wchip_ex_chp,,Wood Chips Extraction CHP,biomass,el,980,0.0,70,0,26700.0,1.11,25,0.423,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+bio_wpel_boiler,,Wood Pellets Boiler,biomass,ht,645,0.0,46,0,29800.0,2.815,25,1.012,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+bio_wpel_chp,,Wood Pellets CHP,biomass,el,2040,0.0,145,0,56500.0,1.71,25,0.336,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+bio_wpel_ex_chp,,Wood Pellets Extraction CHP,biomass,el,885,0.0,63,0,22700.0,0.51,25,0.448,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+e_boiler,,Electric Boiler,el,ht,60,0.0,5,0,970.0,1.0,20,0.99,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+ely_alka,,Alkaline electrolysis,el,hydrogen,300,0.0,19,0,6000.0,0.0,32,0.715,td_renew_fuels,1,0,0,0,1,,,,,,,,,,,
+ely_pem,,PEM electrolysis,el,hydrogen,450,0.0,30,0,18000.0,0.0,28,0.68,td_renew_fuels,1,0,0,0,1,,,,,,,,,,,
+ely_sofc,,Solid oxide electrolysis,el,hydrogen,1342,0.0,108,0,161040.0,0.0,20,0.814,td_renew_fuels,0,0,0,0,1,,,,,,,,,,,
+hp_airl,,"Heatpump, air, large",el,ht,760,0.0,54,0,2000.0,1.69,25,3.9,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+hp_airmini,,"Heatpump, air, residential",el,ht,440,0.0,50,0,27644.0,0.0,12,5.5,td_heating_installations,1,0,0,0,1,,,,,,,,,,,
+hp_airs,,"Heatpump, air, small",el,ht,1330,0.0,94,0,2000.0,2.69,25,3.1,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+hp_gnd,,"Heatpump, ground, residential",el,ht,3544,0.0,284,0,55445.0,0.0,20,3.8,td_heating_installations,1,0,0,0,1,,,,,,,,,,,
+hp_wtr,,"Heatpump, water, residential",el,ht,2447,0.0,196,0,62349.0,0.0,20,3.6,td_heating_installations,1,0,0,0,1,,,,,,,,,,,
+hyd_psp_day,,"Hydro Pumped Storage, day",el,el,3000,6.5,164,0,20000.0,0.0,50,0.9,"3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
+hyd_psp_season,,"Hydro Pumped Storage, seasonal",el,el,3000,6.5,164,0,20000.0,0.0,50,0.9,"3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
+hyd_psp_week,,"Hydro Pumped Storage, week",el,el,3000,6.5,164,0,20000.0,0.0,50,0.9,"3, 6",0,0,1,0,0,1.0,na,na,na,na,na,na,na,na,na,na
+hyd_res_day,,"Hydro Reservoir, day",el,el,2400,6.5,131,0,20000.0,0.0,50,0.9,"2, 3, 6",0,0,1,0,0,1.0,3.6,na,na,na,na,na,na,na,na,na
+hyd_res_season,,"Hydro Reservoir, seasonal",el,el,2400,6.5,131,0,20000.0,0.0,50,0.9,"2, 3, 6",0,0,1,0,0,1.0,0.99,na,na,na,na,na,na,na,na,na
+hyd_res_week,,"Hydro Reservoir, week",el,el,2400,6.5,131,0,20000.0,0.0,50,0.9,"2, 3, 6",0,0,1,0,0,1.0,1.71,na,na,na,na,na,na,na,na,na
+str_lion,,Li-Ion  Battery,el,el,100,94.0,7,6,0.54,1.7,30,0.96,td_energy_storage,0,0,1,0,0,,,,,,,,,,,
+str_varx,,Va Redox Battery,el,el,33,23.0,3,2,1.5,0.9,20,0.78,td_energy_storage,0,0,1,0,0,,,,,,,,,,,
+geotherm,,"Geothermal, deep",geo,ht,2650,0.0,172,0,22150.0,4.575,30,8.765,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+str_hwtr,,Large hot water tank,ht,ht,5,3.0,0,0,8.6,0.0,40,0.98,td_energy_storage,1,0,1,0,0,,,,,,,,,,,
+str_ptes,,Pit Thermal Energy Storage,ht,ht,10,5.1,1,0,3.0,0.0,25,0.7,td_energy_storage,1,0,1,0,0,,,,,,,,,,,
+h2_cbt_hi,,Nat Gas New OCGT,hydrogen,el,590,0.0,42,0,19500.0,4.4,25,0.42,1,0,0,0,0,1,1.0,0,0.96,0.8333333333333335,1.0416666666666667,1,1,2.380952380952381,0.77,0.8,1
+h2_cbt_hi_chp,,Nat Gas New OCGT CoGen,hydrogen,el,649,0.0,46,0,19500.0,4.4,25,0.42,,1,0,0,0,1,,,,,,,,,,,
+h2_cc_hi,,Nat Gas New Combined Cycle,hydrogen,el,836,0.0,59,0,27835.0,4.4,25,0.61,1,0,0,0,0,1,0.0,0,0,0,0,0,0,0,0,0,na
+h2_cc_hi_chp,,Nat Gas New Combined Cycle CoGen,hydrogen,el,880,0.0,62,0,29300.0,4.4,25,0.61,1,1,0,0,0,1,0.0,0,0,0,0,0,0,0,0,0,1
+h2_stm,,Nat Gas Steam Turbine,hydrogen,el,400,0.0,26,0,15000.0,3.0,30,0.407,3,0,0,0,0,1,1.0,na,na,na,na,na,na,na,na,na,na
+h2_stm_chp,,Nat Gas Steam Turbine CoGen,hydrogen,el,400,0.0,26,0,15000.0,3.0,30,0.407,3,1,0,0,0,1,1.0,0.15,0.55,1.1428571428571428,1.4285714285714284,0.8285714285714286,0.7857142857142858,2.8782028782028783,0.8023714285714285,0.8,"4, 7, 8"
+h2fc_pem,,Hydrogen PEM FC,hydrogen,el,950,0.0,123,0,47500.0,0.0,10,0.5,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+str_h2cave,,Cavern Hydrogen storage,hydrogen,hydrogen,50,1.5,3,0,3e-05,1.5e-05,100,0.99,td_energy_storage,0,0,1,0,0,,,,,,,,,,,
+str_h2lohc,,LOHC Hydrogen storage,hydrogen,hydrogen,5,0.45,0,0,1.8e-05,4.5e-06,20,0.75,td_energy_storage,0,0,1,0,0,,,,,,,,,,,
+str_h2tnk,,Hydrogen storage tank,hydrogen,hydrogen,250,27.0,16,2,500.0,0.0,30,0.89,td_energy_storage,0,0,1,0,0,,,,,,,,,,,
+g_boiler,,Gas Boiler,ngas,ht,50,0.0,4,0,1800.0,1.0,25,1.04,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+ngas_cbt_hi,,Nat Gas New OCGT,ngas,el,590,0.0,42,0,19500.0,4.4,25,0.42,1,0,0,0,0,1,0.0,0,0.96,0.8333333333333335,1.0416666666666667,1,1,2.380952380952381,0.77,0.8,1
+ngas_cbt_hi_chp,,Nat Gas New OCGT CoGen,ngas,el,649,0.0,46,0,19500.0,4.4,25,0.42,,1,0,0,0,1,,,,,,,,,,,
+oil__ocgt,,LFO OCGT,oil,el,350,0.0,25,0,7584.0,4.5,25,0.43,td_for_el_and_dh,0,0,0,0,1,,,,,,,,,,,
+oil_eng,,Diesel engine,oil,el,340,0.0,24,0,8272.0,6.0,25,0.37,td_for_el_and_dh,0,0,0,0,1,,,,,,,,,,,
+pv_com,,PV rooftop commercial & industrial,solar,el,460,0.0,27,0,7300.0,0.0,40,1.0,td_for_el_and_dh,0,1,0,0,0,,,,,,,,,,,
+pv_res,,PV Rooftop residential,solar,el,700,0.0,41,0,9100.0,0.0,40,1.0,td_for_el_and_dh,0,1,0,0,0,,,,,,,,,,,
+pv_track,,PV utility-scale tracker,solar,el,380,0.0,22,0,9400.0,0.0,40,1.0,td_for_el_and_dh,0,1,0,0,0,,,,,,,,,,,
+pv_utl,,PV utility-scale,solar,el,320,0.0,19,0,8100.0,0.0,40,1.0,td_for_el_and_dh,0,1,0,0,0,,,,,,,,,,,
+solartherm,,Solarthermal plant,solar,ht,290,0.0,19,0,58.26,0.325,30,0.49,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+wst_boiler,,Waste boiler,waste,ht,1625,0.0,115,0,69300.0,5.57,25,1.061,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+wst_chp,,Waste CHP,waste,el,6920,0.0,491,0,39450.0,5.885,25,0.245,td_for_el_and_dh,1,0,0,0,1,,,,,,,,,,,
+ror,,Hydro Run-of-river,water,el,2800,0.0,148,0,60000.0,0.0,60,1.0,,0,1,0,0,0,1.0,na,na,na,na,na,na,na,na,na,na
+wind_off,,Wind Offshore,wind_off,el,1680,0.0,109,0,34000.0,3.42,30,1.0,td_for_el_and_dh,0,1,0,0,0,,,,,,,,,,,
+wind_on,,Wind Onshore,wind_on,el,980,0.0,64,0,11592.0,1.24,30,1.0,td_for_el_and_dh,0,1,0,0,0,,,,,,,,,,,

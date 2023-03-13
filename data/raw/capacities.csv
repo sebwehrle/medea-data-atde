@@ -1,70 +1,201 @@
-,,,Name,battery,bio,bio_boiler_chp,bio_chp,coal_igcc,coal_sc,coal_sc_chp,coal_sub,coal_sub_chp,coal_usc,coal_usc_chp,eboi_pth,h2_stack,heatpump_pth,hpa_pth,hyd_psp_day,hyd_psp_season,hyd_psp_week,hyd_res_day,hyd_res_season,hyd_res_week,lig_boa,lig_boa_chp,lig_stm,lig_stm_chp,ng_boiler_chp,ng_cbt_hi,ng_cbt_hi_chp,ng_cbt_lo,ng_cbt_lo_chp,ng_cc_hi,ng_cc_hi_chp,ng_cc_lo,ng_cc_lo_chp,ng_mtr,ng_mtr_chp,ng_stm,ng_stm_chp,nuc,oil_cbt,oil_cbt_chp,oil_cc,oil_cc_chp,oil_stm,oil_stm_chp,pv,ror,wind_off,wind_on
-Installed Capacity Out,AT,2012,el,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.362885,5.519,0.0,1.373
-Installed Capacity In,AT,2012,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,AT,2012,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,AT,2013,el,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.625974,5.573,0.0,1.688
-Installed Capacity In,AT,2013,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,AT,2013,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,AT,2014,el,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.724,5.615,0.0,2.11
-Installed Capacity In,AT,2014,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,AT,2014,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,AT,2015,el,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.872,5.656,0.0,2.489
-Installed Capacity In,AT,2015,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,AT,2015,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,AT,2016,el,0.0,0.2095,0.8,0.355,0.0,0.0,0.0,0.785,0.416,0.0,0.0,0.0,0.5,0.0,0.0,2.464,1.606,1.17,1.989,1.207,0.328,0.0,0.0,0.0,0.0,1.719,0.0,0.0,0.149,0.322,0.0,2.658,0.176,0.383,0.0,0.0,0.162,0.705,0.0,0.014,0.0,0.12,0.0,0.296,0.0,1.033,5.7,0.0,2.73
-Installed Capacity In,AT,2016,el,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.89,1.393,1.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,AT,2016,el,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,375.0,0.0,0.0,75.4,1481.5,308.5,34.6,1342.3,36.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,AT,2017,el,,,,,,,,0.0,0.598,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.193,5.714,0.0,2.887
-Installed Capacity In,AT,2017,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,AT,2017,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,AT,2018,el,,,0.8,,,,,,0.598,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.371,5.723,0.0,3.133
-Installed Capacity In,AT,2018,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,AT,2018,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,AT,2019,el,0.0,0.21,0.8,0.375,0.0,0.414,0.0,,0.598,0.0,0.0,0.0,0.0,0.0,0.0,2.464,1.606,1.17,1.989,1.207,0.328,0.0,0.0,0.0,0.0,,0.0,0.0,0.149,0.322,0.0,2.658,0.176,0.383,0.0,0.0,0.0,0.705,0.0,0.014,0.0,0.12,0.0,0.0,0.0,1.615,5.797,0.0,3.208
-Installed Capacity In,AT,2019,el,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.89,1.393,1.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,AT,2019,el,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,75.4,1481.5,308.5,34.6,1342.3,36.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,AT,2020,el,,,,,,,,,0.246,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.976,5.796,0.0,3.164
-Installed Capacity In,AT,2020,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,AT,2020,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,DE,2012,el,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,34.077,4.518,0.268,30.711
-Installed Capacity In,DE,2012,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,DE,2012,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,DE,2013,el,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,36.71,4.5009999999999994,0.508,32.969
-Installed Capacity In,DE,2013,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,DE,2013,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,DE,2014,el,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,37.9,4.491,0.994,37.62
-Installed Capacity In,DE,2014,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,DE,2014,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,DE,2015,el,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,39.224,4.5,3.283,41.297
-Installed Capacity In,DE,2015,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,DE,2015,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,DE,2016,el,0.0,2.504,2.0,0.0,0.0,1.135,4.146,8.06,11.634,0.0,0.0,0.0,5.0,0.1,0.0,6.155,0.289,0.0,0.0,0.185,0.0,1.012,0.933,5.923,12.425,18.0,0.094,0.428,2.462,1.082,3.472,5.236,1.835,4.995,0.021,0.149,1.502,2.909,12.02,1.478,0.297,0.0,0.0,0.194,1.547,40.679,4.5,4.152,45.283
-Installed Capacity In,DE,2016,el,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,5.0,0.0,0.0,5.835,0.173,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,DE,2016,el,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3750.0,0.0,0.0,38.45,98.55,0.0,0.0,101.44,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,DE,2017,el,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,42.339,4.5,5.427,50.291
-Installed Capacity In,DE,2017,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,DE,2017,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,DE,2018,el,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45.277,4.507,6.417,52.565
-Installed Capacity In,DE,2018,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,DE,2018,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,DE,2019,el,0.0,4.697,5.0,4.697,0.0,8.06,11.634,0.0,0.0,1.135,4.146,0.0,0.0,0.0,0.0,6.75,0.289,0.0,0.0,0.185,0.0,3.821,2.54,4.74,9.195,18.0,0.094,0.428,2.462,1.082,3.472,5.236,1.835,4.995,0.021,0.149,1.502,2.909,9.515,1.478,0.297,0.0,0.0,0.194,1.547,48.914,4.556,7.555,53.187
-Installed Capacity In,DE,2019,el,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,5.835,0.173,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,DE,2019,el,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,38.45,98.55,0.0,0.0,101.44,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,DE,2020,el,,4.2,2.0,4.2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,53.848,4.5,7.747,54.42
-Installed Capacity In,DE,2020,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Storage Capacity,DE,2020,el,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Installed Capacity Out,CH,2030,el,,1.197,,,,,,0.0,,,,,,,,3.989,,,8.152,,,0.0,,4.42,,,,,,,0.889,,,,,,,,1.19,,,,,,,5.5,4.113,,0.255
-Installed Capacity In,CH,2030,el,,,,,,,,0.0,,,,,,,,,,,,,,0.0,,0.0,,,,,,,,,,,,,,,0.0,,,,,,,0.0,0.0,,0.0
-Storage Capacity,CH,2030,el,,,,,,,,0.0,,,,,,,,,,,,,,0.0,,0.0,,,,,,,,,,,,,,,0.0,,,,,,,0.0,0.0,,0.0
-Installed Capacity Out,CZ,2030,el,0.453,1.063,,,,,,0.372,,,1.225,,,,,1.158,,,0.7,,,0.6,,0.0,,,,,,,0.886,,0.462,,,,,,4.041,,,,,0.014,,4.9,0.395,,0.96
-Installed Capacity In,CZ,2030,el,,,,,,,,0.0,,,,,,,,,,,,,,0.0,,0.0,,,,,,,,,,,,,,,0.0,,,,,,,0.0,0.0,,0.0
-Storage Capacity,CZ,2030,el,,,,,,,,0.0,,,,,,,,,,,,,,0.0,,0.0,,,,,,,,,,,,,,,0.0,,,,,,,0.0,0.0,,0.0
-Installed Capacity Out,HU,2030,el,,0.577,,,,,,0.0,,,0.454,,,,,,,,,,,0.0,,0.0,,,0.114,,,,0.834,,1.167,,,,,,4.248,,,,,0.41,,6.645,0.057,,0.0
-Installed Capacity In,HU,2030,el,,,,,,,,0.0,,,,,,,,,,,,,,0.0,,0.0,,,,,,,,,,,,,,,0.0,,,,,,,0.0,0.0,,0.0
-Storage Capacity,HU,2030,el,,,,,,,,0.0,,,,,,,,,,,,,,0.0,,0.0,,,,,,,,,,,,,,,0.0,,,,,,,0.0,0.0,,0.0
-Installed Capacity Out,IT,2030,el,,2.266,,,,,,0.0,,,3.242,,,,,4.872,,,7.015,,,0.0,,0.0,,,2.846,,,,15.2,,4.482,,,,,,0.0,,,,,,,23.656,4.68,,0.12
-Installed Capacity In,IT,2030,el,,,,,,,,0.0,,,,,,,,,,,,,,0.0,,0.0,,,,,,,,,,,,,,,0.0,,,,,,,0.0,0.0,,0.0
-Storage Capacity,IT,2030,el,,,,,,,,0.0,,,,,,,,,,,,,,0.0,,0.0,,,,,,,,,,,,,,,0.0,,,,,,,0.0,0.0,,0.0
-Installed Capacity Out,SI,2030,el,0.01,0.049,,,,,,0.045,,,0.158,,,,,0.185,,,,,,0.0,,0.844,,,,,0.415,,0.139,,,,,,,,0.703,,,,,,,1.81,1.206,,0.15
-Installed Capacity In,SI,2030,el,,,,,,,,0.0,,,,,,,,,,,,,,0.0,,0.0,,,,,,,,,,,,,,,0.0,,,,,,,0.0,0.0,,0.0
-Storage Capacity,SI,2030,el,,,,,,,,0.0,,,,,,,,,,,,,,0.0,,0.0,,,,,,,,,,,,,,,0.0,,,,,,,0.0,0.0,,0.0
+,,,Source,el,ht,hydrogen
+Installed Capacity In,AT,2020,0.328,0.0,,
+Installed Capacity In,AT,2020,1.17,1.01,,
+Installed Capacity In,AT,2020,1.207,0.0,,
+Installed Capacity In,AT,2020,1.606,1.393,,
+Installed Capacity In,AT,2020,1.989,0.0,,
+Installed Capacity In,AT,2020,2.464,0.89,,
+Storage Capacity,AT,2020,0.328,36.7,,
+Storage Capacity,AT,2020,1.17,308.5,,
+Storage Capacity,AT,2020,1.207,1342.3,,
+Storage Capacity,AT,2020,1.606,1481.5,,
+Storage Capacity,AT,2020,1.989,34.6,,
+Storage Capacity,AT,2020,2.464,75.4,,
+Installed Capacity Out,AT,2025,0.134,0.134,,
+Installed Capacity Out,AT,2025,0.21,0.21,,
+Installed Capacity Out,AT,2025,0.328,0.328,,
+Installed Capacity Out,AT,2025,0.375,0.375,,
+Installed Capacity Out,AT,2025,0.8,,0.8,
+Installed Capacity Out,AT,2025,1.17,1.17,,
+Installed Capacity Out,AT,2025,1.176,1.176,,
+Installed Capacity Out,AT,2025,1.207,1.207,,
+Installed Capacity Out,AT,2025,1.606,1.606,,
+Installed Capacity Out,AT,2025,1.976,1.976,,
+Installed Capacity Out,AT,2025,1.989,1.989,,
+Installed Capacity Out,AT,2025,2.464,2.464,,
+Installed Capacity Out,AT,2025,3.164,3.164,,
+Installed Capacity Out,AT,2025,3.2169999999999996,3.2169999999999996,,
+Installed Capacity Out,AT,2025,5.796,5.796,,
+Installed Capacity In,AT,2025,0.328,0.0,,
+Installed Capacity In,AT,2025,1.17,1.01,,
+Installed Capacity In,AT,2025,1.207,0.0,,
+Installed Capacity In,AT,2025,1.606,1.393,,
+Installed Capacity In,AT,2025,1.989,0.0,,
+Installed Capacity In,AT,2025,2.464,0.89,,
+Storage Capacity,AT,2025,0.328,36.7,,
+Storage Capacity,AT,2025,1.17,308.5,,
+Storage Capacity,AT,2025,1.207,1342.3,,
+Storage Capacity,AT,2025,1.606,1481.5,,
+Storage Capacity,AT,2025,1.989,34.6,,
+Storage Capacity,AT,2025,2.464,75.4,,
+Installed Capacity Out,AT,2030,0.134,0.134,,
+Installed Capacity Out,AT,2030,0.21,0.21,,
+Installed Capacity Out,AT,2030,0.328,0.328,,
+Installed Capacity Out,AT,2030,0.375,0.375,,
+Installed Capacity Out,AT,2030,0.8,,0.8,
+Installed Capacity Out,AT,2030,1.17,1.17,,
+Installed Capacity Out,AT,2030,1.176,1.176,,
+Installed Capacity Out,AT,2030,1.207,1.207,,
+Installed Capacity Out,AT,2030,1.606,1.606,,
+Installed Capacity Out,AT,2030,1.976,1.976,,
+Installed Capacity Out,AT,2030,1.989,1.989,,
+Installed Capacity Out,AT,2030,2.464,2.464,,
+Installed Capacity Out,AT,2030,3.164,3.164,,
+Installed Capacity Out,AT,2030,3.2169999999999996,3.2169999999999996,,
+Installed Capacity Out,AT,2030,5.796,5.796,,
+Installed Capacity In,AT,2030,0.328,0.0,,
+Installed Capacity In,AT,2030,1.17,1.01,,
+Installed Capacity In,AT,2030,1.207,0.0,,
+Installed Capacity In,AT,2030,1.606,1.393,,
+Installed Capacity In,AT,2030,1.989,0.0,,
+Installed Capacity In,AT,2030,2.464,0.89,,
+Storage Capacity,AT,2030,0.328,36.7,,
+Storage Capacity,AT,2030,1.17,308.5,,
+Storage Capacity,AT,2030,1.207,1342.3,,
+Storage Capacity,AT,2030,1.606,1481.5,,
+Storage Capacity,AT,2030,1.989,34.6,,
+Storage Capacity,AT,2030,2.464,75.4,,
+Installed Capacity Out,AT,2035,0.134,0.134,,
+Installed Capacity Out,AT,2035,0.21,0.21,,
+Installed Capacity Out,AT,2035,0.328,0.328,,
+Installed Capacity Out,AT,2035,0.375,0.375,,
+Installed Capacity Out,AT,2035,0.8,,0.8,
+Installed Capacity Out,AT,2035,1.17,1.17,,
+Installed Capacity Out,AT,2035,1.176,1.176,,
+Installed Capacity Out,AT,2035,1.207,1.207,,
+Installed Capacity Out,AT,2035,1.606,1.606,,
+Installed Capacity Out,AT,2035,1.976,1.976,,
+Installed Capacity Out,AT,2035,1.989,1.989,,
+Installed Capacity Out,AT,2035,2.464,2.464,,
+Installed Capacity Out,AT,2035,3.164,3.164,,
+Installed Capacity Out,AT,2035,3.2169999999999996,3.2169999999999996,,
+Installed Capacity Out,AT,2035,5.796,5.796,,
+Installed Capacity In,AT,2035,0.328,0.0,,
+Installed Capacity In,AT,2035,1.17,1.01,,
+Installed Capacity In,AT,2035,1.207,0.0,,
+Installed Capacity In,AT,2035,1.606,1.393,,
+Installed Capacity In,AT,2035,1.989,0.0,,
+Installed Capacity In,AT,2035,2.464,0.89,,
+Storage Capacity,AT,2035,0.328,36.7,,
+Storage Capacity,AT,2035,1.17,308.5,,
+Storage Capacity,AT,2035,1.207,1342.3,,
+Storage Capacity,AT,2035,1.606,1481.5,,
+Storage Capacity,AT,2035,1.989,34.6,,
+Storage Capacity,AT,2035,2.464,75.4,,
+Installed Capacity Out,AT,2040,0.134,0.134,,
+Installed Capacity Out,AT,2040,0.21,0.21,,
+Installed Capacity Out,AT,2040,0.328,0.328,,
+Installed Capacity Out,AT,2040,0.375,0.375,,
+Installed Capacity Out,AT,2040,0.8,,0.8,
+Installed Capacity Out,AT,2040,1.17,1.17,,
+Installed Capacity Out,AT,2040,1.176,1.176,,
+Installed Capacity Out,AT,2040,1.207,1.207,,
+Installed Capacity Out,AT,2040,1.606,1.606,,
+Installed Capacity Out,AT,2040,1.976,1.976,,
+Installed Capacity Out,AT,2040,1.989,1.989,,
+Installed Capacity Out,AT,2040,2.464,2.464,,
+Installed Capacity Out,AT,2040,3.164,3.164,,
+Installed Capacity Out,AT,2040,3.2169999999999996,3.2169999999999996,,
+Installed Capacity Out,AT,2040,5.796,5.796,,
+Installed Capacity In,AT,2040,0.328,0.0,,
+Installed Capacity In,AT,2040,1.17,1.01,,
+Installed Capacity In,AT,2040,1.207,0.0,,
+Installed Capacity In,AT,2040,1.606,1.393,,
+Installed Capacity In,AT,2040,1.989,0.0,,
+Installed Capacity In,AT,2040,2.464,0.89,,
+Storage Capacity,AT,2040,0.328,36.7,,
+Storage Capacity,AT,2040,1.17,308.5,,
+Storage Capacity,AT,2040,1.207,1342.3,,
+Storage Capacity,AT,2040,1.606,1481.5,,
+Storage Capacity,AT,2040,1.989,34.6,,
+Storage Capacity,AT,2040,2.464,75.4,,
+Installed Capacity Out,DE,2020,0.134,2.3,,
+Installed Capacity Out,DE,2020,0.21,1.4,,
+Installed Capacity Out,DE,2020,0.375,8.8,,
+Installed Capacity Out,DE,2020,1.176,8.8,,
+Installed Capacity Out,DE,2020,1.976,53.7,,
+Installed Capacity Out,DE,2020,2.464,9.6,,
+Installed Capacity Out,DE,2020,3.164,54.4,,
+Installed Capacity Out,DE,2020,3.2169999999999996,17.5,,
+Installed Capacity Out,DE,2020,5.796,5.3,,
+Installed Capacity Out,DE,2020,Unnamed: 11_level_1,,0.4,
+Installed Capacity Out,DE,2020,Unnamed: 13_level_1,,,0.05
+Installed Capacity Out,DE,2020,Unnamed: 15_level_1,,0.4,
+Installed Capacity Out,DE,2020,Unnamed: 54_level_1,7.8,,
+Installed Capacity Out,DE,2020,Unnamed: 5_level_1,,4.1,
+Installed Capacity In,DE,2020,2.464,8.3,,
+Storage Capacity,DE,2020,2.464,54.7,,
+Installed Capacity Out,DE,2025,0.134,1.9,,
+Installed Capacity Out,DE,2025,0.21,1.3,,
+Installed Capacity Out,DE,2025,0.375,7.9,,
+Installed Capacity Out,DE,2025,1.176,9.7,,
+Installed Capacity Out,DE,2025,1.976,110.3,,
+Installed Capacity Out,DE,2025,2.464,10.3,,
+Installed Capacity Out,DE,2025,3.164,69.6,,
+Installed Capacity Out,DE,2025,3.2169999999999996,19.5,,
+Installed Capacity Out,DE,2025,5.796,5.3,,
+Installed Capacity Out,DE,2025,Unnamed: 11_level_1,,2.8,
+Installed Capacity Out,DE,2025,Unnamed: 13_level_1,,,4.5
+Installed Capacity Out,DE,2025,Unnamed: 15_level_1,,1.7,
+Installed Capacity Out,DE,2025,Unnamed: 54_level_1,16.9,,
+Installed Capacity Out,DE,2025,Unnamed: 5_level_1,,3.3,
+Installed Capacity In,DE,2025,2.464,8.9,,
+Storage Capacity,DE,2025,2.464,58.7,,
+Installed Capacity Out,DE,2030,0.134,1.5,,
+Installed Capacity Out,DE,2030,0.21,1.1,,
+Installed Capacity Out,DE,2030,0.375,6.7,,
+Installed Capacity Out,DE,2030,1.176,11.0,,
+Installed Capacity Out,DE,2030,1.976,181.0,,
+Installed Capacity Out,DE,2030,2.464,11.1,,
+Installed Capacity Out,DE,2030,3.164,88.5,,
+Installed Capacity Out,DE,2030,3.2169999999999996,21.9,,
+Installed Capacity Out,DE,2030,5.796,5.3,,
+Installed Capacity Out,DE,2030,Unnamed: 11_level_1,,5.8,
+Installed Capacity Out,DE,2030,Unnamed: 13_level_1,,,10.1
+Installed Capacity Out,DE,2030,Unnamed: 15_level_1,,3.2,
+Installed Capacity Out,DE,2030,Unnamed: 54_level_1,28.3,,
+Installed Capacity Out,DE,2030,Unnamed: 5_level_1,,2.4,
+Installed Capacity In,DE,2030,2.464,9.6,,
+Storage Capacity,DE,2030,2.464,63.3,,
+Installed Capacity Out,DE,2035,0.134,1.0,,
+Installed Capacity Out,DE,2035,0.21,0.9,,
+Installed Capacity Out,DE,2035,0.375,5.5,,
+Installed Capacity Out,DE,2035,1.176,12.2,,
+Installed Capacity Out,DE,2035,1.976,251.7,,
+Installed Capacity Out,DE,2035,2.464,11.9,,
+Installed Capacity Out,DE,2035,3.164,107.4,,
+Installed Capacity Out,DE,2035,3.2169999999999996,24.3,,
+Installed Capacity Out,DE,2035,5.796,5.3,,
+Installed Capacity Out,DE,2035,Unnamed: 11_level_1,,8.8,
+Installed Capacity Out,DE,2035,Unnamed: 13_level_1,,,15.8
+Installed Capacity Out,DE,2035,Unnamed: 15_level_1,,4.8,
+Installed Capacity Out,DE,2035,Unnamed: 54_level_1,39.7,,
+Installed Capacity Out,DE,2035,Unnamed: 5_level_1,,1.4,
+Installed Capacity In,DE,2035,2.464,10.3,,
+Storage Capacity,DE,2035,2.464,67.8,,
+Installed Capacity Out,DE,2040,0.134,0.5,,
+Installed Capacity Out,DE,2040,0.21,0.8,,
+Installed Capacity Out,DE,2040,0.375,3.9,,
+Installed Capacity Out,DE,2040,1.176,12.2,,
+Installed Capacity Out,DE,2040,1.976,323.1,,
+Installed Capacity Out,DE,2040,2.464,12.2,,
+Installed Capacity Out,DE,2040,3.164,128.1,,
+Installed Capacity Out,DE,2040,3.2169999999999996,24.5,,
+Installed Capacity Out,DE,2040,5.796,5.3,,
+Installed Capacity Out,DE,2040,Unnamed: 11_level_1,,11.4,
+Installed Capacity Out,DE,2040,Unnamed: 13_level_1,,,26.3
+Installed Capacity Out,DE,2040,Unnamed: 15_level_1,,5.7,
+Installed Capacity Out,DE,2040,Unnamed: 54_level_1,54.2,,
+Installed Capacity Out,DE,2040,Unnamed: 5_level_1,,0.9,
+Installed Capacity In,DE,2040,2.464,10.6,,
+Storage Capacity,DE,2040,2.464,69.5,,
