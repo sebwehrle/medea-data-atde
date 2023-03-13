@@ -1,5 +1,6 @@
 # %% imports
 import os
+import ssl
 import sysconfig
 import certifi
 import shutil
@@ -9,10 +10,12 @@ import urllib.request
 import cdsapi
 import logging
 import pandas as pd
+from openpyxl import load_workbook
 from pathlib import Path
 from zipfile import ZipFile
 from bs4 import BeautifulSoup
 from itertools import compress
+from datetime import datetime
 from medea_data_atde.logging_config import setup_logging
 
 
@@ -85,11 +88,13 @@ def mastr_gesamtdatenurl(mastr_html):
     :param mastr_html: url to the page holding the download link for the zipped Gesamtdatenexport-XML
     :return: url to download zipped Gesamtdatenexport XML-file
     """
-    html_page = urllib.request.urlopen(mastr_html)
+    gcontext = ssl.SSLContext()
+    html_page = urllib.request.urlopen(mastr_html, context=gcontext)
     soup = BeautifulSoup(html_page, 'html.parser')
     for link in soup.findAll('a'):
         mastr_href = link.get('href')
-        if (mastr_href is not None) and ('Gesamtdatenexport' in mastr_href) and ('zip' in mastr_href):
+        if (mastr_href is not None) and ('Gesamtdatenexport' in mastr_href) and \
+                ('zip' in mastr_href) and ('Dokumentation' not in mastr_href):
             url_mastr = mastr_href
     return url_mastr
 
@@ -171,9 +176,8 @@ def download_energy_balance(country, directory, years=range(2012, 2019)):
 
     if country == 'AT':
         # Austrian energy balance as provided by Statistik Austria
-        url = ('http://www.statistik.at/wcm/idc/idcplg?IdcService=GET_NATIVE_FILE&'
-               'RevisionSelectionMethod=LatestReleased&dDocName=029955')
-        enbal_at = directory / 'data' / 'raw' / 'enbal_AT.xlsx'
+        url = ('https://www.statistik.at/fileadmin/pages/99/AustriaDatenPublikation.ods')
+        enbal_at = directory / 'data' / 'raw' / 'enbal_AT.ods'
         logging.info(f'downloading Austrian energy balance')
         download_file(url, enbal_at)
 
@@ -191,6 +195,13 @@ def download_energy_balance(country, directory, years=range(2012, 2019)):
             logging.info(f'downloading German energy balance for year 20{yr}')
             download_file(url_balance, enbal_de)
             download_file(url_sat, enbal_sat_de)
+            # post-process sheet names
+            wb = load_workbook(filename=directory / f'data/raw/enbal_DE_20{yr}.{url_extension_bal[yr]}')
+            if 'tj' not in wb.sheetnames:
+                sheet = wb['TJ20']
+                sheet.title = 'tj'
+                wb.save(directory / f'data/raw/enbal_DE_20{yr}.{url_extension_bal[yr]}')
+
 
 
 def is_leapyear(year):
@@ -265,7 +276,7 @@ def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb
 
     # %% Settings
     # imf_file = root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
-    bafa_file = root_dir / 'data' / 'raw' / 'egas_aufkommen_export_1991.xlsm'
+    bafa_file = root_dir / 'data' / 'raw' / 'egas_aufkommen_export_1999.xlsx'
     destatis_file = root_dir / 'data' / 'raw' / 'energiepreisentwicklung_5619001.xlsx'
     eia_file = root_dir / 'data' / 'raw' / 'RBRTEm.xls'
     fx_file = root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
@@ -311,7 +322,7 @@ def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb
     download_file(url_imf, imf_file)
     """
     # BAFA data
-    url_ngas = 'https://www.bafa.de/SharedDocs/Downloads/DE/Energie/egas_aufkommen_export_1991.xlsm?__blob=publicationFile'
+    url_ngas = 'https://www.bafa.de/SharedDocs/Downloads/DE/Energie/egas_aufkommen_export_1999.xlsx?__blob=publicationFile'
     # destatis coal price index for Germany
     url_coal = 'https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Publikationen/Energiepreise/energiepreisentwicklung-xlsx-5619001.xlsx?__blob=publicationFile'
     # EIA oil prices
@@ -369,11 +380,14 @@ def do_download(root_dir, zones, user, pwd, api_key, years, categories, url_ageb
     download_file(url_timeseries, opsd_timeseries)
 
     # offshore wind power capacities from MaStR
-    mastr_html = 'https://www.marktstammdatenregister.de/MaStR/Datendownload'
-    download_file(mastr_gesamtdatenurl(mastr_html), mastr_file)
-    with ZipFile(mastr_file, 'r') as zippedObject:
-        zippedObject.extract('EinheitenWind.xml', root_dir / 'data' / 'raw')
-    logging.info('Marktstammdatenregister successfully downloaded and unzipped "EinheitenWind.xml"')
+    if (datetime.now() - datetime.fromtimestamp(os.path.getmtime(mastr_file))).days < 7:
+        logging.info('MaStR updated less than 7 days ago. Skipping download.')
+    else:
+        mastr_html = 'https://www.marktstammdatenregister.de/MaStR/Datendownload'
+        download_file(mastr_gesamtdatenurl(mastr_html), mastr_file)
+        with ZipFile(mastr_file, 'r') as zippedObject:
+            zippedObject.extract('EinheitenWind.xml', root_dir / 'data' / 'raw')
+        logging.info('Marktstammdatenregister successfully downloaded and unzipped "EinheitenWind.xml"')
 
     # e-control Jahresreihen
     url_jahresreihen = 'https://www.e-control.at/documents/1785851/1811609/BStGes-JR1_Bilanz.xlsx'

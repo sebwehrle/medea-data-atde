@@ -4,8 +4,8 @@ import sysconfig
 from pathlib import Path
 import logging
 from medea_data_atde.logging_config import setup_logging
-import pandas as pd
 import numpy as np
+import pandas as pd
 from scipy import interpolate
 from datetime import datetime as dt
 from netCDF4 import Dataset, num2date
@@ -263,6 +263,18 @@ def mastr_capacity_wind_at_sea(mastr_wind_file):
     return wkash
 
 
+def process_energiedaten_de():
+
+    dir_energiedaten = root / 'energiedaten_bmwi_gesamt.xlsx'
+    # Compile:
+    # pv generation
+    # wind_onshore generation
+    # wind_offshore generation
+    # hydropower (run-of-river, storages)
+    # strom endenergieverbrauch
+
+
+
 def process_energy_balance_de(root_dir):
     """
     processes annual German energy balances from AGEB into a single multi-dimensional file
@@ -270,13 +282,16 @@ def process_energy_balance_de(root_dir):
     'data'/'processed' to exist. Moreover, 'data'/'raw' is expected to hold German energy balances named *enbal_DE*
     :return:
     """
+    # TODO: replace AGEB by BMWi energiedaten-gesamt-xls-2022.xlsx from https://www.bmwk.de/Redaktion/DE/Binaer/Energiedaten/energiedaten-gesamt-xls-2022.xlsx?__blob=publicationFile&v=8
+    # TODO: AGEB balance for 2020 has non-standard naming in sheet 'tj' in cell A1
     dir_nblde = root_dir / 'data' / 'raw'
     nbal_de = pd.DataFrame()
     for file in os.listdir(dir_nblde):
         filename = os.fsdecode(file)
 
         if 'enbal_DE' in filename:
-            nb = pd.read_excel(dir_nblde / filename, sheet_name='tj', header=[0], index_col=[0], na_values='')
+            nb = pd.read_excel(dir_nblde / filename, sheet_name='tj', header=[0],
+                               index_col=[0], na_values='')
             # generate multiindex columns
             year = int(nb.index[0][-4:])
             column_label1 = []
@@ -316,7 +331,7 @@ def process_profiles(root_dir, zones, eta=0.9):
     capacities  = root_dir / 'data' / 'raw' / 'capacities.csv'
     opsd_timeseries = root_dir / 'data' / 'raw' / 'time_series_60min_singleindex.csv'
     hydro_generation = root_dir / 'data' / 'processed' / 'generation_hydro.csv'
-    nrg_balance_at = root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
+    nrg_balance_at = root_dir / 'data' / 'raw' / 'enbal_AT.ods'
     nrg_balance_de = root_dir / 'data' / 'processed' / 'Energiebilanz_DE_TJ.csv'
     jahresreihen_eca = root_dir / 'data' / 'raw' / 'BStGes-JR1_Bilanz.xlsx'
     zeitreihen_ee_de = root_dir / 'data' / 'raw' / 'zeitreihen-ee-in-de-1990-2021-excel-en.xlsx'
@@ -405,16 +420,27 @@ def process_profiles(root_dir, zones, eta=0.9):
     scaling_factor = pd.DataFrame(data=1, columns=zones, index=scale_index)
 
     nbal_at = {}
-    nbal_at['cons'] = pd.read_excel(nrg_balance_at, sheet_name='Elektrische Energie',
-                                    header=196, index_col=[0], nrows=190, na_values=['-']).astype('float').dropna(
-        axis=0, how='all')
-    nbal_at['pv'] = pd.read_excel(nrg_balance_at, sheet_name='Photovoltaik', header=196, index_col=[0], nrows=1,
+    # sheet_name='Fernwärme', index_col=[0],
+    #                                  header=[3], skiprows=list(range(4, 439)), nrows=24,
+    #                                  na_values=['-']).astype('float')
+
+    nbal_at['cons'] = pd.read_excel(nrg_balance_at, sheet_name='Elektrische_Energie',
+                                    index_col=[0], header=[3],
+                                    skiprows=list(range(4, 197)), nrows=190,
+                                    na_values=['-']).astype('float').dropna(axis=0,
+                                                                            how='all')
+    nbal_at['pv'] = pd.read_excel(nrg_balance_at, sheet_name='Photovoltaik',
+                                  index_col=[0], header=[3],
+                                  skiprows=list(range(4, 197)), nrows=1,
                                   na_values=['-']).astype('float').dropna(axis=1)
-    nbal_at['wind_on'] = pd.read_excel(nrg_balance_at, sheet_name='Wind', header=196, index_col=[0], nrows=1,
-                                       na_values=['-']).astype('float').dropna(
-        axis=1)
-    nbal_at['hydro_eca'] = pd.read_excel(jahresreihen_eca, sheet_name='Erz', header=[8, 9], index_col=[0], nrows=37)
-    nbal_at['pump_eca'] = pd.read_excel(jahresreihen_eca, sheet_name='Bil',  header=[7, 8], index_col=[0], nrows=37,
+    nbal_at['wind_on'] = pd.read_excel(nrg_balance_at, sheet_name='Wind',
+                                       index_col=[0], header=[3],
+                                       skiprows=list(range(4, 197)), nrows=1,
+                                       na_values=['-']).astype('float').dropna(axis=1)
+    nbal_at['hydro_eca'] = pd.read_excel(jahresreihen_eca, sheet_name='Erz',
+                                         header=[8, 9], index_col=[0], nrows=37)
+    nbal_at['pump_eca'] = pd.read_excel(jahresreihen_eca, sheet_name='Bil',
+                                        header=[7, 8], index_col=[0], nrows=37,
                                         na_values=['', ' '])
     nbal_at['hydro_eca'].replace(to_replace='-', value=np.nan, inplace=True)
     nbal_at['hydro'] = nbal_at['cons'].loc['aus Wasserkraft', :].sum()
@@ -428,21 +454,21 @@ def process_profiles(root_dir, zones, eta=0.9):
                                                                   ts.loc[str(year), 'AT-wind_on-gen'].sum()
         if ts.loc[str(year), 'AT-ror-gen'].sum() > 0:
             scaling_factor.loc[idx['ror', str(year)], 'AT'] = \
-                nbal_at['hydro_eca'].loc[year, ('Laufkraft\nwerke', 'GWh')] * (nbal_at['hydro'][year] / 1000) / \
-                nbal_at['hydro_eca'].loc[year, ('Summe\nWasser\nkraft', 'GWh')] / \
+                nbal_at['hydro_eca'].loc[year, ('Laufkraft-\nwerke', 'GWh')] * (nbal_at['hydro'][year] / 1000) / \
+                nbal_at['hydro_eca'].loc[year, ('Summe\nWasser-\nkraft', 'GWh')] / \
                 ts.loc[str(year), 'AT-ror-gen'].sum()
 
         if ts_hydro_generation.loc[str(year), ['res_AT', 'psp_gen_AT']].sum().sum() > 0:
             scaling_factor.loc[idx['store', str(year)], 'AT'] = \
-                nbal_at['hydro_eca'].loc[year, ('Speicher\nkraftwerke', 'GWh')] * (nbal_at['hydro'][year] / 1000) / \
-                nbal_at['hydro_eca'].loc[year, ('Summe\nWasser\nkraft', 'GWh')] / \
+                nbal_at['hydro_eca'].loc[year, ('Speicher-\nkraftwerke', 'GWh')] * (nbal_at['hydro'][year] / 1000) / \
+                nbal_at['hydro_eca'].loc[year, ('Summe\nWasser-\nkraft', 'GWh')] / \
                 (ts_hydro_generation.loc[str(year), ['res_AT', 'psp_gen_AT']].sum().sum() / 1000)
 
         if ts.loc[str(year), 'AT-power-load'].sum() > 0:
             scaling_factor.loc[idx['load', str(year)], 'AT'] = \
                 (nbal_at['cons'].loc[['Energetischer Endverbrauch', 'Transportverluste',
                                       'Verbrauch des Sektors Energie'], year].sum() / 1000 -
-                 nbal_at['pump_eca'].loc[year, ('Verbrauch\nfür Pump\nspeicher', 'GWh')]) / \
+                 nbal_at['pump_eca'].loc[year, ('Verbrauch\nfür Pump-\nspeicher', 'GWh')]) / \
                 ts.loc[str(year), 'AT-power-load'].sum()
 
     # scaling factor for Germany
@@ -454,9 +480,17 @@ def process_profiles(root_dir, zones, eta=0.9):
     res_de_clean.columns = [str(x.year) for x in res_de_clean_cols]
     res_de = res_de_clean
 
-    nbal_de = pd.read_csv(nrg_balance_de, index_col=[0, 1], sep=';', decimal=',')
-    # convert from TJ to GWh
-    nbal_de = nbal_de / 3.6
+    nbal_de = pd.read_excel(zeitreihen_ee_de, sheet_name='7', header=[7], index_col=[0], nrows=8)
+        # nrg_balance_de, index_col=[0, 1], sep=';', decimal=',')
+    # convert from TWh to GWh
+    nbal_de = nbal_de * 1000
+    # clear superscripts from index
+    index = []
+    for ndxelem in nbal_de.index:
+        ndx = [(''.join([i for i in ndxelem if ord(i) < 128])).strip()]
+        index = index + ndx
+    nbal_de.index = index
+
 
     for year in range(first_year, last_year):
         if ts.loc[str(year), 'DE-pv-gen'].sum() > 0:
@@ -478,8 +512,7 @@ def process_profiles(root_dir, zones, eta=0.9):
 
         if ts.loc[str(year), 'DE-power-load'].sum() > 0:
             scaling_factor.loc[idx['load', str(year)], 'DE'] = \
-                nbal_de.loc[idx['Elektrischer Strom und-Strom',
-                                   ['ENDENERGIEVERBRAUCH', 'Fackel- u. Leitungsverluste']], str(year)].sum() / \
+                nbal_de.loc[idx['Gross electricity consumption'], str(year)].sum() / \
                 ts.loc[str(year), 'DE-power-load'].sum()
 
     # generate scaled generation profiles and electric load
@@ -528,9 +561,9 @@ def process_profiles(root_dir, zones, eta=0.9):
         inflows = inflows.resample('H').interpolate(method='pchip')
 
     # inflow correction factor
-    inflows_nbal = (nbal_at['hydro_eca'][('Speicher\nkraftwerke', 'GWh')] / eta -
-                    nbal_at['pump_eca'][('Verbrauch\nfür Pump\nspeicher', 'GWh')] * eta) * \
-                   (nbal_at['hydro_eca'][('Summe\nWasser\nkraft', 'GWh')] / (nbal_at['hydro'] / 1000))
+    inflows_nbal = (nbal_at['hydro_eca'][('Speicher-\nkraftwerke', 'GWh')] / eta -
+                    nbal_at['pump_eca'][('Verbrauch\nfür Pump-\nspeicher', 'GWh')] * eta) * \
+                   (nbal_at['hydro_eca'][('Summe\nWasser-\nkraft', 'GWh')] / (nbal_at['hydro'] / 1000))
     inflows_annual = inflows.resample('Y').sum()
     inflows_annual.index = inflows_annual.index.year
     # scale inflows
@@ -557,18 +590,19 @@ def do_processing(root_dir, years, zones):
     :return:
     """
     setup_logging()
+    idx = pd.IndexSlice
 
     # file paths
     root_dir = Path(root_dir)
     ERA_DIR = root_dir / 'data' / 'raw' / 'era5'
     # imf_file = root_dir / 'data' / 'raw' / 'imf_price_data.xlsx'
-    ngas_file = root_dir / 'data' / 'raw' / 'egas_aufkommen_export_1991.xlsm'
+    ngas_file = root_dir / 'data' / 'raw' / 'egas_aufkommen_export_1999.xlsx'
     brent_file = root_dir / 'data' / 'raw' / 'RBRTEm.xls'
     coal_file = root_dir / 'data' / 'raw' / 'energiepreisentwicklung_5619001.xlsx'
     fx_file = root_dir / 'data' / 'raw' / 'ecb_fx_data.csv'
     co2_file = root_dir / 'data' / 'raw' / 'eua_price.csv'
-    enbal_at = root_dir / 'data' / 'raw' / 'enbal_AT.xlsx'
-    enbal_de = root_dir / 'data' / 'processed' / 'Energiebilanz_DE_TJ.csv'
+    enbal_at = root_dir / 'data' / 'raw' / 'enbal_AT.ods'
+    enbal_de = root_dir / 'data' / 'raw/energiedaten-gesamt-xls-2022.xlsx'  # 'processed' / 'Energiebilanz_DE_TJ.csv'
     PPLANT_DB = root_dir / 'data' / 'raw' / 'conventional_power_plants_EU.csv'
 
     process_dir = root_dir / 'data' / 'processed'
@@ -611,7 +645,7 @@ def do_processing(root_dir, years, zones):
     p_coal = pd.DataFrame(data=0, index=pd.date_range(start='2010/01/01', end='2021/12/31', freq='MS'), columns=['Preis'])
     p_coal.loc['2010':'2021', 'Preis'] = df_coal.values * 67.9 / 100  # Euro pro Tonne SKE
 
-    df_fx = pd.read_csv(fx_file, index_col=[0], skiprows=[0, 2, 3, 4, 5], usecols=[1], na_values=['-']).astype('float')
+    df_fx = pd.read_csv(fx_file, index_col=[0], usecols=[0, 1], skiprows=[0, 2, 3, 4, 5], na_values=['-']).astype('float')
     df_fx.index = pd.to_datetime(df_fx.index, format='%Y-%m-%d')
 
     # convert prices to EUR per MWh
@@ -641,19 +675,27 @@ def do_processing(root_dir, years, zones):
     logging.info(f'Temperatures processed and saved to {MEAN_TEMP_FILE}')
 
     # process German energy balances
-    process_energy_balance_de(root_dir)
+    # process_energy_balance_de(root_dir)
 
     # process HEAT LOAD
     # read German energy balances
-    nbal_de = pd.read_csv(enbal_de, sep=';', index_col=[0, 1])
-    ht_enduse_de = nbal_de.loc[pd.IndexSlice['Elektrischer Strom und-Fernwärme', :], :] / 3.6
-    ht_enduse_de.index = ht_enduse_de.index.get_level_values(1)
-    ht_enduse_de.columns = ht_enduse_de.columns.astype(int)
+    finen_de = pd.read_excel(enbal_de, sheet_name='6a', header=[8], index_col=[0], nrows=52)
+    finen_de.index = finen_de.index.str.strip()
+    finen_de = finen_de.loc['Fernwärme', :]
+    finen_de.loc[:, 'Sektor'] = pd.DataFrame(data=['Industrie', 'Haushalte', 'GHD'],
+                                             columns=['Sektor'], index=finen_de.index)
+    finen_de.index.name = finen_de.index.name.strip()
+    finen_de = finen_de.reset_index()
+    finen_de = finen_de.set_index(['Sektor', 'Energieträger'])
+    ht_enduse_de = finen_de.loc[idx[:, 'Fernwärme'], :] / 3.6 * 1000
+    ht_enduse_de.index = ht_enduse_de.index.droplevel(1)
 
     # process Austrian energy balances
-    ht_gen_at = pd.read_excel(enbal_at, sheet_name='Fernwärme', index_col=[0], header=[196], nrows=190)
+    ht_gen_at = pd.read_excel(enbal_at, sheet_name='Fernwärme', index_col=[0],
+                              header=[3], skiprows=list(range(4, 197)), nrows=190)
     ht_gen_at = ht_gen_at.loc[['Energetischer Endverbrauch', 'Transportverluste'], years].sum() / 1000
-    ht_enduse_at = pd.read_excel(enbal_at, sheet_name='Fernwärme', header=[438], index_col=[0], nrows=24,
+    ht_enduse_at = pd.read_excel(enbal_at, sheet_name='Fernwärme', index_col=[0],
+                                 header=[3], skiprows=list(range(4, 439)), nrows=24,
                                  na_values=['-']).astype('float')
     ht_enduse_at = ht_enduse_at / 1000
     ht_mult_at = ht_gen_at / ht_enduse_at.loc[['Private Haushalte', 'Öffentliche und Private Dienstleistungen',
@@ -669,10 +711,8 @@ def do_processing(root_dir, years, zones):
     ht_cons.loc[years, ('DE', 'HE08')] = ht_enduse_de.loc['Haushalte', years] * 0.376 * 0.75
     ht_cons.loc[years, ('DE', 'HM08')] = ht_enduse_de.loc['Haushalte', years] * 0.624 * 0.75
     ht_cons.loc[years, ('DE', 'WW')] = ht_enduse_de.loc['Haushalte', years] * 0.25
-    ht_cons.loc[years, ('DE', 'HG08')] = ht_enduse_de.loc[
-        'Gewerbe, Handel, Dienstleistungen u.übrige Verbraucher', years]
-    ht_cons.loc[years, ('DE', 'IND')] = ht_enduse_de.loc[
-        'Bergbau, Gew. Steine u. Erden, Verarbeit. Gewerbe insg.', years]
+    ht_cons.loc[years, ('DE', 'HG08')] = ht_enduse_de.loc['GHD', years]
+    ht_cons.loc[years, ('DE', 'IND')] = ht_enduse_de.loc['Industrie', years]
 
     """ 
     Above transformations are based on following Assumptions
