@@ -8,5 +8,5 @@ cdsapi
 urllib3
 pysftp
 openpyxl
-xlrd
+odfpy
 bs4
