@@ -21,7 +21,8 @@ def date2set_index(df, year, tz='utc', set_sym='h'):
     return df
 
 
-def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True, invest_renewables=True,
+def compile_symbols(root_dir, timeseries, zones, weatheryear, year,
+                    invest_conventionals=True, invest_renewables=True,
                     invest_storage=True, invest_tc=True):
     """
     prepares dictionaries used to build input data gdx-files for power system model medea
@@ -74,7 +75,7 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
         'g': [transmit for transmit in technologies['technology'].loc[
             technologies['technology']['transmission'] == 1].index.unique()],  # transmission technologies
         'l': [f'l{x}' for x in range(1, 5)],  # feasible operating regions
-        'h': [f'h{hour}' for hour in range(1, hours_in_year(year) + 1)],  # time steps / hours
+        'h': [f'h{hour}' for hour in range(1, hours_in_year(weatheryear) + 1)],  # time steps / hours
         'z': [zone for zone in zones]  # market zones
     }
 
@@ -116,8 +117,8 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
     ts_data['zonal'] = ts_data['zonal'].rename(columns={'power': 'el', 'heat': 'ht'})
 
     # date-time conversion and selection
-    ts_data['zonal'] = date2set_index(ts_data['zonal'], year)
-    ts_data['timeseries'] = date2set_index(ts_data['timeseries'], year)
+    ts_data['zonal'] = date2set_index(ts_data['zonal'], weatheryear)
+    ts_data['timeseries'] = date2set_index(ts_data['timeseries'], weatheryear)
 
     # process PRICES
     # create price time series incl transport cost
@@ -143,6 +144,7 @@ def compile_symbols(root_dir, timeseries, zones, year, invest_conventionals=True
                                                    (technologies['technology'].index.str.contains('hyd'))].index
     inflow_factor = technologies['capacity'].loc[idx['Installed Capacity Out', zones, year], hydro_storage].T / \
                     technologies['capacity'].loc[idx['Installed Capacity Out', zones, year], hydro_storage].T.sum()
+    inflow_factor = inflow_factor.loc[:, idx[:, :, :, 'el']]
     inflow_factor.columns = inflow_factor.columns.droplevel([0, 2, 3])
     ts_inflows = pd.DataFrame(index=list(ts_data['zonal'].index),
                               columns=pd.MultiIndex.from_product([zones,
