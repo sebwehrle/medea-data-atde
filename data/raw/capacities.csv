@@ -1,91 +1,1591 @@
-,,,Name,bio_eng,bio_sofc,bio_wchip_boiler,bio_wchip_chp,bio_wchip_ex_chp,bio_wpel_boiler,bio_wpel_chp,bio_wpel_ex_chp,e_boiler,ely_alka,ely_pem,ely_sofc,g_boiler,geotherm,h2_cbt_hi,h2_cbt_hi_chp,h2_cc_hi,h2_cc_hi_chp,h2_stm,h2_stm_chp,h2fc_pem,hp_airl,hp_airmini,hp_airs,hp_gnd,hp_wtr,hyd_psp_day,hyd_psp_season,hyd_psp_week,hyd_res_day,hyd_res_season,hyd_res_week,ngas_cbt_hi,ngas_cbt_hi_chp,oil__ocgt,oil_eng,pv_com,pv_res,pv_track,pv_utl,ror,solartherm,str_h2cave,str_h2lohc,str_h2tnk,str_hwtr,str_lion,str_ptes,str_varx,wind_off,wind_on,wst_boiler,wst_chp
-Installed Capacity Out,AT,2020,el,0.0,0.0,,0.0,0.375,,0.0,0.0,,,,,,,0.0,1.176,0.0,3.2169999999999996,0.0,0.0,0.0,,,,,,2.464,1.17,1.606,1.989,0.328,1.207,0.0,0.0,0.134,0.0,0.0,0.0,0.0,1.976,5.796,,,,,,0.0,,0.0,0.0,3.164,,0.21
-Installed Capacity Out,AT,2020,ht,,,0.0,,,0.8,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity Out,AT,2020,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity In,AT,2020,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.89,1.01,1.393,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Installed Capacity In,AT,2020,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity In,AT,2020,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Storage Capacity,AT,2020,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,75.4,308.5,1481.5,34.6,36.7,1342.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Storage Capacity,AT,2020,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Storage Capacity,AT,2020,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity Out,AT,2025,el,0.0,0.0,,0.0,0.375,,0.0,0.0,,,,,,,0.0,1.176,0.0,3.2169999999999996,0.0,0.0,0.0,,,,,,2.464,1.17,1.606,1.989,0.328,1.207,0.0,0.0,0.134,0.0,0.0,0.0,0.0,1.976,5.796,,,,,,0.0,,0.0,0.0,3.164,,0.21
-Installed Capacity Out,AT,2025,ht,,,0.0,,,0.8,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity Out,AT,2025,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity In,AT,2025,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.89,1.01,1.393,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Installed Capacity In,AT,2025,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity In,AT,2025,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Storage Capacity,AT,2025,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,75.4,308.5,1481.5,34.6,36.7,1342.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Storage Capacity,AT,2025,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Storage Capacity,AT,2025,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity Out,AT,2030,el,0.0,0.0,,0.0,0.375,,0.0,0.0,,,,,,,0.0,1.176,0.0,3.2169999999999996,0.0,0.0,0.0,,,,,,2.464,1.17,1.606,1.989,0.328,1.207,0.0,0.0,0.134,0.0,0.0,0.0,0.0,1.976,5.796,,,,,,0.0,,0.0,0.0,3.164,,0.21
-Installed Capacity Out,AT,2030,ht,,,0.0,,,0.8,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity Out,AT,2030,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity In,AT,2030,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.89,1.01,1.393,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Installed Capacity In,AT,2030,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity In,AT,2030,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Storage Capacity,AT,2030,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,75.4,308.5,1481.5,34.6,36.7,1342.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Storage Capacity,AT,2030,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Storage Capacity,AT,2030,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity Out,AT,2035,el,0.0,0.0,,0.0,0.375,,0.0,0.0,,,,,,,0.0,1.176,0.0,3.2169999999999996,0.0,0.0,0.0,,,,,,2.464,1.17,1.606,1.989,0.328,1.207,0.0,0.0,0.134,0.0,0.0,0.0,0.0,1.976,5.796,,,,,,0.0,,0.0,0.0,3.164,,0.21
-Installed Capacity Out,AT,2035,ht,,,0.0,,,0.8,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity Out,AT,2035,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity In,AT,2035,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.89,1.01,1.393,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Installed Capacity In,AT,2035,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity In,AT,2035,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Storage Capacity,AT,2035,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,75.4,308.5,1481.5,34.6,36.7,1342.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Storage Capacity,AT,2035,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Storage Capacity,AT,2035,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity Out,AT,2040,el,0.0,0.0,,0.0,0.375,,0.0,0.0,,,,,,,0.0,1.176,0.0,3.2169999999999996,0.0,0.0,0.0,,,,,,2.464,1.17,1.606,1.989,0.328,1.207,0.0,0.0,0.134,0.0,0.0,0.0,0.0,1.976,5.796,,,,,,0.0,,0.0,0.0,3.164,,0.21
-Installed Capacity Out,AT,2040,ht,,,0.0,,,0.8,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity Out,AT,2040,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity In,AT,2040,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.89,1.01,1.393,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Installed Capacity In,AT,2040,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity In,AT,2040,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Storage Capacity,AT,2040,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,75.4,308.5,1481.5,34.6,36.7,1342.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Storage Capacity,AT,2040,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Storage Capacity,AT,2040,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity Out,DE,2020,el,0.0,0.0,,0.0,8.8,,0.0,0.0,,,,,,,0.0,8.8,0.0,17.5,0.0,0.0,0.0,,,,,,9.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.3,0.0,0.0,0.0,0.0,53.7,5.3,,,,,,0.0,,0.0,7.8,54.4,,1.4
-Installed Capacity Out,DE,2020,ht,,,4.1,,,0.0,,,0.4,,,,0.0,0.0,,,,,,,,0.4,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity Out,DE,2020,hydrogen,,,,,,,,,,0.0,0.05,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity In,DE,2020,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,8.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Installed Capacity In,DE,2020,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity In,DE,2020,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Storage Capacity,DE,2020,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,54.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Storage Capacity,DE,2020,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Storage Capacity,DE,2020,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity Out,DE,2025,el,0.0,0.0,,0.0,7.9,,0.0,0.0,,,,,,,0.0,9.7,0.0,19.5,0.0,0.0,0.0,,,,,,10.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.9,0.0,0.0,0.0,0.0,110.3,5.3,,,,,,0.0,,0.0,16.9,69.6,,1.3
-Installed Capacity Out,DE,2025,ht,,,3.3,,,0.0,,,2.8,,,,0.0,0.0,,,,,,,,1.7,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity Out,DE,2025,hydrogen,,,,,,,,,,0.0,4.5,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity In,DE,2025,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,8.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Installed Capacity In,DE,2025,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity In,DE,2025,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Storage Capacity,DE,2025,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,58.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Storage Capacity,DE,2025,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Storage Capacity,DE,2025,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity Out,DE,2030,el,0.0,0.0,,0.0,6.7,,0.0,0.0,,,,,,,0.0,11.0,0.0,21.9,0.0,0.0,0.0,,,,,,11.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.5,0.0,0.0,0.0,0.0,181.0,5.3,,,,,,0.0,,0.0,28.3,88.5,,1.1
-Installed Capacity Out,DE,2030,ht,,,2.4,,,0.0,,,5.8,,,,0.0,0.0,,,,,,,,3.2,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity Out,DE,2030,hydrogen,,,,,,,,,,0.0,10.1,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity In,DE,2030,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,9.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Installed Capacity In,DE,2030,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity In,DE,2030,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Storage Capacity,DE,2030,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,63.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Storage Capacity,DE,2030,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Storage Capacity,DE,2030,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity Out,DE,2035,el,0.0,0.0,,0.0,5.5,,0.0,0.0,,,,,,,0.0,12.2,0.0,24.3,0.0,0.0,0.0,,,,,,11.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,251.7,5.3,,,,,,0.0,,0.0,39.7,107.4,,0.9
-Installed Capacity Out,DE,2035,ht,,,1.4,,,0.0,,,8.8,,,,0.0,0.0,,,,,,,,4.8,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity Out,DE,2035,hydrogen,,,,,,,,,,0.0,15.8,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity In,DE,2035,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,10.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Installed Capacity In,DE,2035,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity In,DE,2035,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Storage Capacity,DE,2035,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,67.8,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Storage Capacity,DE,2035,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Storage Capacity,DE,2035,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity Out,DE,2040,el,0.0,0.0,,0.0,3.9,,0.0,0.0,,,,,,,0.0,12.2,0.0,24.5,0.0,0.0,0.0,,,,,,12.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,323.1,5.3,,,,,,0.0,,0.0,54.2,128.1,,0.8
-Installed Capacity Out,DE,2040,ht,,,0.9,,,0.0,,,11.4,,,,0.0,0.0,,,,,,,,5.7,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity Out,DE,2040,hydrogen,,,,,,,,,,0.0,26.3,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Installed Capacity In,DE,2040,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,10.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Installed Capacity In,DE,2040,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Installed Capacity In,DE,2040,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
-Storage Capacity,DE,2040,el,0.0,0.0,,0.0,0.0,,0.0,0.0,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,69.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,,,0.0,,0.0,0.0,0.0,,0.0
-Storage Capacity,DE,2040,ht,,,0.0,,,0.0,,,0.0,,,,0.0,0.0,,,,,,,,0.0,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,,0.0,,,,0.0,,0.0,,,,0.0,
-Storage Capacity,DE,2040,hydrogen,,,,,,,,,,0.0,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,,,,,,,,
+set_id,,,,0
+Installed Capacity Out,AT,2020,bio_eng,0.0
+Installed Capacity Out,AT,2020,bio_sofc,0.0
+Installed Capacity Out,AT,2020,bio_wchip_boiler,0.0
+Installed Capacity Out,AT,2020,bio_wchip_chp,0.0
+Installed Capacity Out,AT,2020,bio_wchip_ex_chp,0.375
+Installed Capacity Out,AT,2020,bio_wpel_boiler,0.8
+Installed Capacity Out,AT,2020,bio_wpel_chp,0.0
+Installed Capacity Out,AT,2020,bio_wpel_ex_chp,0.0
+Installed Capacity Out,AT,2020,e_boiler,0.0
+Installed Capacity Out,AT,2020,ely_alka,0.0
+Installed Capacity Out,AT,2020,ely_pem,0.0
+Installed Capacity Out,AT,2020,ely_sofc,0.0
+Installed Capacity Out,AT,2020,hp_airl,0.0
+Installed Capacity Out,AT,2020,hp_airmini,0.0
+Installed Capacity Out,AT,2020,hp_airs,0.0
+Installed Capacity Out,AT,2020,hp_gnd,0.0
+Installed Capacity Out,AT,2020,hp_wtr,0.0
+Installed Capacity Out,AT,2020,hyd_psp_day,2.464
+Installed Capacity Out,AT,2020,hyd_psp_season,1.17
+Installed Capacity Out,AT,2020,hyd_psp_week,1.606
+Installed Capacity Out,AT,2020,hyd_res_day,1.989
+Installed Capacity Out,AT,2020,hyd_res_season,0.328
+Installed Capacity Out,AT,2020,hyd_res_week,1.207
+Installed Capacity Out,AT,2020,str_lion,0.0
+Installed Capacity Out,AT,2020,str_varx,0.0
+Installed Capacity Out,AT,2020,geotherm,0.0
+Installed Capacity Out,AT,2020,str_hwtr,0.0
+Installed Capacity Out,AT,2020,str_ptes,0.0
+Installed Capacity Out,AT,2020,h2_cbt_hi,0.0
+Installed Capacity Out,AT,2020,h2_cbt_hi_chp,1.176
+Installed Capacity Out,AT,2020,h2_cc_hi,0.0
+Installed Capacity Out,AT,2020,h2_cc_hi_chp,3.2169999999999996
+Installed Capacity Out,AT,2020,h2_stm,0.0
+Installed Capacity Out,AT,2020,h2_stm_chp,0.0
+Installed Capacity Out,AT,2020,h2fc_pem,0.0
+Installed Capacity Out,AT,2020,str_h2cave,0.0
+Installed Capacity Out,AT,2020,str_h2lohc,0.0
+Installed Capacity Out,AT,2020,str_h2tnk,0.0
+Installed Capacity Out,AT,2020,g_boiler,0.0
+Installed Capacity Out,AT,2020,ngas_cbt_hi,0.0
+Installed Capacity Out,AT,2020,ngas_cbt_hi_chp,0.0
+Installed Capacity Out,AT,2020,oil__ocgt,0.134
+Installed Capacity Out,AT,2020,oil_eng,0.0
+Installed Capacity Out,AT,2020,pv_com,0.0
+Installed Capacity Out,AT,2020,pv_res,0.0
+Installed Capacity Out,AT,2020,pv_track,0.0
+Installed Capacity Out,AT,2020,pv_utl,1.976
+Installed Capacity Out,AT,2020,solartherm,0.0
+Installed Capacity Out,AT,2020,wst_boiler,0.0
+Installed Capacity Out,AT,2020,wst_chp,0.21
+Installed Capacity Out,AT,2020,ror,5.796
+Installed Capacity Out,AT,2020,wind_off,0.0
+Installed Capacity Out,AT,2020,wind_on,3.164
+Installed Capacity In,AT,2020,bio_eng,0.0
+Installed Capacity In,AT,2020,bio_sofc,0.0
+Installed Capacity In,AT,2020,bio_wchip_boiler,0.0
+Installed Capacity In,AT,2020,bio_wchip_chp,0.0
+Installed Capacity In,AT,2020,bio_wchip_ex_chp,0.0
+Installed Capacity In,AT,2020,bio_wpel_boiler,0.0
+Installed Capacity In,AT,2020,bio_wpel_chp,0.0
+Installed Capacity In,AT,2020,bio_wpel_ex_chp,0.0
+Installed Capacity In,AT,2020,e_boiler,0.0
+Installed Capacity In,AT,2020,ely_alka,0.0
+Installed Capacity In,AT,2020,ely_pem,0.0
+Installed Capacity In,AT,2020,ely_sofc,0.0
+Installed Capacity In,AT,2020,hp_airl,0.0
+Installed Capacity In,AT,2020,hp_airmini,0.0
+Installed Capacity In,AT,2020,hp_airs,0.0
+Installed Capacity In,AT,2020,hp_gnd,0.0
+Installed Capacity In,AT,2020,hp_wtr,0.0
+Installed Capacity In,AT,2020,hyd_psp_day,0.89
+Installed Capacity In,AT,2020,hyd_psp_season,1.01
+Installed Capacity In,AT,2020,hyd_psp_week,1.393
+Installed Capacity In,AT,2020,hyd_res_day,0.0
+Installed Capacity In,AT,2020,hyd_res_season,0.0
+Installed Capacity In,AT,2020,hyd_res_week,0.0
+Installed Capacity In,AT,2020,str_lion,0.0
+Installed Capacity In,AT,2020,str_varx,0.0
+Installed Capacity In,AT,2020,geotherm,0.0
+Installed Capacity In,AT,2020,str_hwtr,0.0
+Installed Capacity In,AT,2020,str_ptes,0.0
+Installed Capacity In,AT,2020,h2_cbt_hi,0.0
+Installed Capacity In,AT,2020,h2_cbt_hi_chp,0.0
+Installed Capacity In,AT,2020,h2_cc_hi,0.0
+Installed Capacity In,AT,2020,h2_cc_hi_chp,0.0
+Installed Capacity In,AT,2020,h2_stm,0.0
+Installed Capacity In,AT,2020,h2_stm_chp,0.0
+Installed Capacity In,AT,2020,h2fc_pem,0.0
+Installed Capacity In,AT,2020,str_h2cave,0.0
+Installed Capacity In,AT,2020,str_h2lohc,0.0
+Installed Capacity In,AT,2020,str_h2tnk,0.0
+Installed Capacity In,AT,2020,g_boiler,0.0
+Installed Capacity In,AT,2020,ngas_cbt_hi,0.0
+Installed Capacity In,AT,2020,ngas_cbt_hi_chp,0.0
+Installed Capacity In,AT,2020,oil__ocgt,0.0
+Installed Capacity In,AT,2020,oil_eng,0.0
+Installed Capacity In,AT,2020,pv_com,0.0
+Installed Capacity In,AT,2020,pv_res,0.0
+Installed Capacity In,AT,2020,pv_track,0.0
+Installed Capacity In,AT,2020,pv_utl,0.0
+Installed Capacity In,AT,2020,solartherm,0.0
+Installed Capacity In,AT,2020,wst_boiler,0.0
+Installed Capacity In,AT,2020,wst_chp,0.0
+Installed Capacity In,AT,2020,ror,0.0
+Installed Capacity In,AT,2020,wind_off,0.0
+Installed Capacity In,AT,2020,wind_on,0.0
+Storage Capacity,AT,2020,bio_eng,0.0
+Storage Capacity,AT,2020,bio_sofc,0.0
+Storage Capacity,AT,2020,bio_wchip_boiler,0.0
+Storage Capacity,AT,2020,bio_wchip_chp,0.0
+Storage Capacity,AT,2020,bio_wchip_ex_chp,0.0
+Storage Capacity,AT,2020,bio_wpel_boiler,0.0
+Storage Capacity,AT,2020,bio_wpel_chp,0.0
+Storage Capacity,AT,2020,bio_wpel_ex_chp,0.0
+Storage Capacity,AT,2020,e_boiler,0.0
+Storage Capacity,AT,2020,ely_alka,0.0
+Storage Capacity,AT,2020,ely_pem,0.0
+Storage Capacity,AT,2020,ely_sofc,0.0
+Storage Capacity,AT,2020,hp_airl,0.0
+Storage Capacity,AT,2020,hp_airmini,0.0
+Storage Capacity,AT,2020,hp_airs,0.0
+Storage Capacity,AT,2020,hp_gnd,0.0
+Storage Capacity,AT,2020,hp_wtr,0.0
+Storage Capacity,AT,2020,hyd_psp_day,75.4
+Storage Capacity,AT,2020,hyd_psp_season,308.5
+Storage Capacity,AT,2020,hyd_psp_week,1481.5
+Storage Capacity,AT,2020,hyd_res_day,34.6
+Storage Capacity,AT,2020,hyd_res_season,36.7
+Storage Capacity,AT,2020,hyd_res_week,1342.3
+Storage Capacity,AT,2020,str_lion,0.0
+Storage Capacity,AT,2020,str_varx,0.0
+Storage Capacity,AT,2020,geotherm,0.0
+Storage Capacity,AT,2020,str_hwtr,0.0
+Storage Capacity,AT,2020,str_ptes,0.0
+Storage Capacity,AT,2020,h2_cbt_hi,0.0
+Storage Capacity,AT,2020,h2_cbt_hi_chp,0.0
+Storage Capacity,AT,2020,h2_cc_hi,0.0
+Storage Capacity,AT,2020,h2_cc_hi_chp,0.0
+Storage Capacity,AT,2020,h2_stm,0.0
+Storage Capacity,AT,2020,h2_stm_chp,0.0
+Storage Capacity,AT,2020,h2fc_pem,0.0
+Storage Capacity,AT,2020,str_h2cave,0.0
+Storage Capacity,AT,2020,str_h2lohc,0.0
+Storage Capacity,AT,2020,str_h2tnk,0.0
+Storage Capacity,AT,2020,g_boiler,0.0
+Storage Capacity,AT,2020,ngas_cbt_hi,0.0
+Storage Capacity,AT,2020,ngas_cbt_hi_chp,0.0
+Storage Capacity,AT,2020,oil__ocgt,0.0
+Storage Capacity,AT,2020,oil_eng,0.0
+Storage Capacity,AT,2020,pv_com,0.0
+Storage Capacity,AT,2020,pv_res,0.0
+Storage Capacity,AT,2020,pv_track,0.0
+Storage Capacity,AT,2020,pv_utl,0.0
+Storage Capacity,AT,2020,solartherm,0.0
+Storage Capacity,AT,2020,wst_boiler,0.0
+Storage Capacity,AT,2020,wst_chp,0.0
+Storage Capacity,AT,2020,ror,0.0
+Storage Capacity,AT,2020,wind_off,0.0
+Storage Capacity,AT,2020,wind_on,0.0
+Installed Capacity Out,AT,2025,bio_eng,0.0
+Installed Capacity Out,AT,2025,bio_sofc,0.0
+Installed Capacity Out,AT,2025,bio_wchip_boiler,0.0
+Installed Capacity Out,AT,2025,bio_wchip_chp,0.0
+Installed Capacity Out,AT,2025,bio_wchip_ex_chp,0.375
+Installed Capacity Out,AT,2025,bio_wpel_boiler,0.8
+Installed Capacity Out,AT,2025,bio_wpel_chp,0.0
+Installed Capacity Out,AT,2025,bio_wpel_ex_chp,0.0
+Installed Capacity Out,AT,2025,e_boiler,0.0
+Installed Capacity Out,AT,2025,ely_alka,0.0
+Installed Capacity Out,AT,2025,ely_pem,0.0
+Installed Capacity Out,AT,2025,ely_sofc,0.0
+Installed Capacity Out,AT,2025,hp_airl,0.0
+Installed Capacity Out,AT,2025,hp_airmini,0.0
+Installed Capacity Out,AT,2025,hp_airs,0.0
+Installed Capacity Out,AT,2025,hp_gnd,0.0
+Installed Capacity Out,AT,2025,hp_wtr,0.0
+Installed Capacity Out,AT,2025,hyd_psp_day,2.464
+Installed Capacity Out,AT,2025,hyd_psp_season,1.17
+Installed Capacity Out,AT,2025,hyd_psp_week,1.606
+Installed Capacity Out,AT,2025,hyd_res_day,1.989
+Installed Capacity Out,AT,2025,hyd_res_season,0.328
+Installed Capacity Out,AT,2025,hyd_res_week,1.207
+Installed Capacity Out,AT,2025,str_lion,0.0
+Installed Capacity Out,AT,2025,str_varx,0.0
+Installed Capacity Out,AT,2025,geotherm,0.0
+Installed Capacity Out,AT,2025,str_hwtr,0.0
+Installed Capacity Out,AT,2025,str_ptes,0.0
+Installed Capacity Out,AT,2025,h2_cbt_hi,0.0
+Installed Capacity Out,AT,2025,h2_cbt_hi_chp,1.176
+Installed Capacity Out,AT,2025,h2_cc_hi,0.0
+Installed Capacity Out,AT,2025,h2_cc_hi_chp,3.2169999999999996
+Installed Capacity Out,AT,2025,h2_stm,0.0
+Installed Capacity Out,AT,2025,h2_stm_chp,0.0
+Installed Capacity Out,AT,2025,h2fc_pem,0.0
+Installed Capacity Out,AT,2025,str_h2cave,0.0
+Installed Capacity Out,AT,2025,str_h2lohc,0.0
+Installed Capacity Out,AT,2025,str_h2tnk,0.0
+Installed Capacity Out,AT,2025,g_boiler,0.0
+Installed Capacity Out,AT,2025,ngas_cbt_hi,0.0
+Installed Capacity Out,AT,2025,ngas_cbt_hi_chp,0.0
+Installed Capacity Out,AT,2025,oil__ocgt,0.134
+Installed Capacity Out,AT,2025,oil_eng,0.0
+Installed Capacity Out,AT,2025,pv_com,0.0
+Installed Capacity Out,AT,2025,pv_res,0.0
+Installed Capacity Out,AT,2025,pv_track,0.0
+Installed Capacity Out,AT,2025,pv_utl,1.976
+Installed Capacity Out,AT,2025,solartherm,0.0
+Installed Capacity Out,AT,2025,wst_boiler,0.0
+Installed Capacity Out,AT,2025,wst_chp,0.21
+Installed Capacity Out,AT,2025,ror,5.796
+Installed Capacity Out,AT,2025,wind_off,0.0
+Installed Capacity Out,AT,2025,wind_on,3.164
+Installed Capacity In,AT,2025,bio_eng,0.0
+Installed Capacity In,AT,2025,bio_sofc,0.0
+Installed Capacity In,AT,2025,bio_wchip_boiler,0.0
+Installed Capacity In,AT,2025,bio_wchip_chp,0.0
+Installed Capacity In,AT,2025,bio_wchip_ex_chp,0.0
+Installed Capacity In,AT,2025,bio_wpel_boiler,0.0
+Installed Capacity In,AT,2025,bio_wpel_chp,0.0
+Installed Capacity In,AT,2025,bio_wpel_ex_chp,0.0
+Installed Capacity In,AT,2025,e_boiler,0.0
+Installed Capacity In,AT,2025,ely_alka,0.0
+Installed Capacity In,AT,2025,ely_pem,0.0
+Installed Capacity In,AT,2025,ely_sofc,0.0
+Installed Capacity In,AT,2025,hp_airl,0.0
+Installed Capacity In,AT,2025,hp_airmini,0.0
+Installed Capacity In,AT,2025,hp_airs,0.0
+Installed Capacity In,AT,2025,hp_gnd,0.0
+Installed Capacity In,AT,2025,hp_wtr,0.0
+Installed Capacity In,AT,2025,hyd_psp_day,0.89
+Installed Capacity In,AT,2025,hyd_psp_season,1.01
+Installed Capacity In,AT,2025,hyd_psp_week,1.393
+Installed Capacity In,AT,2025,hyd_res_day,0.0
+Installed Capacity In,AT,2025,hyd_res_season,0.0
+Installed Capacity In,AT,2025,hyd_res_week,0.0
+Installed Capacity In,AT,2025,str_lion,0.0
+Installed Capacity In,AT,2025,str_varx,0.0
+Installed Capacity In,AT,2025,geotherm,0.0
+Installed Capacity In,AT,2025,str_hwtr,0.0
+Installed Capacity In,AT,2025,str_ptes,0.0
+Installed Capacity In,AT,2025,h2_cbt_hi,0.0
+Installed Capacity In,AT,2025,h2_cbt_hi_chp,0.0
+Installed Capacity In,AT,2025,h2_cc_hi,0.0
+Installed Capacity In,AT,2025,h2_cc_hi_chp,0.0
+Installed Capacity In,AT,2025,h2_stm,0.0
+Installed Capacity In,AT,2025,h2_stm_chp,0.0
+Installed Capacity In,AT,2025,h2fc_pem,0.0
+Installed Capacity In,AT,2025,str_h2cave,0.0
+Installed Capacity In,AT,2025,str_h2lohc,0.0
+Installed Capacity In,AT,2025,str_h2tnk,0.0
+Installed Capacity In,AT,2025,g_boiler,0.0
+Installed Capacity In,AT,2025,ngas_cbt_hi,0.0
+Installed Capacity In,AT,2025,ngas_cbt_hi_chp,0.0
+Installed Capacity In,AT,2025,oil__ocgt,0.0
+Installed Capacity In,AT,2025,oil_eng,0.0
+Installed Capacity In,AT,2025,pv_com,0.0
+Installed Capacity In,AT,2025,pv_res,0.0
+Installed Capacity In,AT,2025,pv_track,0.0
+Installed Capacity In,AT,2025,pv_utl,0.0
+Installed Capacity In,AT,2025,solartherm,0.0
+Installed Capacity In,AT,2025,wst_boiler,0.0
+Installed Capacity In,AT,2025,wst_chp,0.0
+Installed Capacity In,AT,2025,ror,0.0
+Installed Capacity In,AT,2025,wind_off,0.0
+Installed Capacity In,AT,2025,wind_on,0.0
+Storage Capacity,AT,2025,bio_eng,0.0
+Storage Capacity,AT,2025,bio_sofc,0.0
+Storage Capacity,AT,2025,bio_wchip_boiler,0.0
+Storage Capacity,AT,2025,bio_wchip_chp,0.0
+Storage Capacity,AT,2025,bio_wchip_ex_chp,0.0
+Storage Capacity,AT,2025,bio_wpel_boiler,0.0
+Storage Capacity,AT,2025,bio_wpel_chp,0.0
+Storage Capacity,AT,2025,bio_wpel_ex_chp,0.0
+Storage Capacity,AT,2025,e_boiler,0.0
+Storage Capacity,AT,2025,ely_alka,0.0
+Storage Capacity,AT,2025,ely_pem,0.0
+Storage Capacity,AT,2025,ely_sofc,0.0
+Storage Capacity,AT,2025,hp_airl,0.0
+Storage Capacity,AT,2025,hp_airmini,0.0
+Storage Capacity,AT,2025,hp_airs,0.0
+Storage Capacity,AT,2025,hp_gnd,0.0
+Storage Capacity,AT,2025,hp_wtr,0.0
+Storage Capacity,AT,2025,hyd_psp_day,75.4
+Storage Capacity,AT,2025,hyd_psp_season,308.5
+Storage Capacity,AT,2025,hyd_psp_week,1481.5
+Storage Capacity,AT,2025,hyd_res_day,34.6
+Storage Capacity,AT,2025,hyd_res_season,36.7
+Storage Capacity,AT,2025,hyd_res_week,1342.3
+Storage Capacity,AT,2025,str_lion,0.0
+Storage Capacity,AT,2025,str_varx,0.0
+Storage Capacity,AT,2025,geotherm,0.0
+Storage Capacity,AT,2025,str_hwtr,0.0
+Storage Capacity,AT,2025,str_ptes,0.0
+Storage Capacity,AT,2025,h2_cbt_hi,0.0
+Storage Capacity,AT,2025,h2_cbt_hi_chp,0.0
+Storage Capacity,AT,2025,h2_cc_hi,0.0
+Storage Capacity,AT,2025,h2_cc_hi_chp,0.0
+Storage Capacity,AT,2025,h2_stm,0.0
+Storage Capacity,AT,2025,h2_stm_chp,0.0
+Storage Capacity,AT,2025,h2fc_pem,0.0
+Storage Capacity,AT,2025,str_h2cave,0.0
+Storage Capacity,AT,2025,str_h2lohc,0.0
+Storage Capacity,AT,2025,str_h2tnk,0.0
+Storage Capacity,AT,2025,g_boiler,0.0
+Storage Capacity,AT,2025,ngas_cbt_hi,0.0
+Storage Capacity,AT,2025,ngas_cbt_hi_chp,0.0
+Storage Capacity,AT,2025,oil__ocgt,0.0
+Storage Capacity,AT,2025,oil_eng,0.0
+Storage Capacity,AT,2025,pv_com,0.0
+Storage Capacity,AT,2025,pv_res,0.0
+Storage Capacity,AT,2025,pv_track,0.0
+Storage Capacity,AT,2025,pv_utl,0.0
+Storage Capacity,AT,2025,solartherm,0.0
+Storage Capacity,AT,2025,wst_boiler,0.0
+Storage Capacity,AT,2025,wst_chp,0.0
+Storage Capacity,AT,2025,ror,0.0
+Storage Capacity,AT,2025,wind_off,0.0
+Storage Capacity,AT,2025,wind_on,0.0
+Installed Capacity Out,AT,2030,bio_eng,0.0
+Installed Capacity Out,AT,2030,bio_sofc,0.0
+Installed Capacity Out,AT,2030,bio_wchip_boiler,0.0
+Installed Capacity Out,AT,2030,bio_wchip_chp,0.0
+Installed Capacity Out,AT,2030,bio_wchip_ex_chp,0.375
+Installed Capacity Out,AT,2030,bio_wpel_boiler,0.8
+Installed Capacity Out,AT,2030,bio_wpel_chp,0.0
+Installed Capacity Out,AT,2030,bio_wpel_ex_chp,0.0
+Installed Capacity Out,AT,2030,e_boiler,0.0
+Installed Capacity Out,AT,2030,ely_alka,0.0
+Installed Capacity Out,AT,2030,ely_pem,0.0
+Installed Capacity Out,AT,2030,ely_sofc,0.0
+Installed Capacity Out,AT,2030,hp_airl,0.0
+Installed Capacity Out,AT,2030,hp_airmini,0.0
+Installed Capacity Out,AT,2030,hp_airs,0.0
+Installed Capacity Out,AT,2030,hp_gnd,0.0
+Installed Capacity Out,AT,2030,hp_wtr,0.0
+Installed Capacity Out,AT,2030,hyd_psp_day,2.464
+Installed Capacity Out,AT,2030,hyd_psp_season,1.17
+Installed Capacity Out,AT,2030,hyd_psp_week,1.606
+Installed Capacity Out,AT,2030,hyd_res_day,1.989
+Installed Capacity Out,AT,2030,hyd_res_season,0.328
+Installed Capacity Out,AT,2030,hyd_res_week,1.207
+Installed Capacity Out,AT,2030,str_lion,0.0
+Installed Capacity Out,AT,2030,str_varx,0.0
+Installed Capacity Out,AT,2030,geotherm,0.0
+Installed Capacity Out,AT,2030,str_hwtr,0.0
+Installed Capacity Out,AT,2030,str_ptes,0.0
+Installed Capacity Out,AT,2030,h2_cbt_hi,0.0
+Installed Capacity Out,AT,2030,h2_cbt_hi_chp,1.176
+Installed Capacity Out,AT,2030,h2_cc_hi,0.0
+Installed Capacity Out,AT,2030,h2_cc_hi_chp,3.2169999999999996
+Installed Capacity Out,AT,2030,h2_stm,0.0
+Installed Capacity Out,AT,2030,h2_stm_chp,0.0
+Installed Capacity Out,AT,2030,h2fc_pem,0.0
+Installed Capacity Out,AT,2030,str_h2cave,0.0
+Installed Capacity Out,AT,2030,str_h2lohc,0.0
+Installed Capacity Out,AT,2030,str_h2tnk,0.0
+Installed Capacity Out,AT,2030,g_boiler,0.0
+Installed Capacity Out,AT,2030,ngas_cbt_hi,0.0
+Installed Capacity Out,AT,2030,ngas_cbt_hi_chp,0.0
+Installed Capacity Out,AT,2030,oil__ocgt,0.134
+Installed Capacity Out,AT,2030,oil_eng,0.0
+Installed Capacity Out,AT,2030,pv_com,0.0
+Installed Capacity Out,AT,2030,pv_res,0.0
+Installed Capacity Out,AT,2030,pv_track,0.0
+Installed Capacity Out,AT,2030,pv_utl,1.976
+Installed Capacity Out,AT,2030,solartherm,0.0
+Installed Capacity Out,AT,2030,wst_boiler,0.0
+Installed Capacity Out,AT,2030,wst_chp,0.21
+Installed Capacity Out,AT,2030,ror,5.796
+Installed Capacity Out,AT,2030,wind_off,0.0
+Installed Capacity Out,AT,2030,wind_on,3.164
+Installed Capacity In,AT,2030,bio_eng,0.0
+Installed Capacity In,AT,2030,bio_sofc,0.0
+Installed Capacity In,AT,2030,bio_wchip_boiler,0.0
+Installed Capacity In,AT,2030,bio_wchip_chp,0.0
+Installed Capacity In,AT,2030,bio_wchip_ex_chp,0.0
+Installed Capacity In,AT,2030,bio_wpel_boiler,0.0
+Installed Capacity In,AT,2030,bio_wpel_chp,0.0
+Installed Capacity In,AT,2030,bio_wpel_ex_chp,0.0
+Installed Capacity In,AT,2030,e_boiler,0.0
+Installed Capacity In,AT,2030,ely_alka,0.0
+Installed Capacity In,AT,2030,ely_pem,0.0
+Installed Capacity In,AT,2030,ely_sofc,0.0
+Installed Capacity In,AT,2030,hp_airl,0.0
+Installed Capacity In,AT,2030,hp_airmini,0.0
+Installed Capacity In,AT,2030,hp_airs,0.0
+Installed Capacity In,AT,2030,hp_gnd,0.0
+Installed Capacity In,AT,2030,hp_wtr,0.0
+Installed Capacity In,AT,2030,hyd_psp_day,0.89
+Installed Capacity In,AT,2030,hyd_psp_season,1.01
+Installed Capacity In,AT,2030,hyd_psp_week,1.393
+Installed Capacity In,AT,2030,hyd_res_day,0.0
+Installed Capacity In,AT,2030,hyd_res_season,0.0
+Installed Capacity In,AT,2030,hyd_res_week,0.0
+Installed Capacity In,AT,2030,str_lion,0.0
+Installed Capacity In,AT,2030,str_varx,0.0
+Installed Capacity In,AT,2030,geotherm,0.0
+Installed Capacity In,AT,2030,str_hwtr,0.0
+Installed Capacity In,AT,2030,str_ptes,0.0
+Installed Capacity In,AT,2030,h2_cbt_hi,0.0
+Installed Capacity In,AT,2030,h2_cbt_hi_chp,0.0
+Installed Capacity In,AT,2030,h2_cc_hi,0.0
+Installed Capacity In,AT,2030,h2_cc_hi_chp,0.0
+Installed Capacity In,AT,2030,h2_stm,0.0
+Installed Capacity In,AT,2030,h2_stm_chp,0.0
+Installed Capacity In,AT,2030,h2fc_pem,0.0
+Installed Capacity In,AT,2030,str_h2cave,0.0
+Installed Capacity In,AT,2030,str_h2lohc,0.0
+Installed Capacity In,AT,2030,str_h2tnk,0.0
+Installed Capacity In,AT,2030,g_boiler,0.0
+Installed Capacity In,AT,2030,ngas_cbt_hi,0.0
+Installed Capacity In,AT,2030,ngas_cbt_hi_chp,0.0
+Installed Capacity In,AT,2030,oil__ocgt,0.0
+Installed Capacity In,AT,2030,oil_eng,0.0
+Installed Capacity In,AT,2030,pv_com,0.0
+Installed Capacity In,AT,2030,pv_res,0.0
+Installed Capacity In,AT,2030,pv_track,0.0
+Installed Capacity In,AT,2030,pv_utl,0.0
+Installed Capacity In,AT,2030,solartherm,0.0
+Installed Capacity In,AT,2030,wst_boiler,0.0
+Installed Capacity In,AT,2030,wst_chp,0.0
+Installed Capacity In,AT,2030,ror,0.0
+Installed Capacity In,AT,2030,wind_off,0.0
+Installed Capacity In,AT,2030,wind_on,0.0
+Storage Capacity,AT,2030,bio_eng,0.0
+Storage Capacity,AT,2030,bio_sofc,0.0
+Storage Capacity,AT,2030,bio_wchip_boiler,0.0
+Storage Capacity,AT,2030,bio_wchip_chp,0.0
+Storage Capacity,AT,2030,bio_wchip_ex_chp,0.0
+Storage Capacity,AT,2030,bio_wpel_boiler,0.0
+Storage Capacity,AT,2030,bio_wpel_chp,0.0
+Storage Capacity,AT,2030,bio_wpel_ex_chp,0.0
+Storage Capacity,AT,2030,e_boiler,0.0
+Storage Capacity,AT,2030,ely_alka,0.0
+Storage Capacity,AT,2030,ely_pem,0.0
+Storage Capacity,AT,2030,ely_sofc,0.0
+Storage Capacity,AT,2030,hp_airl,0.0
+Storage Capacity,AT,2030,hp_airmini,0.0
+Storage Capacity,AT,2030,hp_airs,0.0
+Storage Capacity,AT,2030,hp_gnd,0.0
+Storage Capacity,AT,2030,hp_wtr,0.0
+Storage Capacity,AT,2030,hyd_psp_day,75.4
+Storage Capacity,AT,2030,hyd_psp_season,308.5
+Storage Capacity,AT,2030,hyd_psp_week,1481.5
+Storage Capacity,AT,2030,hyd_res_day,34.6
+Storage Capacity,AT,2030,hyd_res_season,36.7
+Storage Capacity,AT,2030,hyd_res_week,1342.3
+Storage Capacity,AT,2030,str_lion,0.0
+Storage Capacity,AT,2030,str_varx,0.0
+Storage Capacity,AT,2030,geotherm,0.0
+Storage Capacity,AT,2030,str_hwtr,0.0
+Storage Capacity,AT,2030,str_ptes,0.0
+Storage Capacity,AT,2030,h2_cbt_hi,0.0
+Storage Capacity,AT,2030,h2_cbt_hi_chp,0.0
+Storage Capacity,AT,2030,h2_cc_hi,0.0
+Storage Capacity,AT,2030,h2_cc_hi_chp,0.0
+Storage Capacity,AT,2030,h2_stm,0.0
+Storage Capacity,AT,2030,h2_stm_chp,0.0
+Storage Capacity,AT,2030,h2fc_pem,0.0
+Storage Capacity,AT,2030,str_h2cave,0.0
+Storage Capacity,AT,2030,str_h2lohc,0.0
+Storage Capacity,AT,2030,str_h2tnk,0.0
+Storage Capacity,AT,2030,g_boiler,0.0
+Storage Capacity,AT,2030,ngas_cbt_hi,0.0
+Storage Capacity,AT,2030,ngas_cbt_hi_chp,0.0
+Storage Capacity,AT,2030,oil__ocgt,0.0
+Storage Capacity,AT,2030,oil_eng,0.0
+Storage Capacity,AT,2030,pv_com,0.0
+Storage Capacity,AT,2030,pv_res,0.0
+Storage Capacity,AT,2030,pv_track,0.0
+Storage Capacity,AT,2030,pv_utl,0.0
+Storage Capacity,AT,2030,solartherm,0.0
+Storage Capacity,AT,2030,wst_boiler,0.0
+Storage Capacity,AT,2030,wst_chp,0.0
+Storage Capacity,AT,2030,ror,0.0
+Storage Capacity,AT,2030,wind_off,0.0
+Storage Capacity,AT,2030,wind_on,0.0
+Installed Capacity Out,AT,2035,bio_eng,0.0
+Installed Capacity Out,AT,2035,bio_sofc,0.0
+Installed Capacity Out,AT,2035,bio_wchip_boiler,0.0
+Installed Capacity Out,AT,2035,bio_wchip_chp,0.0
+Installed Capacity Out,AT,2035,bio_wchip_ex_chp,0.375
+Installed Capacity Out,AT,2035,bio_wpel_boiler,0.8
+Installed Capacity Out,AT,2035,bio_wpel_chp,0.0
+Installed Capacity Out,AT,2035,bio_wpel_ex_chp,0.0
+Installed Capacity Out,AT,2035,e_boiler,0.0
+Installed Capacity Out,AT,2035,ely_alka,0.0
+Installed Capacity Out,AT,2035,ely_pem,0.0
+Installed Capacity Out,AT,2035,ely_sofc,0.0
+Installed Capacity Out,AT,2035,hp_airl,0.0
+Installed Capacity Out,AT,2035,hp_airmini,0.0
+Installed Capacity Out,AT,2035,hp_airs,0.0
+Installed Capacity Out,AT,2035,hp_gnd,0.0
+Installed Capacity Out,AT,2035,hp_wtr,0.0
+Installed Capacity Out,AT,2035,hyd_psp_day,2.464
+Installed Capacity Out,AT,2035,hyd_psp_season,1.17
+Installed Capacity Out,AT,2035,hyd_psp_week,1.606
+Installed Capacity Out,AT,2035,hyd_res_day,1.989
+Installed Capacity Out,AT,2035,hyd_res_season,0.328
+Installed Capacity Out,AT,2035,hyd_res_week,1.207
+Installed Capacity Out,AT,2035,str_lion,0.0
+Installed Capacity Out,AT,2035,str_varx,0.0
+Installed Capacity Out,AT,2035,geotherm,0.0
+Installed Capacity Out,AT,2035,str_hwtr,0.0
+Installed Capacity Out,AT,2035,str_ptes,0.0
+Installed Capacity Out,AT,2035,h2_cbt_hi,0.0
+Installed Capacity Out,AT,2035,h2_cbt_hi_chp,1.176
+Installed Capacity Out,AT,2035,h2_cc_hi,0.0
+Installed Capacity Out,AT,2035,h2_cc_hi_chp,3.2169999999999996
+Installed Capacity Out,AT,2035,h2_stm,0.0
+Installed Capacity Out,AT,2035,h2_stm_chp,0.0
+Installed Capacity Out,AT,2035,h2fc_pem,0.0
+Installed Capacity Out,AT,2035,str_h2cave,0.0
+Installed Capacity Out,AT,2035,str_h2lohc,0.0
+Installed Capacity Out,AT,2035,str_h2tnk,0.0
+Installed Capacity Out,AT,2035,g_boiler,0.0
+Installed Capacity Out,AT,2035,ngas_cbt_hi,0.0
+Installed Capacity Out,AT,2035,ngas_cbt_hi_chp,0.0
+Installed Capacity Out,AT,2035,oil__ocgt,0.134
+Installed Capacity Out,AT,2035,oil_eng,0.0
+Installed Capacity Out,AT,2035,pv_com,0.0
+Installed Capacity Out,AT,2035,pv_res,0.0
+Installed Capacity Out,AT,2035,pv_track,0.0
+Installed Capacity Out,AT,2035,pv_utl,1.976
+Installed Capacity Out,AT,2035,solartherm,0.0
+Installed Capacity Out,AT,2035,wst_boiler,0.0
+Installed Capacity Out,AT,2035,wst_chp,0.21
+Installed Capacity Out,AT,2035,ror,5.796
+Installed Capacity Out,AT,2035,wind_off,0.0
+Installed Capacity Out,AT,2035,wind_on,3.164
+Installed Capacity In,AT,2035,bio_eng,0.0
+Installed Capacity In,AT,2035,bio_sofc,0.0
+Installed Capacity In,AT,2035,bio_wchip_boiler,0.0
+Installed Capacity In,AT,2035,bio_wchip_chp,0.0
+Installed Capacity In,AT,2035,bio_wchip_ex_chp,0.0
+Installed Capacity In,AT,2035,bio_wpel_boiler,0.0
+Installed Capacity In,AT,2035,bio_wpel_chp,0.0
+Installed Capacity In,AT,2035,bio_wpel_ex_chp,0.0
+Installed Capacity In,AT,2035,e_boiler,0.0
+Installed Capacity In,AT,2035,ely_alka,0.0
+Installed Capacity In,AT,2035,ely_pem,0.0
+Installed Capacity In,AT,2035,ely_sofc,0.0
+Installed Capacity In,AT,2035,hp_airl,0.0
+Installed Capacity In,AT,2035,hp_airmini,0.0
+Installed Capacity In,AT,2035,hp_airs,0.0
+Installed Capacity In,AT,2035,hp_gnd,0.0
+Installed Capacity In,AT,2035,hp_wtr,0.0
+Installed Capacity In,AT,2035,hyd_psp_day,0.89
+Installed Capacity In,AT,2035,hyd_psp_season,1.01
+Installed Capacity In,AT,2035,hyd_psp_week,1.393
+Installed Capacity In,AT,2035,hyd_res_day,0.0
+Installed Capacity In,AT,2035,hyd_res_season,0.0
+Installed Capacity In,AT,2035,hyd_res_week,0.0
+Installed Capacity In,AT,2035,str_lion,0.0
+Installed Capacity In,AT,2035,str_varx,0.0
+Installed Capacity In,AT,2035,geotherm,0.0
+Installed Capacity In,AT,2035,str_hwtr,0.0
+Installed Capacity In,AT,2035,str_ptes,0.0
+Installed Capacity In,AT,2035,h2_cbt_hi,0.0
+Installed Capacity In,AT,2035,h2_cbt_hi_chp,0.0
+Installed Capacity In,AT,2035,h2_cc_hi,0.0
+Installed Capacity In,AT,2035,h2_cc_hi_chp,0.0
+Installed Capacity In,AT,2035,h2_stm,0.0
+Installed Capacity In,AT,2035,h2_stm_chp,0.0
+Installed Capacity In,AT,2035,h2fc_pem,0.0
+Installed Capacity In,AT,2035,str_h2cave,0.0
+Installed Capacity In,AT,2035,str_h2lohc,0.0
+Installed Capacity In,AT,2035,str_h2tnk,0.0
+Installed Capacity In,AT,2035,g_boiler,0.0
+Installed Capacity In,AT,2035,ngas_cbt_hi,0.0
+Installed Capacity In,AT,2035,ngas_cbt_hi_chp,0.0
+Installed Capacity In,AT,2035,oil__ocgt,0.0
+Installed Capacity In,AT,2035,oil_eng,0.0
+Installed Capacity In,AT,2035,pv_com,0.0
+Installed Capacity In,AT,2035,pv_res,0.0
+Installed Capacity In,AT,2035,pv_track,0.0
+Installed Capacity In,AT,2035,pv_utl,0.0
+Installed Capacity In,AT,2035,solartherm,0.0
+Installed Capacity In,AT,2035,wst_boiler,0.0
+Installed Capacity In,AT,2035,wst_chp,0.0
+Installed Capacity In,AT,2035,ror,0.0
+Installed Capacity In,AT,2035,wind_off,0.0
+Installed Capacity In,AT,2035,wind_on,0.0
+Storage Capacity,AT,2035,bio_eng,0.0
+Storage Capacity,AT,2035,bio_sofc,0.0
+Storage Capacity,AT,2035,bio_wchip_boiler,0.0
+Storage Capacity,AT,2035,bio_wchip_chp,0.0
+Storage Capacity,AT,2035,bio_wchip_ex_chp,0.0
+Storage Capacity,AT,2035,bio_wpel_boiler,0.0
+Storage Capacity,AT,2035,bio_wpel_chp,0.0
+Storage Capacity,AT,2035,bio_wpel_ex_chp,0.0
+Storage Capacity,AT,2035,e_boiler,0.0
+Storage Capacity,AT,2035,ely_alka,0.0
+Storage Capacity,AT,2035,ely_pem,0.0
+Storage Capacity,AT,2035,ely_sofc,0.0
+Storage Capacity,AT,2035,hp_airl,0.0
+Storage Capacity,AT,2035,hp_airmini,0.0
+Storage Capacity,AT,2035,hp_airs,0.0
+Storage Capacity,AT,2035,hp_gnd,0.0
+Storage Capacity,AT,2035,hp_wtr,0.0
+Storage Capacity,AT,2035,hyd_psp_day,75.4
+Storage Capacity,AT,2035,hyd_psp_season,308.5
+Storage Capacity,AT,2035,hyd_psp_week,1481.5
+Storage Capacity,AT,2035,hyd_res_day,34.6
+Storage Capacity,AT,2035,hyd_res_season,36.7
+Storage Capacity,AT,2035,hyd_res_week,1342.3
+Storage Capacity,AT,2035,str_lion,0.0
+Storage Capacity,AT,2035,str_varx,0.0
+Storage Capacity,AT,2035,geotherm,0.0
+Storage Capacity,AT,2035,str_hwtr,0.0
+Storage Capacity,AT,2035,str_ptes,0.0
+Storage Capacity,AT,2035,h2_cbt_hi,0.0
+Storage Capacity,AT,2035,h2_cbt_hi_chp,0.0
+Storage Capacity,AT,2035,h2_cc_hi,0.0
+Storage Capacity,AT,2035,h2_cc_hi_chp,0.0
+Storage Capacity,AT,2035,h2_stm,0.0
+Storage Capacity,AT,2035,h2_stm_chp,0.0
+Storage Capacity,AT,2035,h2fc_pem,0.0
+Storage Capacity,AT,2035,str_h2cave,0.0
+Storage Capacity,AT,2035,str_h2lohc,0.0
+Storage Capacity,AT,2035,str_h2tnk,0.0
+Storage Capacity,AT,2035,g_boiler,0.0
+Storage Capacity,AT,2035,ngas_cbt_hi,0.0
+Storage Capacity,AT,2035,ngas_cbt_hi_chp,0.0
+Storage Capacity,AT,2035,oil__ocgt,0.0
+Storage Capacity,AT,2035,oil_eng,0.0
+Storage Capacity,AT,2035,pv_com,0.0
+Storage Capacity,AT,2035,pv_res,0.0
+Storage Capacity,AT,2035,pv_track,0.0
+Storage Capacity,AT,2035,pv_utl,0.0
+Storage Capacity,AT,2035,solartherm,0.0
+Storage Capacity,AT,2035,wst_boiler,0.0
+Storage Capacity,AT,2035,wst_chp,0.0
+Storage Capacity,AT,2035,ror,0.0
+Storage Capacity,AT,2035,wind_off,0.0
+Storage Capacity,AT,2035,wind_on,0.0
+Installed Capacity Out,AT,2040,bio_eng,0.0
+Installed Capacity Out,AT,2040,bio_sofc,0.0
+Installed Capacity Out,AT,2040,bio_wchip_boiler,0.0
+Installed Capacity Out,AT,2040,bio_wchip_chp,0.0
+Installed Capacity Out,AT,2040,bio_wchip_ex_chp,0.375
+Installed Capacity Out,AT,2040,bio_wpel_boiler,0.8
+Installed Capacity Out,AT,2040,bio_wpel_chp,0.0
+Installed Capacity Out,AT,2040,bio_wpel_ex_chp,0.0
+Installed Capacity Out,AT,2040,e_boiler,0.0
+Installed Capacity Out,AT,2040,ely_alka,0.0
+Installed Capacity Out,AT,2040,ely_pem,0.0
+Installed Capacity Out,AT,2040,ely_sofc,0.0
+Installed Capacity Out,AT,2040,hp_airl,0.0
+Installed Capacity Out,AT,2040,hp_airmini,0.0
+Installed Capacity Out,AT,2040,hp_airs,0.0
+Installed Capacity Out,AT,2040,hp_gnd,0.0
+Installed Capacity Out,AT,2040,hp_wtr,0.0
+Installed Capacity Out,AT,2040,hyd_psp_day,2.464
+Installed Capacity Out,AT,2040,hyd_psp_season,1.17
+Installed Capacity Out,AT,2040,hyd_psp_week,1.606
+Installed Capacity Out,AT,2040,hyd_res_day,1.989
+Installed Capacity Out,AT,2040,hyd_res_season,0.328
+Installed Capacity Out,AT,2040,hyd_res_week,1.207
+Installed Capacity Out,AT,2040,str_lion,0.0
+Installed Capacity Out,AT,2040,str_varx,0.0
+Installed Capacity Out,AT,2040,geotherm,0.0
+Installed Capacity Out,AT,2040,str_hwtr,0.0
+Installed Capacity Out,AT,2040,str_ptes,0.0
+Installed Capacity Out,AT,2040,h2_cbt_hi,0.0
+Installed Capacity Out,AT,2040,h2_cbt_hi_chp,1.176
+Installed Capacity Out,AT,2040,h2_cc_hi,0.0
+Installed Capacity Out,AT,2040,h2_cc_hi_chp,3.2169999999999996
+Installed Capacity Out,AT,2040,h2_stm,0.0
+Installed Capacity Out,AT,2040,h2_stm_chp,0.0
+Installed Capacity Out,AT,2040,h2fc_pem,0.0
+Installed Capacity Out,AT,2040,str_h2cave,0.0
+Installed Capacity Out,AT,2040,str_h2lohc,0.0
+Installed Capacity Out,AT,2040,str_h2tnk,0.0
+Installed Capacity Out,AT,2040,g_boiler,0.0
+Installed Capacity Out,AT,2040,ngas_cbt_hi,0.0
+Installed Capacity Out,AT,2040,ngas_cbt_hi_chp,0.0
+Installed Capacity Out,AT,2040,oil__ocgt,0.134
+Installed Capacity Out,AT,2040,oil_eng,0.0
+Installed Capacity Out,AT,2040,pv_com,0.0
+Installed Capacity Out,AT,2040,pv_res,0.0
+Installed Capacity Out,AT,2040,pv_track,0.0
+Installed Capacity Out,AT,2040,pv_utl,1.976
+Installed Capacity Out,AT,2040,solartherm,0.0
+Installed Capacity Out,AT,2040,wst_boiler,0.0
+Installed Capacity Out,AT,2040,wst_chp,0.21
+Installed Capacity Out,AT,2040,ror,5.796
+Installed Capacity Out,AT,2040,wind_off,0.0
+Installed Capacity Out,AT,2040,wind_on,3.164
+Installed Capacity In,AT,2040,bio_eng,0.0
+Installed Capacity In,AT,2040,bio_sofc,0.0
+Installed Capacity In,AT,2040,bio_wchip_boiler,0.0
+Installed Capacity In,AT,2040,bio_wchip_chp,0.0
+Installed Capacity In,AT,2040,bio_wchip_ex_chp,0.0
+Installed Capacity In,AT,2040,bio_wpel_boiler,0.0
+Installed Capacity In,AT,2040,bio_wpel_chp,0.0
+Installed Capacity In,AT,2040,bio_wpel_ex_chp,0.0
+Installed Capacity In,AT,2040,e_boiler,0.0
+Installed Capacity In,AT,2040,ely_alka,0.0
+Installed Capacity In,AT,2040,ely_pem,0.0
+Installed Capacity In,AT,2040,ely_sofc,0.0
+Installed Capacity In,AT,2040,hp_airl,0.0
+Installed Capacity In,AT,2040,hp_airmini,0.0
+Installed Capacity In,AT,2040,hp_airs,0.0
+Installed Capacity In,AT,2040,hp_gnd,0.0
+Installed Capacity In,AT,2040,hp_wtr,0.0
+Installed Capacity In,AT,2040,hyd_psp_day,0.89
+Installed Capacity In,AT,2040,hyd_psp_season,1.01
+Installed Capacity In,AT,2040,hyd_psp_week,1.393
+Installed Capacity In,AT,2040,hyd_res_day,0.0
+Installed Capacity In,AT,2040,hyd_res_season,0.0
+Installed Capacity In,AT,2040,hyd_res_week,0.0
+Installed Capacity In,AT,2040,str_lion,0.0
+Installed Capacity In,AT,2040,str_varx,0.0
+Installed Capacity In,AT,2040,geotherm,0.0
+Installed Capacity In,AT,2040,str_hwtr,0.0
+Installed Capacity In,AT,2040,str_ptes,0.0
+Installed Capacity In,AT,2040,h2_cbt_hi,0.0
+Installed Capacity In,AT,2040,h2_cbt_hi_chp,0.0
+Installed Capacity In,AT,2040,h2_cc_hi,0.0
+Installed Capacity In,AT,2040,h2_cc_hi_chp,0.0
+Installed Capacity In,AT,2040,h2_stm,0.0
+Installed Capacity In,AT,2040,h2_stm_chp,0.0
+Installed Capacity In,AT,2040,h2fc_pem,0.0
+Installed Capacity In,AT,2040,str_h2cave,0.0
+Installed Capacity In,AT,2040,str_h2lohc,0.0
+Installed Capacity In,AT,2040,str_h2tnk,0.0
+Installed Capacity In,AT,2040,g_boiler,0.0
+Installed Capacity In,AT,2040,ngas_cbt_hi,0.0
+Installed Capacity In,AT,2040,ngas_cbt_hi_chp,0.0
+Installed Capacity In,AT,2040,oil__ocgt,0.0
+Installed Capacity In,AT,2040,oil_eng,0.0
+Installed Capacity In,AT,2040,pv_com,0.0
+Installed Capacity In,AT,2040,pv_res,0.0
+Installed Capacity In,AT,2040,pv_track,0.0
+Installed Capacity In,AT,2040,pv_utl,0.0
+Installed Capacity In,AT,2040,solartherm,0.0
+Installed Capacity In,AT,2040,wst_boiler,0.0
+Installed Capacity In,AT,2040,wst_chp,0.0
+Installed Capacity In,AT,2040,ror,0.0
+Installed Capacity In,AT,2040,wind_off,0.0
+Installed Capacity In,AT,2040,wind_on,0.0
+Storage Capacity,AT,2040,bio_eng,0.0
+Storage Capacity,AT,2040,bio_sofc,0.0
+Storage Capacity,AT,2040,bio_wchip_boiler,0.0
+Storage Capacity,AT,2040,bio_wchip_chp,0.0
+Storage Capacity,AT,2040,bio_wchip_ex_chp,0.0
+Storage Capacity,AT,2040,bio_wpel_boiler,0.0
+Storage Capacity,AT,2040,bio_wpel_chp,0.0
+Storage Capacity,AT,2040,bio_wpel_ex_chp,0.0
+Storage Capacity,AT,2040,e_boiler,0.0
+Storage Capacity,AT,2040,ely_alka,0.0
+Storage Capacity,AT,2040,ely_pem,0.0
+Storage Capacity,AT,2040,ely_sofc,0.0
+Storage Capacity,AT,2040,hp_airl,0.0
+Storage Capacity,AT,2040,hp_airmini,0.0
+Storage Capacity,AT,2040,hp_airs,0.0
+Storage Capacity,AT,2040,hp_gnd,0.0
+Storage Capacity,AT,2040,hp_wtr,0.0
+Storage Capacity,AT,2040,hyd_psp_day,75.4
+Storage Capacity,AT,2040,hyd_psp_season,308.5
+Storage Capacity,AT,2040,hyd_psp_week,1481.5
+Storage Capacity,AT,2040,hyd_res_day,34.6
+Storage Capacity,AT,2040,hyd_res_season,36.7
+Storage Capacity,AT,2040,hyd_res_week,1342.3
+Storage Capacity,AT,2040,str_lion,0.0
+Storage Capacity,AT,2040,str_varx,0.0
+Storage Capacity,AT,2040,geotherm,0.0
+Storage Capacity,AT,2040,str_hwtr,0.0
+Storage Capacity,AT,2040,str_ptes,0.0
+Storage Capacity,AT,2040,h2_cbt_hi,0.0
+Storage Capacity,AT,2040,h2_cbt_hi_chp,0.0
+Storage Capacity,AT,2040,h2_cc_hi,0.0
+Storage Capacity,AT,2040,h2_cc_hi_chp,0.0
+Storage Capacity,AT,2040,h2_stm,0.0
+Storage Capacity,AT,2040,h2_stm_chp,0.0
+Storage Capacity,AT,2040,h2fc_pem,0.0
+Storage Capacity,AT,2040,str_h2cave,0.0
+Storage Capacity,AT,2040,str_h2lohc,0.0
+Storage Capacity,AT,2040,str_h2tnk,0.0
+Storage Capacity,AT,2040,g_boiler,0.0
+Storage Capacity,AT,2040,ngas_cbt_hi,0.0
+Storage Capacity,AT,2040,ngas_cbt_hi_chp,0.0
+Storage Capacity,AT,2040,oil__ocgt,0.0
+Storage Capacity,AT,2040,oil_eng,0.0
+Storage Capacity,AT,2040,pv_com,0.0
+Storage Capacity,AT,2040,pv_res,0.0
+Storage Capacity,AT,2040,pv_track,0.0
+Storage Capacity,AT,2040,pv_utl,0.0
+Storage Capacity,AT,2040,solartherm,0.0
+Storage Capacity,AT,2040,wst_boiler,0.0
+Storage Capacity,AT,2040,wst_chp,0.0
+Storage Capacity,AT,2040,ror,0.0
+Storage Capacity,AT,2040,wind_off,0.0
+Storage Capacity,AT,2040,wind_on,0.0
+Installed Capacity Out,DE,2020,bio_eng,0.0
+Installed Capacity Out,DE,2020,bio_sofc,0.0
+Installed Capacity Out,DE,2020,bio_wchip_boiler,4.1
+Installed Capacity Out,DE,2020,bio_wchip_chp,0.0
+Installed Capacity Out,DE,2020,bio_wchip_ex_chp,8.8
+Installed Capacity Out,DE,2020,bio_wpel_boiler,0.0
+Installed Capacity Out,DE,2020,bio_wpel_chp,0.0
+Installed Capacity Out,DE,2020,bio_wpel_ex_chp,0.0
+Installed Capacity Out,DE,2020,e_boiler,0.4
+Installed Capacity Out,DE,2020,ely_alka,0.0
+Installed Capacity Out,DE,2020,ely_pem,0.05
+Installed Capacity Out,DE,2020,ely_sofc,0.0
+Installed Capacity Out,DE,2020,hp_airl,0.4
+Installed Capacity Out,DE,2020,hp_airmini,0.0
+Installed Capacity Out,DE,2020,hp_airs,0.0
+Installed Capacity Out,DE,2020,hp_gnd,0.0
+Installed Capacity Out,DE,2020,hp_wtr,0.0
+Installed Capacity Out,DE,2020,hyd_psp_day,9.6
+Installed Capacity Out,DE,2020,hyd_psp_season,0.0
+Installed Capacity Out,DE,2020,hyd_psp_week,0.0
+Installed Capacity Out,DE,2020,hyd_res_day,0.0
+Installed Capacity Out,DE,2020,hyd_res_season,0.0
+Installed Capacity Out,DE,2020,hyd_res_week,0.0
+Installed Capacity Out,DE,2020,str_lion,0.0
+Installed Capacity Out,DE,2020,str_varx,0.0
+Installed Capacity Out,DE,2020,geotherm,0.0
+Installed Capacity Out,DE,2020,str_hwtr,0.0
+Installed Capacity Out,DE,2020,str_ptes,0.0
+Installed Capacity Out,DE,2020,h2_cbt_hi,0.0
+Installed Capacity Out,DE,2020,h2_cbt_hi_chp,8.8
+Installed Capacity Out,DE,2020,h2_cc_hi,0.0
+Installed Capacity Out,DE,2020,h2_cc_hi_chp,17.5
+Installed Capacity Out,DE,2020,h2_stm,0.0
+Installed Capacity Out,DE,2020,h2_stm_chp,0.0
+Installed Capacity Out,DE,2020,h2fc_pem,0.0
+Installed Capacity Out,DE,2020,str_h2cave,0.0
+Installed Capacity Out,DE,2020,str_h2lohc,0.0
+Installed Capacity Out,DE,2020,str_h2tnk,0.0
+Installed Capacity Out,DE,2020,g_boiler,0.0
+Installed Capacity Out,DE,2020,ngas_cbt_hi,0.0
+Installed Capacity Out,DE,2020,ngas_cbt_hi_chp,0.0
+Installed Capacity Out,DE,2020,oil__ocgt,2.3
+Installed Capacity Out,DE,2020,oil_eng,0.0
+Installed Capacity Out,DE,2020,pv_com,0.0
+Installed Capacity Out,DE,2020,pv_res,0.0
+Installed Capacity Out,DE,2020,pv_track,0.0
+Installed Capacity Out,DE,2020,pv_utl,53.7
+Installed Capacity Out,DE,2020,solartherm,0.0
+Installed Capacity Out,DE,2020,wst_boiler,0.0
+Installed Capacity Out,DE,2020,wst_chp,1.4
+Installed Capacity Out,DE,2020,ror,5.3
+Installed Capacity Out,DE,2020,wind_off,7.8
+Installed Capacity Out,DE,2020,wind_on,54.4
+Installed Capacity In,DE,2020,bio_eng,0.0
+Installed Capacity In,DE,2020,bio_sofc,0.0
+Installed Capacity In,DE,2020,bio_wchip_boiler,0.0
+Installed Capacity In,DE,2020,bio_wchip_chp,0.0
+Installed Capacity In,DE,2020,bio_wchip_ex_chp,0.0
+Installed Capacity In,DE,2020,bio_wpel_boiler,0.0
+Installed Capacity In,DE,2020,bio_wpel_chp,0.0
+Installed Capacity In,DE,2020,bio_wpel_ex_chp,0.0
+Installed Capacity In,DE,2020,e_boiler,0.0
+Installed Capacity In,DE,2020,ely_alka,0.0
+Installed Capacity In,DE,2020,ely_pem,0.0
+Installed Capacity In,DE,2020,ely_sofc,0.0
+Installed Capacity In,DE,2020,hp_airl,0.0
+Installed Capacity In,DE,2020,hp_airmini,0.0
+Installed Capacity In,DE,2020,hp_airs,0.0
+Installed Capacity In,DE,2020,hp_gnd,0.0
+Installed Capacity In,DE,2020,hp_wtr,0.0
+Installed Capacity In,DE,2020,hyd_psp_day,8.3
+Installed Capacity In,DE,2020,hyd_psp_season,0.0
+Installed Capacity In,DE,2020,hyd_psp_week,0.0
+Installed Capacity In,DE,2020,hyd_res_day,0.0
+Installed Capacity In,DE,2020,hyd_res_season,0.0
+Installed Capacity In,DE,2020,hyd_res_week,0.0
+Installed Capacity In,DE,2020,str_lion,0.0
+Installed Capacity In,DE,2020,str_varx,0.0
+Installed Capacity In,DE,2020,geotherm,0.0
+Installed Capacity In,DE,2020,str_hwtr,0.0
+Installed Capacity In,DE,2020,str_ptes,0.0
+Installed Capacity In,DE,2020,h2_cbt_hi,0.0
+Installed Capacity In,DE,2020,h2_cbt_hi_chp,0.0
+Installed Capacity In,DE,2020,h2_cc_hi,0.0
+Installed Capacity In,DE,2020,h2_cc_hi_chp,0.0
+Installed Capacity In,DE,2020,h2_stm,0.0
+Installed Capacity In,DE,2020,h2_stm_chp,0.0
+Installed Capacity In,DE,2020,h2fc_pem,0.0
+Installed Capacity In,DE,2020,str_h2cave,0.0
+Installed Capacity In,DE,2020,str_h2lohc,0.0
+Installed Capacity In,DE,2020,str_h2tnk,0.0
+Installed Capacity In,DE,2020,g_boiler,0.0
+Installed Capacity In,DE,2020,ngas_cbt_hi,0.0
+Installed Capacity In,DE,2020,ngas_cbt_hi_chp,0.0
+Installed Capacity In,DE,2020,oil__ocgt,0.0
+Installed Capacity In,DE,2020,oil_eng,0.0
+Installed Capacity In,DE,2020,pv_com,0.0
+Installed Capacity In,DE,2020,pv_res,0.0
+Installed Capacity In,DE,2020,pv_track,0.0
+Installed Capacity In,DE,2020,pv_utl,0.0
+Installed Capacity In,DE,2020,solartherm,0.0
+Installed Capacity In,DE,2020,wst_boiler,0.0
+Installed Capacity In,DE,2020,wst_chp,0.0
+Installed Capacity In,DE,2020,ror,0.0
+Installed Capacity In,DE,2020,wind_off,0.0
+Installed Capacity In,DE,2020,wind_on,0.0
+Storage Capacity,DE,2020,bio_eng,0.0
+Storage Capacity,DE,2020,bio_sofc,0.0
+Storage Capacity,DE,2020,bio_wchip_boiler,0.0
+Storage Capacity,DE,2020,bio_wchip_chp,0.0
+Storage Capacity,DE,2020,bio_wchip_ex_chp,0.0
+Storage Capacity,DE,2020,bio_wpel_boiler,0.0
+Storage Capacity,DE,2020,bio_wpel_chp,0.0
+Storage Capacity,DE,2020,bio_wpel_ex_chp,0.0
+Storage Capacity,DE,2020,e_boiler,0.0
+Storage Capacity,DE,2020,ely_alka,0.0
+Storage Capacity,DE,2020,ely_pem,0.0
+Storage Capacity,DE,2020,ely_sofc,0.0
+Storage Capacity,DE,2020,hp_airl,0.0
+Storage Capacity,DE,2020,hp_airmini,0.0
+Storage Capacity,DE,2020,hp_airs,0.0
+Storage Capacity,DE,2020,hp_gnd,0.0
+Storage Capacity,DE,2020,hp_wtr,0.0
+Storage Capacity,DE,2020,hyd_psp_day,54.7
+Storage Capacity,DE,2020,hyd_psp_season,0.0
+Storage Capacity,DE,2020,hyd_psp_week,0.0
+Storage Capacity,DE,2020,hyd_res_day,0.0
+Storage Capacity,DE,2020,hyd_res_season,0.0
+Storage Capacity,DE,2020,hyd_res_week,0.0
+Storage Capacity,DE,2020,str_lion,0.0
+Storage Capacity,DE,2020,str_varx,0.0
+Storage Capacity,DE,2020,geotherm,0.0
+Storage Capacity,DE,2020,str_hwtr,0.0
+Storage Capacity,DE,2020,str_ptes,0.0
+Storage Capacity,DE,2020,h2_cbt_hi,0.0
+Storage Capacity,DE,2020,h2_cbt_hi_chp,0.0
+Storage Capacity,DE,2020,h2_cc_hi,0.0
+Storage Capacity,DE,2020,h2_cc_hi_chp,0.0
+Storage Capacity,DE,2020,h2_stm,0.0
+Storage Capacity,DE,2020,h2_stm_chp,0.0
+Storage Capacity,DE,2020,h2fc_pem,0.0
+Storage Capacity,DE,2020,str_h2cave,0.0
+Storage Capacity,DE,2020,str_h2lohc,0.0
+Storage Capacity,DE,2020,str_h2tnk,0.0
+Storage Capacity,DE,2020,g_boiler,0.0
+Storage Capacity,DE,2020,ngas_cbt_hi,0.0
+Storage Capacity,DE,2020,ngas_cbt_hi_chp,0.0
+Storage Capacity,DE,2020,oil__ocgt,0.0
+Storage Capacity,DE,2020,oil_eng,0.0
+Storage Capacity,DE,2020,pv_com,0.0
+Storage Capacity,DE,2020,pv_res,0.0
+Storage Capacity,DE,2020,pv_track,0.0
+Storage Capacity,DE,2020,pv_utl,0.0
+Storage Capacity,DE,2020,solartherm,0.0
+Storage Capacity,DE,2020,wst_boiler,0.0
+Storage Capacity,DE,2020,wst_chp,0.0
+Storage Capacity,DE,2020,ror,0.0
+Storage Capacity,DE,2020,wind_off,0.0
+Storage Capacity,DE,2020,wind_on,0.0
+Installed Capacity Out,DE,2025,bio_eng,0.0
+Installed Capacity Out,DE,2025,bio_sofc,0.0
+Installed Capacity Out,DE,2025,bio_wchip_boiler,3.3
+Installed Capacity Out,DE,2025,bio_wchip_chp,0.0
+Installed Capacity Out,DE,2025,bio_wchip_ex_chp,7.9
+Installed Capacity Out,DE,2025,bio_wpel_boiler,0.0
+Installed Capacity Out,DE,2025,bio_wpel_chp,0.0
+Installed Capacity Out,DE,2025,bio_wpel_ex_chp,0.0
+Installed Capacity Out,DE,2025,e_boiler,2.8
+Installed Capacity Out,DE,2025,ely_alka,0.0
+Installed Capacity Out,DE,2025,ely_pem,4.5
+Installed Capacity Out,DE,2025,ely_sofc,0.0
+Installed Capacity Out,DE,2025,hp_airl,1.7
+Installed Capacity Out,DE,2025,hp_airmini,0.0
+Installed Capacity Out,DE,2025,hp_airs,0.0
+Installed Capacity Out,DE,2025,hp_gnd,0.0
+Installed Capacity Out,DE,2025,hp_wtr,0.0
+Installed Capacity Out,DE,2025,hyd_psp_day,10.3
+Installed Capacity Out,DE,2025,hyd_psp_season,0.0
+Installed Capacity Out,DE,2025,hyd_psp_week,0.0
+Installed Capacity Out,DE,2025,hyd_res_day,0.0
+Installed Capacity Out,DE,2025,hyd_res_season,0.0
+Installed Capacity Out,DE,2025,hyd_res_week,0.0
+Installed Capacity Out,DE,2025,str_lion,0.0
+Installed Capacity Out,DE,2025,str_varx,0.0
+Installed Capacity Out,DE,2025,geotherm,0.0
+Installed Capacity Out,DE,2025,str_hwtr,0.0
+Installed Capacity Out,DE,2025,str_ptes,0.0
+Installed Capacity Out,DE,2025,h2_cbt_hi,0.0
+Installed Capacity Out,DE,2025,h2_cbt_hi_chp,9.7
+Installed Capacity Out,DE,2025,h2_cc_hi,0.0
+Installed Capacity Out,DE,2025,h2_cc_hi_chp,19.5
+Installed Capacity Out,DE,2025,h2_stm,0.0
+Installed Capacity Out,DE,2025,h2_stm_chp,0.0
+Installed Capacity Out,DE,2025,h2fc_pem,0.0
+Installed Capacity Out,DE,2025,str_h2cave,0.0
+Installed Capacity Out,DE,2025,str_h2lohc,0.0
+Installed Capacity Out,DE,2025,str_h2tnk,0.0
+Installed Capacity Out,DE,2025,g_boiler,0.0
+Installed Capacity Out,DE,2025,ngas_cbt_hi,0.0
+Installed Capacity Out,DE,2025,ngas_cbt_hi_chp,0.0
+Installed Capacity Out,DE,2025,oil__ocgt,1.9
+Installed Capacity Out,DE,2025,oil_eng,0.0
+Installed Capacity Out,DE,2025,pv_com,0.0
+Installed Capacity Out,DE,2025,pv_res,0.0
+Installed Capacity Out,DE,2025,pv_track,0.0
+Installed Capacity Out,DE,2025,pv_utl,110.3
+Installed Capacity Out,DE,2025,solartherm,0.0
+Installed Capacity Out,DE,2025,wst_boiler,0.0
+Installed Capacity Out,DE,2025,wst_chp,1.3
+Installed Capacity Out,DE,2025,ror,5.3
+Installed Capacity Out,DE,2025,wind_off,16.9
+Installed Capacity Out,DE,2025,wind_on,69.6
+Installed Capacity In,DE,2025,bio_eng,0.0
+Installed Capacity In,DE,2025,bio_sofc,0.0
+Installed Capacity In,DE,2025,bio_wchip_boiler,0.0
+Installed Capacity In,DE,2025,bio_wchip_chp,0.0
+Installed Capacity In,DE,2025,bio_wchip_ex_chp,0.0
+Installed Capacity In,DE,2025,bio_wpel_boiler,0.0
+Installed Capacity In,DE,2025,bio_wpel_chp,0.0
+Installed Capacity In,DE,2025,bio_wpel_ex_chp,0.0
+Installed Capacity In,DE,2025,e_boiler,0.0
+Installed Capacity In,DE,2025,ely_alka,0.0
+Installed Capacity In,DE,2025,ely_pem,0.0
+Installed Capacity In,DE,2025,ely_sofc,0.0
+Installed Capacity In,DE,2025,hp_airl,0.0
+Installed Capacity In,DE,2025,hp_airmini,0.0
+Installed Capacity In,DE,2025,hp_airs,0.0
+Installed Capacity In,DE,2025,hp_gnd,0.0
+Installed Capacity In,DE,2025,hp_wtr,0.0
+Installed Capacity In,DE,2025,hyd_psp_day,8.9
+Installed Capacity In,DE,2025,hyd_psp_season,0.0
+Installed Capacity In,DE,2025,hyd_psp_week,0.0
+Installed Capacity In,DE,2025,hyd_res_day,0.0
+Installed Capacity In,DE,2025,hyd_res_season,0.0
+Installed Capacity In,DE,2025,hyd_res_week,0.0
+Installed Capacity In,DE,2025,str_lion,0.0
+Installed Capacity In,DE,2025,str_varx,0.0
+Installed Capacity In,DE,2025,geotherm,0.0
+Installed Capacity In,DE,2025,str_hwtr,0.0
+Installed Capacity In,DE,2025,str_ptes,0.0
+Installed Capacity In,DE,2025,h2_cbt_hi,0.0
+Installed Capacity In,DE,2025,h2_cbt_hi_chp,0.0
+Installed Capacity In,DE,2025,h2_cc_hi,0.0
+Installed Capacity In,DE,2025,h2_cc_hi_chp,0.0
+Installed Capacity In,DE,2025,h2_stm,0.0
+Installed Capacity In,DE,2025,h2_stm_chp,0.0
+Installed Capacity In,DE,2025,h2fc_pem,0.0
+Installed Capacity In,DE,2025,str_h2cave,0.0
+Installed Capacity In,DE,2025,str_h2lohc,0.0
+Installed Capacity In,DE,2025,str_h2tnk,0.0
+Installed Capacity In,DE,2025,g_boiler,0.0
+Installed Capacity In,DE,2025,ngas_cbt_hi,0.0
+Installed Capacity In,DE,2025,ngas_cbt_hi_chp,0.0
+Installed Capacity In,DE,2025,oil__ocgt,0.0
+Installed Capacity In,DE,2025,oil_eng,0.0
+Installed Capacity In,DE,2025,pv_com,0.0
+Installed Capacity In,DE,2025,pv_res,0.0
+Installed Capacity In,DE,2025,pv_track,0.0
+Installed Capacity In,DE,2025,pv_utl,0.0
+Installed Capacity In,DE,2025,solartherm,0.0
+Installed Capacity In,DE,2025,wst_boiler,0.0
+Installed Capacity In,DE,2025,wst_chp,0.0
+Installed Capacity In,DE,2025,ror,0.0
+Installed Capacity In,DE,2025,wind_off,0.0
+Installed Capacity In,DE,2025,wind_on,0.0
+Storage Capacity,DE,2025,bio_eng,0.0
+Storage Capacity,DE,2025,bio_sofc,0.0
+Storage Capacity,DE,2025,bio_wchip_boiler,0.0
+Storage Capacity,DE,2025,bio_wchip_chp,0.0
+Storage Capacity,DE,2025,bio_wchip_ex_chp,0.0
+Storage Capacity,DE,2025,bio_wpel_boiler,0.0
+Storage Capacity,DE,2025,bio_wpel_chp,0.0
+Storage Capacity,DE,2025,bio_wpel_ex_chp,0.0
+Storage Capacity,DE,2025,e_boiler,0.0
+Storage Capacity,DE,2025,ely_alka,0.0
+Storage Capacity,DE,2025,ely_pem,0.0
+Storage Capacity,DE,2025,ely_sofc,0.0
+Storage Capacity,DE,2025,hp_airl,0.0
+Storage Capacity,DE,2025,hp_airmini,0.0
+Storage Capacity,DE,2025,hp_airs,0.0
+Storage Capacity,DE,2025,hp_gnd,0.0
+Storage Capacity,DE,2025,hp_wtr,0.0
+Storage Capacity,DE,2025,hyd_psp_day,58.7
+Storage Capacity,DE,2025,hyd_psp_season,0.0
+Storage Capacity,DE,2025,hyd_psp_week,0.0
+Storage Capacity,DE,2025,hyd_res_day,0.0
+Storage Capacity,DE,2025,hyd_res_season,0.0
+Storage Capacity,DE,2025,hyd_res_week,0.0
+Storage Capacity,DE,2025,str_lion,0.0
+Storage Capacity,DE,2025,str_varx,0.0
+Storage Capacity,DE,2025,geotherm,0.0
+Storage Capacity,DE,2025,str_hwtr,0.0
+Storage Capacity,DE,2025,str_ptes,0.0
+Storage Capacity,DE,2025,h2_cbt_hi,0.0
+Storage Capacity,DE,2025,h2_cbt_hi_chp,0.0
+Storage Capacity,DE,2025,h2_cc_hi,0.0
+Storage Capacity,DE,2025,h2_cc_hi_chp,0.0
+Storage Capacity,DE,2025,h2_stm,0.0
+Storage Capacity,DE,2025,h2_stm_chp,0.0
+Storage Capacity,DE,2025,h2fc_pem,0.0
+Storage Capacity,DE,2025,str_h2cave,0.0
+Storage Capacity,DE,2025,str_h2lohc,0.0
+Storage Capacity,DE,2025,str_h2tnk,0.0
+Storage Capacity,DE,2025,g_boiler,0.0
+Storage Capacity,DE,2025,ngas_cbt_hi,0.0
+Storage Capacity,DE,2025,ngas_cbt_hi_chp,0.0
+Storage Capacity,DE,2025,oil__ocgt,0.0
+Storage Capacity,DE,2025,oil_eng,0.0
+Storage Capacity,DE,2025,pv_com,0.0
+Storage Capacity,DE,2025,pv_res,0.0
+Storage Capacity,DE,2025,pv_track,0.0
+Storage Capacity,DE,2025,pv_utl,0.0
+Storage Capacity,DE,2025,solartherm,0.0
+Storage Capacity,DE,2025,wst_boiler,0.0
+Storage Capacity,DE,2025,wst_chp,0.0
+Storage Capacity,DE,2025,ror,0.0
+Storage Capacity,DE,2025,wind_off,0.0
+Storage Capacity,DE,2025,wind_on,0.0
+Installed Capacity Out,DE,2030,bio_eng,0.0
+Installed Capacity Out,DE,2030,bio_sofc,0.0
+Installed Capacity Out,DE,2030,bio_wchip_boiler,2.4
+Installed Capacity Out,DE,2030,bio_wchip_chp,0.0
+Installed Capacity Out,DE,2030,bio_wchip_ex_chp,6.7
+Installed Capacity Out,DE,2030,bio_wpel_boiler,0.0
+Installed Capacity Out,DE,2030,bio_wpel_chp,0.0
+Installed Capacity Out,DE,2030,bio_wpel_ex_chp,0.0
+Installed Capacity Out,DE,2030,e_boiler,5.8
+Installed Capacity Out,DE,2030,ely_alka,0.0
+Installed Capacity Out,DE,2030,ely_pem,10.1
+Installed Capacity Out,DE,2030,ely_sofc,0.0
+Installed Capacity Out,DE,2030,hp_airl,3.2
+Installed Capacity Out,DE,2030,hp_airmini,0.0
+Installed Capacity Out,DE,2030,hp_airs,0.0
+Installed Capacity Out,DE,2030,hp_gnd,0.0
+Installed Capacity Out,DE,2030,hp_wtr,0.0
+Installed Capacity Out,DE,2030,hyd_psp_day,11.1
+Installed Capacity Out,DE,2030,hyd_psp_season,0.0
+Installed Capacity Out,DE,2030,hyd_psp_week,0.0
+Installed Capacity Out,DE,2030,hyd_res_day,0.0
+Installed Capacity Out,DE,2030,hyd_res_season,0.0
+Installed Capacity Out,DE,2030,hyd_res_week,0.0
+Installed Capacity Out,DE,2030,str_lion,0.0
+Installed Capacity Out,DE,2030,str_varx,0.0
+Installed Capacity Out,DE,2030,geotherm,0.0
+Installed Capacity Out,DE,2030,str_hwtr,0.0
+Installed Capacity Out,DE,2030,str_ptes,0.0
+Installed Capacity Out,DE,2030,h2_cbt_hi,0.0
+Installed Capacity Out,DE,2030,h2_cbt_hi_chp,11.0
+Installed Capacity Out,DE,2030,h2_cc_hi,0.0
+Installed Capacity Out,DE,2030,h2_cc_hi_chp,21.9
+Installed Capacity Out,DE,2030,h2_stm,0.0
+Installed Capacity Out,DE,2030,h2_stm_chp,0.0
+Installed Capacity Out,DE,2030,h2fc_pem,0.0
+Installed Capacity Out,DE,2030,str_h2cave,0.0
+Installed Capacity Out,DE,2030,str_h2lohc,0.0
+Installed Capacity Out,DE,2030,str_h2tnk,0.0
+Installed Capacity Out,DE,2030,g_boiler,0.0
+Installed Capacity Out,DE,2030,ngas_cbt_hi,0.0
+Installed Capacity Out,DE,2030,ngas_cbt_hi_chp,0.0
+Installed Capacity Out,DE,2030,oil__ocgt,1.5
+Installed Capacity Out,DE,2030,oil_eng,0.0
+Installed Capacity Out,DE,2030,pv_com,0.0
+Installed Capacity Out,DE,2030,pv_res,0.0
+Installed Capacity Out,DE,2030,pv_track,0.0
+Installed Capacity Out,DE,2030,pv_utl,181.0
+Installed Capacity Out,DE,2030,solartherm,0.0
+Installed Capacity Out,DE,2030,wst_boiler,0.0
+Installed Capacity Out,DE,2030,wst_chp,1.1
+Installed Capacity Out,DE,2030,ror,5.3
+Installed Capacity Out,DE,2030,wind_off,28.3
+Installed Capacity Out,DE,2030,wind_on,88.5
+Installed Capacity In,DE,2030,bio_eng,0.0
+Installed Capacity In,DE,2030,bio_sofc,0.0
+Installed Capacity In,DE,2030,bio_wchip_boiler,0.0
+Installed Capacity In,DE,2030,bio_wchip_chp,0.0
+Installed Capacity In,DE,2030,bio_wchip_ex_chp,0.0
+Installed Capacity In,DE,2030,bio_wpel_boiler,0.0
+Installed Capacity In,DE,2030,bio_wpel_chp,0.0
+Installed Capacity In,DE,2030,bio_wpel_ex_chp,0.0
+Installed Capacity In,DE,2030,e_boiler,0.0
+Installed Capacity In,DE,2030,ely_alka,0.0
+Installed Capacity In,DE,2030,ely_pem,0.0
+Installed Capacity In,DE,2030,ely_sofc,0.0
+Installed Capacity In,DE,2030,hp_airl,0.0
+Installed Capacity In,DE,2030,hp_airmini,0.0
+Installed Capacity In,DE,2030,hp_airs,0.0
+Installed Capacity In,DE,2030,hp_gnd,0.0
+Installed Capacity In,DE,2030,hp_wtr,0.0
+Installed Capacity In,DE,2030,hyd_psp_day,9.6
+Installed Capacity In,DE,2030,hyd_psp_season,0.0
+Installed Capacity In,DE,2030,hyd_psp_week,0.0
+Installed Capacity In,DE,2030,hyd_res_day,0.0
+Installed Capacity In,DE,2030,hyd_res_season,0.0
+Installed Capacity In,DE,2030,hyd_res_week,0.0
+Installed Capacity In,DE,2030,str_lion,0.0
+Installed Capacity In,DE,2030,str_varx,0.0
+Installed Capacity In,DE,2030,geotherm,0.0
+Installed Capacity In,DE,2030,str_hwtr,0.0
+Installed Capacity In,DE,2030,str_ptes,0.0
+Installed Capacity In,DE,2030,h2_cbt_hi,0.0
+Installed Capacity In,DE,2030,h2_cbt_hi_chp,0.0
+Installed Capacity In,DE,2030,h2_cc_hi,0.0
+Installed Capacity In,DE,2030,h2_cc_hi_chp,0.0
+Installed Capacity In,DE,2030,h2_stm,0.0
+Installed Capacity In,DE,2030,h2_stm_chp,0.0
+Installed Capacity In,DE,2030,h2fc_pem,0.0
+Installed Capacity In,DE,2030,str_h2cave,0.0
+Installed Capacity In,DE,2030,str_h2lohc,0.0
+Installed Capacity In,DE,2030,str_h2tnk,0.0
+Installed Capacity In,DE,2030,g_boiler,0.0
+Installed Capacity In,DE,2030,ngas_cbt_hi,0.0
+Installed Capacity In,DE,2030,ngas_cbt_hi_chp,0.0
+Installed Capacity In,DE,2030,oil__ocgt,0.0
+Installed Capacity In,DE,2030,oil_eng,0.0
+Installed Capacity In,DE,2030,pv_com,0.0
+Installed Capacity In,DE,2030,pv_res,0.0
+Installed Capacity In,DE,2030,pv_track,0.0
+Installed Capacity In,DE,2030,pv_utl,0.0
+Installed Capacity In,DE,2030,solartherm,0.0
+Installed Capacity In,DE,2030,wst_boiler,0.0
+Installed Capacity In,DE,2030,wst_chp,0.0
+Installed Capacity In,DE,2030,ror,0.0
+Installed Capacity In,DE,2030,wind_off,0.0
+Installed Capacity In,DE,2030,wind_on,0.0
+Storage Capacity,DE,2030,bio_eng,0.0
+Storage Capacity,DE,2030,bio_sofc,0.0
+Storage Capacity,DE,2030,bio_wchip_boiler,0.0
+Storage Capacity,DE,2030,bio_wchip_chp,0.0
+Storage Capacity,DE,2030,bio_wchip_ex_chp,0.0
+Storage Capacity,DE,2030,bio_wpel_boiler,0.0
+Storage Capacity,DE,2030,bio_wpel_chp,0.0
+Storage Capacity,DE,2030,bio_wpel_ex_chp,0.0
+Storage Capacity,DE,2030,e_boiler,0.0
+Storage Capacity,DE,2030,ely_alka,0.0
+Storage Capacity,DE,2030,ely_pem,0.0
+Storage Capacity,DE,2030,ely_sofc,0.0
+Storage Capacity,DE,2030,hp_airl,0.0
+Storage Capacity,DE,2030,hp_airmini,0.0
+Storage Capacity,DE,2030,hp_airs,0.0
+Storage Capacity,DE,2030,hp_gnd,0.0
+Storage Capacity,DE,2030,hp_wtr,0.0
+Storage Capacity,DE,2030,hyd_psp_day,63.3
+Storage Capacity,DE,2030,hyd_psp_season,0.0
+Storage Capacity,DE,2030,hyd_psp_week,0.0
+Storage Capacity,DE,2030,hyd_res_day,0.0
+Storage Capacity,DE,2030,hyd_res_season,0.0
+Storage Capacity,DE,2030,hyd_res_week,0.0
+Storage Capacity,DE,2030,str_lion,0.0
+Storage Capacity,DE,2030,str_varx,0.0
+Storage Capacity,DE,2030,geotherm,0.0
+Storage Capacity,DE,2030,str_hwtr,0.0
+Storage Capacity,DE,2030,str_ptes,0.0
+Storage Capacity,DE,2030,h2_cbt_hi,0.0
+Storage Capacity,DE,2030,h2_cbt_hi_chp,0.0
+Storage Capacity,DE,2030,h2_cc_hi,0.0
+Storage Capacity,DE,2030,h2_cc_hi_chp,0.0
+Storage Capacity,DE,2030,h2_stm,0.0
+Storage Capacity,DE,2030,h2_stm_chp,0.0
+Storage Capacity,DE,2030,h2fc_pem,0.0
+Storage Capacity,DE,2030,str_h2cave,0.0
+Storage Capacity,DE,2030,str_h2lohc,0.0
+Storage Capacity,DE,2030,str_h2tnk,0.0
+Storage Capacity,DE,2030,g_boiler,0.0
+Storage Capacity,DE,2030,ngas_cbt_hi,0.0
+Storage Capacity,DE,2030,ngas_cbt_hi_chp,0.0
+Storage Capacity,DE,2030,oil__ocgt,0.0
+Storage Capacity,DE,2030,oil_eng,0.0
+Storage Capacity,DE,2030,pv_com,0.0
+Storage Capacity,DE,2030,pv_res,0.0
+Storage Capacity,DE,2030,pv_track,0.0
+Storage Capacity,DE,2030,pv_utl,0.0
+Storage Capacity,DE,2030,solartherm,0.0
+Storage Capacity,DE,2030,wst_boiler,0.0
+Storage Capacity,DE,2030,wst_chp,0.0
+Storage Capacity,DE,2030,ror,0.0
+Storage Capacity,DE,2030,wind_off,0.0
+Storage Capacity,DE,2030,wind_on,0.0
+Installed Capacity Out,DE,2035,bio_eng,0.0
+Installed Capacity Out,DE,2035,bio_sofc,0.0
+Installed Capacity Out,DE,2035,bio_wchip_boiler,1.4
+Installed Capacity Out,DE,2035,bio_wchip_chp,0.0
+Installed Capacity Out,DE,2035,bio_wchip_ex_chp,5.5
+Installed Capacity Out,DE,2035,bio_wpel_boiler,0.0
+Installed Capacity Out,DE,2035,bio_wpel_chp,0.0
+Installed Capacity Out,DE,2035,bio_wpel_ex_chp,0.0
+Installed Capacity Out,DE,2035,e_boiler,8.8
+Installed Capacity Out,DE,2035,ely_alka,0.0
+Installed Capacity Out,DE,2035,ely_pem,15.8
+Installed Capacity Out,DE,2035,ely_sofc,0.0
+Installed Capacity Out,DE,2035,hp_airl,4.8
+Installed Capacity Out,DE,2035,hp_airmini,0.0
+Installed Capacity Out,DE,2035,hp_airs,0.0
+Installed Capacity Out,DE,2035,hp_gnd,0.0
+Installed Capacity Out,DE,2035,hp_wtr,0.0
+Installed Capacity Out,DE,2035,hyd_psp_day,11.9
+Installed Capacity Out,DE,2035,hyd_psp_season,0.0
+Installed Capacity Out,DE,2035,hyd_psp_week,0.0
+Installed Capacity Out,DE,2035,hyd_res_day,0.0
+Installed Capacity Out,DE,2035,hyd_res_season,0.0
+Installed Capacity Out,DE,2035,hyd_res_week,0.0
+Installed Capacity Out,DE,2035,str_lion,0.0
+Installed Capacity Out,DE,2035,str_varx,0.0
+Installed Capacity Out,DE,2035,geotherm,0.0
+Installed Capacity Out,DE,2035,str_hwtr,0.0
+Installed Capacity Out,DE,2035,str_ptes,0.0
+Installed Capacity Out,DE,2035,h2_cbt_hi,0.0
+Installed Capacity Out,DE,2035,h2_cbt_hi_chp,12.2
+Installed Capacity Out,DE,2035,h2_cc_hi,0.0
+Installed Capacity Out,DE,2035,h2_cc_hi_chp,24.3
+Installed Capacity Out,DE,2035,h2_stm,0.0
+Installed Capacity Out,DE,2035,h2_stm_chp,0.0
+Installed Capacity Out,DE,2035,h2fc_pem,0.0
+Installed Capacity Out,DE,2035,str_h2cave,0.0
+Installed Capacity Out,DE,2035,str_h2lohc,0.0
+Installed Capacity Out,DE,2035,str_h2tnk,0.0
+Installed Capacity Out,DE,2035,g_boiler,0.0
+Installed Capacity Out,DE,2035,ngas_cbt_hi,0.0
+Installed Capacity Out,DE,2035,ngas_cbt_hi_chp,0.0
+Installed Capacity Out,DE,2035,oil__ocgt,1.0
+Installed Capacity Out,DE,2035,oil_eng,0.0
+Installed Capacity Out,DE,2035,pv_com,0.0
+Installed Capacity Out,DE,2035,pv_res,0.0
+Installed Capacity Out,DE,2035,pv_track,0.0
+Installed Capacity Out,DE,2035,pv_utl,251.7
+Installed Capacity Out,DE,2035,solartherm,0.0
+Installed Capacity Out,DE,2035,wst_boiler,0.0
+Installed Capacity Out,DE,2035,wst_chp,0.9
+Installed Capacity Out,DE,2035,ror,5.3
+Installed Capacity Out,DE,2035,wind_off,39.7
+Installed Capacity Out,DE,2035,wind_on,107.4
+Installed Capacity In,DE,2035,bio_eng,0.0
+Installed Capacity In,DE,2035,bio_sofc,0.0
+Installed Capacity In,DE,2035,bio_wchip_boiler,0.0
+Installed Capacity In,DE,2035,bio_wchip_chp,0.0
+Installed Capacity In,DE,2035,bio_wchip_ex_chp,0.0
+Installed Capacity In,DE,2035,bio_wpel_boiler,0.0
+Installed Capacity In,DE,2035,bio_wpel_chp,0.0
+Installed Capacity In,DE,2035,bio_wpel_ex_chp,0.0
+Installed Capacity In,DE,2035,e_boiler,0.0
+Installed Capacity In,DE,2035,ely_alka,0.0
+Installed Capacity In,DE,2035,ely_pem,0.0
+Installed Capacity In,DE,2035,ely_sofc,0.0
+Installed Capacity In,DE,2035,hp_airl,0.0
+Installed Capacity In,DE,2035,hp_airmini,0.0
+Installed Capacity In,DE,2035,hp_airs,0.0
+Installed Capacity In,DE,2035,hp_gnd,0.0
+Installed Capacity In,DE,2035,hp_wtr,0.0
+Installed Capacity In,DE,2035,hyd_psp_day,10.3
+Installed Capacity In,DE,2035,hyd_psp_season,0.0
+Installed Capacity In,DE,2035,hyd_psp_week,0.0
+Installed Capacity In,DE,2035,hyd_res_day,0.0
+Installed Capacity In,DE,2035,hyd_res_season,0.0
+Installed Capacity In,DE,2035,hyd_res_week,0.0
+Installed Capacity In,DE,2035,str_lion,0.0
+Installed Capacity In,DE,2035,str_varx,0.0
+Installed Capacity In,DE,2035,geotherm,0.0
+Installed Capacity In,DE,2035,str_hwtr,0.0
+Installed Capacity In,DE,2035,str_ptes,0.0
+Installed Capacity In,DE,2035,h2_cbt_hi,0.0
+Installed Capacity In,DE,2035,h2_cbt_hi_chp,0.0
+Installed Capacity In,DE,2035,h2_cc_hi,0.0
+Installed Capacity In,DE,2035,h2_cc_hi_chp,0.0
+Installed Capacity In,DE,2035,h2_stm,0.0
+Installed Capacity In,DE,2035,h2_stm_chp,0.0
+Installed Capacity In,DE,2035,h2fc_pem,0.0
+Installed Capacity In,DE,2035,str_h2cave,0.0
+Installed Capacity In,DE,2035,str_h2lohc,0.0
+Installed Capacity In,DE,2035,str_h2tnk,0.0
+Installed Capacity In,DE,2035,g_boiler,0.0
+Installed Capacity In,DE,2035,ngas_cbt_hi,0.0
+Installed Capacity In,DE,2035,ngas_cbt_hi_chp,0.0
+Installed Capacity In,DE,2035,oil__ocgt,0.0
+Installed Capacity In,DE,2035,oil_eng,0.0
+Installed Capacity In,DE,2035,pv_com,0.0
+Installed Capacity In,DE,2035,pv_res,0.0
+Installed Capacity In,DE,2035,pv_track,0.0
+Installed Capacity In,DE,2035,pv_utl,0.0
+Installed Capacity In,DE,2035,solartherm,0.0
+Installed Capacity In,DE,2035,wst_boiler,0.0
+Installed Capacity In,DE,2035,wst_chp,0.0
+Installed Capacity In,DE,2035,ror,0.0
+Installed Capacity In,DE,2035,wind_off,0.0
+Installed Capacity In,DE,2035,wind_on,0.0
+Storage Capacity,DE,2035,bio_eng,0.0
+Storage Capacity,DE,2035,bio_sofc,0.0
+Storage Capacity,DE,2035,bio_wchip_boiler,0.0
+Storage Capacity,DE,2035,bio_wchip_chp,0.0
+Storage Capacity,DE,2035,bio_wchip_ex_chp,0.0
+Storage Capacity,DE,2035,bio_wpel_boiler,0.0
+Storage Capacity,DE,2035,bio_wpel_chp,0.0
+Storage Capacity,DE,2035,bio_wpel_ex_chp,0.0
+Storage Capacity,DE,2035,e_boiler,0.0
+Storage Capacity,DE,2035,ely_alka,0.0
+Storage Capacity,DE,2035,ely_pem,0.0
+Storage Capacity,DE,2035,ely_sofc,0.0
+Storage Capacity,DE,2035,hp_airl,0.0
+Storage Capacity,DE,2035,hp_airmini,0.0
+Storage Capacity,DE,2035,hp_airs,0.0
+Storage Capacity,DE,2035,hp_gnd,0.0
+Storage Capacity,DE,2035,hp_wtr,0.0
+Storage Capacity,DE,2035,hyd_psp_day,67.8
+Storage Capacity,DE,2035,hyd_psp_season,0.0
+Storage Capacity,DE,2035,hyd_psp_week,0.0
+Storage Capacity,DE,2035,hyd_res_day,0.0
+Storage Capacity,DE,2035,hyd_res_season,0.0
+Storage Capacity,DE,2035,hyd_res_week,0.0
+Storage Capacity,DE,2035,str_lion,0.0
+Storage Capacity,DE,2035,str_varx,0.0
+Storage Capacity,DE,2035,geotherm,0.0
+Storage Capacity,DE,2035,str_hwtr,0.0
+Storage Capacity,DE,2035,str_ptes,0.0
+Storage Capacity,DE,2035,h2_cbt_hi,0.0
+Storage Capacity,DE,2035,h2_cbt_hi_chp,0.0
+Storage Capacity,DE,2035,h2_cc_hi,0.0
+Storage Capacity,DE,2035,h2_cc_hi_chp,0.0
+Storage Capacity,DE,2035,h2_stm,0.0
+Storage Capacity,DE,2035,h2_stm_chp,0.0
+Storage Capacity,DE,2035,h2fc_pem,0.0
+Storage Capacity,DE,2035,str_h2cave,0.0
+Storage Capacity,DE,2035,str_h2lohc,0.0
+Storage Capacity,DE,2035,str_h2tnk,0.0
+Storage Capacity,DE,2035,g_boiler,0.0
+Storage Capacity,DE,2035,ngas_cbt_hi,0.0
+Storage Capacity,DE,2035,ngas_cbt_hi_chp,0.0
+Storage Capacity,DE,2035,oil__ocgt,0.0
+Storage Capacity,DE,2035,oil_eng,0.0
+Storage Capacity,DE,2035,pv_com,0.0
+Storage Capacity,DE,2035,pv_res,0.0
+Storage Capacity,DE,2035,pv_track,0.0
+Storage Capacity,DE,2035,pv_utl,0.0
+Storage Capacity,DE,2035,solartherm,0.0
+Storage Capacity,DE,2035,wst_boiler,0.0
+Storage Capacity,DE,2035,wst_chp,0.0
+Storage Capacity,DE,2035,ror,0.0
+Storage Capacity,DE,2035,wind_off,0.0
+Storage Capacity,DE,2035,wind_on,0.0
+Installed Capacity Out,DE,2040,bio_eng,0.0
+Installed Capacity Out,DE,2040,bio_sofc,0.0
+Installed Capacity Out,DE,2040,bio_wchip_boiler,0.9
+Installed Capacity Out,DE,2040,bio_wchip_chp,0.0
+Installed Capacity Out,DE,2040,bio_wchip_ex_chp,3.9
+Installed Capacity Out,DE,2040,bio_wpel_boiler,0.0
+Installed Capacity Out,DE,2040,bio_wpel_chp,0.0
+Installed Capacity Out,DE,2040,bio_wpel_ex_chp,0.0
+Installed Capacity Out,DE,2040,e_boiler,11.4
+Installed Capacity Out,DE,2040,ely_alka,0.0
+Installed Capacity Out,DE,2040,ely_pem,26.3
+Installed Capacity Out,DE,2040,ely_sofc,0.0
+Installed Capacity Out,DE,2040,hp_airl,5.7
+Installed Capacity Out,DE,2040,hp_airmini,0.0
+Installed Capacity Out,DE,2040,hp_airs,0.0
+Installed Capacity Out,DE,2040,hp_gnd,0.0
+Installed Capacity Out,DE,2040,hp_wtr,0.0
+Installed Capacity Out,DE,2040,hyd_psp_day,12.2
+Installed Capacity Out,DE,2040,hyd_psp_season,0.0
+Installed Capacity Out,DE,2040,hyd_psp_week,0.0
+Installed Capacity Out,DE,2040,hyd_res_day,0.0
+Installed Capacity Out,DE,2040,hyd_res_season,0.0
+Installed Capacity Out,DE,2040,hyd_res_week,0.0
+Installed Capacity Out,DE,2040,str_lion,0.0
+Installed Capacity Out,DE,2040,str_varx,0.0
+Installed Capacity Out,DE,2040,geotherm,0.0
+Installed Capacity Out,DE,2040,str_hwtr,0.0
+Installed Capacity Out,DE,2040,str_ptes,0.0
+Installed Capacity Out,DE,2040,h2_cbt_hi,0.0
+Installed Capacity Out,DE,2040,h2_cbt_hi_chp,12.2
+Installed Capacity Out,DE,2040,h2_cc_hi,0.0
+Installed Capacity Out,DE,2040,h2_cc_hi_chp,24.5
+Installed Capacity Out,DE,2040,h2_stm,0.0
+Installed Capacity Out,DE,2040,h2_stm_chp,0.0
+Installed Capacity Out,DE,2040,h2fc_pem,0.0
+Installed Capacity Out,DE,2040,str_h2cave,0.0
+Installed Capacity Out,DE,2040,str_h2lohc,0.0
+Installed Capacity Out,DE,2040,str_h2tnk,0.0
+Installed Capacity Out,DE,2040,g_boiler,0.0
+Installed Capacity Out,DE,2040,ngas_cbt_hi,0.0
+Installed Capacity Out,DE,2040,ngas_cbt_hi_chp,0.0
+Installed Capacity Out,DE,2040,oil__ocgt,0.5
+Installed Capacity Out,DE,2040,oil_eng,0.0
+Installed Capacity Out,DE,2040,pv_com,0.0
+Installed Capacity Out,DE,2040,pv_res,0.0
+Installed Capacity Out,DE,2040,pv_track,0.0
+Installed Capacity Out,DE,2040,pv_utl,323.1
+Installed Capacity Out,DE,2040,solartherm,0.0
+Installed Capacity Out,DE,2040,wst_boiler,0.0
+Installed Capacity Out,DE,2040,wst_chp,0.8
+Installed Capacity Out,DE,2040,ror,5.3
+Installed Capacity Out,DE,2040,wind_off,54.2
+Installed Capacity Out,DE,2040,wind_on,128.1
+Installed Capacity In,DE,2040,bio_eng,0.0
+Installed Capacity In,DE,2040,bio_sofc,0.0
+Installed Capacity In,DE,2040,bio_wchip_boiler,0.0
+Installed Capacity In,DE,2040,bio_wchip_chp,0.0
+Installed Capacity In,DE,2040,bio_wchip_ex_chp,0.0
+Installed Capacity In,DE,2040,bio_wpel_boiler,0.0
+Installed Capacity In,DE,2040,bio_wpel_chp,0.0
+Installed Capacity In,DE,2040,bio_wpel_ex_chp,0.0
+Installed Capacity In,DE,2040,e_boiler,0.0
+Installed Capacity In,DE,2040,ely_alka,0.0
+Installed Capacity In,DE,2040,ely_pem,0.0
+Installed Capacity In,DE,2040,ely_sofc,0.0
+Installed Capacity In,DE,2040,hp_airl,0.0
+Installed Capacity In,DE,2040,hp_airmini,0.0
+Installed Capacity In,DE,2040,hp_airs,0.0
+Installed Capacity In,DE,2040,hp_gnd,0.0
+Installed Capacity In,DE,2040,hp_wtr,0.0
+Installed Capacity In,DE,2040,hyd_psp_day,10.6
+Installed Capacity In,DE,2040,hyd_psp_season,0.0
+Installed Capacity In,DE,2040,hyd_psp_week,0.0
+Installed Capacity In,DE,2040,hyd_res_day,0.0
+Installed Capacity In,DE,2040,hyd_res_season,0.0
+Installed Capacity In,DE,2040,hyd_res_week,0.0
+Installed Capacity In,DE,2040,str_lion,0.0
+Installed Capacity In,DE,2040,str_varx,0.0
+Installed Capacity In,DE,2040,geotherm,0.0
+Installed Capacity In,DE,2040,str_hwtr,0.0
+Installed Capacity In,DE,2040,str_ptes,0.0
+Installed Capacity In,DE,2040,h2_cbt_hi,0.0
+Installed Capacity In,DE,2040,h2_cbt_hi_chp,0.0
+Installed Capacity In,DE,2040,h2_cc_hi,0.0
+Installed Capacity In,DE,2040,h2_cc_hi_chp,0.0
+Installed Capacity In,DE,2040,h2_stm,0.0
+Installed Capacity In,DE,2040,h2_stm_chp,0.0
+Installed Capacity In,DE,2040,h2fc_pem,0.0
+Installed Capacity In,DE,2040,str_h2cave,0.0
+Installed Capacity In,DE,2040,str_h2lohc,0.0
+Installed Capacity In,DE,2040,str_h2tnk,0.0
+Installed Capacity In,DE,2040,g_boiler,0.0
+Installed Capacity In,DE,2040,ngas_cbt_hi,0.0
+Installed Capacity In,DE,2040,ngas_cbt_hi_chp,0.0
+Installed Capacity In,DE,2040,oil__ocgt,0.0
+Installed Capacity In,DE,2040,oil_eng,0.0
+Installed Capacity In,DE,2040,pv_com,0.0
+Installed Capacity In,DE,2040,pv_res,0.0
+Installed Capacity In,DE,2040,pv_track,0.0
+Installed Capacity In,DE,2040,pv_utl,0.0
+Installed Capacity In,DE,2040,solartherm,0.0
+Installed Capacity In,DE,2040,wst_boiler,0.0
+Installed Capacity In,DE,2040,wst_chp,0.0
+Installed Capacity In,DE,2040,ror,0.0
+Installed Capacity In,DE,2040,wind_off,0.0
+Installed Capacity In,DE,2040,wind_on,0.0
+Storage Capacity,DE,2040,bio_eng,0.0
+Storage Capacity,DE,2040,bio_sofc,0.0
+Storage Capacity,DE,2040,bio_wchip_boiler,0.0
+Storage Capacity,DE,2040,bio_wchip_chp,0.0
+Storage Capacity,DE,2040,bio_wchip_ex_chp,0.0
+Storage Capacity,DE,2040,bio_wpel_boiler,0.0
+Storage Capacity,DE,2040,bio_wpel_chp,0.0
+Storage Capacity,DE,2040,bio_wpel_ex_chp,0.0
+Storage Capacity,DE,2040,e_boiler,0.0
+Storage Capacity,DE,2040,ely_alka,0.0
+Storage Capacity,DE,2040,ely_pem,0.0
+Storage Capacity,DE,2040,ely_sofc,0.0
+Storage Capacity,DE,2040,hp_airl,0.0
+Storage Capacity,DE,2040,hp_airmini,0.0
+Storage Capacity,DE,2040,hp_airs,0.0
+Storage Capacity,DE,2040,hp_gnd,0.0
+Storage Capacity,DE,2040,hp_wtr,0.0
+Storage Capacity,DE,2040,hyd_psp_day,69.5
+Storage Capacity,DE,2040,hyd_psp_season,0.0
+Storage Capacity,DE,2040,hyd_psp_week,0.0
+Storage Capacity,DE,2040,hyd_res_day,0.0
+Storage Capacity,DE,2040,hyd_res_season,0.0
+Storage Capacity,DE,2040,hyd_res_week,0.0
+Storage Capacity,DE,2040,str_lion,0.0
+Storage Capacity,DE,2040,str_varx,0.0
+Storage Capacity,DE,2040,geotherm,0.0
+Storage Capacity,DE,2040,str_hwtr,0.0
+Storage Capacity,DE,2040,str_ptes,0.0
+Storage Capacity,DE,2040,h2_cbt_hi,0.0
+Storage Capacity,DE,2040,h2_cbt_hi_chp,0.0
+Storage Capacity,DE,2040,h2_cc_hi,0.0
+Storage Capacity,DE,2040,h2_cc_hi_chp,0.0
+Storage Capacity,DE,2040,h2_stm,0.0
+Storage Capacity,DE,2040,h2_stm_chp,0.0
+Storage Capacity,DE,2040,h2fc_pem,0.0
+Storage Capacity,DE,2040,str_h2cave,0.0
+Storage Capacity,DE,2040,str_h2lohc,0.0
+Storage Capacity,DE,2040,str_h2tnk,0.0
+Storage Capacity,DE,2040,g_boiler,0.0
+Storage Capacity,DE,2040,ngas_cbt_hi,0.0
+Storage Capacity,DE,2040,ngas_cbt_hi_chp,0.0
+Storage Capacity,DE,2040,oil__ocgt,0.0
+Storage Capacity,DE,2040,oil_eng,0.0
+Storage Capacity,DE,2040,pv_com,0.0
+Storage Capacity,DE,2040,pv_res,0.0
+Storage Capacity,DE,2040,pv_track,0.0
+Storage Capacity,DE,2040,pv_utl,0.0
+Storage Capacity,DE,2040,solartherm,0.0
+Storage Capacity,DE,2040,wst_boiler,0.0
+Storage Capacity,DE,2040,wst_chp,0.0
+Storage Capacity,DE,2040,ror,0.0
+Storage Capacity,DE,2040,wind_off,0.0
+Storage Capacity,DE,2040,wind_on,0.0
